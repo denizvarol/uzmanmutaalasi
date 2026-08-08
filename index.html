@@ -42,9 +42,9 @@
 
       <!-- Right Contact Action & Mobile Menu Toggle Button -->
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="tel:05326422657" class="phone-header-link" title="Ara: 0532 642 26 57">
+        <a href="tel:05326422657" class="phone-header-link data-phone-link" title="Ara: 0532 642 26 57">
           <i class="fa-solid fa-phone-volume" style="color: #38bdf8;"></i>
-          <span>İletişim: 0532 642 26 57</span>
+          <span class="data-phone-text">İletişim: 0532 642 26 57</span>
         </a>
         
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
@@ -65,11 +65,11 @@
       
       <!-- Metinler ve Butonlar Birebir Korunmuş Sayfaya Yayılmış Düzen -->
       <div class="hero-spread-box">
-        <h1 class="hero-h1-title">
+        <h1 class="hero-h1-title data-hero-title">
           ADLİ MÜHENDİSLİK, ADLİ BİLİŞİM VE TEKNİK BİLİRKİŞİLİK
         </h1>
         
-        <p class="hero-sub-para">
+        <p class="hero-sub-para data-hero-sub">
           Elektrik, elektronik, enerji, dijital delil ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve mütalaa hizmetleri.
         </p>
 
@@ -563,7 +563,7 @@
           </div>
           <h4 class="contact-card-h4">Telefon / Danışma Hattı</h4>
           <p class="contact-card-p">Hızlı bilgi ve dosya ön değerlendirmesi için hemen arayın.</p>
-          <a href="tel:05326422657" class="contact-card-value-phone">0532 642 26 57</a>
+          <a href="tel:05326422657" class="contact-card-value-phone data-phone-link data-phone-val">0532 642 26 57</a>
         </div>
 
         <!-- White Card 2: E-mail -->
@@ -573,7 +573,7 @@
           </div>
           <h4 class="contact-card-h4">E-Posta İletişim</h4>
           <p class="contact-card-p">Dava dosyası evraklarınızı e-posta ile iletebilirsiniz.</p>
-          <a href="mailto:info@adliteknik.com" class="contact-card-value-email">info@adliteknik.com</a>
+          <a href="mailto:info@adliteknik.com" class="contact-card-value-email data-email-link data-email-val">info@adliteknik.com</a>
         </div>
 
         <!-- White Card 3: Location -->
@@ -583,7 +583,7 @@
           </div>
           <h4 class="contact-card-h4">Merkez Ofis / UYAP</h4>
           <p class="contact-card-p">Ankara Merkez Ofisi ve UYAP Entegrasyon Merkezi.</p>
-          <span class="contact-card-value-office">Ankara / TÜRKİYE</span>
+          <span class="contact-card-value-office data-office-val">Ankara / TÜRKİYE</span>
         </div>
 
       </div>
@@ -641,15 +641,15 @@
           <ul class="footer-links" style="font-size: 0.9rem;">
             <li style="margin-bottom: 12px;">
               <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 6px;"></i> 
-              <strong style="color: #fff;">0532 642 26 57</strong>
+              <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong>
             </li>
             <li style="margin-bottom: 12px;">
               <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 6px;"></i> 
-              info@adliteknik.com
+              <span class="data-email-val">info@adliteknik.com</span>
             </li>
             <li style="margin-bottom: 12px;">
               <i class="fa-solid fa-building" style="color: #38bdf8; margin-right: 6px;"></i> 
-              Ankara Merkez Ofis / UYAP Uyumlu
+              <span class="data-office-val">Ankara Merkez Ofis / UYAP Uyumlu</span>
             </li>
             <li>
               <i class="fa-solid fa-lock" style="color: #10b981; margin-right: 6px;"></i> 
@@ -661,12 +661,33 @@
 
       <div class="footer-bottom">
         <div>© 2026 UZMAN İNCELEME — Adli Mühendislik & Bilişim Platformu. Tüm Hakları Saklıdır.</div>
-        <div style="color: #38bdf8; font-weight: 700;">İletişim: 0532 642 26 57</div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <div style="color: #38bdf8; font-weight: 700;">İletişim: <span class="data-phone-val">0532 642 26 57</span></div>
+          <button id="adminPanelBtn" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fa-solid fa-gear"></i> Yönetici Paneli
+          </button>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- 8. Modal Popup for Fast File Upload -->
+  <!-- 8. WHATSAPP FLOATING ILETIŞIM WIDGETI -->
+  <div class="whatsapp-float-container">
+    <div class="whatsapp-label-badge">
+      <span class="whatsapp-status-dot"></span>
+      <span>WhatsApp Destek Hattı</span>
+    </div>
+    <a href="https://wa.me/905326422657?text=Merhaba,%20uzman%20m%C3%BCtalaas%C4%B1%20ve%20dan%C4%B1%C5%9Fmanl%C4%B1k%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-float-btn id-wa-link" 
+       aria-label="WhatsApp İletişim Hattı">
+      <div class="whatsapp-pulse-ring"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- 9. Modal Popup for Fast File Upload -->
   <div id="uploadModal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
@@ -719,6 +740,56 @@
           <span>GÜVENLİ GÖNDER VE İNCELEME AL</span>
           <i class="fa-solid fa-paper-plane"></i>
         </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 10. YÖNETİCİ PANELİ MODAL DİYALOGU -->
+  <div id="adminModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 650px;">
+      <button class="modal-close id-admin-close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-sliders" style="color: #0284c7;"></i> Yönetici Paneli — Temel Bilgi Düzenleme
+      </h3>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem;">
+        Site üzerindeki telefon numarası, e-posta, WhatsApp hattı ve ana başlık gibi temel bilgileri buradan anında güncelleyebilirsiniz.
+      </p>
+
+      <form id="adminForm">
+        <div class="form-group">
+          <label class="form-label">Telefon Numarası (Örn: 0532 642 26 57)</label>
+          <input type="text" id="adminPhone" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">E-Posta Adresi</label>
+          <input type="email" id="adminEmail" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Merkez Ofis Konumu</label>
+          <input type="text" id="adminOffice" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ana Sayfa Hero Başlığı</label>
+          <textarea id="adminHeroTitle" class="form-textarea" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ana Sayfa Hero Açıklaması</label>
+          <textarea id="adminHeroSub" class="form-textarea" required></textarea>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 1.5rem;">
+          <button type="submit" class="btn-hero-primary" style="flex: 1; justify-content: center; padding: 12px;">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>DEĞİŞİKLİKLERİ KAYDET VE UYGULA</span>
+          </button>
+          <button type="button" id="adminResetBtn" style="background: #f1f5f9; color: #475569; font-weight: 700; padding: 12px 18px; border-radius: 12px; border: 1px solid #cbd5e1;">
+            Sıfırla
+          </button>
+        </div>
       </form>
     </div>
   </div>

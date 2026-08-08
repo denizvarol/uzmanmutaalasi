@@ -808,7 +808,82 @@ input, select, textarea {
   font-size: 0.85rem;
 }
 
-/* Modal Popup */
+/* ==========================================================================
+   WHATSAPP FLOATING WIDGET (SABİT FLOATING BÖLÜM)
+   ========================================================================== */
+.whatsapp-float-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.whatsapp-float-btn {
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+}
+
+.whatsapp-pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: waPulse 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes waPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.whatsapp-label-badge {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+}
+
+.whatsapp-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #25D366;
+}
+
+/* Modal Popup & Admin Panel */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -908,7 +983,7 @@ input, select, textarea {
   margin-bottom: 6px;
 }
 
-.form-select, .form-input {
+.form-select, .form-input, .form-textarea {
   width: 100%;
   padding: 11px 14px;
   border: 1px solid #cbd5e1;
@@ -919,7 +994,12 @@ input, select, textarea {
   transition: var(--transition-fast);
 }
 
-.form-select:focus, .form-input:focus {
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-select:focus, .form-input:focus, .form-textarea:focus {
   outline: none;
   border-color: var(--color-bilişim);
   background-color: #ffffff;
@@ -1027,7 +1107,7 @@ input, select, textarea {
   }
 
   .phone-header-link span {
-    display: none; /* Icon-only on small phones for header space */
+    display: none;
   }
 
   .phone-header-link {
@@ -1071,5 +1151,9 @@ input, select, textarea {
 
   .modal-content {
     padding: 1.5rem 1rem;
+  }
+
+  .whatsapp-label-badge {
+    display: none; /* Icon-only floating button on ultra small screens */
   }
 }
