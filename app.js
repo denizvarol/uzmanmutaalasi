@@ -1,68 +1,82 @@
-// UZMAN İNCELEME - Interactivity Scripts
+/* ==========================================================================
+   UZMAN İNCELEME - ADLİ MÜHENDİSLİK & BİLİŞİM INTERACTIVE JAVASCRIPT
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Modal Popup Handlers
-  const modal = document.getElementById('uploadModal');
-  const triggerBtns = document.querySelectorAll('.trigger-modal');
-  const closeBtn = document.querySelector('.modal-close');
 
-  if (modal) {
-    triggerBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.classList.add('active');
-      });
-    });
+  // 1. Mobile Menu Drawer Toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-      });
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
-  }
-
-  // Dropzone Interactivity
-  const dropzone = document.querySelector('.dropzone');
-  if (dropzone) {
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-      dropzone.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-      }, false);
-    });
-
-    ['dragenter', 'dragover'].forEach(eventName => {
-      dropzone.addEventListener(eventName, () => dropzone.classList.add('dragover'), false);
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-      dropzone.addEventListener(eventName, () => dropzone.classList.remove('dragover'), false);
-    });
-
-    dropzone.addEventListener('drop', (e) => {
-      const dt = e.dataTransfer;
-      const files = dt.files;
-      if (files.length > 0) {
-        const textElem = dropzone.querySelector('.dropzone-text');
-        if (textElem) {
-          textElem.innerHTML = `<i class="fa-solid fa-check-circle" style="color: #10b981;"></i> ${files[0].name} (${(files[0].size / 1024 / 1024).toFixed(2)} MB Seçildi)`;
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
         }
       }
     });
-  }
 
-  // Form Submission Handler
-  const form = document.getElementById('modalForm');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Talebiniz ve dosyanız 256-bit şifreleme ile başarıyla alındı. Uzman kadromuz 0532 642 26 57 numaralı telefondan ve e-posta adresinizden sizinle iletişime geçecektir.');
-      modal.classList.remove('active');
+    // Close menu when clicking any nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      });
     });
   }
+
+  // 2. Sticky Header Scroll Effect
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+
+  // 3. Modal Popup Management
+  const modalOverlay = document.getElementById('uploadModal');
+  const triggerBtns = document.querySelectorAll('.trigger-modal');
+  const closeBtn = document.querySelector('.modal-close');
+
+  triggerBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modalOverlay?.classList.add('active');
+    });
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    modalOverlay?.classList.remove('active');
+  });
+
+  modalOverlay?.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay.classList.remove('active');
+    }
+  });
+
+  // 4. Modal Form Submission Feedback
+  const modalForm = document.getElementById('modalForm');
+  if (modalForm) {
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Talebiniz ve dosyanız başarıyla iletilmiştir. Uzmanlarımız 24 saat içinde tarafınızla iletişime geçecektir.');
+      modalOverlay?.classList.remove('active');
+      modalForm.reset();
+    });
+  }
+
 });

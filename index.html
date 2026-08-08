@@ -32,7 +32,7 @@
       </a>
 
       <!-- Navigation Links -->
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
         <li><a href="#uzmanliklar" class="nav-link">Uzmanlık Alanlarımız</a></li>
         <li><a href="#egitimler" class="nav-link">Eğitimler</a></li>
@@ -40,12 +40,16 @@
         <li><a href="#iletisim" class="nav-link">İletişim</a></li>
       </ul>
 
-      <!-- Right Contact Action: Phone Link -->
-      <div>
-        <a href="tel:05326422657" class="phone-header-link">
+      <!-- Right Contact Action & Mobile Menu Toggle Button -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="tel:05326422657" class="phone-header-link" title="Ara: 0532 642 26 57">
           <i class="fa-solid fa-phone-volume" style="color: #38bdf8;"></i>
           <span>İletişim: 0532 642 26 57</span>
         </a>
+        
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -260,7 +264,7 @@
               <li>Kimlik Avı / Phishing</li>
               <li>Hesap Ele Geçirme</li>
               <li>Kripto Transfer Zinciri</li>
-              <li>Zararlı Yazılım İncelemesi</li>
+              <li>Zararlı Yazılım İncelesi</li>
               <li>Ağ ve Erişim Kayıtları</li>
             </ul>
           </div>
@@ -347,7 +351,7 @@
           </div>
         </div>
 
-        <!-- Column 7: Hukuksal & Avukatlık Desteği, Dava Süreci (EKLEME YAPILDI) -->
+        <!-- Column 7: Hukuksal & Avukatlık Desteği, Dava Süreci -->
         <div class="column-card col-7">
           <div class="column-card-header">
             <i class="fa-solid fa-scale-unbalanced-flip"></i>
@@ -367,7 +371,7 @@
           </div>
         </div>
 
-        <!-- Column 8: Eğitim & Danışmanlık (YENİ EKLENEN SÜTUN) -->
+        <!-- Column 8: Eğitim & Danışmanlık -->
         <div class="column-card col-8">
           <div class="column-card-header">
             <i class="fa-solid fa-graduation-cap"></i>
