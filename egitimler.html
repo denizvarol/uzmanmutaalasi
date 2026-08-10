@@ -3,14 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eğitimler | UZMAN İNCELEME — Adli Mühendislik & Bilişim</title>
-  <meta name="description" content="Avukatlar, mühendisler, kurumlar ve bilirkişiler için Adli Bilişim, Siber Güvenlik, Yangın İnceleme ve HMK 293 eğitim programları.">
+  <title>Eğitimler & Kurumsal Akademi | UZMAN İNCELEME</title>
+  <meta name="description" content="Avukatlar, hukuk büroları, tesis yöneticileri ve mühendisler için uygulamalı adli bilişim, adli mühendislik, İSG, siber güvenlik ve HMK 293 uzman görüşü eğitimleri.">
   
+  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Dedicated Premium Styles for Eğitimler Page */
+    .course-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .course-card-item {
+      background: #0e172c;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .course-card-item:hover {
+      border-color: #38bdf8;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(2, 132, 199, 0.25);
+    }
+
+    .course-card-top {
+      padding: 1.75rem 1.5rem 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .course-pill-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .course-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .pill-cyan { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .pill-orange { background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
+    .pill-purple { background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+    .course-icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.2) 0%, rgba(56, 189, 248, 0.05) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .course-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .course-desc {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .course-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .course-highlights-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .course-highlights-list li {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .course-highlights-list li i {
+      color: #38bdf8;
+      font-size: 0.85rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .target-audience-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 1.25rem;
+    }
+
+    .target-audience-box strong {
+      color: #ffffff;
+    }
+
+    .course-btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-course-outline {
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      background: rgba(2, 132, 199, 0.1);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-course-outline:hover {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .btn-course-apply {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-course-apply:hover {
+      background: #0369a1;
+    }
+
+    /* Trust Feature Bar */
+    .academy-features-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      background: rgba(14, 23, 44, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .academy-feat-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .academy-feat-icon {
+      font-size: 1.6rem;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .academy-feat-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .academy-feat-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 1100px) {
+      .course-card-grid { grid-template-columns: repeat(2, 1fr); }
+      .academy-features-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      .course-card-grid { grid-template-columns: 1fr; }
+      .academy-features-bar { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,7 +238,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
         <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
-        <li><a href="makaleler.html" class="nav-link">Makaleler & Yayınlar</a></li>
+        <li><a href="makaleler.html" class="nav-link">Dergi & Yayınlar</a></li>
         <li><a href="egitimler.html" class="nav-link active">Eğitimler</a></li>
         <li><a href="surec.html" class="nav-link">Süreç</a></li>
         <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
@@ -48,141 +258,263 @@
 
   <!-- Subpage Banner -->
   <section class="subpage-banner">
+    <div class="subpage-banner-bg-img"></div>
+    <div class="subpage-banner-gradient"></div>
+
     <div class="container">
-      <ul class="breadcrumb-list">
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li>/</li>
-        <li>Eğitimler</li>
-      </ul>
-      <h1 class="subpage-banner-title">EĞİTİM PROGRAMLARI VE AKADEMİK ÇALIŞTAYLAR</h1>
-      <p class="subpage-banner-sub">
-        Avukatlar, mühendisler, adli bilirkişiler ve kurumlar için uygulamalı adli bilişim, siber güvenlik ve mühendislik eğitimleri.
-      </p>
+      <div class="subpage-banner-content">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li>Eğitimler & Kurumsal Akademi</li>
+        </ul>
+        <h1 class="subpage-banner-title">KURUMSAL EĞİTİM & UZMANLIK AKADEMİSİ</h1>
+        <p class="subpage-banner-sub">
+          Avukatlar, hukuk büroları, tesis yöneticileri ve mühendisler için uluslararası standartlar, HMK 293 / CMK 67 uygulamaları ve canlı vaka analizleriyle zenginleştirilmiş sertifikasyon programları.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- EĞİTİMLER (6 MODULES GRID) -->
-  <section style="padding: 5rem 0; background: #0b132b;">
+  <!-- MAIN SECTION -->
+  <section style="padding: 3.5rem 0; background: #070d1e;">
     <div class="container">
-      <div class="section-title-box">
-        <span class="section-num-tag">AKADEMİK EĞİTİM</span>
-        <h2 class="section-main-heading">Uzmanlık ve Sertifikasyon Eğitim Modülleri</h2>
-      </div>
 
-      <div class="trainings-6-grid">
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-gavel"></i></div>
+      <!-- Trust Feature Bar -->
+      <div class="academy-features-bar">
+        <div class="academy-feat-item">
+          <i class="fa-solid fa-certificate academy-feat-icon"></i>
           <div>
-            <h3 class="training-card-title">Avukatlar İçin Adli Bilişim & Delil Eğitimi</h3>
-            <p class="training-card-desc">Dijital delillerin mahkemede sunulması, HTS kayıtları, WhatsApp konuşmaları ve imaj alma süreçlerinin hukuki analizi.</p>
+            <h4 class="academy-feat-title">Onaylı Sertifikasyon</h4>
+            <p class="academy-feat-sub">Katılım ve Başarı Sertifikası</p>
           </div>
         </div>
-
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
+        <div class="academy-feat-item">
+          <i class="fa-solid fa-chalkboard-user academy-feat-icon"></i>
           <div>
-            <h3 class="training-card-title">Adli Mühendislik & Yangın İnceleme</h3>
-            <p class="training-card-desc">Elektrik tesisatı, trafo, pano ve endüstriyel yangınlarda kök neden analizi, kusur tespiti ve raporlama metotları.</p>
+            <h4 class="academy-feat-title">Uygulamalı Müfredat</h4>
+            <p class="academy-feat-sub">Canlı Dava Dosyası & Vaka Analizleri</p>
           </div>
         </div>
-
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-user-shield"></i></div>
+        <div class="academy-feat-item">
+          <i class="fa-solid fa-building-user academy-feat-icon"></i>
           <div>
-            <h3 class="training-card-title">Kurumsal Siber Güvenlik & Farkındalık</h3>
-            <p class="training-card-desc">Şirket çalışanları için oltalama (phishing) koruması, veri sızıntısı önleme ve sosyal mühendislik savunma eğitimi.</p>
+            <h4 class="academy-feat-title">Kuruma Özel Program</h4>
+            <p class="academy-feat-sub">Şirket & Barolara Özel Eğitim</p>
           </div>
         </div>
-
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="academy-feat-item">
+          <i class="fa-solid fa-scale-balanced academy-feat-icon"></i>
           <div>
-            <h3 class="training-card-title">HMK 293 Uzman Görüşü Raporlama</h3>
-            <p class="training-card-desc">Teknik bilirkişiler ve uzmanlar için HMK Madde 293 standartlarında reddedilemez bilimsel mütalaa hazırlama teknikleri.</p>
-          </div>
-        </div>
-
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-hard-drive"></i></div>
-          <div>
-            <h3 class="training-card-title">Mobil & Bilgisayar Adli İnceleme (Forensic Tools)</h3>
-            <p class="training-card-desc">EnCase, FTK Imager, Cellebrite gibi adli bilişim yazılımları ile delil toplama ve analiz atölye çalışması.</p>
-          </div>
-        </div>
-
-        <div class="training-card">
-          <div class="training-icon-box"><i class="fa-solid fa-building-user"></i></div>
-          <div>
-            <h3 class="training-card-title">BEDAM & Üniversitesi Onaylı Sertifika</h3>
-            <p class="training-card-desc">Üniversite ve BEDAM iş birliği ile düzenlenen resmi sertifikalı ve e-Devlet onaylı uzmanlık programları.</p>
+            <h4 class="academy-feat-title">Hukuki-Teknik Uyum</h4>
+            <p class="academy-feat-sub">HMK 293 ve CMK 67 Standardı</p>
           </div>
         </div>
       </div>
 
-      <div class="training-features-bar">
-        <div class="feature-pill"><i class="fa-solid fa-certificate"></i> <span>Resmi Eğitim Sertifikası</span></div>
-        <div class="feature-pill"><i class="fa-solid fa-user-graduate"></i> <span>Akademisyen & Kıdemli Bilirkişi Kadrosu</span></div>
-        <div class="feature-pill"><i class="fa-solid fa-laptop-code"></i> <span>Uygulamalı Vaka Analizleri</span></div>
-        <div class="feature-pill"><i class="fa-solid fa-award"></i> <span>BEDAM Uyumlu Müfredat</span></div>
+      <!-- FILTER TABS FOR COURSES -->
+      <div class="filter-pills-bar" style="margin-bottom: 2.5rem;">
+        <button class="filter-pill-btn active" data-course-filter="all">Tüm Programlar</button>
+        <button class="filter-pill-btn" data-course-filter="hukuk">⚖️ Hukukçular İçin</button>
+        <button class="filter-pill-btn" data-course-filter="muhendislik">⚙️ Adli Mühendislik & Yangın</button>
+        <button class="filter-pill-btn" data-course-filter="isg">⚡ Enerji & İSG</button>
+        <button class="filter-pill-btn" data-course-filter="siber">🛡️ Siber Güvenlik & KVKK</button>
       </div>
 
-      <!-- CORPORATE TRAINING REQUEST FORM -->
-      <div style="margin-top: 4rem; background: var(--bg-navy-card); border-radius: var(--radius-lg); padding: 3rem 2rem; border: 1px solid var(--border-color); max-width: 800px; margin-left: auto; margin-right: auto;">
-        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 8px; text-align: center;">Kurumsal Eğitim veya Seminer Talebi</h3>
-        <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 2rem; text-align: center;">Barolar, hukuk büroları veya şirketleriniz için kapalı grup eğitim talebinde bulunabilirsiniz.</p>
+      <!-- 6 MODERN RICH TRAINING CARDS GRID -->
+      <div class="course-card-grid">
         
-        <form id="trainingRequestForm">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;" class="form-group">
-            <div><label class="form-label" style="color: #fff;">Ad Soyad / Kurum Adı</label><input type="text" class="form-input" placeholder="Ankara Barosu / Şirket Adı" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></div>
-            <div><label class="form-label" style="color: #fff;">Talep Edilen Eğitim Modülü</label><select class="form-select" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"><option>1. Avukatlar İçin Adli Bilişim Eğitimi</option><option>2. Adli Mühendislik & Yangın İnceleme</option><option>3. Kurumsal Siber Güvenlik</option><option>4. HMK 293 Rapor Yazım Eğitimi</option><option>5. Özel Kurumsal Atölye</option></select></div>
+        <!-- Course 1 -->
+        <div class="course-card-item" data-course-cat="hukuk">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-cyan">Hukukçular İçin</span>
+              <span class="course-pill pill-purple">1 Gün / 8 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3 class="course-title">Avukatlar İçin Adli Bilişim ve Dijital Delil Yönetimi</h3>
+            <p class="course-desc">Dijital delillerin toplanması, incelenmesi ve UYAP dava dosyalarına hukuki geçerlilikle sunulması.</p>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;" class="form-group">
-            <div><label class="form-label" style="color: #fff;">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></div>
-            <div><label class="form-label" style="color: #fff;">E-posta Adresi</label><input type="email" class="form-input" placeholder="kurum@ornek.com" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> HTS, WhatsApp, E-posta ve silinen mesajların inceleme esasları</li>
+              <li><i class="fa-solid fa-circle-check"></i> Hash (MD5/SHA256) bütünlüğü ve Chain of Custody (delil zinciri)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Bilirkişi raporuna teknik itiraz ve HMK 293 mütalaa yöntemleri</li>
+              <li><i class="fa-solid fa-circle-check"></i> Canlı Vaka: Sahte e-posta ve BEC dolandırıcılığı dava dosyası</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> Avukatlar, Stajyer Avukatlar, Hukuk Müşavirleri
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c1">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
           </div>
-          <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>EĞİTİM TALEBİ GÖNDER</span><i class="fa-solid fa-paper-plane"></i></button>
-        </form>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card-item" data-course-cat="muhendislik">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-orange">Uzmanlar İçin</span>
+              <span class="course-pill pill-purple">2 Gün / 16 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-file-signature"></i></div>
+            <h3 class="course-title">HMK 293 & CMK 67 Kapsamında Uzman Görüşü Hazırlama</h3>
+            <p class="course-desc">Mahkemelere sunulacak bilimsel mütalaaların hukuki standartlara ve teknik esaslara uygun hazırlanması.</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> Bilimsel mütalaa yazım standartları ve metodoloji ilkeleri</li>
+              <li><i class="fa-solid fa-circle-check"></i> Bilirkişi raporu ile uzman görüşü arasındaki farklar</li>
+              <li><i class="fa-solid fa-circle-check"></i> Duruşmada uzman dinlenmesi (HMK 293/2) ve çapraz sorgu hazırlığı</li>
+              <li><i class="fa-solid fa-circle-check"></i> Yargıtay emsal kararları ışığında rapor teknikleri</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> Mühendisler, Mimarlar, Mali Müşavirler, Teknik Uzmanlar
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c2">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card-item" data-course-cat="isg">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-orange">İSG & Teknik</span>
+              <span class="course-pill pill-purple">1 Gün / 8 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h3 class="course-title">Elektrik Tesislerinde İSG, Elektriksel Riskler ve İş Kazaları</h3>
+            <p class="course-desc">Elektrik kazalarında kök neden analizi, teknik kusur tespiti ve hukuki/cezai sorumluluklar.</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> Elektrik çarpmaları, ark flaş (Arc Flash) ve patlama risk analizi</li>
+              <li><i class="fa-solid fa-circle-check"></i> Topraklama, RCD ve yüksek gerilim güvenlik kuralları</li>
+              <li><i class="fa-solid fa-circle-check"></i> İş kazası sonrası teknik kök neden tespiti ve delil toplama</li>
+              <li><i class="fa-solid fa-circle-check"></i> İşveren ve teknik personelin cezai sorumluluk sınırları</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> İSG Uzmanları, Tesis Müdürleri, Elektrik Mühendisleri
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c3">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card-item" data-course-cat="isg">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-cyan">Enerji Sistemleri</span>
+              <span class="course-pill pill-purple">2 Gün / 12 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-solar-panel"></i></div>
+            <h3 class="course-title">Enerji Santralleri (GES/RES/HES) Verimlilik ve Yangın Güvenliği</h3>
+            <p class="course-desc">Yenilenebilir enerji santrallerinde arıza tespiti, santral duruşu kayıp üretimi ve sigorta uyuşmazlıkları.</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> GES termal kamera (FLIR) ve hot-spot tespiti incelemeleri</li>
+              <li><i class="fa-solid fa-circle-check"></i> Inverter, DC birleştirme kutusu ve kablo yangınlarında kök nedenler</li>
+              <li><i class="fa-solid fa-circle-check"></i> Santral duruşları, kayıp üretim hesaplamaları ve sigorta talepleri</li>
+              <li><i class="fa-solid fa-circle-check"></i> Periyodik bakım ve kabul kriterleri standartları</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> Santral İşletmecileri, EPC Şirketleri, Sigorta Eksperleri
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c4">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card-item" data-course-cat="siber">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-cyan">Kurumsal Güvenlik</span>
+              <span class="course-pill pill-purple">1 Gün / 6 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-user-shield"></i></div>
+            <h3 class="course-title">Kurumsal Siber Güvenlik Farkındalığı ve KVKK Teknik Uyum</h3>
+            <p class="course-desc">Siber şantaj, fidye yazılımı (Ransomware) kriz yönetimi ve KVKK Madde 12 teknik tedbirleri.</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> Phishing ve sosyal mühendislik saldırılarına karşı korunma</li>
+              <li><i class="fa-solid fa-circle-check"></i> KVKK Madde 12 teknik tedbirler ve VERBİS veri güvenliği uyumu</li>
+              <li><i class="fa-solid fa-circle-check"></i> Ransomware saldırısında kriz yönetimi ve ilk 24 saat rehberi</li>
+              <li><i class="fa-solid fa-circle-check"></i> Parola politikaları, 2FA/MFA ve bulut güvenliği esasları</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> Şirket Yöneticileri, IT Departmanları, İK Yöneticileri
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c5">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card-item" data-course-cat="muhendislik">
+          <div class="course-card-top">
+            <div class="course-pill-group">
+              <span class="course-pill pill-orange">Yangın & Kriminal</span>
+              <span class="course-pill pill-purple">2 Gün / 16 Saat</span>
+            </div>
+            <div class="course-icon-badge"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <h3 class="course-title">Yangın Kök Neden Analizi ve Adli Yangın İnceleme Teknikleri</h3>
+            <p class="course-desc">Endüstriyel tesis ve konut yangınlarında başlangıç noktası (Origin) ve ark haritalama (Arc Mapping).</p>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-highlights-list">
+              <li><i class="fa-solid fa-circle-check"></i> Yangın başlangıç noktası ve erime izleri (Arc Mapping) tespiti</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tesisat kaynaklı yangın ile yangın sonrası elektrik hasarı ayrımı</li>
+              <li><i class="fa-solid fa-circle-check"></i> Sabotaj, kaza ve ihmal unsurlarının adli kriminal değerlendirilmesi</li>
+              <li><i class="fa-solid fa-circle-check"></i> Yangın ekspertiz raporlarına teknik itiraz metodolojisi</li>
+            </ul>
+            <div class="target-audience-box">
+              <strong>Kimler Katılmalı:</strong> Sigorta Eksperleri, Yangın İnceleme Uzmanları, Avukatlar
+            </div>
+            <div class="course-btn-group">
+              <button class="btn-course-outline open-syllabus" data-course="c6">Müfredat İncele</button>
+              <button class="btn-course-apply trigger-modal">Başvuru Yap →</button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-    </div>
-  </section>
-
-  <!-- İLETİŞİM (LIGHT THEME 3 CARDS) -->
-  <section class="contact-light-section">
-    <div class="container text-center" style="text-align: center;">
-      <span class="contact-pill-badge">BİZE ULAŞIN</span>
-      <h2 class="contact-section-title">İletişim & Eğitim Kayıt</h2>
-      <p class="contact-section-sub">Eğitim kayıtları ve takvim hakkında bilgi almak için doğrudan ulaşın.</p>
-
-      <div class="contact-3-cards-grid">
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle phone"><i class="fa-solid fa-phone-volume"></i></div>
-          <h4 class="contact-card-h4">Telefon / Danışma Hattı</h4>
-          <p class="contact-card-p">Hızlı bilgi ve kayıt için hemen arayın.</p>
-          <a href="tel:05326422657" class="contact-card-value-phone data-phone-link data-phone-val">0532 642 26 57</a>
+      <!-- CORPORATE TRAINING DEMAND BANNER -->
+      <div class="bottom-cta-banner">
+        <div class="bottom-cta-left">
+          <div class="bottom-cta-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <h3 class="bottom-cta-title">Kurumunuza Veya Baronuza Özel Eğitim Programı Düzenleyelim</h3>
+            <p class="bottom-cta-sub">Şirketinizin, hukuk büronuzun veya baronuzun ihtiyaçlarına özel müfredat oluşturarak kendi yerinizde veya online olarak sertifikalı eğitimler düzenliyoruz.</p>
+          </div>
         </div>
-
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle email"><i class="fa-solid fa-envelope"></i></div>
-          <h4 class="contact-card-h4">E-Posta İletişim</h4>
-          <p class="contact-card-p">Eğitim talebinizi e-posta ile iletebilirsiniz.</p>
-          <a href="mailto:info@adliteknik.com" class="contact-card-value-email data-email-link data-email-val">info@adliteknik.com</a>
-        </div>
-
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle office"><i class="fa-solid fa-building-columns"></i></div>
-          <h4 class="contact-card-h4">Merkez Ofis / UYAP</h4>
-          <p class="contact-card-p">Ankara Merkez Ofisi ve UYAP Entegrasyon Merkezi.</p>
-          <span class="contact-card-value-office data-office-val">Ankara / TÜRKİYE</span>
+        <div class="bottom-cta-btns">
+          <button class="btn-hero-primary trigger-modal" style="padding: 14px 24px;"><span>Kurumsal Talep Oluştur</span> <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid-4">
         <div>
           <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
             <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
@@ -191,75 +523,179 @@
               <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
             </div>
           </a>
-          <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
-            Dijital Delilden Teknik Gerçeğe — Adli Bilişim • Siber Güvenlik • Adli Mühendislik • Enerji Sistemleri • Adli Hesap Uzmanlığı.
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim ve mühendislik alanlarında uzman inceleme, raporlama ve akademi hizmetleri sunuyoruz.
           </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@uzmaninceleme.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
 
         <div>
-          <h4 class="footer-col-title">KURUMSAL & YETKİ</h4>
-          <ul class="footer-links">
-            <li><a href="surec.html">Resmi Adli Bilirkişilik Kayıtları</a></li>
-            <li><a href="egitimler.html">Arabuluculuk & BEDAM Eğitmenliği</a></li>
-            <li><a href="surec.html">Yasal HMK 293 Mütalaa Standartları</a></li>
-            <li><a href="iletisim.html">Gizlilik ve KVKK Politikası</a></li>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="makaleler.html">Dergi & Yayınlar</a></li>
+            <li><a href="egitimler.html">Eğitimler</a></li>
+            <li><a href="surec.html">Süreç</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">HIZLI ERİŞİM</h4>
-          <ul class="footer-links">
-            <li><a href="uzmanliklar.html#adli-bilisim">Adli Bilişim & Dijital Deliller</a></li>
-            <li><a href="uzmanliklar.html#siber-guvenlik">Siber Güvenlik & Dolandırıcılık</a></li>
-            <li><a href="uzmanliklar.html#adli-muhendislik">Adli Mühendislik & Enerji</a></li>
-            <li><a href="uzmanliklar.html#adli-hesap">Özel Raporlama & Adli Hesap</a></li>
+          <h4 class="footer-col-title">Eğitim Programları</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="#">Adli Bilişim Eğitimi</a></li>
+            <li><a href="#">HMK 293 Uzman Görüşü</a></li>
+            <li><a href="#">Elektriksel İSG & Riskler</a></li>
+            <li><a href="#">GES/RES Yangın & Verimlilik</a></li>
+            <li><a href="#">Kurumsal Siber Güvenlik</a></li>
+            <li><a href="#">Yangın Kök Neden Analizi</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">İLETİŞİM</h4>
-          <ul class="footer-links" style="font-size: 0.9rem;">
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 6px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-email-val">info@adliteknik.com</span></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-building" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-office-val">Ankara Merkez Ofis / UYAP Uyumlu</span></li>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@uzmaninceleme.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 UZMAN İNCELEME — Adli Mühendislik & Bilişim Platformu. Tüm Hakları Saklıdır.</div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-          <div style="color: #38bdf8; font-weight: 700;">İletişim: <span class="data-phone-val">0532 642 26 57</span></div>
-          <a href="admin.html" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-gear"></i> Yönetici Paneli
-          </a>
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Widget -->
-  <div class="whatsapp-float-container">
-    <div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div>
-    <a href="https://wa.me/905326422657" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a>
-  </div>
+  <!-- WhatsApp Widget & Upload Modal -->
+  <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <!-- Upload Modal -->
   <div id="uploadModal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up" style="color: #0284c7;"></i> Hızlı Mütalaa & Dosya Gönder</h3>
-      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.25rem;">Dijital delillerinizi ve dava dosyanızı yükleyin, uzmanlarımız 24 saat içinde incelesin.</p>
+      <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;"><i class="fa-solid fa-graduation-cap" style="color: #0284c7;"></i> Kurumsal Eğitim & Başvuru Formu</h3>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.25rem;">Eğitim talebinizi iletin, akademimiz sizinle 24 saat içinde iletişime geçsin.</p>
       <form id="modalForm">
-        <div class="form-group"><label class="form-label">Uzmanlık Alanı Seçin</label><select class="form-select" required><option>1. Adli Bilişim & Dijital Deliller</option><option>2. Siber Güvenlik & Dijital Dolandırıcılık</option><option>3. Adli Mühendislik (Elektrik)</option><option>4. Enerji Sistemleri Değerlendirmeleri</option><option>5. Adli Hesap Uzmanlığı</option><option>6. Özel Raporlama & Mütalaa</option><option>7. Hukuksal & Avukatlık Desteği</option><option>8. Eğitim & Danışmanlık</option></select></div>
-        <div class="form-group"><label class="form-label">Ad Soyad / Baro No / Şirket Adı</label><input type="text" class="form-input" placeholder="Av. Ad Soyad / Şirket Adı" required></div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group"><div><label class="form-label">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required></div><div><label class="form-label">E-posta Adresi</label><input type="email" class="form-input" placeholder="avukat@ornek.com" required></div></div>
-        <div class="form-group"><label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label><div class="dropzone"><i class="fa-solid fa-file-arrow-up dropzone-icon"></i><div class="dropzone-text">Dosya seçin veya buraya bırakın</div><div class="dropzone-subtext">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div></div></div>
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>GÜVENLİ GÖNDER VE İNCELEME AL</span><i class="fa-solid fa-paper-plane"></i></button>
+        <div class="form-group">
+          <label class="form-label">Eğitim Programı Seçin</label>
+          <select class="form-select" required>
+            <option>1. Avukatlar İçin Adli Bilişim ve Dijital Delil Yönetimi</option>
+            <option>2. HMK 293 & CMK 67 Kapsamında Uzman Görüşü Hazırlama</option>
+            <option>3. Elektrik Tesislerinde İSG, Elektriksel Riskler ve İş Kazaları</option>
+            <option>4. Enerji Santralleri (GES/RES/HES) Verimlilik ve Yangın Güvenliği</option>
+            <option>5. Kurumsal Siber Güvenlik Farkındalığı ve KVKK Uyum</option>
+            <option>6. Yangın Kök Neden Analizi ve Adli Yangın İnceleme</option>
+            <option>7. Kuruma Özel Müfredat Talebi</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Ad Soyad / Kurum Adı / Baro Sicil No</label><input type="text" class="form-input" placeholder="Ad Soyad / Şirket veya Baro Adı" required></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group"><div><label class="form-label">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required></div><div><label class="form-label">E-posta Adresi</label><input type="email" class="form-input" placeholder="ornek@kurum.com" required></div></div>
+        <div class="form-group"><label class="form-label">Tahmini Katılımcı Sayısı & Özel Notlar</label><textarea class="form-textarea" rows="3" placeholder="Katılımcı sayısı, eğitim lokasyonu veya talep edilen tarihler..."></textarea></div>
+        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>EĞİTİM TALEBİNİ GÖNDER</span><i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
   </div>
 
+  <!-- SYLLABUS DETAIL MODAL -->
+  <div id="syllabusModal" class="modal-overlay">
+    <div class="modal-content" style="background:#0e172c; color:#fff; border:1px solid rgba(56,189,248,0.3); max-width:650px;">
+      <button class="modal-close" id="closeSyllabusModal"><i class="fa-solid fa-xmark" style="color:#fff;"></i></button>
+      <div id="syllabusModalBody">
+        <span class="course-pill pill-cyan" style="display:inline-block; margin-bottom:8px;">DETAYLI MÜFREDAT</span>
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 1rem;" id="sylTitle">Eğitim Detayı</h2>
+        <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;" id="sylContent">
+          Müfredat yükleniyor...
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Course Category Filter Logic
+      const filterBtns = document.querySelectorAll('[data-course-filter]');
+      const courseCards = document.querySelectorAll('.course-card-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const category = btn.dataset.courseFilter;
+          courseCards.forEach(card => {
+            if (category === 'all' || card.dataset.courseCat === category) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Syllabus Modal Logic
+      const syllabusModal = document.getElementById('syllabusModal');
+      const closeSylModal = document.getElementById('closeSyllabusModal');
+      const sylTitle = document.getElementById('sylTitle');
+      const sylContent = document.getElementById('sylContent');
+
+      const SYLLABUS_DATA = {
+        c1: {
+          title: 'Avukatlar İçin Adli Bilişim ve Dijital Delil Yönetimi',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: Dijital Delil Hukuku ve Adli Bilişim Esasları</strong><br>- HTS ve baz istasyonu verilerinin çakıştırılması<br>- WhatsApp, Telegram ve e-posta kayıtlarının adli geçerliliği</p><p style="margin-bottom:1rem;"><strong>2. Oturum: İmaj Alma ve Hash Bütünlüğü</strong><br>- EnCase, FTK ve Cellebrite imaj raporlarının okunması<br>- Bilirkişi raporlarında yapılan eksik metodoloji hatalarına itiraz teknikleri</p><p><strong>Sertifika:</strong> Katılımcılara Uzman İnceleme Akademisi onaylı 8 Saatlik Başarı Sertifikası verilmektedir.</p>`
+        },
+        c2: {
+          title: 'HMK 293 & CMK 67 Kapsamında Uzman Görüşü Hazırlama',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: Mütalaa Yazım Standartları</strong><br>- Yargıtay standartlarında bilimsel analiz ve teknik gerekçelendirme<br>- Bilirkişi raporu ile uzman mütalaası arasındaki hukuki farklar</p><p style="margin-bottom:1rem;"><strong>2. Oturum: Duruşmada Uzman Dinlenmesi</strong><br>- HMK 293/2 kapsamında mahkemede doğrudan sorgu ve açıklama yöntemleri</p><p><strong>Sertifika:</strong> 16 Saatlik Uygulamalı Mütalaa Sertifikası.</p>`
+        },
+        c3: {
+          title: 'Elektrik Tesislerinde İSG, Elektriksel Riskler ve İş Kazaları',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: Elektriksel Riskler ve Ark Flaş Analizi</strong><br>- Yüksek gerilim, topraklama ve kaçak akım rölesi güvenlik standartları</p><p style="margin-bottom:1rem;"><strong>2. Oturum: İş Kazası Kök Neden Tespiti</strong><br>- Kaza sonrası teknik delil toplama, fotoğraflama ve kusur analizi</p>`
+        },
+        c4: {
+          title: 'Enerji Santralleri (GES/RES/HES) Verimlilik ve Yangın Güvenliği',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: GES & RES Arıza Tespiti</strong><br>- FLIR Termal kamera, EL testi ve inverter arızalarının analizi</p><p style="margin-bottom:1rem;"><strong>2. Oturum: Kayıp Üretim ve Sigorta Uyuşmazlığı</strong><br>- Santral duruşlarında üretim kaybı hesaplama metodolojisi</p>`
+        },
+        c5: {
+          title: 'Kurumsal Siber Güvenlik Farkındalığı ve KVKK Uyum',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: Siber Tehditler ve Oltalama</strong><br>- Phishing, Ransomware ve sosyal mühendislik koruma yöntemleri</p><p style="margin-bottom:1rem;"><strong>2. Oturum: KVKK Madde 12 Teknik Uyum</strong><br>- Şifreleme, yetki matrisi, log yönetimi ve VERBİS teknik tedbirleri</p>`
+        },
+        c6: {
+          title: 'Yangın Kök Neden Analizi ve Adli Yangın İnceleme',
+          content: `<p style="margin-bottom:1rem;"><strong>1. Oturum: Adli Yangın Mühendisliği</strong><br>- Arc Mapping (ark haritalama) ve yangın başlangıç noktası tespiti</p><p style="margin-bottom:1rem;"><strong>2. Oturum: Sabotaj & Kaza Ayrımı</strong><br>- Yangın ekspertiz ve itfaiye raporlarına teknik itiraz metodolojisi</p>`
+        }
+      };
+
+      document.querySelectorAll('.open-syllabus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const key = btn.dataset.course;
+          const data = SYLLABUS_DATA[key] || { title: 'Eğitim Müfredatı', content: 'Detaylı müfredat bilgisi için bizimle iletişime geçebilirsiniz.' };
+
+          sylTitle.textContent = data.title;
+          sylContent.innerHTML = data.content;
+          syllabusModal.classList.add('active');
+        });
+      });
+
+      closeSylModal?.addEventListener('click', () => syllabusModal.classList.remove('active'));
+      syllabusModal?.addEventListener('click', (e) => {
+        if (e.target === syllabusModal) syllabusModal.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>

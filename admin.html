@@ -3,247 +3,332 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yönetici Paneli (CMS) | UZMAN İNCELEME — Adli Mühendislik & Bilişim</title>
-  <meta name="description" content="Uzman İnceleme platformu içerik, iletişim ve makale yönetim paneli.">
-  
+  <title>Yönetici Paneli | UZMAN İNCELEME - Makale & İçerik Yönetimi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-color: #070d1e; color: #ffffff; }
+    .admin-card { background: #0e172c; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .table-admin { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .table-admin th, .table-admin td { padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: left; font-size: 0.88rem; }
+    .table-admin th { background: rgba(2, 132, 199, 0.15); color: #38bdf8; font-weight: 700; }
+    .btn-sm-action { padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; border: none; }
+    .btn-edit { background: #0284c7; color: #fff; }
+    .btn-delete { background: #ef4444; color: #fff; }
+  </style>
 </head>
-<body style="background-color: #0b132b;">
+<body>
 
-  <!-- Header Navigation -->
+  <!-- Header -->
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="logo-icon"><i class="fa-solid fa-gear"></i></div>
         <div class="logo-title-group">
-          <span class="logo-main-text">UZMAN İNCELEME</span>
-          <span class="logo-sub-text">YÖNETİCİ PANELİ (CMS)</span>
+          <span class="logo-main-text">YÖNETİCİ PANELİ</span>
+          <span class="logo-sub-text">UZMAN İNCELEME CMS</span>
         </div>
       </a>
-
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <span style="font-size: 0.85rem; color: #10b981; font-weight: 700;">
-          <i class="fa-solid fa-circle-check"></i> Sistem Çevrimiçi
-        </span>
-        <a href="index.html" class="btn-hero-secondary" style="padding: 8px 16px; font-size: 0.85rem;">
-          <i class="fa-solid fa-globe"></i> <span>Siteye Dön</span>
-        </a>
-      </div>
+      <a href="index.html" class="btn-hero-secondary" style="padding: 8px 16px; font-size: 0.85rem;"><i class="fa-solid fa-arrow-left"></i> Siteye Dön</a>
     </div>
   </header>
 
-  <!-- PIN LOCK OVERLAY -->
-  <div id="pinLockOverlay" class="modal-overlay active" style="z-index: 99999;">
-    <div class="modal-content" style="max-width: 420px; text-align: center;">
-      <div style="width: 60px; height: 60px; background: rgba(2, 132, 199, 0.15); border-radius: 50%; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.25rem auto;">
-        <i class="fa-solid fa-lock"></i>
-      </div>
-      <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Yönetici Girişi</h3>
-      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem;">Lütfen devam etmek için yönetici PIN kodunu giriniz. (Varsayılan PIN: <strong>1234</strong>)</p>
-      
-      <form id="pinForm">
-        <div class="form-group">
-          <input type="password" id="pinInput" class="form-input" placeholder="4 Haneli PIN Kodu" style="text-align: center; font-size: 1.4rem; letter-spacing: 4px;" required maxlength="6" autofocus>
-        </div>
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 12px;">
-          <span>GİRİŞ YAP</span>
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        </button>
+  <!-- Login Overlay -->
+  <div id="loginOverlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #070d1e; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+    <div style="background: #0e172c; border: 1px solid rgba(56, 189, 248, 0.3); padding: 2.5rem; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
+      <i class="fa-solid fa-user-shield" style="font-size: 3rem; color: #38bdf8; margin-bottom: 1rem;"></i>
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Yönetici Girişi</h2>
+      <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.5rem;">Varsayılan PIN koda (1234) girerek oturum açın.</p>
+      <form id="loginForm">
+        <input type="password" id="pinInput" class="form-input" placeholder="PIN Kodu Girin (1234)" style="text-align: center; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 1rem;" required>
+        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center;">Giriş Yap</button>
       </form>
     </div>
   </div>
 
-  <!-- ADMIN DASHBOARD CONTAINER -->
-  <div class="container">
-    <div class="admin-layout">
-      
-      <!-- Sidebar Tabs -->
-      <div class="admin-sidebar">
-        <div class="admin-nav-item active" data-tab="tab-overview">
-          <i class="fa-solid fa-chart-pie"></i> <span>Genel Bakış</span>
-        </div>
-        <div class="admin-nav-item" data-tab="tab-contact">
-          <i class="fa-solid fa-phone"></i> <span>İletişim & Konum</span>
-        </div>
-        <div class="admin-nav-item" data-tab="tab-hero">
-          <i class="fa-solid fa-heading"></i> <span>Ana Sayfa & Metinler</span>
-        </div>
-        <div class="admin-nav-item" data-tab="tab-articles">
-          <i class="fa-solid fa-newspaper"></i> <span>Makale & Yayın Yönetimi</span>
-        </div>
+  <!-- Admin Main Dashboard Container -->
+  <main class="container" style="padding: 3rem 1.5rem;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <div>
+        <h1 style="font-size: 1.8rem; font-weight: 900;">Yayın & Makale Yönetim Paneli</h1>
+        <p style="font-size: 0.9rem; color: #94a3b8;">Dergi & Yayınlar sayfasındaki makaleleri ekleyin, düzenleyin veya silin.</p>
       </div>
-
-      <!-- Main Dashboard Section -->
-      <div class="admin-main-card">
-        
-        <!-- Tab 1: Overview -->
-        <div id="tab-overview" class="admin-tab-content active">
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Yönetim Paneli Özeti</h2>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 2rem;">Sitedeki tüm dinamik metinler, iletişim numaraları ve resmi yayınlar buradan yönetilmektedir.</p>
-
-          <div class="stats-grid" style="margin-bottom: 2rem;">
-            <div class="stat-card">
-              <div class="stat-number" id="dashArticleCount">0</div>
-              <div class="stat-label">Yayınlanmış Makale</div>
-              <div class="stat-desc">Duyuru, mevzuat ve inceleme</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">0532...</div>
-              <div class="stat-label">Aktif İletişim Hattı</div>
-              <div class="stat-desc">Tüm sayfalarda güncel</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">%100</div>
-              <div class="stat-label">Dinamik Uyum</div>
-              <div class="stat-desc">localStorage Senkronizasyonu</div>
-            </div>
-          </div>
-
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-            <h4 style="color: #38bdf8; font-size: 1rem; margin-bottom: 8px;"><i class="fa-solid fa-lightbulb"></i> Bilgi ve İpucu</h4>
-            <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
-              Bu panelden değiştireceğiniz telefon numarası (<strong>0532 642 26 57</strong>), e-posta adresi, WhatsApp hattı veya yayınlayacağınız makaleler anında tüm 5 sayfada (Ana Sayfa, Uzmanlıklar, Eğitimler, Süreç, İletişim) canlı olarak güncellenir.
-            </p>
-          </div>
-        </div>
-
-        <!-- Tab 2: Contact Management -->
-        <div id="tab-contact" class="admin-tab-content">
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px;">İletişim & Konum Bilgileri</h2>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.5rem;">Site genelindeki iletişim kanallarını güncelleyin.</p>
-
-          <form id="adminContactForm">
-            <div class="form-group">
-              <label class="form-label" style="color: #fff;">Telefon Numarası (Örn: 0532 642 26 57)</label>
-              <input type="text" id="settingPhone" class="form-input" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" style="color: #fff;">E-Posta Adresi</label>
-              <input type="email" id="settingEmail" class="form-input" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" style="color: #fff;">Merkez Ofis Adresi</label>
-              <input type="text" id="settingOffice" class="form-input" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-            </div>
-
-            <button type="submit" class="btn-hero-primary" style="padding: 12px 24px; font-size: 0.95rem;">
-              <i class="fa-solid fa-floppy-disk"></i> <span>İletişim Bilgilerini Kaydet</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Tab 3: Hero & Text Management -->
-        <div id="tab-hero" class="admin-tab-content">
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Ana Sayfa & Metin Yönetimi</h2>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.5rem;">Ana sayfadaki vitrin başlığı ve duyuru spotlarını güncelleyin.</p>
-
-          <form id="adminHeroForm">
-            <div class="form-group">
-              <label class="form-label" style="color: #fff;">Ana Sayfa Hero Başlığı</label>
-              <textarea id="settingHeroTitle" class="form-textarea" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" style="color: #fff;">Ana Sayfa Hero Açıklaması</label>
-              <textarea id="settingHeroSub" class="form-textarea" required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></textarea>
-            </div>
-
-            <button type="submit" class="btn-hero-primary" style="padding: 12px 24px; font-size: 0.95rem;">
-              <i class="fa-solid fa-floppy-disk"></i> <span>Ana Sayfa Metinlerini Kaydet</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Tab 4: Articles / News Management -->
-        <div id="tab-articles" class="admin-tab-content">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-            <div>
-              <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 4px;">Makale & Yayın Yönetimi</h2>
-              <p style="font-size: 0.88rem; color: #94a3b8;">Resmi mütalaalar, mevzuat haberleri ve akademik paylaşımlar ekleyin.</p>
-            </div>
-            <button id="openAddArticleBtn" class="btn-hero-primary" style="padding: 10px 18px; font-size: 0.88rem;">
-              <i class="fa-solid fa-plus"></i> <span>Yeni Makale Ekle</span>
-            </button>
-          </div>
-
-          <!-- Add / Edit Article Form Box -->
-          <div id="articleFormBox" style="display: none; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-            <h3 id="articleFormTitle" style="font-size: 1.1rem; font-weight: 800; color: #38bdf8; margin-bottom: 1rem;">Yeni Makale / Haber Ekle</h3>
-            
-            <form id="adminArticleForm">
-              <input type="hidden" id="articleId">
-              
-              <div class="form-group">
-                <label class="form-label" style="color: #fff;">Makale / Haber Başlığı</label>
-                <input type="text" id="articleTitleInput" class="form-input" placeholder="Örn: HMK 293 Çerçevesinde Uzman Mütalaasının Davadaki Önemi" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;" class="form-group">
-                <div>
-                  <label class="form-label" style="color: #fff;">Kategori</label>
-                  <select id="articleCategoryInput" class="form-select" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-                    <option value="Adli Bilişim">Adli Bilişim</option>
-                    <option value="Siber Güvenlik">Siber Güvenlik</option>
-                    <option value="Adli Mühendislik">Adli Mühendislik</option>
-                    <option value="HMK 293 Mevzuat">HMK 293 Mevzuat</option>
-                    <option value="Adli Hesap">Adli Hesap</option>
-                    <option value="Resmi Duyuru">Resmi Duyuru</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label" style="color: #fff;">Yazar / Uzman</label>
-                  <input type="text" id="articleAuthorInput" class="form-input" placeholder="Örn: Adli Bilişim & Mühendislik Kurulu" required style="background: #0b132b; color: #fff; border-color: var(--border-color);">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" style="color: #fff;">Kısa Özet (Ana Sayfada Görünecek Metin)</label>
-                <textarea id="articleSummaryInput" class="form-textarea" placeholder="Makalenin kısa özeti..." required style="background: #0b132b; color: #fff; border-color: var(--border-color);"></textarea>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" style="color: #fff;">Detaylı İçerik Metni</label>
-                <textarea id="articleContentInput" class="form-textarea" placeholder="Makalenin tam metni..." style="min-height: 150px; background: #0b132b; color: #fff; border-color: var(--border-color);" required></textarea>
-              </div>
-
-              <div style="display: flex; gap: 10px;">
-                <button type="submit" class="btn-hero-primary" style="padding: 10px 20px; font-size: 0.9rem;">
-                  <i class="fa-solid fa-check"></i> <span>Yayınla / Kaydet</span>
-                </button>
-                <button type="button" id="cancelArticleBtn" style="background: #334155; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600;">
-                  İptal
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Published Articles Table -->
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th>Tarih</th>
-                <th>Başlık</th>
-                <th>Kategori</th>
-                <th>Yazar</th>
-                <th>İşlemler</th>
-              </tr>
-            </thead>
-            <tbody id="adminArticlesTableBody">
-              <!-- Dynamically Populated -->
-            </tbody>
-          </table>
-        </div>
-
-      </div>
+      <button id="btnNewArticle" class="btn-hero-primary"><i class="fa-solid fa-plus"></i> <span>Yeni Yayın Ekle</span></button>
     </div>
-  </div>
 
-  <script src="app.js"></script>
+    <!-- Article Editor Form (New / Edit) -->
+    <div id="articleFormBox" class="admin-card" style="display: none;">
+      <h3 id="formTitle" style="font-size: 1.2rem; font-weight: 800; color: #38bdf8; margin-bottom: 1.25rem;">
+        <i class="fa-solid fa-pen-to-square"></i> Yeni Yayın Girişi
+      </h3>
+      
+      <form id="articleForm">
+        <input type="hidden" id="articleId">
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;" class="form-group">
+          <div>
+            <label class="form-label" style="color: #fff;">Yayın Başlığı</label>
+            <input type="text" id="artTitle" class="form-input" placeholder="Örn: HMK 293 Uzman Görüşünde Dikkat Edilecek Unsurlar" required>
+          </div>
+          <div>
+            <label class="form-label" style="color: #fff;">Yayın Türü</label>
+            <select id="artCategory" class="form-select" required>
+              <option value="vaka">Vaka Analizi</option>
+              <option value="makale">Uzman Makalesi</option>
+              <option value="mevzuat">Mevzuat Notu</option>
+              <option value="gorus">Uzman Görüşü</option>
+              <option value="rehber">Rehber</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 1rem;" class="form-group">
+          <div>
+            <label class="form-label" style="color: #fff;">Yayın Tarihi</label>
+            <input type="text" id="artDate" class="form-input" placeholder="Örn: 10 Ağustos 2026" required>
+          </div>
+          <div>
+            <label class="form-label" style="color: #fff;">Okuma Süresi</label>
+            <input type="text" id="artReadTime" class="form-input" placeholder="Örn: 6 dk okuma" required>
+          </div>
+          <div>
+            <label class="form-label" style="color: #fff;">Kapak Görseli URL (İsteğe Bağlı)</label>
+            <input type="text" id="artImage" class="form-input" placeholder="assets/vaka_analizi_thumb.png">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" style="color: #fff;">Kısa Özet (Kartlarda Görünecek Metin)</label>
+          <textarea id="artSummary" class="form-textarea" rows="2" placeholder="Yayının 1-2 cümlelik kısa özeti..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" style="color: #fff;">Detaylı Yayın Metni / Makale İçeriği</label>
+          <textarea id="artContent" class="form-textarea" rows="6" placeholder="Makalenin tüm paragraf ve detay metinlerini buraya girin..." required></textarea>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+          <button type="button" id="btnCancelForm" class="btn-hero-secondary">İptal</button>
+          <button type="submit" class="btn-hero-primary"><i class="fa-solid fa-floppy-disk"></i> <span>Yayını Kaydet & Yayınla</span></button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Publications List Table -->
+    <div class="admin-card">
+      <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">
+        <i class="fa-solid fa-list-check" style="color: #38bdf8;"></i> Mevcut Yayın Listesi
+      </h3>
+
+      <table class="table-admin">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Yayın Türü</th>
+            <th>Tarih</th>
+            <th>Okuma Süresi</th>
+            <th style="text-align: right;">İşlemler</th>
+          </tr>
+        </thead>
+        <tbody id="articlesTableBody">
+          <!-- Dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. PIN Check
+      const loginOverlay = document.getElementById('loginOverlay');
+      const loginForm = document.getElementById('loginForm');
+      const pinInput = document.getElementById('pinInput');
+
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (pinInput.value === '1234') {
+          loginOverlay.style.display = 'none';
+        } else {
+          alert('Hatalı PIN Kodu! Tekrar deneyin (Varsayılan: 1234)');
+        }
+      });
+
+      // 2. LocalStorage Articles Management
+      const STORAGE_KEY = 'adli_site_articles';
+      
+      const INITIAL_ARTICLES = [
+        {
+          id: 'art-1',
+          title: 'GES Yangınlarında Teknik Kök Neden: İnverter, DC Ark, Kablo mu?',
+          category: 'vaka',
+          date: '12 Ağustos 2026',
+          readTime: '8 dk okuma',
+          image: 'assets/vaka_analizi_thumb.png',
+          summary: 'Gerçek vakadan hareketle inverter arızaları, DC ark oluşumu ve kablo bağlantı noktalarındaki ısınmaların ayırıcı bulgularla değerlendirilmesi.',
+          content: 'GES santrallerinde meydana gelen yangınlarda kök neden analizi yapılırken inverter, DC birleştirme kutuları, kablo konektörleri ve pano içi izolasyon hataları detaylı olarak incelenmektedir.'
+        },
+        {
+          id: 'art-2',
+          title: 'Dijital Delilin Değişmediği Nasıl Kanıtlanır? Hash ve Delil Bütünlüğü',
+          category: 'makale',
+          date: '09 Ağustos 2026',
+          readTime: '6 dk okuma',
+          image: 'assets/uzman_makalesi_thumb.png',
+          summary: 'Hash algoritmaları, imaj alma yöntemleri ve delil zinciri yönetimi üzerine teknik bir rehber.',
+          content: 'Adli bilişim incelemelerinde SHA-256 ve MD5 hash değerlerinin zaman damgasıyla eşleştirilmesi delil güvenilirliğini sağlar.'
+        },
+        {
+          id: 'art-3',
+          title: 'HMK 293 Uzman Görüşü: Ne Zaman Etkilidir, Nasıl Hazırlanmalıdır?',
+          category: 'mevzuat',
+          date: '06 Ağustos 2026',
+          readTime: '5 dk okuma',
+          image: 'assets/mevzuat_notu_thumb.png',
+          summary: 'Yargı kararları ışığında HMK 293 kapsamındaki uzman görüşünün dava sürecindeki rolü.',
+          content: 'Tarafça sunulan bilimsel uzman mütalaalarının mahkemelerce mahiyeti ve mahkeme bilirkişi raporuyla olan çelişkilerin giderilmesi usulü.'
+        }
+      ];
+
+      function getArticles() {
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (stored) return JSON.parse(stored);
+        } catch (e) {
+          console.error(e);
+        }
+        return INITIAL_ARTICLES;
+      }
+
+      function saveArticles(articles) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
+        renderTable();
+      }
+
+      // DOM Elements
+      const btnNewArticle = document.getElementById('btnNewArticle');
+      const articleFormBox = document.getElementById('articleFormBox');
+      const articleForm = document.getElementById('articleForm');
+      const btnCancelForm = document.getElementById('btnCancelForm');
+      const formTitle = document.getElementById('formTitle');
+      const articlesTableBody = document.getElementById('articlesTableBody');
+
+      const artId = document.getElementById('articleId');
+      const artTitle = document.getElementById('artTitle');
+      const artCategory = document.getElementById('artCategory');
+      const artDate = document.getElementById('artDate');
+      const artReadTime = document.getElementById('artReadTime');
+      const artImage = document.getElementById('artImage');
+      const artSummary = document.getElementById('artSummary');
+      const artContent = document.getElementById('artContent');
+
+      btnNewArticle.addEventListener('click', () => {
+        articleForm.reset();
+        artId.value = '';
+        formTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Yeni Yayın Girişi';
+        articleFormBox.style.display = 'block';
+      });
+
+      btnCancelForm.addEventListener('click', () => {
+        articleFormBox.style.display = 'none';
+      });
+
+      articleForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const articles = getArticles();
+
+        const newObj = {
+          id: artId.value || 'art-' + Date.now(),
+          title: artTitle.value,
+          category: artCategory.value,
+          date: artDate.value,
+          readTime: artReadTime.value,
+          image: artImage.value || 'assets/vaka_analizi_thumb.png',
+          summary: artSummary.value,
+          content: artContent.value
+        };
+
+        if (artId.value) {
+          const idx = articles.findIndex(a => a.id === artId.value);
+          if (idx !== -1) articles[idx] = newObj;
+        } else {
+          articles.unshift(newObj);
+        }
+
+        saveArticles(articles);
+        articleFormBox.style.display = 'none';
+        alert('Yayın başarıyla kaydedildi!');
+      });
+
+      function renderTable() {
+        const articles = getArticles();
+        articlesTableBody.innerHTML = '';
+
+        const typeLabels = {
+          vaka: 'Vaka Analizi',
+          makale: 'Uzman Makalesi',
+          mevzuat: 'Mevzuat Notu',
+          gorus: 'Uzman Görüşü',
+          rehber: 'Rehber'
+        };
+
+        articles.forEach((item, index) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${index + 1}</strong></td>
+            <td><strong>${item.title}</strong></td>
+            <td><span class="badge-tag-blue" style="font-size:0.65rem;">${typeLabels[item.category] || item.category}</span></td>
+            <td>${item.date}</td>
+            <td>${item.readTime}</td>
+            <td style="text-align: right;">
+              <button class="btn-sm-action btn-edit" data-id="${item.id}"><i class="fa-solid fa-pen"></i> Düzenle</button>
+              <button class="btn-sm-action btn-delete" data-id="${item.id}"><i class="fa-solid fa-trash"></i> Sil</button>
+            </td>
+          `;
+          articlesTableBody.appendChild(tr);
+        });
+
+        // Add Edit & Delete Event Listeners
+        document.querySelectorAll('.btn-edit').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            const item = getArticles().find(a => a.id === id);
+            if (item) {
+              artId.value = item.id;
+              artTitle.value = item.title;
+              artCategory.value = item.category;
+              artDate.value = item.date;
+              artReadTime.value = item.readTime;
+              artImage.value = item.image;
+              artSummary.value = item.summary;
+              artContent.value = item.content;
+
+              formTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Yayın Düzenle';
+              articleFormBox.style.display = 'block';
+              window.scrollTo({ top: 150, behavior: 'smooth' });
+            }
+          });
+        });
+
+        document.querySelectorAll('.btn-delete').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            if (confirm('Bu yayını silmek istediğinizden emin misiniz?')) {
+              const articles = getArticles().filter(a => a.id !== id);
+              saveArticles(articles);
+            }
+          });
+        });
+      }
+
+      // Initial Table Render
+      renderTable();
+    });
+  </script>
 </body>
 </html>

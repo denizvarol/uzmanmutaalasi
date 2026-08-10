@@ -3,14 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Çalışma Sürecimiz | UZMAN İNCELEME — Adli Mühendislik & Bilişim</title>
-  <meta name="description" content="HMK 293 standartlarında 7 adımlı adli inceleme süreci, UYAP entegrasyonu ve delil güvenliği zinciri.">
+  <title>Çalışma Süreci & HMK 293 Standartları | UZMAN İNCELEME</title>
+  <meta name="description" content="Başvurudan mahkeme sunumuna kadar ISO 27037 dijital delil standartları, HMK 293 ve CMK 67 mütalaa kurallarına tam uyumlu 7 adımlı şeffaf adli inceleme süreci.">
   
+  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Dedicated Premium Styles for Süreç Page */
+    .surec-timeline-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .surec-timeline-line {
+      position: absolute;
+      top: 0; bottom: 0; left: 40px;
+      width: 2px;
+      background: linear-gradient(180deg, #0284c7 0%, rgba(56, 189, 248, 0.2) 100%);
+      z-index: 1;
+    }
+
+    .surec-card-step {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+
+    .surec-step-badge-num {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0e172c 0%, #16223b 100%);
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      font-size: 1.6rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .surec-step-content-box {
+      background: #0e172c;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      flex-grow: 1;
+      transition: all 0.3s ease;
+    }
+
+    .surec-step-content-box:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 10px 30px rgba(2, 132, 199, 0.2);
+      transform: translateX(6px);
+    }
+
+    .surec-step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .surec-step-h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .surec-step-h3 i {
+      color: #38bdf8;
+      font-size: 1.3rem;
+    }
+
+    .surec-step-tag {
+      background: rgba(2, 132, 199, 0.15);
+      color: #38bdf8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .surec-step-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .surec-step-bullets {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .surec-step-bullets li {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .surec-step-bullets li i {
+      color: #38bdf8;
+      font-size: 0.75rem;
+    }
+
+    /* Legal Standards Cards Grid */
+    .standards-4-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .standard-card {
+      background: #0e172c;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .standard-card:hover {
+      border-color: #38bdf8;
+      transform: translateY(-4px);
+    }
+
+    .standard-code {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #38bdf8;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .standard-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .standard-desc {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      .surec-timeline-line { display: none; }
+      .surec-card-step { flex-direction: column; }
+      .surec-step-bullets { grid-template-columns: 1fr; }
+      .standards-4-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .standards-4-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,7 +200,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
         <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
-        <li><a href="makaleler.html" class="nav-link">Makaleler & Yayınlar</a></li>
+        <li><a href="makaleler.html" class="nav-link">Dergi & Yayınlar</a></li>
         <li><a href="egitimler.html" class="nav-link">Eğitimler</a></li>
         <li><a href="surec.html" class="nav-link active">Süreç</a></li>
         <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
@@ -48,127 +220,218 @@
 
   <!-- Subpage Banner -->
   <section class="subpage-banner">
+    <div class="subpage-banner-bg-img"></div>
+    <div class="subpage-banner-gradient"></div>
+
     <div class="container">
-      <ul class="breadcrumb-list">
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li>/</li>
-        <li>Çalışma Sürecimiz</li>
-      </ul>
-      <h1 class="subpage-banner-title">ÇALIŞMA SÜRECİMİZ VE YASAL METODOLOJİ</h1>
-      <p class="subpage-banner-sub">
-        HMK Madde 293 (Uzman Görüşü) standartlarında, delil güvenliği zinciri (Chain of Custody) korunarak yürütülen 7 adımlı bilimsel inceleme metodolojimiz.
-      </p>
+      <div class="subpage-banner-content">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li>Çalışma Süreci & Metodoloji</li>
+        </ul>
+        <h1 class="subpage-banner-title">ÇALIŞMA SÜRECİ VE ADLİ STANDARTLAR</h1>
+        <p class="subpage-banner-sub">
+          Başvurudan mahkeme sunumuna kadar ISO 27037 dijital delil standartları, HMK 293 ve CMK 67 mütalaa kurallarına tam uyumlu 7 adımlı şeffaf adli inceleme metodolojisi.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- 7 STEP WORKFLOW & LEGAL METHODOLOGY -->
-  <section style="padding: 5rem 0; background: #1c2541;">
+  <!-- MAIN CONTENT SECTION -->
+  <section style="padding: 4rem 0; background: #070d1e;">
     <div class="container">
-      <div class="section-title-box">
-        <span class="section-num-tag">İŞ AKIŞI</span>
-        <h2 class="section-main-heading">7 Adımda Bilimsel Uzman İnceleme Süreci</h2>
+
+      <!-- SECTION TITLE -->
+      <div class="section-header-dashed">
+        <h2 class="section-header-dashed-title">7 ADIMLI UZMAN İNCELEME METODOLOJİSİ</h2>
       </div>
 
-      <div class="process-7-track">
-        <div class="process-step-card">
-          <div class="step-num-badge">1</div>
-          <h4 class="step-title-text">Talep & Ön Görüşme</h4>
-          <p class="step-sub-desc">Dava dosyası veya teknik ihtiyaç analizi yapılarak gerekli doküman ve delil listesi belirlenir.</p>
+      <!-- 7-STEP TIMELINE STACK -->
+      <div class="surec-timeline-container">
+        <div class="surec-timeline-line"></div>
+
+        <!-- Step 01 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">01</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-magnifying-glass-nodes"></i> 1. Ön Değerlendirme ve Dosya Kabulü</h3>
+              <span class="surec-step-tag">ÜCRETSİZ ÖN İNCELEME</span>
+            </div>
+            <p class="surec-step-desc">
+              Dava dosyası, UYAP evrakları, teknik belgeler veya dijital verileriniz uzman ekibimizce ön incelemeye tabi tutulur. İncelemenin davanın seyrine sağlayacağı somut teknik katkı değerlendirilir.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> UYAP Dava Evrakları & İddianame Analizi</li>
+              <li><i class="fa-solid fa-check"></i> Gizlilik Sözleşmesi (NDA) Teminatı</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">2</div>
-          <h4 class="step-title-text">Dosya / Delil İnceleme</h4>
-          <p class="step-desc">Tarafımıza sunulan imajlar, loglar, elektrik tesisatı veya mali kayıtlar adli forensik cihazlarla kopyalanır.</p>
+        <!-- Step 02 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">02</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-link"></i> 2. Delil Bütünlüğü ve Chain of Custody (Emanet Zinciri)</h3>
+              <span class="surec-step-tag">ISO 27037 STANDARDI</span>
+            </div>
+            <p class="surec-step-desc">
+              Dijital deliller donanımsal yazma koruyucular (Write-Blocker) ile imajlanır. Tüm adli kopyalara MD5 ve SHA-256 hash mühürü uygulanarak delil zinciri oluşturulur.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> Write-Blocker ile Birebir Adli İmaj</li>
+              <li><i class="fa-solid fa-check"></i> SHA-256 Zaman Damgalı Hash Mührü</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">3</div>
-          <h4 class="step-title-text">Teknik Analiz</h4>
-          <p class="step-desc">Mühendisler ve bilişim uzmanları tarafından uluslararası standartlara (ISO/IEC) göre laboratuvar incelemesi yapılır.</p>
+        <!-- Step 03 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">03</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-microscope"></i> 3. Laboratuvar ve Saha İncelemesi</h3>
+              <span class="surec-step-tag">LABORATUVAR & SAHA</span>
+            </div>
+            <p class="surec-step-desc">
+              Elektrik/elektronik arızalarında FLIR termal kamera, osiloskop ve izolasyon testleri; bilişim vakalarında log, bellek (RAM) ve adli veri kurtarma analizleri gerçekleştirilir.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> Termal İnceleme & Arc Mapping</li>
+              <li><i class="fa-solid fa-check"></i> Adli Bellek, Log & HTS Analizi</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">4</div>
-          <h4 class="step-title-text">Raporlama / Mütalaa</h4>
-          <p class="step-desc">HMK 293 standartlarında bilimsel gerekçeli, net ve mahkeme heyetini ikna edici teknik mütalaa raporu hazırlanır.</p>
+        <!-- Step 04 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">04</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-atom"></i> 4. Bilimsel Metodoloji ve Kök Neden Analizi</h3>
+              <span class="surec-step-tag">KÖK NEDEN TESPİTİ</span>
+            </div>
+            <p class="surec-step-desc">
+              Uluslararası standartlar (IEEE, IEC, NFPA 921, ISO 27037) çerçevesinde nedensellik bağı kurulur. Teknik kusur, imalat hatası veya üçüncü şahıs ihmalleri netleştirilir.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> IEEE, IEC & NFPA 921 Standartları</li>
+              <li><i class="fa-solid fa-check"></i> Kusur ve Nedensellik Ayrımı</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">5</div>
-          <h4 class="step-title-text">Dava Süreci Desteği</h4>
-          <p class="step-desc">Dava dosyasındaki bilirkişi raporları incelenir, hatalı hususlar tespit edilerek teknik görüş sunulur.</p>
+        <!-- Step 05 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">05</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-file-signature"></i> 5. HMK 293 & CMK 67 Mütalaa Hazırlanması</h3>
+              <span class="surec-step-tag">BİLİMSEL MÜTALAA</span>
+            </div>
+            <p class="surec-step-desc">
+              Mahkemelerin ve Yargıtay’ın aradığı kriterlere uygun, şüpheye yer bırakmayan grafikler, fotoğraflar ve gerekçeli hukuki-teknik değerlendirmeler içeren mütalaa raporlaştırılır.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> HMK 293 / CMK 67 Uyumlu Raportörlük</li>
+              <li><i class="fa-solid fa-check"></i> Görsel & Grafik Destekli İspat Mantığı</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">6</div>
-          <h4 class="step-title-text">Sunum & İtiraz Desteği</h4>
-          <p class="step-desc">Gerekli hallerde mahkemede uzman dinlenmesi (HMK 293/2) için duruşma sunumu ve teknik itiraz dilekçesi hazırlanır.</p>
+        <!-- Step 06 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">06</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-scale-balanced"></i> 6. Hukuki Destek ve Bilirkişi Raporuna İtiraz</h3>
+              <span class="surec-step-tag">DAVA İTİRAZ STRATEJİSİ</span>
+            </div>
+            <p class="surec-step-desc">
+              Hatalı veya eksik hazırlanmış mahkeme bilirkişi raporlarına karşı teknik itiraz dilekçelerine esas somut gerekçeler ve keşifte sorulacak soru setleri hazırlanır.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> Bilirkişi Raporu Hata Analizi</li>
+              <li><i class="fa-solid fa-check"></i> Dilekçe & Keşif Soru Seti Hazırlığı</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="process-step-card">
-          <div class="step-num-badge">7</div>
-          <h4 class="step-title-text">Sonuçlandırma</h4>
-          <p class="step-desc">E-imzalı veya ıslak imzalı rapor teslim edilerek veriler KVKK standartlarına uygun güvenli şekilde arşivlenir.</p>
+        <!-- Step 07 -->
+        <div class="surec-card-step">
+          <div class="surec-step-badge-num">07</div>
+          <div class="surec-step-content-box">
+            <div class="surec-step-header">
+              <h3 class="surec-step-h3"><i class="fa-solid fa-gavel"></i> 7. Duruşmada Uzman Dinlenmesi (HMK 293/2)</h3>
+              <span class="surec-step-tag">DURUŞMA SUNUMU</span>
+            </div>
+            <p class="surec-step-desc">
+              Talep halinde uzmanın mahkeme huzurunda hazır bulunarak bizzat dinlenmesi (HMK 293/2) sağlanır; hakim, savcı ve taraf avukatlarının soruları bizzat yanıtlanır.
+            </p>
+            <ul class="surec-step-bullets">
+              <li><i class="fa-solid fa-check"></i> Mahkemede Bizzat Sözlü Sunum</li>
+              <li><i class="fa-solid fa-check"></i> Doğrudan Sorgu & Açıklama Katkısı</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LEGAL STANDARDS GRID -->
+      <div class="section-header-dashed">
+        <h2 class="section-header-dashed-title">DAYANDIĞIMIZ YASAL VE ULUŞLARARASI STANDARTLAR</h2>
+      </div>
+
+      <div class="standards-4-grid">
+        <div class="standard-card">
+          <div class="standard-code"><i class="fa-solid fa-certificate"></i> ISO/IEC 27037</div>
+          <h4 class="standard-title">Dijital Delil Standardı</h4>
+          <p class="standard-desc">Dijital delillerin toplanması, elde edilmesi, muhafazası ve korunmasına ilişkin uluslararası adli standart.</p>
+        </div>
+
+        <div class="standard-card">
+          <div class="standard-code"><i class="fa-solid fa-fire"></i> NFPA 921</div>
+          <h4 class="standard-title">Yangın Kök Neden Rehberi</h4>
+          <p class="standard-desc">Yangın ve patlama olaylarının bilimsel yöntemlerle adli inceleme ve kök neden tespiti kılavuzu.</p>
+        </div>
+
+        <div class="standard-card">
+          <div class="standard-code"><i class="fa-solid fa-gavel"></i> HMK Madde 293</div>
+          <h4 class="standard-title">Hukuk Davaları Mütalaası</h4>
+          <p class="standard-desc">Hukuk yargılamasında tarafların dava konusuna ilişkin bilimsel uzman görüşü alma ve sunma hakkı.</p>
+        </div>
+
+        <div class="standard-card">
+          <div class="standard-code"><i class="fa-solid fa-shield-halved"></i> CMK Madde 67</div>
+          <h4 class="standard-title">Ceza Davaları Mütalaası</h4>
+          <p class="standard-desc">Ceza yargılamasında şüpheli, sanık veya katılanın teknik uzman görüşü alma ve dosyaya sunma usulü.</p>
         </div>
       </div>
 
-      <!-- LEGAL BASIS SECTION -->
-      <div style="margin-top: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-        <div style="background: var(--bg-dark-navy); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-color);">
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: #38bdf8; margin-bottom: 1rem;"><i class="fa-solid fa-scale-balanced"></i> HMK Madde 293: Uzman Görüşü Nedir?</h3>
-          <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
-            6100 Sayılı Hukuk Muhakemeleri Kanunu Madde 293 uyarınca; taraflar, dava konusu uyuşmazlıkla ilgili olarak uzmanından bilimsel mütalaa alabilirler. Mahkeme hakimi, hukuki ve teknik olarak bilimsel mütalaayı dikkate almakla yükümlüdür.
-          </p>
+      <!-- BOTTOM CTA BANNER -->
+      <div class="bottom-cta-banner">
+        <div class="bottom-cta-left">
+          <div class="bottom-cta-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div>
+            <h3 class="bottom-cta-title">Dava Dosyanızı Birlikte İnceleyelim</h3>
+            <p class="bottom-cta-sub">Dosyanızdaki teknik çelişkileri ve eksiklikleri tespit etmek için ücretsiz ön değerlendirme talep edin.</p>
+          </div>
         </div>
-
-        <div style="background: var(--bg-dark-navy); border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-color);">
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: #10b981; margin-bottom: 1rem;"><i class="fa-solid fa-lock"></i> Delil Güvenliği Zinciri (Chain of Custody)</h3>
-          <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
-            Dijital delillerin ve saha incelemelerinin mahkemede reddedilmemesi için delilin elde edilmesinden rapora dökülmesine kadar geçen süreçte hash değerleri (MD5/SHA256) alınarak delil bütünlüğü %100 garanti altına alınır.
-          </p>
+        <div class="bottom-cta-btns">
+          <button class="btn-hero-secondary trigger-modal"><i class="fa-solid fa-comments"></i> <span>İletişime Geç</span></button>
+          <button class="btn-hero-primary trigger-modal"><span>Ön Değerlendirme İste</span> <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- İLETİŞİM (LIGHT THEME 3 CARDS) -->
-  <section class="contact-light-section">
-    <div class="container text-center" style="text-align: center;">
-      <span class="contact-pill-badge">BİZE ULAŞIN</span>
-      <h2 class="contact-section-title">İletişim & Teknik Danışmanlık</h2>
-      <p class="contact-section-sub">Süreç ve mütalaa talepleriniz için doğrudan ulaşın.</p>
-
-      <div class="contact-3-cards-grid">
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle phone"><i class="fa-solid fa-phone-volume"></i></div>
-          <h4 class="contact-card-h4">Telefon / Danışma Hattı</h4>
-          <p class="contact-card-p">Hızlı bilgi ve dosya ön değerlendirmesi için hemen arayın.</p>
-          <a href="tel:05326422657" class="contact-card-value-phone data-phone-link data-phone-val">0532 642 26 57</a>
-        </div>
-
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle email"><i class="fa-solid fa-envelope"></i></div>
-          <h4 class="contact-card-h4">E-Posta İletişim</h4>
-          <p class="contact-card-p">Dava dosyası evraklarınızı e-posta ile iletebilirsiniz.</p>
-          <a href="mailto:info@adliteknik.com" class="contact-card-value-email data-email-link data-email-val">info@adliteknik.com</a>
-        </div>
-
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle office"><i class="fa-solid fa-building-columns"></i></div>
-          <h4 class="contact-card-h4">Merkez Ofis / UYAP</h4>
-          <p class="contact-card-p">Ankara Merkez Ofisi ve UYAP Entegrasyon Merkezi.</p>
-          <span class="contact-card-value-office data-office-val">Ankara / TÜRKİYE</span>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid-4">
         <div>
           <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
             <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
@@ -177,70 +440,75 @@
               <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
             </div>
           </a>
-          <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
-            Dijital Delilden Teknik Gerçeğe — Adli Bilişim • Siber Güvenlik • Adli Mühendislik • Enerji Sistemleri • Adli Hesap Uzmanlığı.
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim ve mühendislik alanlarında uzman inceleme, raporlama ve mütalaa hizmetleri sunuyoruz.
           </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@uzmaninceleme.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
 
         <div>
-          <h4 class="footer-col-title">KURUMSAL & YETKİ</h4>
-          <ul class="footer-links">
-            <li><a href="surec.html">Resmi Adli Bilirkişilik Kayıtları</a></li>
-            <li><a href="egitimler.html">Arabuluculuk & BEDAM Eğitmenliği</a></li>
-            <li><a href="surec.html">Yasal HMK 293 Mütalaa Standartları</a></li>
-            <li><a href="iletisim.html">Gizlilik ve KVKK Politikası</a></li>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="makaleler.html">Dergi & Yayınlar</a></li>
+            <li><a href="egitimler.html">Eğitimler</a></li>
+            <li><a href="surec.html">Süreç</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">HIZLI ERİŞİM</h4>
-          <ul class="footer-links">
-            <li><a href="uzmanliklar.html#adli-bilisim">Adli Bilişim & Dijital Deliller</a></li>
-            <li><a href="uzmanliklar.html#siber-guvenlik">Siber Güvenlik & Dolandırıcılık</a></li>
-            <li><a href="uzmanliklar.html#adli-muhendislik">Adli Mühendislik & Enerji</a></li>
-            <li><a href="uzmanliklar.html#adli-hesap">Özel Raporlama & Adli Hesap</a></li>
+          <h4 class="footer-col-title">İnceleme Standartları</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="#">ISO/IEC 27037 Standardı</a></li>
+            <li><a href="#">NFPA 921 Yangın Rehberi</a></li>
+            <li><a href="#">HMK 293 Uzman Görüşü</a></li>
+            <li><a href="#">CMK 67 Uzman Mütalaası</a></li>
+            <li><a href="#">Chain of Custody</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">İLETİŞİM</h4>
-          <ul class="footer-links" style="font-size: 0.9rem;">
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 6px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-email-val">info@adliteknik.com</span></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-building" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-office-val">Ankara Merkez Ofis / UYAP Uyumlu</span></li>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@uzmaninceleme.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 UZMAN İNCELEME — Adli Mühendislik & Bilişim Platformu. Tüm Hakları Saklıdır.</div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-          <div style="color: #38bdf8; font-weight: 700;">İletişim: <span class="data-phone-val">0532 642 26 57</span></div>
-          <a href="admin.html" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-gear"></i> Yönetici Paneli
-          </a>
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Widget -->
-  <div class="whatsapp-float-container">
-    <div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div>
-    <a href="https://wa.me/905326422657" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a>
-  </div>
+  <!-- WhatsApp Widget & Upload Modal -->
+  <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <!-- Upload Modal -->
   <div id="uploadModal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
       <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up" style="color: #0284c7;"></i> Hızlı Mütalaa & Dosya Gönder</h3>
       <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.25rem;">Dijital delillerinizi ve dava dosyanızı yükleyin, uzmanlarımız 24 saat içinde incelesin.</p>
       <form id="modalForm">
-        <div class="form-group"><label class="form-label">Uzmanlık Alanı Seçin</label><select class="form-select" required><option>1. Adli Bilişim & Dijital Deliller</option><option>2. Siber Güvenlik & Dijital Dolandırıcılık</option><option>3. Adli Mühendislik (Elektrik)</option><option>4. Enerji Sistemleri Değerlendirmeleri</option><option>5. Adli Hesap Uzmanlığı</option><option>6. Özel Raporlama & Mütalaa</option><option>7. Hukuksal & Avukatlık Desteği</option><option>8. Eğitim & Danışmanlık</option></select></div>
+        <div class="form-group"><label class="form-label">Uzmanlık Alanı Seçin</label><select class="form-select" required><option>1. Adli Bilişim & Dijital Deliller</option><option>2. Siber Güvenlik & Dijital Dolandırıcılık</option><option>3. Adli Mühendislik (Elektrik)</option><option>4. Yangın & Teknik Kök Neden Analizi</option><option>5. Hasar, Sigorta Uyuşmazlıkları</option><option>6. Enerji Sistemleri</option><option>7. Adli Hesap Uzmanlığı</option><option>8. Özel Raporlama & Mütalaa</option><option>9. Hukuksal & Avukatlık Desteği</option><option>10. Eğitim & Danışmanlık</option></select></div>
         <div class="form-group"><label class="form-label">Ad Soyad / Baro No / Şirket Adı</label><input type="text" class="form-input" placeholder="Av. Ad Soyad / Şirket Adı" required></div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group"><div><label class="form-label">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required></div><div><label class="form-label">E-posta Adresi</label><input type="email" class="form-input" placeholder="avukat@ornek.com" required></div></div>
-        <div class="form-group"><label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label><div class="dropzone"><i class="fa-solid fa-file-arrow-up dropzone-icon"></i><div class="dropzone-text">Dosya seçin veya buraya bırakın</div><div class="dropzone-subtext">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div></div></div>
+        <div class="form-group"><label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label><div style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 1.25rem; text-align: center; background: #f8fafc; cursor: pointer;"><i class="fa-solid fa-file-arrow-up" style="font-size: 1.8rem; color: #0284c7; margin-bottom: 6px;"></i><div style="font-size: 0.85rem; font-weight: 600; color: #0f172a;">Dosya seçin veya buraya bırakın</div><div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div></div></div>
         <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>GÜVENLİ GÖNDER VE İNCELEME AL</span><i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>

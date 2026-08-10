@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UZMAN İNCELEME | Adli Mühendislik, Adli Bilişim ve Teknik Bilirkişilik</title>
-  <meta name="description" content="Elektrik, elektronik, otomasyon, PLC/SCADA, siber güvenlik, dijital delil ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve mütalaa hizmetleri.">
+  <title>UZMAN İNCELEME | Adli Mühendislik & Bilişim Platformu</title>
+  <meta name="description" content="Elektrik, elektronik, enerji, dijital delil, yangın, sigorta, adli hesap ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve uzman mütalaası hizmetleri.">
   
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,9 @@
   <!-- 1. Header & Sticky Navbar -->
   <header class="header">
     <div class="container navbar">
-      <!-- Logo: UZMAN İNCELEME - ADLİ MÜHENDİSLİK & BİLİŞİM -->
+      <!-- Logo -->
       <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <i class="fa-solid fa-scale-balanced"></i>
-        </div>
+        <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
         <div class="logo-title-group">
           <span class="logo-main-text">UZMAN İNCELEME</span>
           <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
@@ -35,19 +33,18 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
         <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
-        <li><a href="makaleler.html" class="nav-link">Makaleler & Yayınlar</a></li>
+        <li><a href="makaleler.html" class="nav-link">Dergi & Yayınlar</a></li>
         <li><a href="egitimler.html" class="nav-link">Eğitimler</a></li>
         <li><a href="surec.html" class="nav-link">Süreç</a></li>
         <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
       </ul>
 
-      <!-- Right Contact Action & Mobile Menu Toggle Button -->
+      <!-- Right Phone Link & Mobile Hamburger -->
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="tel:05326422657" class="phone-header-link data-phone-link" title="Ara: 0532 642 26 57">
+        <a href="tel:05326422657" class="phone-header-link data-phone-link">
           <i class="fa-solid fa-phone-volume" style="color: #38bdf8;"></i>
           <span class="data-phone-text">İletişim: 0532 642 26 57</span>
         </a>
-        
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -55,22 +52,20 @@
     </div>
   </header>
 
-  <!-- 2. Hero Section (Vitrin Katmanı) -->
+  <!-- 2. Hero Section (Mockup 2 Birebir) -->
   <section id="hero" class="hero">
-    
-    <!-- YÜKLENEN İZOMETRİK GÖRSELİN BİREBİR ARKA PLAN ŞEFFAF KATMANI -->
     <div class="hero-bg-overlay-img"></div>
     <div class="hero-bg-gradient-overlay"></div>
 
     <div class="container">
-      
-      <div class="hero-spread-box">
+      <div class="hero-content-box">
         <h1 class="hero-h1-title data-hero-title">
-          ADLİ MÜHENDİSLİK, ADLİ BİLİŞİM VE TEKNİK BİLİRKİŞİLİK
+          Teknik Doğruluk.
+          <span class="cyan-text">Hukuki Güç.</span>
         </h1>
         
         <p class="hero-sub-para data-hero-sub">
-          Elektrik, elektronik, otomasyon, PLC/SCADA, enerji, dijital delil ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve mütalaa hizmetleri.
+          Elektrik, elektronik, enerji, dijital delil, yangın, sigorta, adli hesap ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve uzman mütalaası hizmetleri.
         </p>
 
         <div class="hero-btn-group">
@@ -85,311 +80,426 @@
         </div>
       </div>
 
-      <!-- IMAGE 1 SPECIFICATION: 8 KATEGORİ KARTI GRID DÜZENİ (2 ROW x 4 COL) -->
-      <div class="hero-8-cards-grid">
+      <!-- 4 Trust Badges Under Hero -->
+      <div class="hero-trust-bar">
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-shield-halved trust-badge-icon"></i>
+          <div>
+            <h4 class="trust-badge-title">Bağımsız & Tarafsız</h4>
+            <p class="trust-badge-desc">Çıkar ilişkilerinden bağımsız, tarafsız ve objektif yaklaşım.</p>
+          </div>
+        </div>
+
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-flask trust-badge-icon"></i>
+          <div>
+            <h4 class="trust-badge-title">Bilimsel ve Teknik Yöntem</h4>
+            <p class="trust-badge-desc">Uluslararası kabul gören metot ve standartlar.</p>
+          </div>
+        </div>
+
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-file-contract trust-badge-icon"></i>
+          <div>
+            <h4 class="trust-badge-title">Detaylı Raporlama</h4>
+            <p class="trust-badge-desc">Anlaşılır, kanıta dayalı ve eksiksiz raporlar.</p>
+          </div>
+        </div>
+
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-user-lock trust-badge-icon"></i>
+          <div>
+            <h4 class="trust-badge-title">Gizlilik & Güven</h4>
+            <p class="trust-badge-desc">Bilgi güvenliği ve gizlilik en üst seviyede.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. UZMANLIK ALANLARIMIZ (5 COLUMNS x 2 ROWS GRID) -->
+  <section style="padding: 5rem 0 3rem 0; background: #070d1e;">
+    <div class="container">
+      
+      <div class="section-header-dashed">
+        <h2 class="section-header-dashed-title">UZMANLIK ALANLARIMIZ</h2>
+      </div>
+
+      <div class="cards-10-mockup-grid">
         
-        <!-- Card 1: Adli Bilişim & Dijital Deliller -->
-        <div class="card-spec-box c1">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-desktop"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">1. Adli Bilişim & Dijital Deliller</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 01. Adli Bilişim & Dijital Deliller -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-desktop"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">01.</span>
+              <h3 class="card-mockup-title">Adli Bilişim & Dijital Deliller</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Cihaz, veri, log ve dijital delil incelemeleri, veri kurtarma ve adli analiz hizmetleri.
-          </p>
-          <a href="uzmanliklar.html#adli-bilisim" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Mobil cihaz ve adli inceleme</li>
+            <li>Silinen veri / mesaj tespiti</li>
+            <li>WhatsApp, e-posta ve sosyal medya delilleri</li>
+          </ul>
+          <a href="uzmanliklar.html#row-adli-bilisim" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 2: Siber Güvenlik & Dijital Dolandırıcılık -->
-        <div class="card-spec-box c2">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">2. Siber Güvenlik & Dijital Dolandırıcılık</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 02. Siber Güvenlik & Dijital Dolandırıcılık -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">02.</span>
+              <h3 class="card-mockup-title">Siber Güvenlik & Dijital Dolandırıcılık</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Siber olay müdahalesi, saldırı analizi, dijital dolandırıcılık ve hesap incelemeleri.
-          </p>
-          <a href="uzmanliklar.html#siber-guvenlik" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Siber olay müdahalesi</li>
+            <li>Ransomware ve veri ihlali</li>
+            <li>BEC, phishing ve ödeme dolandırıcılığı</li>
+          </ul>
+          <a href="uzmanliklar.html#row-siber-guvenlik" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 3: Adli Mühendislik (Elektrik & Elektronik) -->
-        <div class="card-spec-box c3">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-gear"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">3. Adli Mühendislik (Elektrik & Elektronik)</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 03. Adli Mühendislik (Elektrik & Elektronik) -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-gear"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">03.</span>
+              <h3 class="card-mockup-title">Adli Mühendislik (Elektrik & Elektronik)</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Elektronik cihaz ayıp tespiti, CCTV, PLC/SCADA otomasyon, sayaç, GPS araç takip ve sinyal/ses incelemeleri.
-          </p>
-          <a href="uzmanliklar.html#adli-muhendislik" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Arıza, ayıp ve servis kusuru</li>
+            <li>PLC / SCADA / otomasyon</li>
+            <li>Elektrik kazaları ve teknik uygunluk</li>
+          </ul>
+          <a href="uzmanliklar.html#row-adli-muhendislik" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 4: Enerji Sistemleri Değerlendirmeleri -->
-        <div class="card-spec-box c4">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-solar-panel"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">4. Enerji Sistemleri Değerlendirmeleri</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 04. Yangın & Teknik Kök Neden Analizi -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-fire-burner"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">04.</span>
+              <h3 class="card-mockup-title">Yangın & Teknik Kök Neden Analizi</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Enerji üretimi, GES, sayaç, iletim ve dağıtım şebekeleri analiz ve değerlendirmeleri.
-          </p>
-          <a href="uzmanliklar.html#enerji-sistemleri" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Elektrik kaynaklı yangın analizi</li>
+            <li>GES / RES / HES tesis yangınları</li>
+            <li>Teknik kusur ve nedensellik</li>
+          </ul>
+          <a href="uzmanliklar.html#row-yangin" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 5: Adli Hesap Uzmanlığı -->
-        <div class="card-spec-box c5">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-calculator"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">5. Adli Hesap Uzmanlığı</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 05. Hasar, Sigorta Uyuşmazlıkları & Teknik Değerleme -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">05.</span>
+              <h3 class="card-mockup-title">Hasar, Sigorta Uyuşmazlıkları & Teknik Değerleme</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Mali, ticari ve hesap incelemeleri, finansal analiz, zarar tespiti ve bilirkişi raporları.
-          </p>
-          <a href="uzmanliklar.html#adli-hesap" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Yangın / patlama sonrası hasar</li>
+            <li>Mühendislik sigortaları</li>
+            <li>İş durması ve üretim kaybı</li>
+          </ul>
+          <a href="uzmanliklar.html#row-hasar-sigorta" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 6: Özel Raporlama & Mütalaa -->
-        <div class="card-spec-box c6">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-file-circle-check"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">6. Özel Raporlama & Mütalaa</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 06. Enerji Sistemleri & Teknik Değerlendirmeler -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">06.</span>
+              <h3 class="card-mockup-title">Enerji Sistemleri & Teknik Değerlendirmeler</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Uzman raporları, teknik mütalaa ve özel değerlendirme raporları hazırlama hizmetleri.
-          </p>
-          <a href="uzmanliklar.html#ozel-raporlama" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>GES / RES / HES performansı</li>
+            <li>Sayaç, OSOS ve kaçak elektrik</li>
+            <li>Tarife, reaktif enerji ve güç kalitesi</li>
+          </ul>
+          <a href="uzmanliklar.html#row-enerji-sistemleri" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 7: Hukuksal Destek & Dava Süreci -->
-        <div class="card-spec-box c7">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-scale-balanced"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">7. Hukuksal Destek & Dava Süreci</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 07. Adli Hesap Uzmanlığı & Nitelikli Hesaplamalar -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-calculator"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">07.</span>
+              <h3 class="card-mockup-title">Adli Hesap Uzmanlığı & Nitelikli Hesaplamalar</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Teknik-hukuki değerlendirme, dava desteği, süreç takibi ve itiraz hazırlıkları.
-          </p>
-          <a href="uzmanliklar.html#hukuksal-destek" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>Ticari defter ve cari hesap</li>
+            <li>Maddi zarar ve kâr kaybı</li>
+            <li>İcra, iflas ve konkordato hesapları</li>
+          </ul>
+          <a href="uzmanliklar.html#row-adli-hesap" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Card 8: Eğitim & Danışmanlık -->
-        <div class="card-spec-box c8">
-          <div class="card-spec-header">
-            <div class="card-spec-icon-box">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="card-spec-title-group">
-              <h3 class="card-spec-title">8. Eğitim & Danışmanlık</h3>
-              <div class="card-spec-underline"></div>
+        <!-- 08. Özel Raporlama & Uzman Mütalaası -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">08.</span>
+              <h3 class="card-mockup-title">Özel Raporlama & Uzman Mütalaası</h3>
             </div>
           </div>
-          <p class="card-spec-subtext">
-            Adli bilişim, siber güvenlik ve mühendislik alanlarında kurumsal eğitim ve danışmanlık hizmetleri.
-          </p>
-          <a href="egitimler.html" class="card-link-more">
-            <span>Detaylı Bilgi</span> <i class="fa-solid fa-chevron-right"></i>
+          <ul class="card-mockup-bullets">
+            <li>HMK 293 uzman görüşü</li>
+            <li>CMK 67 teknik mütalaa</li>
+            <li>Bilirkişi raporuna itiraz</li>
+          </ul>
+          <a href="uzmanliklar.html#row-ozel-raporlama" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
+        </div>
+
+        <!-- 09. Hukuksal & Avukatlık Desteği, Dava Süreci -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">09.</span>
+              <h3 class="card-mockup-title">Hukuksal & Avukatlık Desteği, Dava Süreci</h3>
+            </div>
+          </div>
+          <ul class="card-mockup-bullets">
+            <li>Bilişim ve siber suçlar desteği</li>
+            <li>Elektrik / enerji hukuku analizi</li>
+            <li>Dilekçe ve itiraz için teknik gerekçe</li>
+          </ul>
+          <a href="uzmanliklar.html#row-hukuksal-destek" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- 10. Eğitim & Danışmanlık -->
+        <div class="card-mockup-item">
+          <div class="card-mockup-header">
+            <div class="card-mockup-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="card-mockup-title-group">
+              <span class="card-mockup-num">10.</span>
+              <h3 class="card-mockup-title">Eğitim & Danışmanlık</h3>
+            </div>
+          </div>
+          <ul class="card-mockup-bullets">
+            <li>Enerji yönetimi ve verimlilik</li>
+            <li>İSG ve elektriksel risk eğitimleri</li>
+            <li>Kurumsal siber güvenlik farkındalığı</li>
+          </ul>
+          <a href="uzmanliklar.html#row-egitim-danismanlik" class="card-mockup-link">
+            <span>Tüm Alt Başlıkları Gör</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. STATS BAR (4 STATS) -->
+  <section class="stats-bar-mockup">
+    <div class="container">
+      <div class="stats-grid-4">
+        <div class="stat-item-mockup">
+          <div class="stat-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+          <div>
+            <div class="stat-val">500+</div>
+            <div class="stat-lbl">Dosya İncelemesi</div>
+          </div>
+        </div>
+
+        <div class="stat-item-mockup">
+          <div class="stat-icon-box"><i class="fa-solid fa-file-signature"></i></div>
+          <div>
+            <div class="stat-val">200+</div>
+            <div class="stat-lbl">Teknik Rapor</div>
+          </div>
+        </div>
+
+        <div class="stat-item-mockup">
+          <div class="stat-icon-box"><i class="fa-solid fa-chart-simple"></i></div>
+          <div>
+            <div class="stat-val">10</div>
+            <div class="stat-lbl">Ana Uzmanlık Alanı</div>
+          </div>
+        </div>
+
+        <div class="stat-item-mockup">
+          <div class="stat-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <div class="stat-val">%100</div>
+            <div class="stat-lbl">Gizlilik</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SPLIT SECTION: DERGİ (LEFT) | SÜREÇ (RIGHT) -->
+  <section style="background: #070d1e; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="split-section-grid">
+        
+        <!-- LEFT: UZMAN İNCELEME DERGİSİ -->
+        <div>
+          <h2 class="split-title">UZMAN İNCELEME DERGİSİ</h2>
+          <p class="split-sub">Vaka analizleri, teknik makaleler ve mevzuat notları.</p>
+
+          <div class="dergi-3-cards-grid">
+            <div class="dergi-card">
+              <div class="dergi-card-img-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/vaka_analizi_thumb.png'); background-color: #1e293b;">
+                <span class="dergi-card-tag">VAKA ANALİZİ</span>
+              </div>
+              <div class="dergi-card-body">
+                <span class="dergi-card-date">10 Mayıs 2026</span>
+                <h4 class="dergi-card-title">GES Yangınlarında Teknik Kök Neden: Inverter, DC Ark, Kablo mu?</h4>
+                <p class="dergi-card-desc">Gerçek bir uyuşmazlık üzerinden teknik inceleme adımları, deliller ve sonuç değerlendirmesi.</p>
+                <a href="makaleler.html" class="dergi-card-link">Devamını Oku →</a>
+              </div>
+            </div>
+
+            <div class="dergi-card">
+              <div class="dergi-card-img-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/uzman_makalesi_thumb.png'); background-color: #0f172a;">
+                <span class="dergi-card-tag" style="background: #0284c7;">UZMAN MAKALERİ</span>
+              </div>
+              <div class="dergi-card-body">
+                <span class="dergi-card-date">07 Nisan 2026</span>
+                <h4 class="dergi-card-title">Dijital Delilin Değişmediği Nasıl Kanıtlanır? Hash ve Delil Bütünlüğü</h4>
+                <p class="dergi-card-desc">Hash algoritmaları, imaj alma yöntemleri ve delil zinciri yönetimi üzerine teknik bir rehber.</p>
+                <a href="makaleler.html" class="dergi-card-link">Devamını Oku →</a>
+              </div>
+            </div>
+
+            <div class="dergi-card">
+              <div class="dergi-card-img-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/mevzuat_notu_thumb.png'); background-color: #1e1b4b;">
+                <span class="dergi-card-tag" style="background: #4f46e5;">MEVZUAT NOTU</span>
+              </div>
+              <div class="dergi-card-body">
+                <span class="dergi-card-date">28 Mart 2026</span>
+                <h4 class="dergi-card-title">HMK 293 Uzman Görüşü: Ne Zaman Etkilidir, Nasıl Hazırlanmalıdır?</h4>
+                <p class="dergi-card-desc">Yargı kararları ışığında HMK 293 kapsamındaki uzman görüşünün dava sürecindeki rolü.</p>
+                <a href="makaleler.html" class="dergi-card-link">Devamını Oku →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: ÇALIŞMA SÜRECİ -->
+        <div>
+          <h2 class="split-title">ÇALIŞMA SÜRECİ</h2>
+          <p class="split-sub">&nbsp;</p>
+
+          <div class="surec-4-steps-list">
+            <div class="surec-step-item">
+              <div class="surec-num-circle">1</div>
+              <i class="fa-solid fa-magnifying-glass surec-step-icon"></i>
+              <div>
+                <h4 class="surec-step-title">Ön Değerlendirme</h4>
+                <p class="surec-step-desc">Dosyanız incelenir, ihtiyaçlar belirlenir ve yol haritası çıkarılır.</p>
+              </div>
+            </div>
+
+            <div class="surec-step-item">
+              <div class="surec-num-circle">2</div>
+              <i class="fa-solid fa-gears surec-step-icon"></i>
+              <div>
+                <h4 class="surec-step-title">Teknik İnceleme</h4>
+                <p class="surec-step-desc">Bilimsel yöntemlerle deliller toplanır ve teknik analiz yapılır.</p>
+              </div>
+            </div>
+
+            <div class="surec-step-item">
+              <div class="surec-num-circle">3</div>
+              <i class="fa-solid fa-file-contract surec-step-icon"></i>
+              <div>
+                <h4 class="surec-step-title">Raporlama / Mütalaa</h4>
+                <p class="surec-step-desc">Bulgular kanıta dayalı olarak raporlanır veya mütalaa hazırlanır.</p>
+              </div>
+            </div>
+
+            <div class="surec-step-item">
+              <div class="surec-num-circle">4</div>
+              <i class="fa-solid fa-users surec-step-icon"></i>
+              <div>
+                <h4 class="surec-step-title">Sunum & Süreç Desteği</h4>
+                <p class="surec-step-desc">Rapor sunumu yapılır, dava sürecinde teknik destek sağlanır.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 3. NEDEN UZMAN MÜTALAASI VE UZMAN İNCELEME? (İkna Katmanı) -->
-  <section style="padding: 5rem 0; background: #1c2541; border-bottom: 1px solid var(--border-color);">
+  <!-- 6. EĞİTİMLER & KURUMSAL DANIŞMANLIK (3 BAR CARDS) -->
+  <section style="background: #070d1e; padding: 3rem 0;">
     <div class="container">
-      <div class="section-title-box">
-        <span class="section-num-tag">KURUMSAL GÜVEN</span>
-        <h2 class="section-main-heading">Neden Uzman Mütalaası ve Bilimsel İnceleme?</h2>
+      <div class="section-header-dashed" style="margin-bottom: 2rem;">
+        <h2 class="section-header-dashed-title" style="font-size: 1rem;">Eğitimler & Kurumsal Danışmanlık</h2>
       </div>
 
-      <div class="why-us-grid">
-        
-        <div class="why-card">
-          <div class="why-card-icon">
-            <i class="fa-solid fa-gavel"></i>
+      <div class="egitimler-3-bar-grid">
+        <a href="egitimler.html" class="egitim-bar-card">
+          <div class="egitim-bar-icon"><i class="fa-solid fa-leaf"></i></div>
+          <div>
+            <h4 class="egitim-bar-title">Enerji Yönetimi ve Verimlilik</h4>
+            <p class="egitim-bar-sub">Enerji performansı, tasarruf yöntemleri ve sürdürülebilirlik stratejileri.</p>
           </div>
-          <h3 class="why-card-title">HMK Madde 293 Standartları</h3>
-          <p class="why-card-desc">
-            Mahkemelerde dava dosyasının kaderini belirleyen taraf uzman görüşü (uzman mütalaası), yasal mevzuata tam uyumlu ve bilimsel metodoloji ile hazırlanır.
-          </p>
-        </div>
+          <i class="fa-solid fa-arrow-right egitim-bar-arrow"></i>
+        </a>
 
-        <div class="why-card">
-          <div class="why-card-icon">
-            <i class="fa-solid fa-users-gear"></i>
+        <a href="egitimler.html" class="egitim-bar-card">
+          <div class="egitim-bar-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.15);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <h4 class="egitim-bar-title">İSG & Elektriksel Risk Eğitimleri</h4>
+            <p class="egitim-bar-sub">Elektriksel riskler, iş güvenliği ve mevzuata uygun uygulamalar.</p>
           </div>
-          <h3 class="why-card-title">Disiplinler Arası Uzman Kadro</h3>
-          <p class="why-card-desc">
-            Elektrik-Elektronik Mühendisleri, Adli Bilişim Uzmanları, Hesap Uzmanları ve Hukukçu Danışma Kurulu birlikte çalışarak çok açılı analiz üretir.
-          </p>
-        </div>
+          <i class="fa-solid fa-arrow-right egitim-bar-arrow"></i>
+        </a>
 
-        <div class="why-card">
-          <div class="why-card-icon">
-            <i class="fa-solid fa-file-shield"></i>
+        <a href="egitimler.html" class="egitim-bar-card">
+          <div class="egitim-bar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h4 class="egitim-bar-title">Kurumsal Siber Güvenlik ve KVKK</h4>
+            <p class="egitim-bar-sub">Siber güvenlik farkındalığı, KVKK uyumu ve veri koruma stratejileri.</p>
           </div>
-          <h3 class="why-card-title">UYAP ve E-İmza Entegrasyonu</h3>
-          <p class="why-card-desc">
-            Hazırlanan teknik raporlar ve mütalaalar e-imzalı veya ıslak imzalı olarak doğrudan mahkeme ve UYAP sistemine sunulmaya hazır teslim edilir.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. RESMİ YAYINLAR & AKADEMİK MAKALELER (Yeni Dinamik Katman) -->
-  <section style="padding: 5rem 0; background: #0b132b; border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-title-box">
-        <span class="section-num-tag">RESMİ YAYINLAR</span>
-        <h2 class="section-main-heading">Makaleler, Haberler ve Duyurular</h2>
-      </div>
-
-      <div id="homeArticlesGrid" class="articles-grid" style="margin-bottom: 2.5rem;">
-        <!-- Dynamically rendered latest 3 articles -->
-      </div>
-
-      <div style="text-align: center;">
-        <a href="makaleler.html" class="btn-hero-secondary">
-          <span>Tüm Resmi Yayınları ve Makaleleri İncele</span>
-          <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right egitim-bar-arrow"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 5. RAKAMLARLA VE İSTATİSTİKLERLE UZMAN İNCELEME -->
-  <section style="padding: 4rem 0; background: #1c2541; border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="stats-grid">
-        
-        <div class="stat-card">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">İnceleme & Mütalaa</div>
-          <div class="stat-desc">Mahkemelere ve kurumlara sunulmuş teknik rapor</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Yıllık Deneyim</div>
-          <div class="stat-desc">Bilirkişilik, akademisyenlik ve saha tecrübesi</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-number">%100</div>
-          <div class="stat-label">HMK 293 Uyumu</div>
-          <div class="stat-desc">Mahkeme heyetini ikna edici bilimsel standart</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-number">24 Saat</div>
-          <div class="stat-label">Hızlı Ön İnceleme</div>
-          <div class="stat-desc">Dosya ve delilleriniz için hızlı geri dönüş</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. İLETİŞİM & TEKNİK DANIŞMANLIK (LIGHT THEME 3-CARDS SECTION) -->
-  <section id="iletisim" class="contact-light-section">
-    <div class="container text-center" style="text-align: center;">
-      <span class="contact-pill-badge">BİZE ULAŞIN</span>
-      <h2 class="contact-section-title">İletişim & Teknik Danışmanlık</h2>
-      <p class="contact-section-sub">Uzman mütalaası ve teknik danışmanlık talepleriniz için doğrudan ulaşın.</p>
-
-      <div class="contact-3-cards-grid">
-        
-        <!-- White Card 1: Phone -->
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle phone">
-            <i class="fa-solid fa-phone-volume"></i>
-          </div>
-          <h4 class="contact-card-h4">Telefon / Danışma Hattı</h4>
-          <p class="contact-card-p">Hızlı bilgi ve dosya ön değerlendirmesi için hemen arayın.</p>
-          <a href="tel:05326422657" class="contact-card-value-phone data-phone-link data-phone-val">0532 642 26 57</a>
-        </div>
-
-        <!-- White Card 2: E-mail -->
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle email">
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <h4 class="contact-card-h4">E-Posta İletişim</h4>
-          <p class="contact-card-p">Dava dosyası evraklarınızı e-posta ile iletebilirsiniz.</p>
-          <a href="mailto:info@adliteknik.com" class="contact-card-value-email data-email-link data-email-val">info@adliteknik.com</a>
-        </div>
-
-        <!-- White Card 3: Location -->
-        <div class="contact-white-card">
-          <div class="contact-card-icon-circle office">
-            <i class="fa-solid fa-building-columns"></i>
-          </div>
-          <h4 class="contact-card-h4">Merkez Ofis / UYAP</h4>
-          <p class="contact-card-p">Ankara Merkez Ofisi ve UYAP Entegrasyon Merkezi.</p>
-          <span class="contact-card-value-office data-office-val">Ankara / TÜRKİYE</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Footer Architecture -->
+  <!-- 7. FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Col 1: Brand -->
+      <div class="footer-grid-4">
         <div>
           <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
             <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
@@ -398,126 +508,85 @@
               <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
             </div>
           </a>
-          <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem;">
-            Dijital Delilden Teknik Gerçeğe — Adli Bilişim • Siber Güvenlik • Adli Mühendislik • Enerji Sistemleri • Adli Hesap Uzmanlığı.
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim ve mühendislik alanlarında uzman inceleme, raporlama ve mütalaa hizmetleri sunuyoruz.
           </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@uzmaninceleme.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
 
-        <!-- Col 2: Kurumsal & Yetki -->
         <div>
-          <h4 class="footer-col-title">KURUMSAL & YETKİ</h4>
-          <ul class="footer-links">
-            <li><a href="surec.html">Resmi Adli Bilirkişilik Kayıtları</a></li>
-            <li><a href="egitimler.html">Arabuluculuk & BEDAM Eğitmenliği</a></li>
-            <li><a href="surec.html">Yasal HMK 293 Mütalaa Standartları</a></li>
-            <li><a href="iletisim.html">Gizlilik ve KVKK Politikası</a></li>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="makaleler.html">Dergi & Yayınlar</a></li>
+            <li><a href="egitimler.html">Eğitimler</a></li>
+            <li><a href="surec.html">Süreç</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Hızlı Erişim -->
         <div>
-          <h4 class="footer-col-title">HIZLI ERİŞİM</h4>
-          <ul class="footer-links">
-            <li><a href="uzmanliklar.html#adli-bilisim">Adli Bilişim & Dijital Deliller</a></li>
-            <li><a href="uzmanliklar.html#siber-guvenlik">Siber Güvenlik & Dolandırıcılık</a></li>
-            <li><a href="uzmanliklar.html#adli-muhendislik">Adli Mühendislik & Enerji</a></li>
-            <li><a href="uzmanliklar.html#adli-hesap">Özel Raporlama & Adli Hesap</a></li>
+          <h4 class="footer-col-title">Uzmanlık Alanları</h4>
+          <ul class="footer-links-list" style="font-size: 0.8rem;">
+            <li><a href="uzmanliklar.html#row-adli-bilisim">Adli Bilişim & Dijital Deliller</a></li>
+            <li><a href="uzmanliklar.html#row-siber-guvenlik">Siber Güvenlik & Dolandırıcılık</a></li>
+            <li><a href="uzmanliklar.html#row-adli-muhendislik">Adli Mühendislik (E&E)</a></li>
+            <li><a href="uzmanliklar.html#row-yangin">Yangın & Kök Neden Analizi</a></li>
+            <li><a href="uzmanliklar.html#row-hasar-sigorta">Hasar, Sigorta & Değerleme</a></li>
+            <li><a href="uzmanliklar.html#row-enerji-sistemleri">Enerji Sistemleri & Değerlendirmeler</a></li>
+            <li><a href="uzmanliklar.html#row-adli-hesap">Adli Hesap Uzmanlığı</a></li>
+            <li><a href="uzmanliklar.html#row-ozel-raporlama">Raporlama & Mütalaa</a></li>
+            <li><a href="uzmanliklar.html#row-hukuksal-destek">Hukuksal & Avukatlık Desteği</a></li>
+            <li><a href="uzmanliklar.html#row-egitim-danismanlik">Eğitim & Danışmanlık</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: İletişim -->
         <div>
-          <h4 class="footer-col-title">İLETİŞİM</h4>
-          <ul class="footer-links" style="font-size: 0.9rem;">
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 6px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-email-val">info@adliteknik.com</span></li>
-            <li style="margin-bottom: 12px;"><i class="fa-solid fa-building" style="color: #38bdf8; margin-right: 6px;"></i> <span class="data-office-val">Ankara Merkez Ofis / UYAP Uyumlu</span></li>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@uzmaninceleme.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 UZMAN İNCELEME — Adli Mühendislik & Bilişim Platformu. Tüm Hakları Saklıdır.</div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-          <div style="color: #38bdf8; font-weight: 700;">İletişim: <span class="data-phone-val">0532 642 26 57</span></div>
-          <a href="admin.html" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-gear"></i> Yönetici Paneli
-          </a>
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOATING WIDGET -->
-  <div class="whatsapp-float-container">
-    <div class="whatsapp-label-badge">
-      <span class="whatsapp-status-dot"></span>
-      <span>WhatsApp Destek Hattı</span>
-    </div>
-    <a href="https://wa.me/905326422657" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn id-wa-link">
-      <div class="whatsapp-pulse-ring"></div>
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-  </div>
+  <!-- WhatsApp Widget & Upload Modal -->
+  <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <!-- Modal Popup for Fast File Upload -->
   <div id="uploadModal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">
-        <i class="fa-solid fa-cloud-arrow-up" style="color: #0284c7;"></i> Hızlı Mütalaa & Dosya Gönder
-      </h3>
+      <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up" style="color: #0284c7;"></i> Hızlı Mütalaa & Dosya Gönder</h3>
       <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.25rem;">Dijital delillerinizi ve dava dosyanızı yükleyin, uzmanlarımız 24 saat içinde incelesin.</p>
-      
       <form id="modalForm">
-        <div class="form-group">
-          <label class="form-label">Uzmanlık Alanı Seçin</label>
-          <select class="form-select" required>
-            <option>1. Adli Bilişim & Dijital Deliller</option>
-            <option>2. Siber Güvenlik & Dijital Dolandırıcılık</option>
-            <option>3. Adli Mühendislik (Elektrik)</option>
-            <option>4. Enerji Sistemleri Değerlendirmeleri</option>
-            <option>5. Adli Hesap Uzmanlığı</option>
-            <option>6. Özel Raporlama & Mütalaa</option>
-            <option>7. Hukuksal & Avukatlık Desteği, Dava Süreci</option>
-            <option>8. Eğitim & Danışmanlık</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Ad Soyad / Baro No / Şirket Adı</label>
-          <input type="text" class="form-input" placeholder="Av. Ad Soyad / Şirket Adı" required>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group">
-          <div>
-            <label class="form-label">Telefon Numarası</label>
-            <input type="tel" class="form-input" placeholder="05XX XXX XX XX" required>
-          </div>
-          <div>
-            <label class="form-label">E-posta Adresi</label>
-            <input type="email" class="form-input" placeholder="avukat@ornek.com" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label>
-          <div class="dropzone">
-            <i class="fa-solid fa-file-arrow-up dropzone-icon"></i>
-            <div class="dropzone-text">Dosya seçin veya buraya bırakın</div>
-            <div class="dropzone-subtext">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;">
-          <span>GÜVENLİ GÖNDER VE İNCELEME AL</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
+        <div class="form-group"><label class="form-label">Uzmanlık Alanı Seçin</label><select class="form-select" required><option>1. Adli Bilişim & Dijital Deliller</option><option>2. Siber Güvenlik & Dijital Dolandırıcılık</option><option>3. Adli Mühendislik (Elektrik)</option><option>4. Yangın & Teknik Kök Neden Analizi</option><option>5. Hasar, Sigorta Uyuşmazlıkları</option><option>6. Enerji Sistemleri</option><option>7. Adli Hesap Uzmanlığı</option><option>8. Özel Raporlama & Mütalaa</option><option>9. Hukuksal & Avukatlık Desteği</option><option>10. Eğitim & Danışmanlık</option></select></div>
+        <div class="form-group"><label class="form-label">Ad Soyad / Baro No / Şirket Adı</label><input type="text" class="form-input" placeholder="Av. Ad Soyad / Şirket Adı" required></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group"><div><label class="form-label">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required></div><div><label class="form-label">E-posta Adresi</label><input type="email" class="form-input" placeholder="avukat@ornek.com" required></div></div>
+        <div class="form-group"><label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label><div style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 1.25rem; text-align: center; background: #f8fafc; cursor: pointer;"><i class="fa-solid fa-file-arrow-up" style="font-size: 1.8rem; color: #0284c7; margin-bottom: 6px;"></i><div style="font-size: 0.85rem; font-weight: 600; color: #0f172a;">Dosya seçin veya buraya bırakın</div><div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div></div></div>
+        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>GÜVENLİ GÖNDER VE İNCELEME AL</span><i class="fa-solid fa-paper-plane"></i></button>
       </form>
     </div>
   </div>
 
-  <!-- Custom JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
