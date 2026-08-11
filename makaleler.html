@@ -12,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom Stylesheet -->
+  <!-- Custom Stylesheet & Physical Data Script -->
   <link rel="stylesheet" href="style.css">
+  <script src="yayinlar.js"></script>
 
   <style>
-    /* Dedicated Rock-Solid Styles for Dergi & Yayınlar Page (Mockup Birebir) */
+    /* Dedicated Rock-Solid Styles for Dergi & Yayınlar Page */
     .dergi-banner-hero {
       position: relative;
       background-color: #070d1e;
@@ -67,7 +68,7 @@
     .dergi-filter-line {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -101,147 +102,11 @@
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
     }
 
-    /* Featured Top 3 Grid */
-    .dergi-featured-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .featured-main-box {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      min-height: 420px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 2.25rem;
-      background-size: cover;
-      background-position: center;
-      transition: all 0.3s ease;
-    }
-
-    .featured-main-box:hover {
-      border-color: #38bdf8;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .featured-shade-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(7, 13, 30, 0.2) 0%, rgba(7, 13, 30, 0.95) 90%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .featured-box-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .tag-blue-badge {
-      background: #0284c7;
-      color: #ffffff;
-      font-size: 0.7rem;
-      font-weight: 900;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .meta-time-row {
-      font-size: 0.78rem;
-      color: #94a3b8;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .featured-main-h2 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .featured-main-excerpt {
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      line-height: 1.5;
-      margin-bottom: 1.25rem;
-      max-width: 90%;
-    }
-
-    .featured-side-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .featured-side-box {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.25rem;
-      background-size: cover;
-      background-position: center;
-      transition: all 0.3s ease;
-    }
-
-    .featured-side-box:hover {
-      border-color: #38bdf8;
-    }
-
-    .featured-side-h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-
-    /* Main Layout Grid */
-    .dergi-main-columns-layout {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 2.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .dergi-sec-header {
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .dergi-sec-link {
-      font-size: 0.8rem;
-      color: #38bdf8;
-      font-weight: 700;
-    }
-
+    /* Cards 3 Grid */
     .cards-3-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
       margin-bottom: 3.5rem;
     }
 
@@ -261,7 +126,7 @@
     }
 
     .art-card-thumb {
-      height: 130px;
+      height: 160px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -275,7 +140,7 @@
     }
 
     .art-card-h4 {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: #ffffff;
       line-height: 1.35;
@@ -283,15 +148,15 @@
     }
 
     .art-card-text {
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       color: #94a3b8;
-      line-height: 1.45;
+      line-height: 1.5;
       margin-bottom: 1.25rem;
       flex-grow: 1;
     }
 
     .art-card-link-btn {
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: #38bdf8;
       display: inline-flex;
@@ -303,85 +168,36 @@
       cursor: pointer;
     }
 
-    /* Sidebar Widgets */
-    .sidebar-widget-card {
-      background: #0e172c;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+    .tag-blue-badge {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      display: inline-block;
     }
 
-    .sidebar-widget-head {
-      font-size: 1.05rem;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 1.25rem;
+    .meta-time-row {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .editor-item-row {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 1.25rem;
-    }
-
-    .editor-item-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .editor-item-img {
-      width: 65px;
-      height: 55px;
-      border-radius: 6px;
-      background-size: cover;
-      background-position: center;
-      flex-shrink: 0;
-    }
-
-    .editor-item-h4 {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .series-links-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .series-links-list li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .series-links-list li:last-child {
-      border-bottom: none;
-    }
-
-    .series-links-list a {
-      padding: 12px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.88rem;
+    .empty-state-box {
+      background: #0e172c;
+      border: 1px dashed rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 3.5rem 2rem;
+      text-align: center;
       color: #cbd5e1;
-      font-weight: 600;
-      transition: all 0.2s ease;
     }
 
-    .series-links-list a:hover {
-      color: #38bdf8;
-    }
-
-    @media (max-width: 1100px) {
-      .dergi-featured-grid { grid-template-columns: 1fr; }
-      .dergi-main-columns-layout { grid-template-columns: 1fr; }
+    @media (max-width: 992px) {
       .cards-3-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -424,7 +240,7 @@
     </div>
   </header>
 
-  <!-- Subpage Banner (Dergi & Yayınlar Mockup Birebir) -->
+  <!-- Subpage Banner -->
   <section class="dergi-banner-hero">
     <div class="dergi-banner-bg"></div>
     <div class="dergi-banner-overlay"></div>
@@ -441,17 +257,17 @@
           Vaka Analizleri • Uzman Makaleleri • Mevzuat Notları • Rehberler
         </div>
         <p class="subpage-banner-sub">
-          Adli bilişim, siber güvenlik, adli mühendislik, yangın, hasar, enerji, adli hesap, uzman mütalaası ve eğitim alanlarına ilişkin anonim vaka analizleri, teknik makaleler, hukuki-teknik değerlendirmeler ve mevzuat incelemelerini bu sayfada bulabilirsiniz.
+          Adli bilişim, siber güvenlik, adli mühendislik, yangın, hasar, enerji, adli hesap, uzman mütalaası ve eğitim alanlarına ilişkin anonim vaka analizleri, teknik makaleler ve mevzuat incelemeleri.
         </p>
       </div>
     </div>
   </section>
 
   <!-- MAIN SECTION -->
-  <section style="padding: 3.5rem 0; background: #070d1e;">
+  <section style="padding: 3.5rem 0; background: #070d1e; min-height: 50vh;">
     <div class="container">
 
-      <!-- DUAL-TIER FILTER BARS (MOCKUP BİREBİR - HEM YAYIN TÜRÜ HEM UZMANLIK ALANI) -->
+      <!-- DUAL-TIER CROSS FILTER BARS -->
       <div class="dergi-dual-filter-card">
         <!-- Row 1: Yayın Türü -->
         <div class="dergi-filter-line">
@@ -467,6 +283,7 @@
         <!-- Row 2: Uzmanlık Alanı -->
         <div class="dergi-filter-line" style="padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06);">
           <span class="dergi-filter-label">Uzmanlık Alanı</span>
+          <button class="dergi-pill-btn active" data-cat="all">Tümü</button>
           <button class="dergi-pill-btn" data-cat="bilisim"><i class="fa-solid fa-desktop" style="color:#38bdf8;"></i> Adli Bilişim</button>
           <button class="dergi-pill-btn" data-cat="siber"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Siber Güvenlik</button>
           <button class="dergi-pill-btn" data-cat="muhendislik"><i class="fa-solid fa-gear" style="color:#38bdf8;"></i> Adli Mühendislik</button>
@@ -479,250 +296,23 @@
         </div>
       </div>
 
-      <!-- HERO FEATURED ARTICLES GRID (3 CARDS MOCKUP BİREBİR) -->
-      <div class="dergi-featured-grid">
-        
-        <!-- Large Left Featured Card -->
-        <div class="featured-main-box target-article-card" data-pub-type="vaka" style="background-image: url('assets/vaka_analizi_thumb.png');">
-          <div class="featured-shade-overlay"></div>
-          <div class="featured-box-content">
-            <span class="tag-blue-badge">VAKA ANALİZİ</span>
-            <div class="meta-time-row">
-              <span>12 Ağustos 2026</span> • <span><i class="fa-regular fa-clock"></i> 8 dk okuma</span>
-            </div>
-            <h2 class="featured-main-h2">GES Yangınlarında Teknik Kök Neden: İnverter, DC Ark, Kablo mu?</h2>
-            <p class="featured-main-excerpt">
-              Gerçek vakadan hareketle inverter arızaları, DC ark oluşumu ve kablo bağlantı noktalarındaki ısınmaların ayırıcı bulgularla değerlendirilmesi.
-            </p>
-            <button class="btn-hero-primary open-read-modal" style="padding: 10px 20px; font-size: 0.85rem;">
-              <span>İncelemeyi Oku</span> <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Right Side 2 Stacked Cards -->
-        <div class="featured-side-stack">
-          
-          <div class="featured-side-box target-article-card" data-pub-type="makale" style="background-image: url('assets/uzman_makalesi_thumb.png');">
-            <div class="featured-shade-overlay"></div>
-            <div class="featured-box-content">
-              <span class="tag-blue-badge" style="background: #0284c7;">UZMAN MAKALESİ</span>
-              <div class="meta-time-row">
-                <span>09 Ağustos 2026</span> • <span><i class="fa-regular fa-clock"></i> 6 dk okuma</span>
-              </div>
-              <h3 class="featured-side-h3">Dijital Delilin Değişmediği Nasıl Kanıtlanır? Hash ve Delil Bütünlüğü</h3>
-              <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-            </div>
-          </div>
-
-          <div class="featured-side-box target-article-card" data-pub-type="mevzuat" style="background-image: url('assets/mevzuat_notu_thumb.png');">
-            <div class="featured-shade-overlay"></div>
-            <div class="featured-box-content">
-              <span class="tag-blue-badge" style="background: #4f46e5;">MEVZUAT NOTU</span>
-              <div class="meta-time-row">
-                <span>06 Ağustos 2026</span> • <span><i class="fa-regular fa-clock"></i> 5 dk okuma</span>
-              </div>
-              <h3 class="featured-side-h3">HMK 293 Uzman Görüşü: Ne Zaman Etkilidir, Nasıl Hazırlanmalıdır?</h3>
-              <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-            </div>
-          </div>
-
-        </div>
-
+      <!-- DYNAMIC USER ARTICLES GRID (EKLENDİKÇE GÖRÜNECEK YAYINLAR) -->
+      <div id="dynamicArticlesContainer">
+        <div class="cards-3-grid" id="dynamicGrid"></div>
       </div>
 
-      <!-- MAIN DERGİ LAYOUT (LEFT 2/3 CARDS + RIGHT 1/3 SIDEBAR) -->
-      <div class="dergi-main-columns-layout">
-        
-        <!-- LEFT COLUMN: 3 CATEGORY SECTIONS WITH 3 CARDS EACH -->
-        <div>
-          
-          <!-- SECTION 1: VAKA ANALİZLERİ -->
-          <div class="section-group-block" data-section-name="vaka">
-            <div class="dergi-sec-header">
-              <span><i class="fa-solid fa-magnifying-glass-chart" style="color: #38bdf8; margin-right: 8px;"></i> Vaka Analizleri</span>
-              <a href="#" class="dergi-sec-link">Tümünü Gör →</a>
-            </div>
-
-            <div class="cards-3-grid">
-              <div class="art-card-item target-article-card" data-pub-type="vaka">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/vaka_analizi_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">VAKA ANALİZİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">01 Ağustos 2026 • ⏱ 7 dk okuma</div>
-                  <h4 class="art-card-h4">Kaçak Elektrik İddiasında Sayaç Kaydı Tek Başına Yeterli midir?</h4>
-                  <p class="art-card-text">Sayaç kayıtları, yan ölçümler ve abone değişikliklerinin birlikte değerlendirilmesi.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="vaka">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/hero_mockup_bg.jpg');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">VAKA ANALİZİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">28 Temmuz 2026 • ⏱ 6 dk okuma</div>
-                  <h4 class="art-card-h4">Elektrik Yangınında Kısa Devre Sebep mi, Sonuç mu?</h4>
-                  <p class="art-card-text">Yangın izleri, iletken hasarı ve termal bulgular üzerinden zaman ilişkisinin kurulması.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="vaka">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/uzman_makalesi_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">VAKA ANALİZİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">20 Temmuz 2026 • ⏱ 7 dk okuma</div>
-                  <h4 class="art-card-h4">Kaynak Kod Sahipliği Uyuşmazlığında Git Kayıtları Nasıl İncelenir?</h4>
-                  <p class="art-card-text">Commit zinciri, branş yapısı ve zaman damgaları ile sahiplik iddialarının teknik analizi.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SECTION 2: UZMAN MAKALELERİ -->
-          <div class="section-group-block" data-section-name="makale">
-            <div class="dergi-sec-header">
-              <span><i class="fa-solid fa-newspaper" style="color: #38bdf8; margin-right: 8px;"></i> Uzman Makaleleri</span>
-              <a href="#" class="dergi-sec-link">Tümünü Gör →</a>
-            </div>
-
-            <div class="cards-3-grid">
-              <div class="art-card-item target-article-card" data-pub-type="makale">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/mevzuat_notu_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">UZMAN MAKALESİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">03 Ağustos 2026 • ⏱ 6 dk okuma</div>
-                  <h4 class="art-card-h4">Bilirkişi Raporuna Teknik İtirazda En Sık Yapılan Hatalar</h4>
-                  <p class="art-card-text">Eksik inceleme, varsayım ve metodoloji hatalarının itiraz süreçlerindeki etkileri.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="makale">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/vaka_analizi_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">UZMAN MAKALESİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">27 Temmuz 2026 • ⏱ 7 dk okuma</div>
-                  <h4 class="art-card-h4">RES ve HES Performans Uyuşmazlıklarında Kayıp Üretim Analizi</h4>
-                  <p class="art-card-text">Meteorolojik düzeltmeler, referans değerler ve ölçüm belirsizliklerinin değerlendirilmesi.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="makale">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/uzman_makalesi_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">UZMAN MAKALESİ</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">18 Temmuz 2026 • ⏱ 5 dk okuma</div>
-                  <h4 class="art-card-h4">Ransomware Sonrası İlk 24 Saatte Hangi Deliller Toplanmalıdır?</h4>
-                  <p class="art-card-text">Loglar, bellek, ağ trafiği ve yedeklerin güvenli toplanmasına yönelik pratik rehber.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SECTION 3: MEVZUAT & REHBERLER -->
-          <div class="section-group-block" data-section-name="mevzuat">
-            <div class="dergi-sec-header">
-              <span><i class="fa-solid fa-book-bookmark" style="color: #38bdf8; margin-right: 8px;"></i> Mevzuat & Rehberler</span>
-              <a href="#" class="dergi-sec-link">Tümünü Gör →</a>
-            </div>
-
-            <div class="cards-3-grid">
-              <div class="art-card-item target-article-card" data-pub-type="mevzuat">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/mevzuat_notu_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem; background: #4f46e5;">MEVZUAT NOTU</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">02 Ağustos 2026 • ⏱ 5 dk okuma</div>
-                  <h4 class="art-card-h4">CMK 67 Kapsamında Uzman Mütalaasının Sınırları</h4>
-                  <p class="art-card-text">Mütalaanın kapsamı, delil etkisi ve savunma hakkı çerçevesinde değerlendirme.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="mevzuat">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/uzman_makalesi_thumb.png');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem; background: #4f46e5;">MEVZUAT NOTU</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">26 Temmuz 2026 • ⏱ 6 dk okuma</div>
-                  <h4 class="art-card-h4">Dijital Delil Toplamada Chain of Custody Neden Kritik?</h4>
-                  <p class="art-card-text">Zincirleme emanet kaydının bütünlük ve kabul edilebilirlik açısından önemi.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="art-card-item target-article-card" data-pub-type="rehber">
-                <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/hero_mockup_bg.jpg');">
-                  <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem; background: #059669;">REHBER</span>
-                </div>
-                <div class="art-card-content">
-                  <div class="meta-time-row" style="font-size: 0.72rem;">17 Temmuz 2026 • ⏱ 6 dk okuma</div>
-                  <h4 class="art-card-h4">İş Kazalarında Elektriksel Kök Neden Analizi İçin Kontrol Listesi</h4>
-                  <p class="art-card-text">Saha incelemesinden rapora uzanan adım adım kontrol listesi ve örnek form.</p>
-                  <button class="art-card-link-btn open-read-modal">Devamını Oku →</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- RIGHT COLUMN: SIDEBAR WIDGETS (MOCKUP BİREBİR) -->
-        <div>
-          <div class="sidebar-widget-card">
-            <h3 class="sidebar-widget-head">
-              <i class="fa-regular fa-star" style="color: #38bdf8;"></i> Editörün Seçimi
-            </h3>
-            
-            <div>
-              <div class="editor-item-row">
-                <div class="editor-item-img" style="background-image: url('assets/mevzuat_notu_thumb.png');"></div>
-                <div>
-                  <h4 class="editor-item-h4">Raporlama Dilinde Sık Yapılan Hatalar</h4>
-                  <div style="font-size: 0.7rem; color: #64748b;">15 Temmuz 2026 • ⏱ 4 dk</div>
-                  <button class="art-card-link-btn open-read-modal" style="font-size: 0.72rem; margin-top: 2px;">Devamını Oku →</button>
-                </div>
-              </div>
-
-              <div class="editor-item-row">
-                <div class="editor-item-img" style="background-image: url('assets/vaka_analizi_thumb.png');"></div>
-                <div>
-                  <h4 class="editor-item-h4">Bilirkişi Tarafsızlığı: Etik İlkeler ve Uygulama</h4>
-                  <div style="font-size: 0.7rem; color: #64748b;">10 Temmuz 2026 • ⏱ 5 dk</div>
-                  <button class="art-card-link-btn open-read-modal" style="font-size: 0.72rem; margin-top: 2px;">Devamını Oku →</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-widget-card">
-            <h3 class="sidebar-widget-head">
-              <i class="fa-solid fa-book-open" style="color: #38bdf8;"></i> Yayın Serileri
-            </h3>
-            
-            <ul class="series-links-list">
-              <li><a href="#"><span>Yangın Dosyaları</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a></li>
-              <li><a href="#"><span>Dijital Delil Rehberi</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a></li>
-              <li><a href="#"><span>Enerji Uyuşmazlıkları</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a></li>
-              <li><a href="#"><span>Bilirkişi Raporuna İtiraz</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a></li>
-            </ul>
-          </div>
-        </div>
-
+      <!-- EMPTY STATE BOX (HENÜZ YAYIN YOKSA) -->
+      <div id="emptyStateBox" class="empty-state-box" style="display: none;">
+        <i class="fa-solid fa-folder-open" style="font-size: 3rem; color: #38bdf8; margin-bottom: 1rem;"></i>
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Henüz Yayınlanmış Bir Makale Bulunmamaktadır</h3>
+        <p style="font-size: 0.85rem; color: #94a3b8; max-width: 500px; margin: 0 auto 1.5rem auto;">
+          Yönetici panelini kullanarak yeni makale, vaka analizi veya ekli PDF/Word mütalaası ekleyebilirsiniz.
+        </p>
+        <a href="admin.html" class="btn-hero-primary" style="display: inline-flex;"><i class="fa-solid fa-plus"></i> <span>Yayın Ekle (Yönetici Paneli)</span></a>
       </div>
 
-      <!-- BOTTOM CTA BANNER (MOCKUP BİREBİR) -->
-      <div class="bottom-cta-banner">
+      <!-- BOTTOM CTA BANNER -->
+      <div class="bottom-cta-banner" style="margin-top: 4rem;">
         <div class="bottom-cta-left">
           <div class="bottom-cta-icon"><i class="fa-regular fa-comments"></i></div>
           <div>
@@ -825,14 +415,27 @@
     </div>
   </div>
 
-  <!-- ARTICLE READING MODAL -->
+  <!-- ARTICLE READING & PDF/WORD VIEWER MODAL -->
   <div id="readArticleModal" class="modal-overlay">
-    <div class="modal-content" style="background:#0e172c; color:#fff; border:1px solid rgba(56,189,248,0.3); max-width:650px;">
+    <div class="modal-content" style="background:#0e172c; color:#fff; border:1px solid rgba(56,189,248,0.3); max-width:850px; width:95%;">
       <button class="modal-close" id="closeReadingModal"><i class="fa-solid fa-xmark" style="color:#fff;"></i></button>
       <div>
-        <span class="tag-blue-badge" id="readModalTag">YAYIN</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <span class="tag-blue-badge" id="readModalTag">YAYIN</span>
+          <div id="docDownloadBtnBox"></div>
+        </div>
         <h2 style="font-size: 1.4rem; font-weight: 900; color: #fff; margin: 10px 0;" id="readModalTitle">Yayın Başlığı</h2>
         <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.25rem;" id="readModalMeta">Tarih • Okuma Süresi</div>
+        
+        <!-- EMBEDDED PDF / WORD VIEWER CONTAINER -->
+        <div id="documentViewerBox" style="display:none; margin-bottom: 1.5rem; background: #070d1e; border: 1px solid rgba(56,189,248,0.3); border-radius: 8px; overflow: hidden; padding: 10px;">
+          <div id="viewerHeader" style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; padding: 6px 10px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+            <span><i class="fa-solid fa-file-pdf"></i> Ekli Doküman Görüntüleyici</span>
+            <a id="directDownloadLink" href="#" download class="btn-course-outline" style="font-size:0.75rem; padding:4px 10px;"><i class="fa-solid fa-download"></i> Dosyayı İndir</a>
+          </div>
+          <div id="viewerBody" style="min-height: 480px;"></div>
+        </div>
+
         <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;" id="readModalText">
           İçerik yükleniyor...
         </div>
@@ -842,60 +445,273 @@
 
   <script src="app.js"></script>
   <script>
-    // Smooth Filter & Reading Modal Script
+    // INDEXEDDB HELPER FOR RETRIEVING LARGE FILES (5MB, 10MB+)
+    const DB_NAME = 'AdliDocStore';
+    const DB_VERSION = 1;
+
+    function openDocDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains('docs')) {
+            db.createObjectStore('docs');
+          }
+        };
+        req.onsuccess = (e) => resolve(e.target.result);
+        req.onerror = (e) => reject(e.target.error);
+      });
+    }
+
+    async function getDocBlob(id) {
+      try {
+        const db = await openDocDB();
+        return new Promise((resolve) => {
+          const tx = db.transaction('docs', 'readonly');
+          const store = tx.objectStore('docs');
+          const req = store.get(id);
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => resolve(null);
+        });
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // 4 DISTINCT FORENSIC ACCOUNTING / FINANCIAL CALCULATION IMAGES
+    const HESAP_IMAGES = [
+      'assets/hesap_thumb_1.png',
+      'assets/hesap_thumb_2.png',
+      'assets/hesap_thumb_3.png',
+      'assets/hesap_thumb_4.png'
+    ];
+
+    function getTopicImage(uzmanlik, index = 0) {
+      if (uzmanlik === 'hesap') {
+        const idx = Math.abs(index) % HESAP_IMAGES.length;
+        return HESAP_IMAGES[idx];
+      }
+      const TOPIC_IMAGES = {
+        bilisim: 'assets/uzman_makalesi_thumb.png',
+        siber: 'assets/uzman_makalesi_thumb.png',
+        muhendislik: 'assets/vaka_analizi_thumb.png',
+        yangin: 'assets/vaka_analizi_thumb.png',
+        hasar: 'assets/mevzuat_notu_thumb.png',
+        enerji: 'assets/vaka_analizi_thumb.png',
+        hukuk: 'assets/mevzuat_notu_thumb.png',
+        egitim: 'assets/hero_mockup_bg.jpg'
+      };
+      return TOPIC_IMAGES[uzmanlik] || 'assets/vaka_analizi_thumb.png';
+    }
+
+    const CAT_NAME_MAP = {
+      vaka: 'Vaka Analizi',
+      makale: 'Uzman Makalesi',
+      mevzuat: 'Mevzuat Notu',
+      gorus: 'Uzman Görüşü',
+      rehber: 'Rehber'
+    };
+
     document.addEventListener('DOMContentLoaded', () => {
+      let activeType = 'all';
+      let activeCat = 'all';
+
+      // Load Dynamic Articles from localStorage & yayinlar.js
+      const STORAGE_KEY = 'adli_site_articles';
+
+      function getAdminArticles() {
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (stored) {
+            let list = JSON.parse(stored);
+            if (list && list.length > 0) return list;
+          }
+        } catch(e) { console.error(e); }
+
+        if (window.YAYINLAR_DATA && Array.isArray(window.YAYINLAR_DATA)) {
+          return window.YAYINLAR_DATA;
+        }
+        return [];
+      }
+
+      const dynamicGrid = document.getElementById('dynamicGrid');
+      const emptyStateBox = document.getElementById('emptyStateBox');
+
+      function renderArticles() {
+        const adminArts = getAdminArticles();
+
+        if (!adminArts || adminArts.length === 0) {
+          dynamicGrid.style.display = 'none';
+          emptyStateBox.style.display = 'block';
+          emptyStateBox.querySelector('h3').textContent = 'Henüz Yayınlanmış Bir Makale Bulunmamaktadır';
+          return;
+        }
+
+        dynamicGrid.style.display = 'grid';
+        emptyStateBox.style.display = 'none';
+        dynamicGrid.innerHTML = '';
+
+        adminArts.forEach((art, index) => {
+          const docBadgeHTML = (art.fileName || art.hasFile) ? `<span style="background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.3); font-size:0.65rem; font-weight:800; padding:2px 6px; border-radius:4px; margin-left:6px;"><i class="fa-solid fa-file-pdf"></i> DOKÜMAN EKLİ</span>` : '';
+          
+          const coverImg = art.image || getTopicImage(art.uzmanlik || 'bilisim', index);
+          const catLabel = CAT_NAME_MAP[art.category] || art.category || 'YAYIN';
+
+          const card = document.createElement('div');
+          card.className = 'art-card-item target-article-card';
+          card.dataset.artId = art.id;
+          card.dataset.pubType = art.category || 'vaka';
+          card.dataset.pubCat = art.uzmanlik || 'bilisim';
+          card.dataset.fileName = art.fileName || 'dokuman';
+          card.dataset.fullContent = art.content || art.summary;
+
+          card.innerHTML = `
+            <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('${coverImg}');">
+              <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">${catLabel.toUpperCase()} ${docBadgeHTML}</span>
+            </div>
+            <div class="art-card-content">
+              <div class="meta-time-row">${art.date} • ⏱ ${art.readTime}</div>
+              <h4 class="art-card-h4">${art.title}</h4>
+              <p class="art-card-text">${art.summary}</p>
+              <button class="art-card-link-btn open-read-modal">Devamını Oku & Doküman İncele →</button>
+            </div>
+          `;
+          dynamicGrid.appendChild(card);
+        });
+
+        attachReaderListeners();
+        applyDualFilter();
+      }
+
       const typeBtns = document.querySelectorAll('.dergi-pill-btn[data-type]');
-      const cards = document.querySelectorAll('.target-article-card');
-      const sections = document.querySelectorAll('.section-group-block');
+      const catBtns = document.querySelectorAll('.dergi-pill-btn[data-cat]');
+
+      function applyDualFilter() {
+        const adminArts = getAdminArticles();
+        const cards = document.querySelectorAll('.target-article-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardType = card.dataset.pubType || 'all';
+          const cardCat = card.dataset.pubCat || 'all';
+
+          const matchType = (activeType === 'all' || cardType === activeType);
+          const matchCat = (activeCat === 'all' || cardCat === activeCat);
+
+          if (matchType && matchCat) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (adminArts && adminArts.length > 0) {
+          if (visibleCount === 0) {
+            emptyStateBox.style.display = 'block';
+            emptyStateBox.querySelector('h3').textContent = 'Seçilen Filtreye Uygun Yayın Bulunmamaktadır';
+          } else {
+            emptyStateBox.style.display = 'none';
+          }
+        } else {
+          emptyStateBox.style.display = 'block';
+          emptyStateBox.querySelector('h3').textContent = 'Henüz Yayınlanmış Bir Makale Bulunmamaktadır';
+        }
+      }
 
       typeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           typeBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-
-          const type = btn.dataset.type;
-
-          cards.forEach(card => {
-            if (type === 'all' || card.dataset.pubType === type) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          sections.forEach(sec => {
-            if (type === 'all' || sec.dataset.sectionName === type) {
-              sec.style.display = 'block';
-            } else {
-              sec.style.display = 'none';
-            }
-          });
+          activeType = btn.dataset.type;
+          applyDualFilter();
         });
       });
 
-      // Reading Modal
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCat = btn.dataset.cat;
+          applyDualFilter();
+        });
+      });
+
+      // Reading Modal & PDF/Word Viewer Logic
       const readModal = document.getElementById('readArticleModal');
       const closeReadModal = document.getElementById('closeReadingModal');
       const readTitle = document.getElementById('readModalTitle');
       const readMeta = document.getElementById('readModalMeta');
       const readText = document.getElementById('readModalText');
+      
+      const docViewerBox = document.getElementById('documentViewerBox');
+      const viewerBody = document.getElementById('viewerBody');
+      const directDownloadLink = document.getElementById('directDownloadLink');
+      const docDownloadBtnBox = document.getElementById('docDownloadBtnBox');
 
-      document.querySelectorAll('.open-read-modal').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const container = btn.closest('.target-article-card');
-          if (container) {
-            const title = container.querySelector('h2, h3, h4')?.textContent || 'Yayın Detayı';
-            const meta = container.querySelector('.meta-time-row')?.textContent || '';
-            const desc = container.querySelector('.featured-main-excerpt, .art-card-text')?.textContent || '';
+      function attachReaderListeners() {
+        document.querySelectorAll('.open-read-modal').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const container = btn.closest('.target-article-card');
+            if (container) {
+              const artId = container.dataset.artId || '';
+              const title = container.querySelector('h4')?.textContent || 'Yayın Detayı';
+              const meta = container.querySelector('.meta-time-row')?.textContent || '';
+              const desc = container.dataset.fullContent || container.querySelector('.art-card-text')?.textContent || '';
+              const fileName = container.dataset.fileName || 'dokuman';
 
-            readTitle.textContent = title;
-            readMeta.textContent = meta;
-            readText.innerHTML = `<p style="margin-bottom:1.25rem;"><strong>Açıklama & Özet:</strong><br>${desc}</p><p style="line-height:1.7;">Bu teknik yayın adli inceleme kütüphanemizde dijital olarak arşivlenmiştir. Yayına ait tam mütalaa metni, Yargıtay emsal kararları ve teknik ekler hakkında detaylı bilgi almak için kurumumuzla iletişime geçebilirsiniz.</p>`;
-          }
-          readModal.classList.add('active');
+              readTitle.textContent = title;
+              readMeta.textContent = meta;
+              readText.innerHTML = `<p style="margin-bottom:1.25rem;"><strong>Açıklama & Özet:</strong><br>${desc}</p><p style="line-height:1.7;">Bu teknik yayın adli inceleme kütüphanemizde dijital olarak arşivlenmiştir. Yayına ait tam mütalaa metni, Yargıtay emsal kararları ve teknik ekler hakkında detaylı bilgi almak için kurumumuzla iletişime geçebilirsiniz.</p>`;
+
+              // Try getting file from dataset or IndexedDB
+              let fileUrl = container.dataset.fileUrl || '';
+              if (!fileUrl && artId) {
+                fileUrl = await getDocBlob(artId) || '';
+              }
+
+              // PDF & Word Document Viewer Logic
+              if (fileUrl) {
+                docViewerBox.style.display = 'block';
+                directDownloadLink.href = fileUrl;
+                directDownloadLink.download = fileName;
+
+                docDownloadBtnBox.innerHTML = `
+                  <a href="${fileUrl}" download="${fileName}" class="btn-hero-primary" style="padding: 6px 14px; font-size: 0.78rem;">
+                    <i class="fa-solid fa-file-arrow-down"></i> <span>Dokümanı İndir (${fileName})</span>
+                  </a>
+                `;
+
+                // If PDF
+                if (fileUrl.includes('application/pdf') || fileName.toLowerCase().endsWith('.pdf')) {
+                  viewerBody.innerHTML = `
+                    <iframe src="${fileUrl}" width="100%" height="520px" style="border:none; border-radius:8px;"></iframe>
+                  `;
+                } else {
+                  // Word or Other Document
+                  viewerBody.innerHTML = `
+                    <div style="background:#16223b; padding:2rem; text-align:center; border-radius:8px; margin-top:20px;">
+                      <i class="fa-solid fa-file-word" style="font-size:3.5rem; color:#38bdf8; margin-bottom:1rem;"></i>
+                      <h4 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:6px;">${fileName}</h4>
+                      <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.25rem;">Ekli Word dokümanı hazır.</p>
+                      <a href="${fileUrl}" download="${fileName}" class="btn-hero-primary" style="display:inline-flex;">
+                        <i class="fa-solid fa-download"></i> <span>Word Dokümanını İndir</span>
+                      </a>
+                    </div>
+                  `;
+                }
+              } else {
+                docViewerBox.style.display = 'none';
+                docDownloadBtnBox.innerHTML = '';
+              }
+            }
+            readModal.classList.add('active');
+          });
         });
-      });
+      }
+
+      renderArticles();
 
       closeReadModal?.addEventListener('click', () => readModal.classList.remove('active'));
       readModal?.addEventListener('click', (e) => {

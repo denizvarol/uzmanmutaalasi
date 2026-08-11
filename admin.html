@@ -3,61 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yönetici Paneli | UZMAN İNCELEME - Makale & İçerik Yönetimi</title>
+  <title>Yönetici Paneli | UZMAN İNCELEME CMS</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet & Physical Data Script -->
   <link rel="stylesheet" href="style.css">
+  <script src="yayinlar.js"></script>
+
   <style>
-    body { background-color: #070d1e; color: #ffffff; }
-    .admin-card { background: #0e172c; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-    .table-admin { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    .table-admin th, .table-admin td { padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: left; font-size: 0.88rem; }
-    .table-admin th { background: rgba(2, 132, 199, 0.15); color: #38bdf8; font-weight: 700; }
-    .btn-sm-action { padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; border: none; }
+    body { background-color: #040814; color: #ffffff; }
+    .admin-container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+    .admin-card { background: #0e172c; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .admin-header-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .table-admin { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.88rem; }
+    .table-admin th { background: #16223b; color: #38bdf8; text-align: left; padding: 12px; font-weight: 700; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .table-admin td { padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); color: #cbd5e1; }
+    .table-admin tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .badge-cat { background: rgba(2, 132, 199, 0.2); color: #38bdf8; font-size: 0.72rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3); text-transform: uppercase; }
+    .badge-uzm { background: rgba(249, 115, 22, 0.15); color: #f97316; font-size: 0.72rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(249, 115, 22, 0.3); text-transform: uppercase; }
+    .badge-doc { background: rgba(16, 185, 129, 0.15); color: #10b981; font-size: 0.72rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .btn-sm-action { font-size: 0.75rem; padding: 6px 12px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; border: none; }
     .btn-edit { background: #0284c7; color: #fff; }
     .btn-delete { background: #ef4444; color: #fff; }
+    
+    /* Login Overlay */
+    .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #040814; z-index: 10000; display: flex; align-items: center; justify-content: center; }
+    .login-box { background: #0e172c; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; padding: 2.5rem; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 30px rgba(2, 132, 199, 0.2); }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container navbar">
-      <a href="index.html" class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-gear"></i></div>
-        <div class="logo-title-group">
-          <span class="logo-main-text">YÖNETİCİ PANELİ</span>
-          <span class="logo-sub-text">UZMAN İNCELEME CMS</span>
-        </div>
-      </a>
-      <a href="index.html" class="btn-hero-secondary" style="padding: 8px 16px; font-size: 0.85rem;"><i class="fa-solid fa-arrow-left"></i> Siteye Dön</a>
-    </div>
-  </header>
-
-  <!-- Login Overlay -->
-  <div id="loginOverlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #070d1e; z-index: 9999; display: flex; align-items: center; justify-content: center;">
-    <div style="background: #0e172c; border: 1px solid rgba(56, 189, 248, 0.3); padding: 2.5rem; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-      <i class="fa-solid fa-user-shield" style="font-size: 3rem; color: #38bdf8; margin-bottom: 1rem;"></i>
-      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Yönetici Girişi</h2>
-      <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.5rem;">Varsayılan PIN koda (1234) girerek oturum açın.</p>
+  <!-- LOGIN OVERLAY -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-box">
+      <div class="logo-icon" style="margin: 0 auto 1rem auto; width: 56px; height: 56px; font-size: 1.6rem;"><i class="fa-solid fa-lock"></i></div>
+      <h2 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 6px;">YÖNETİCİ GİRİŞİ</h2>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem;">İçerik yönetim sistemine erişmek için PIN kodunuzu girin.</p>
       <form id="loginForm">
-        <input type="password" id="pinInput" class="form-input" placeholder="PIN Kodu Girin (1234)" style="text-align: center; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 1rem;" required>
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center;">Giriş Yap</button>
+        <div class="form-group">
+          <input type="password" id="pinInput" class="form-input" placeholder="PIN Kodu (Varsayılan: 1234)" style="text-align: center; letter-spacing: 4px; font-size: 1.2rem;" required>
+        </div>
+        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 12px;"><span>Sisteme Giriş Yap</span> <i class="fa-solid fa-right-to-bracket"></i></button>
       </form>
     </div>
   </div>
 
-  <!-- Admin Main Dashboard Container -->
-  <main class="container" style="padding: 3rem 1.5rem;">
+  <!-- MAIN ADMIN CONTENT -->
+  <main class="admin-container">
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+    <!-- Top Header -->
+    <div class="admin-header-bar">
       <div>
-        <h1 style="font-size: 1.8rem; font-weight: 900;">Yayın & Makale Yönetim Paneli</h1>
-        <p style="font-size: 0.9rem; color: #94a3b8;">Dergi & Yayınlar sayfasındaki makaleleri ekleyin, düzenleyin veya silin.</p>
+        <a href="index.html" class="logo" style="margin-bottom: 4px;">
+          <div class="logo-icon" style="width: 36px; height: 36px; font-size: 1rem;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <span class="logo-main-text" style="font-size: 1rem;">UZMAN İNCELEME CMS</span>
+        </a>
+        <p style="font-size: 0.8rem; color: #94a3b8;">Fiziksel Dosya Destekli İçerik Giriş Portalı (yayinlar.js)</p>
       </div>
-      <button id="btnNewArticle" class="btn-hero-primary"><i class="fa-solid fa-plus"></i> <span>Yeni Yayın Ekle</span></button>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button id="btnExportJs" class="btn-hero-secondary" style="background: rgba(16,185,129,0.2); border-color: #10b981; color: #10b981; padding: 8px 14px; font-size: 0.8rem;"><i class="fa-solid fa-download"></i> <span>yayinlar.js Kaydet</span></button>
+        <button id="btnClearAll" class="btn-hero-secondary" style="background: rgba(239,68,68,0.2); border-color: #ef4444; color: #ef4444; padding: 8px 14px; font-size: 0.8rem;"><i class="fa-solid fa-trash-can"></i> <span>Tüm Yayınları Temizle</span></button>
+        <a href="makaleler.html" target="_blank" class="btn-hero-secondary" style="padding: 8px 16px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> <span>Dergiyi Gör</span></a>
+        <button id="btnNewArticle" class="btn-hero-primary"><i class="fa-solid fa-plus"></i> <span>Yeni Yayın Ekle</span></button>
+      </div>
     </div>
 
     <!-- Article Editor Form (New / Edit) -->
@@ -68,15 +82,18 @@
       
       <form id="articleForm">
         <input type="hidden" id="articleId">
+        <input type="hidden" id="artFileUrl">
+        <input type="hidden" id="artFileName">
         
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;" class="form-group">
+        <div class="form-group">
+          <label class="form-label" style="color: #fff;">Yayın Başlığı (*Zorunlu)</label>
+          <input type="text" id="artTitle" class="form-input" placeholder="Örn: HMK 293 Uzman Görüşünde Dikkat Edilecek Unsurlar">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr;" class="form-group">
           <div>
-            <label class="form-label" style="color: #fff;">Yayın Başlığı</label>
-            <input type="text" id="artTitle" class="form-input" placeholder="Örn: HMK 293 Uzman Görüşünde Dikkat Edilecek Unsurlar" required>
-          </div>
-          <div>
-            <label class="form-label" style="color: #fff;">Yayın Türü</label>
-            <select id="artCategory" class="form-select" required>
+            <label class="form-label" style="color: #fff;">1. Yayın Türü Seçimi</label>
+            <select id="artCategory" class="form-select">
               <option value="vaka">Vaka Analizi</option>
               <option value="makale">Uzman Makalesi</option>
               <option value="mevzuat">Mevzuat Notu</option>
@@ -84,36 +101,59 @@
               <option value="rehber">Rehber</option>
             </select>
           </div>
+
+          <div>
+            <label class="form-label" style="color: #fff;">2. Uzmanlık Alanı Seçimi</label>
+            <select id="artUzmanlik" class="form-select">
+              <option value="bilisim">💻 Adli Bilişim & Dijital Deliller</option>
+              <option value="siber">🛡️ Siber Güvenlik & Dijital Dolandırıcılık</option>
+              <option value="muhendislik">⚙️ Adli Mühendislik (Elektrik & Elektronik)</option>
+              <option value="yangin">🔥 Yangın & Teknik Kök Neden Analizi</option>
+              <option value="hasar">📄 Hasar, Sigorta Uyuşmazlıkları</option>
+              <option value="enerji">⚡ Enerji Sistemleri (GES/RES/HES)</option>
+              <option value="hesap">🧮 Adli Hesap Uzmanlığı</option>
+              <option value="hukuk">⚖️ Hukuksal & Avukatlık Desteği</option>
+              <option value="egitim">🎓 Eğitim & Danışmanlık</option>
+            </select>
+          </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 1rem;" class="form-group">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr;" class="form-group">
           <div>
             <label class="form-label" style="color: #fff;">Yayın Tarihi</label>
-            <input type="text" id="artDate" class="form-input" placeholder="Örn: 10 Ağustos 2026" required>
+            <input type="text" id="artDate" class="form-input" placeholder="Örn: 11 Ağustos 2026">
           </div>
           <div>
             <label class="form-label" style="color: #fff;">Okuma Süresi</label>
-            <input type="text" id="artReadTime" class="form-input" placeholder="Örn: 6 dk okuma" required>
+            <input type="text" id="artReadTime" class="form-input" placeholder="Örn: 6 dk okuma">
           </div>
           <div>
-            <label class="form-label" style="color: #fff;">Kapak Görseli URL (İsteğe Bağlı)</label>
-            <input type="text" id="artImage" class="form-input" placeholder="assets/vaka_analizi_thumb.png">
+            <label class="form-label" style="color: #fff;">Kapak Görseli (İsteğe Bağlı Özel Fotoğraf / Boşsa Otomatik)</label>
+            <input type="text" id="artImage" class="form-input" placeholder="Boş bırakırsanız konusuna göre fotoğraf otomatik atanır">
           </div>
+        </div>
+
+        <!-- PDF & WORD FILE ATTACHMENT SECTION -->
+        <div class="form-group" style="background: rgba(56, 189, 248, 0.05); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 1.25rem;">
+          <label class="form-label" style="color: #38bdf8; font-weight: 800;"><i class="fa-solid fa-paperclip"></i> PDF veya Word Dokümanı Ekleyin (.pdf, .docx, .doc)</label>
+          <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 8px;">Yayının tam metnini veya ekli belgesini yükleyin. Dosya IndexedDB hafızasında saklanır.</p>
+          <input type="file" id="artFileInput" accept=".pdf,.doc,.docx" class="form-input" style="padding: 6px;">
+          <div id="fileUploadStatus" style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; margin-top: 8px; display: none;"></div>
         </div>
 
         <div class="form-group">
           <label class="form-label" style="color: #fff;">Kısa Özet (Kartlarda Görünecek Metin)</label>
-          <textarea id="artSummary" class="form-textarea" rows="2" placeholder="Yayının 1-2 cümlelik kısa özeti..." required></textarea>
+          <textarea id="artSummary" class="form-textarea" rows="2" placeholder="Yayının 1-2 cümlelik kısa özeti..."></textarea>
         </div>
 
         <div class="form-group">
           <label class="form-label" style="color: #fff;">Detaylı Yayın Metni / Makale İçeriği</label>
-          <textarea id="artContent" class="form-textarea" rows="6" placeholder="Makalenin tüm paragraf ve detay metinlerini buraya girin..." required></textarea>
+          <textarea id="artContent" class="form-textarea" rows="6" placeholder="Makalenin tüm paragraf ve detay metinlerini buraya girin..."></textarea>
         </div>
 
         <div style="display: flex; gap: 10px; justify-content: flex-end;">
           <button type="button" id="btnCancelForm" class="btn-hero-secondary">İptal</button>
-          <button type="submit" class="btn-hero-primary"><i class="fa-solid fa-floppy-disk"></i> <span>Yayını Kaydet & Yayınla</span></button>
+          <button type="submit" id="btnSaveArticle" class="btn-hero-primary"><i class="fa-solid fa-floppy-disk"></i> <span>Yayını Kaydet & Yayınla</span></button>
         </div>
       </form>
     </div>
@@ -130,8 +170,9 @@
             <th>#</th>
             <th>Başlık</th>
             <th>Yayın Türü</th>
+            <th>Uzmanlık Alanı</th>
+            <th>Ekli Dosya</th>
             <th>Tarih</th>
-            <th>Okuma Süresi</th>
             <th style="text-align: right;">İşlemler</th>
           </tr>
         </thead>
@@ -144,6 +185,65 @@
   </main>
 
   <script>
+    // INDEXEDDB HELPER FOR LARGE FILES (5MB, 10MB+)
+    const DB_NAME = 'AdliDocStore';
+    const DB_VERSION = 1;
+
+    function openDocDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains('docs')) {
+            db.createObjectStore('docs');
+          }
+        };
+        req.onsuccess = (e) => resolve(e.target.result);
+        req.onerror = (e) => reject(e.target.error);
+      });
+    }
+
+    async function saveDocBlob(id, fileDataUrl) {
+      try {
+        const db = await openDocDB();
+        return new Promise((resolve, reject) => {
+          const tx = db.transaction('docs', 'readwrite');
+          const store = tx.objectStore('docs');
+          const req = store.put(fileDataUrl, id);
+          req.onsuccess = () => resolve(true);
+          req.onerror = (e) => reject(e.target.error);
+        });
+      } catch (e) {
+        console.error('IndexedDB Error:', e);
+      }
+    }
+
+    // 4 DISTINCT FORENSIC ACCOUNTING / FINANCIAL CALCULATION IMAGES
+    const HESAP_IMAGES = [
+      'assets/hesap_thumb_1.png',
+      'assets/hesap_thumb_2.png',
+      'assets/hesap_thumb_3.png',
+      'assets/hesap_thumb_4.png'
+    ];
+
+    function getTopicImage(uzmanlik, index = 0) {
+      if (uzmanlik === 'hesap') {
+        const idx = Math.abs(index) % HESAP_IMAGES.length;
+        return HESAP_IMAGES[idx];
+      }
+      const TOPIC_IMAGES = {
+        bilisim: 'assets/uzman_makalesi_thumb.png',
+        siber: 'assets/uzman_makalesi_thumb.png',
+        muhendislik: 'assets/vaka_analizi_thumb.png',
+        yangin: 'assets/vaka_analizi_thumb.png',
+        hasar: 'assets/mevzuat_notu_thumb.png',
+        enerji: 'assets/vaka_analizi_thumb.png',
+        hukuk: 'assets/mevzuat_notu_thumb.png',
+        egitim: 'assets/hero_mockup_bg.jpg'
+      };
+      return TOPIC_IMAGES[uzmanlik] || 'assets/vaka_analizi_thumb.png';
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       // 1. PIN Check
       const loginOverlay = document.getElementById('loginOverlay');
@@ -159,59 +259,54 @@
         }
       });
 
-      // 2. LocalStorage Articles Management
+      // 2. LocalStorage & yayinlar.js Synchronization
       const STORAGE_KEY = 'adli_site_articles';
-      
-      const INITIAL_ARTICLES = [
-        {
-          id: 'art-1',
-          title: 'GES Yangınlarında Teknik Kök Neden: İnverter, DC Ark, Kablo mu?',
-          category: 'vaka',
-          date: '12 Ağustos 2026',
-          readTime: '8 dk okuma',
-          image: 'assets/vaka_analizi_thumb.png',
-          summary: 'Gerçek vakadan hareketle inverter arızaları, DC ark oluşumu ve kablo bağlantı noktalarındaki ısınmaların ayırıcı bulgularla değerlendirilmesi.',
-          content: 'GES santrallerinde meydana gelen yangınlarda kök neden analizi yapılırken inverter, DC birleştirme kutuları, kablo konektörleri ve pano içi izolasyon hataları detaylı olarak incelenmektedir.'
-        },
-        {
-          id: 'art-2',
-          title: 'Dijital Delilin Değişmediği Nasıl Kanıtlanır? Hash ve Delil Bütünlüğü',
-          category: 'makale',
-          date: '09 Ağustos 2026',
-          readTime: '6 dk okuma',
-          image: 'assets/uzman_makalesi_thumb.png',
-          summary: 'Hash algoritmaları, imaj alma yöntemleri ve delil zinciri yönetimi üzerine teknik bir rehber.',
-          content: 'Adli bilişim incelemelerinde SHA-256 ve MD5 hash değerlerinin zaman damgasıyla eşleştirilmesi delil güvenilirliğini sağlar.'
-        },
-        {
-          id: 'art-3',
-          title: 'HMK 293 Uzman Görüşü: Ne Zaman Etkilidir, Nasıl Hazırlanmalıdır?',
-          category: 'mevzuat',
-          date: '06 Ağustos 2026',
-          readTime: '5 dk okuma',
-          image: 'assets/mevzuat_notu_thumb.png',
-          summary: 'Yargı kararları ışığında HMK 293 kapsamındaki uzman görüşünün dava sürecindeki rolü.',
-          content: 'Tarafça sunulan bilimsel uzman mütalaalarının mahkemelerce mahiyeti ve mahkeme bilirkişi raporuyla olan çelişkilerin giderilmesi usulü.'
-        }
-      ];
 
       function getArticles() {
         try {
           const stored = localStorage.getItem(STORAGE_KEY);
-          if (stored) return JSON.parse(stored);
+          if (stored) {
+            let list = JSON.parse(stored);
+            if (list && list.length > 0) return list;
+          }
         } catch (e) {
           console.error(e);
         }
-        return INITIAL_ARTICLES;
+        // Fallback to window.YAYINLAR_DATA from yayinlar.js
+        if (window.YAYINLAR_DATA && Array.isArray(window.YAYINLAR_DATA)) {
+          return window.YAYINLAR_DATA;
+        }
+        return [];
       }
 
       function saveArticles(articles) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
+        window.YAYINLAR_DATA = articles;
         renderTable();
       }
 
+      // Export yayinlar.js helper
+      const btnExportJs = document.getElementById('btnExportJs');
+      btnExportJs?.addEventListener('click', () => {
+        const articles = getArticles();
+        const content = `/**
+ * UZMAN İNCELEME - FİZİKSEL YAYINLAR VERİ DOSYASI
+ * C:\\Users\\User\\Desktop\\Projeler\\Danışmanlık\\yayinlar.js
+ */
+
+window.YAYINLAR_DATA = ${JSON.stringify(articles, null, 2)};
+`;
+        const blob = new Blob([content], { type: 'application/javascript' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'yayinlar.js';
+        a.click();
+        alert('yayinlar.js dosyası indirildi! Bu dosyayı C:\\Users\\User\\Desktop\\Projeler\\Danışmanlık\\ klasöründeki yayinlar.js dosyasıyla değiştirebilirsiniz.');
+      });
+
       // DOM Elements
       const btnNewArticle = document.getElementById('btnNewArticle');
+      const btnClearAll = document.getElementById('btnClearAll');
       const articleFormBox = document.getElementById('articleFormBox');
       const articleForm = document.getElementById('articleForm');
       const btnCancelForm = document.getElementById('btnCancelForm');
@@ -221,36 +316,99 @@
       const artId = document.getElementById('articleId');
       const artTitle = document.getElementById('artTitle');
       const artCategory = document.getElementById('artCategory');
+      const artUzmanlik = document.getElementById('artUzmanlik');
       const artDate = document.getElementById('artDate');
       const artReadTime = document.getElementById('artReadTime');
       const artImage = document.getElementById('artImage');
+      const artFileInput = document.getElementById('artFileInput');
+      const artFileUrl = document.getElementById('artFileUrl');
+      const artFileName = document.getElementById('artFileName');
+      const fileUploadStatus = document.getElementById('fileUploadStatus');
       const artSummary = document.getElementById('artSummary');
       const artContent = document.getElementById('artContent');
+
+      // Clear All Button
+      btnClearAll.addEventListener('click', () => {
+        if (confirm('Tüm yayınları silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.')) {
+          saveArticles([]);
+          alert('Tüm yayınlar başarıyla temizlendi.');
+        }
+      });
+
+      // File Reader Logic for Base64 DataURL
+      artFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          fileUploadStatus.style.display = 'block';
+          fileUploadStatus.style.color = '#eab308';
+          fileUploadStatus.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <strong>${file.name}</strong> (${(file.size / (1024 * 1024)).toFixed(2)} MB) işleniyor...`;
+
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            artFileUrl.value = evt.target.result;
+            artFileName.value = file.name;
+            fileUploadStatus.style.color = '#10b981';
+            fileUploadStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>${file.name}</strong> (${(file.size / (1024 * 1024)).toFixed(2)} MB) hazır!`;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
 
       btnNewArticle.addEventListener('click', () => {
         articleForm.reset();
         artId.value = '';
+        artFileUrl.value = '';
+        artFileName.value = '';
+        artImage.value = '';
+        fileUploadStatus.style.display = 'none';
+
+        // Auto-fill today's date & default read time
+        artDate.value = '11 Ağustos 2026';
+        artReadTime.value = '5 dk okuma';
+
         formTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Yeni Yayın Girişi';
         articleFormBox.style.display = 'block';
+        window.scrollTo({ top: articleFormBox.offsetTop - 80, behavior: 'smooth' });
       });
 
       btnCancelForm.addEventListener('click', () => {
         articleFormBox.style.display = 'none';
       });
 
-      articleForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+      async function handleSaveArticle(e) {
+        if (e) e.preventDefault();
+        
+        const titleVal = artTitle.value.trim();
+        if (!titleVal) {
+          alert('Lütfen bir Yayın Başlığı yazın.');
+          artTitle.focus();
+          return;
+        }
+
+        const currentId = artId.value || 'art-' + Date.now();
         const articles = getArticles();
 
+        // If file DataURL exists, save heavy file into IndexedDB
+        if (artFileUrl.value) {
+          await saveDocBlob(currentId, artFileUrl.value);
+        }
+
+        const selectedUzmanlik = artUzmanlik.value || 'bilisim';
+        const userProvidedImage = artImage.value.trim();
+        const finalImage = userProvidedImage || getTopicImage(selectedUzmanlik, articles.length);
+
         const newObj = {
-          id: artId.value || 'art-' + Date.now(),
-          title: artTitle.value,
-          category: artCategory.value,
-          date: artDate.value,
-          readTime: artReadTime.value,
-          image: artImage.value || 'assets/vaka_analizi_thumb.png',
-          summary: artSummary.value,
-          content: artContent.value
+          id: currentId,
+          title: titleVal,
+          category: artCategory.value || 'vaka',
+          uzmanlik: selectedUzmanlik,
+          date: artDate.value.trim() || '11 Ağustos 2026',
+          readTime: artReadTime.value.trim() || '5 dk okuma',
+          image: finalImage,
+          fileName: artFileName.value || '',
+          hasFile: !!artFileName.value,
+          summary: artSummary.value.trim() || titleVal,
+          content: artContent.value.trim() || artSummary.value.trim() || titleVal
         };
 
         if (artId.value) {
@@ -262,55 +420,95 @@
 
         saveArticles(articles);
         articleFormBox.style.display = 'none';
-        alert('Yayın başarıyla kaydedildi!');
+        articleForm.reset();
+        
+        alert('✅ Yayınınız başarıyla kaydedildi! Dilerseniz sağ üstteki "yayinlar.js Kaydet" butonuna basarak fiziksel yayinlar.js dosyanızı güncelleyebilirsiniz.');
+        window.scrollTo({ top: articlesTableBody.offsetTop - 120, behavior: 'smooth' });
+      }
+
+      articleForm.addEventListener('submit', handleSaveArticle);
+      const btnSaveArticle = document.getElementById('btnSaveArticle');
+      btnSaveArticle?.addEventListener('click', (e) => {
+        handleSaveArticle(e);
       });
+
+      const CAT_MAP = {
+        vaka: 'Vaka Analizi',
+        makale: 'Uzman Makalesi',
+        mevzuat: 'Mevzuat Notu',
+        gorus: 'Uzman Görüşü',
+        rehber: 'Rehber'
+      };
+
+      const UZM_MAP = {
+        bilisim: 'Adli Bilişim',
+        siber: 'Siber Güvenlik',
+        muhendislik: 'Adli Mühendislik',
+        yangin: 'Yangın',
+        hasar: 'Hasar & Sigorta',
+        enerji: 'Enerji',
+        hesap: 'Adli Hesap',
+        hukuk: 'Hukuksal Süreç',
+        egitim: 'Eğitim'
+      };
 
       function renderTable() {
         const articles = getArticles();
         articlesTableBody.innerHTML = '';
 
-        const typeLabels = {
-          vaka: 'Vaka Analizi',
-          makale: 'Uzman Makalesi',
-          mevzuat: 'Mevzuat Notu',
-          gorus: 'Uzman Görüşü',
-          rehber: 'Rehber'
-        };
+        if (articles.length === 0) {
+          articlesTableBody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 2rem; color: #94a3b8;">Henüz kayıtlı bir yayın bulunmamaktadır. "Yeni Yayın Ekle" butonuna basarak ilk yayınınızı girebilirsiniz.</td></tr>';
+          return;
+        }
 
-        articles.forEach((item, index) => {
+        articles.forEach((art, index) => {
           const tr = document.createElement('tr');
+          const docBadge = (art.fileName || art.hasFile) ? `<span class="badge-doc"><i class="fa-solid fa-file-pdf"></i> ${art.fileName ? art.fileName.substring(0, 15) : 'Doküman Ekli'}...</span>` : '<span style="color:#64748b;">Yok</span>';
+
           tr.innerHTML = `
-            <td><strong>${index + 1}</strong></td>
-            <td><strong>${item.title}</strong></td>
-            <td><span class="badge-tag-blue" style="font-size:0.65rem;">${typeLabels[item.category] || item.category}</span></td>
-            <td>${item.date}</td>
-            <td>${item.readTime}</td>
+            <td>${index + 1}</td>
+            <td style="font-weight: 700; color: #fff;">${art.title}</td>
+            <td><span class="badge-cat">${CAT_MAP[art.category] || art.category}</span></td>
+            <td><span class="badge-uzm">${UZM_MAP[art.uzmanlik] || art.uzmanlik || 'Genel'}</span></td>
+            <td>${docBadge}</td>
+            <td>${art.date}</td>
             <td style="text-align: right;">
-              <button class="btn-sm-action btn-edit" data-id="${item.id}"><i class="fa-solid fa-pen"></i> Düzenle</button>
-              <button class="btn-sm-action btn-delete" data-id="${item.id}"><i class="fa-solid fa-trash"></i> Sil</button>
+              <button class="btn-sm-action btn-edit" data-id="${art.id}"><i class="fa-solid fa-pen"></i> Düzenle</button>
+              <button class="btn-sm-action btn-delete" data-id="${art.id}"><i class="fa-solid fa-trash"></i> Sil</button>
             </td>
           `;
           articlesTableBody.appendChild(tr);
         });
 
-        // Add Edit & Delete Event Listeners
+        // Add Edit & Delete Listeners
         document.querySelectorAll('.btn-edit').forEach(btn => {
           btn.addEventListener('click', () => {
             const id = btn.dataset.id;
-            const item = getArticles().find(a => a.id === id);
-            if (item) {
-              artId.value = item.id;
-              artTitle.value = item.title;
-              artCategory.value = item.category;
-              artDate.value = item.date;
-              artReadTime.value = item.readTime;
-              artImage.value = item.image;
-              artSummary.value = item.summary;
-              artContent.value = item.content;
+            const articles = getArticles();
+            const art = articles.find(a => a.id === id);
+            if (art) {
+              artId.value = art.id;
+              artTitle.value = art.title;
+              artCategory.value = art.category;
+              artUzmanlik.value = art.uzmanlik || 'bilisim';
+              artDate.value = art.date;
+              artReadTime.value = art.readTime;
+              artImage.value = art.image || '';
+              artFileName.value = art.fileName || '';
+              artSummary.value = art.summary;
+              artContent.value = art.content;
 
-              formTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Yayın Düzenle';
+              if (art.fileName) {
+                fileUploadStatus.style.display = 'block';
+                fileUploadStatus.style.color = '#10b981';
+                fileUploadStatus.innerHTML = `<i class="fa-solid fa-paperclip"></i> Ekli Dosya: <strong>${art.fileName}</strong>`;
+              } else {
+                fileUploadStatus.style.display = 'none';
+              }
+
+              formTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Yayını Düzenle';
               articleFormBox.style.display = 'block';
-              window.scrollTo({ top: 150, behavior: 'smooth' });
+              window.scrollTo({ top: articleFormBox.offsetTop - 80, behavior: 'smooth' });
             }
           });
         });
@@ -319,14 +517,15 @@
           btn.addEventListener('click', () => {
             const id = btn.dataset.id;
             if (confirm('Bu yayını silmek istediğinizden emin misiniz?')) {
-              const articles = getArticles().filter(a => a.id !== id);
+              let articles = getArticles();
+              articles = articles.filter(a => a.id !== id);
               saveArticles(articles);
             }
           });
         });
       }
 
-      // Initial Table Render
+      // Initial Render
       renderTable();
     });
   </script>
