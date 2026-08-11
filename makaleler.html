@@ -16,8 +16,11 @@
   <link rel="stylesheet" href="style.css">
   <script src="yayinlar.js"></script>
 
+  <!-- PDF.js Library for Cinematic Fullscreen PDF Reader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
   <style>
-    /* Dedicated Rock-Solid Styles for Dergi & Yayınlar Page */
+    /* Dedicated Styles for Dergi & Yayınlar Page */
     .dergi-banner-hero {
       position: relative;
       background-color: #070d1e;
@@ -197,7 +200,213 @@
       color: #cbd5e1;
     }
 
+    /* -------------------------------------------------------------
+       CINEMATIC FULLSCREEN PDF READER STYLES
+       ------------------------------------------------------------- */
+    .cine-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(4, 8, 20, 0.96);
+      backdrop-filter: blur(16px);
+      z-index: 10000;
+      display: none;
+    }
+
+    .cine-overlay.active {
+      display: flex;
+    }
+
+    .cine-layout {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      overflow: hidden;
+    }
+
+    .cine-sidebar {
+      background: #091124;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .cine-sidebar-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cine-badge {
+      background: #0284c7;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .cine-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .cine-meta {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cine-summary-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .cine-toc-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cine-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cine-toc-item {
+      background: rgba(14, 23, 44, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .cine-toc-item:hover, .cine-toc-item.active {
+      background: #0284c7;
+      color: #fff;
+      border-color: #38bdf8;
+    }
+
+    .cine-main {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: #040814;
+    }
+
+    .cine-topbar {
+      background: #0e172c;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cine-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cine-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .cine-btn:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+    }
+
+    .cine-viewer-container {
+      flex-grow: 1;
+      overflow: auto;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .cine-canvas-box {
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      background: #ffffff;
+      max-width: 100%;
+    }
+
+    .cine-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(14, 23, 44, 0.9);
+      color: #ffffff;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+
+    .cine-nav-btn:hover {
+      background: #0284c7;
+      border-color: #38bdf8;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .cine-nav-btn.prev { left: 2rem; }
+    .cine-nav-btn.next { right: 2rem; }
+
     @media (max-width: 992px) {
+      .cine-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+      .cine-sidebar { display: none; }
       .cards-3-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -400,46 +609,68 @@
   <!-- WhatsApp Widget & Upload Modal -->
   <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <div id="uploadModal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up" style="color: #0284c7;"></i> Hızlı Mütalaa & Dosya Gönder</h3>
-      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.25rem;">Dijital delillerinizi ve dava dosyanızı yükleyin, uzmanlarımız 24 saat içinde incelesin.</p>
-      <form id="modalForm">
-        <div class="form-group"><label class="form-label">Uzmanlık Alanı Seçin</label><select class="form-select" required><option>1. Adli Bilişim & Dijital Deliller</option><option>2. Siber Güvenlik & Dijital Dolandırıcılık</option><option>3. Adli Mühendislik (Elektrik)</option><option>4. Yangın & Teknik Kök Neden Analizi</option><option>5. Hasar, Sigorta Uyuşmazlıkları</option><option>6. Enerji Sistemleri</option><option>7. Adli Hesap Uzmanlığı</option><option>8. Özel Raporlama & Mütalaa</option><option>9. Hukuksal & Avukatlık Desteği</option><option>10. Eğitim & Danışmanlık</option></select></div>
-        <div class="form-group"><label class="form-label">Ad Soyad / Baro No / Şirket Adı</label><input type="text" class="form-input" placeholder="Av. Ad Soyad / Şirket Adı" required></div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="form-group"><div><label class="form-label">Telefon Numarası</label><input type="tel" class="form-input" placeholder="05XX XXX XX XX" required></div><div><label class="form-label">E-posta Adresi</label><input type="email" class="form-input" placeholder="avukat@ornek.com" required></div></div>
-        <div class="form-group"><label class="form-label">Dava Evrakı / Dijital Delil Dosyası</label><div style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 1.25rem; text-align: center; background: #f8fafc; cursor: pointer;"><i class="fa-solid fa-file-arrow-up" style="font-size: 1.8rem; color: #0284c7; margin-bottom: 6px;"></i><div style="font-size: 0.85rem; font-weight: 600; color: #0f172a;">Dosya seçin veya buraya bırakın</div><div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">PDF, Log, HTS, Excel, İmaj (Maks 100MB UYAP Uyumlu)</div></div></div>
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 14px;"><span>GÜVENLİ GÖNDER VE İNCELEME AL</span><i class="fa-solid fa-paper-plane"></i></button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ARTICLE READING & PDF/WORD VIEWER MODAL -->
-  <div id="readArticleModal" class="modal-overlay">
-    <div class="modal-content" style="background:#0e172c; color:#fff; border:1px solid rgba(56,189,248,0.3); max-width:850px; width:95%;">
-      <button class="modal-close" id="closeReadingModal"><i class="fa-solid fa-xmark" style="color:#fff;"></i></button>
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-          <span class="tag-blue-badge" id="readModalTag">YAYIN</span>
-          <div id="docDownloadBtnBox"></div>
-        </div>
-        <h2 style="font-size: 1.4rem; font-weight: 900; color: #fff; margin: 10px 0;" id="readModalTitle">Yayın Başlığı</h2>
-        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.25rem;" id="readModalMeta">Tarih • Okuma Süresi</div>
-        
-        <!-- EMBEDDED PDF / WORD VIEWER CONTAINER -->
-        <div id="documentViewerBox" style="display:none; margin-bottom: 1.5rem; background: #070d1e; border: 1px solid rgba(56,189,248,0.3); border-radius: 8px; overflow: hidden; padding: 10px;">
-          <div id="viewerHeader" style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; padding: 6px 10px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
-            <span><i class="fa-solid fa-file-pdf"></i> Ekli Doküman Görüntüleyici</span>
-            <a id="directDownloadLink" href="#" download class="btn-course-outline" style="font-size:0.75rem; padding:4px 10px;"><i class="fa-solid fa-download"></i> Dosyayı İndir</a>
+  <!-- CINEMATIC FULLSCREEN PDF READER MODAL -->
+  <div id="cinematicModal" class="cine-overlay">
+    <div class="cine-layout">
+      
+      <!-- Left Sidebar (TOC & Publication Meta) -->
+      <aside class="cine-sidebar">
+        <div class="cine-sidebar-top">
+          <span class="cine-badge" id="cineBadge">YAYIN İNCELEME</span>
+          <h2 class="cine-title" id="cineTitle">Yayın Başlığı</h2>
+          <div class="cine-meta" id="cineMeta">Tarih • Okuma Süresi</div>
+          
+          <div class="cine-summary-card" id="cineSummary">
+            Makale özeti burada görüntülenecektir...
           </div>
-          <div id="viewerBody" style="min-height: 480px;"></div>
+
+          <div>
+            <div class="cine-toc-title"><i class="fa-solid fa-list-ol"></i> İçindekiler & Sayfalar</div>
+            <ul class="cine-toc-list" id="cineTocList">
+              <li class="cine-toc-item active" data-page="1"><span>Sayfa 1: Giriş ve Özet</span> <i class="fa-solid fa-chevron-right"></i></li>
+            </ul>
+          </div>
         </div>
 
-        <div style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;" id="readModalText">
-          İçerik yükleniyor...
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1rem;">
+          <a id="cineDownloadBtn" href="#" download class="btn-hero-primary" style="justify-content: center; padding: 10px; font-size: 0.8rem;">
+            <i class="fa-solid fa-file-arrow-down"></i> <span>Dokümanı İndir</span>
+          </a>
+          <button class="btn-hero-secondary trigger-modal" style="justify-content: center; padding: 10px; font-size: 0.8rem;">
+            <i class="fa-solid fa-comments"></i> <span>Uzman Mütalaası İste</span>
+          </button>
         </div>
-      </div>
+      </aside>
+
+      <!-- Main Workspace -->
+      <main class="cine-main">
+        <!-- Topbar -->
+        <div class="cine-topbar">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #38bdf8;" id="cinePageCounter">Sayfa 1 / 1</span>
+
+          <div class="cine-controls">
+            <button class="cine-btn" id="cineZoomOut"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <button class="cine-btn" id="cineZoomIn"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button class="cine-btn" id="cineClose" style="background:#ef4444; color:#fff; border-color:#ef4444;"><i class="fa-solid fa-xmark"></i> <span>Kapat</span></button>
+          </div>
+        </div>
+
+        <!-- Viewer Canvas Box -->
+        <div class="cine-viewer-container" id="cineViewerContainer">
+          <button class="cine-nav-btn prev" id="cinePrevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+          
+          <div class="cine-canvas-box">
+            <canvas id="cineCanvas"></canvas>
+            <div id="cineHtmlViewer" style="display:none; background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:750px; width:100%;">
+              <div id="cineHtmlTitle" style="font-size:1.3rem; font-weight:900; color:#38bdf8; margin-bottom:1rem;"></div>
+              <div id="cineHtmlBody" style="font-size:0.95rem; line-height:1.75; color:#cbd5e1;"></div>
+            </div>
+          </div>
+
+          <button class="cine-nav-btn next" id="cineNextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </main>
+
     </div>
   </div>
 
@@ -512,11 +743,118 @@
       rehber: 'Rehber'
     };
 
+    // -------------------------------------------------------------
+    // CINEMATIC FULLSCREEN PDF READER LOGIC
+    // -------------------------------------------------------------
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    }
+
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageRendering = false;
+    let pageNumPending = null;
+    let scale = 1.3;
+
+    const cinematicModal = document.getElementById('cinematicModal');
+    const cineBadge = document.getElementById('cineBadge');
+    const cineTitle = document.getElementById('cineTitle');
+    const cineMeta = document.getElementById('cineMeta');
+    const cineSummary = document.getElementById('cineSummary');
+    const cineTocList = document.getElementById('cineTocList');
+    const cinePageCounter = document.getElementById('cinePageCounter');
+    const cineDownloadBtn = document.getElementById('cineDownloadBtn');
+    const cineCanvas = document.getElementById('cineCanvas');
+    const cineHtmlViewer = document.getElementById('cineHtmlViewer');
+    const cineHtmlTitle = document.getElementById('cineHtmlTitle');
+    const cineHtmlBody = document.getElementById('cineHtmlBody');
+    const ctx = cineCanvas.getContext('2d');
+
+    function renderCinePage(num) {
+      pageRendering = true;
+      pdfDoc.getPage(num).then((page) => {
+        const viewport = page.getViewport({ scale: scale });
+        cineCanvas.height = viewport.height;
+        cineCanvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        const renderTask = page.render(renderContext);
+
+        renderTask.promise.then(() => {
+          pageRendering = false;
+          if (pageNumPending !== null) {
+            renderCinePage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      cinePageCounter.textContent = `Sayfa ${num} / ${pdfDoc.numPages}`;
+      
+      // Update active state in TOC list
+      document.querySelectorAll('.cine-toc-item').forEach(item => {
+        if (parseInt(item.dataset.page) === num) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    function queueRenderCinePage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderCinePage(num);
+      }
+    }
+
+    function onCinePrevPage() {
+      if (pageNum <= 1) return;
+      pageNum--;
+      queueRenderCinePage(pageNum);
+    }
+
+    function onCineNextPage() {
+      if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      queueRenderCinePage(pageNum);
+    }
+
+    document.getElementById('cinePrevBtn').addEventListener('click', onCinePrevPage);
+    document.getElementById('cineNextBtn').addEventListener('click', onCineNextPage);
+
+    document.getElementById('cineZoomIn').addEventListener('click', () => {
+      scale += 0.2;
+      if (pdfDoc) queueRenderCinePage(pageNum);
+    });
+
+    document.getElementById('cineZoomOut').addEventListener('click', () => {
+      if (scale > 0.6) {
+        scale -= 0.2;
+        if (pdfDoc) queueRenderCinePage(pageNum);
+      }
+    });
+
+    document.getElementById('cineClose').addEventListener('click', () => {
+      cinematicModal.classList.remove('active');
+    });
+
+    // Keyboard Arrow Navigation Support
+    document.addEventListener('keydown', (e) => {
+      if (!cinematicModal.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') onCinePrevPage();
+      if (e.key === 'ArrowRight') onCineNextPage();
+      if (e.key === 'Escape') cinematicModal.classList.remove('active');
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       let activeType = 'all';
       let activeCat = 'all';
 
-      // Load Dynamic Articles from localStorage & yayinlar.js
       const STORAGE_KEY = 'adli_site_articles';
 
       function getAdminArticles() {
@@ -573,7 +911,7 @@
               <div class="meta-time-row">${art.date} • ⏱ ${art.readTime}</div>
               <h4 class="art-card-h4">${art.title}</h4>
               <p class="art-card-text">${art.summary}</p>
-              <button class="art-card-link-btn open-read-modal">Devamını Oku & Doküman İncele →</button>
+              <button class="art-card-link-btn open-read-modal">🖥️ Sinematik Okuyucuda Aç →</button>
             </div>
           `;
           dynamicGrid.appendChild(card);
@@ -637,18 +975,6 @@
         });
       });
 
-      // Reading Modal & PDF/Word Viewer Logic
-      const readModal = document.getElementById('readArticleModal');
-      const closeReadModal = document.getElementById('closeReadingModal');
-      const readTitle = document.getElementById('readModalTitle');
-      const readMeta = document.getElementById('readModalMeta');
-      const readText = document.getElementById('readModalText');
-      
-      const docViewerBox = document.getElementById('documentViewerBox');
-      const viewerBody = document.getElementById('viewerBody');
-      const directDownloadLink = document.getElementById('directDownloadLink');
-      const docDownloadBtnBox = document.getElementById('docDownloadBtnBox');
-
       function attachReaderListeners() {
         document.querySelectorAll('.open-read-modal').forEach(btn => {
           btn.addEventListener('click', async (e) => {
@@ -659,11 +985,13 @@
               const title = container.querySelector('h4')?.textContent || 'Yayın Detayı';
               const meta = container.querySelector('.meta-time-row')?.textContent || '';
               const desc = container.dataset.fullContent || container.querySelector('.art-card-text')?.textContent || '';
-              const fileName = container.dataset.fileName || 'dokuman';
+              const fileName = container.dataset.fileName || 'dokuman.pdf';
+              const catType = (container.dataset.pubType || 'YAYIN').toUpperCase();
 
-              readTitle.textContent = title;
-              readMeta.textContent = meta;
-              readText.innerHTML = `<p style="margin-bottom:1.25rem;"><strong>Açıklama & Özet:</strong><br>${desc}</p><p style="line-height:1.7;">Bu teknik yayın adli inceleme kütüphanemizde dijital olarak arşivlenmiştir. Yayına ait tam mütalaa metni, Yargıtay emsal kararları ve teknik ekler hakkında detaylı bilgi almak için kurumumuzla iletişime geçebilirsiniz.</p>`;
+              cineTitle.textContent = title;
+              cineMeta.textContent = meta;
+              cineSummary.textContent = desc;
+              cineBadge.textContent = `${catType} • SİNEMATİK OKUYUCU`;
 
               // Try getting file from dataset or IndexedDB
               let fileUrl = container.dataset.fileUrl || '';
@@ -671,52 +999,77 @@
                 fileUrl = await getDocBlob(artId) || '';
               }
 
-              // PDF & Word Document Viewer Logic
               if (fileUrl) {
-                docViewerBox.style.display = 'block';
-                directDownloadLink.href = fileUrl;
-                directDownloadLink.download = fileName;
+                cineDownloadBtn.style.display = 'inline-flex';
+                cineDownloadBtn.href = fileUrl;
+                cineDownloadBtn.download = fileName;
 
-                docDownloadBtnBox.innerHTML = `
-                  <a href="${fileUrl}" download="${fileName}" class="btn-hero-primary" style="padding: 6px 14px; font-size: 0.78rem;">
-                    <i class="fa-solid fa-file-arrow-down"></i> <span>Dokümanı İndir (${fileName})</span>
-                  </a>
-                `;
+                // Load PDF via PDF.js for Cinematic Fullscreen Reader
+                if (fileUrl.includes('application/pdf') || fileName.toLowerCase().endsWith('.pdf') || fileUrl.startsWith('data:application/pdf')) {
+                  cineCanvas.style.display = 'block';
+                  cineHtmlViewer.style.display = 'none';
+                  pageNum = 1;
+                  scale = 1.3;
 
-                // If PDF
-                if (fileUrl.includes('application/pdf') || fileName.toLowerCase().endsWith('.pdf')) {
-                  viewerBody.innerHTML = `
-                    <iframe src="${fileUrl}" width="100%" height="520px" style="border:none; border-radius:8px;"></iframe>
-                  `;
+                  window.pdfjsLib.getDocument(fileUrl).promise.then((pdf) => {
+                    pdfDoc = pdf;
+                    
+                    // Build TOC List in Sidebar
+                    cineTocList.innerHTML = '';
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                      const li = document.createElement('li');
+                      li.className = `cine-toc-item ${i === 1 ? 'active' : ''}`;
+                      li.dataset.page = i;
+                      li.innerHTML = `<span>Sayfa ${i}: Mütalaa İnceleme</span> <i class="fa-solid fa-chevron-right"></i>`;
+                      li.addEventListener('click', () => {
+                        pageNum = i;
+                        queueRenderCinePage(pageNum);
+                      });
+                      cineTocList.appendChild(li);
+                    }
+
+                    renderCinePage(pageNum);
+                  }).catch(err => {
+                    console.error('PDF.js Error:', err);
+                    cineCanvas.style.display = 'none';
+                    cineHtmlViewer.style.display = 'block';
+                    cineHtmlTitle.textContent = title;
+                    cineHtmlBody.innerHTML = `<p style="margin-bottom:1rem;">${desc}</p><p><a href="${fileUrl}" download="${fileName}" class="btn-hero-primary"><i class="fa-solid fa-download"></i> Dokümanı İndir (${fileName})</a></p>`;
+                  });
                 } else {
-                  // Word or Other Document
-                  viewerBody.innerHTML = `
-                    <div style="background:#16223b; padding:2rem; text-align:center; border-radius:8px; margin-top:20px;">
+                  // Word Document
+                  cineCanvas.style.display = 'none';
+                  cineHtmlViewer.style.display = 'block';
+                  cineHtmlTitle.textContent = title;
+                  cineHtmlBody.innerHTML = `
+                    <div style="text-align:center; padding:1.5rem;">
                       <i class="fa-solid fa-file-word" style="font-size:3.5rem; color:#38bdf8; margin-bottom:1rem;"></i>
-                      <h4 style="font-size:1.1rem; font-weight:800; color:#fff; margin-bottom:6px;">${fileName}</h4>
-                      <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.25rem;">Ekli Word dokümanı hazır.</p>
+                      <h4 style="font-size:1.1rem; color:#fff; margin-bottom:8px;">${fileName}</h4>
+                      <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.5rem;">${desc}</p>
                       <a href="${fileUrl}" download="${fileName}" class="btn-hero-primary" style="display:inline-flex;">
                         <i class="fa-solid fa-download"></i> <span>Word Dokümanını İndir</span>
                       </a>
                     </div>
                   `;
+                  cinePageCounter.textContent = 'Doküman Hazır';
                 }
               } else {
-                docViewerBox.style.display = 'none';
-                docDownloadBtnBox.innerHTML = '';
+                // Text-only publication
+                cineCanvas.style.display = 'none';
+                cineHtmlViewer.style.display = 'block';
+                cineHtmlTitle.textContent = title;
+                cineHtmlBody.innerHTML = `<p style="margin-bottom:1rem; line-height:1.75;">${desc}</p>`;
+                cineDownloadBtn.style.display = 'none';
+                cinePageCounter.textContent = 'Metin İçeriği';
               }
+
+              cinematicModal.classList.add('active');
             }
-            readModal.classList.add('active');
           });
         });
       }
 
       renderArticles();
-
-      closeReadModal?.addEventListener('click', () => readModal.classList.remove('active'));
-      readModal?.addEventListener('click', (e) => {
-        if (e.target === readModal) readModal.classList.remove('active');
-      });
     });
   </script>
 </body>
