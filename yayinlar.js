@@ -50,7 +50,7 @@ window.YAYINLAR_DATA = [
     "id": "art-hesap-4",
     "title": "HMK ve CMK Kapsamında Adli Hesap Bilirkişi Raporuna İtiraz Esasları",
     "category": "gorus",
-    uzmanlik: "hesap",
+    "uzmanlik": "hesap",
     "date": "05 Ağustos 2026",
     "readTime": "5 dk okuma",
     "image": "assets/hesap_thumb_4.png",
