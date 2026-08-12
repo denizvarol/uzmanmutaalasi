@@ -16,9 +16,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="yayinlar.js"></script>
 
-  <!-- PDF.js Library for Cinematic Fullscreen PDF Reader -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-
   <style>
     /* Dedicated Styles for Dergi & Yayınlar Page */
     .dergi-banner-hero {
@@ -276,44 +273,17 @@
       line-height: 1.6;
     }
 
-    .cine-toc-title {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #38bdf8;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cine-toc-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .cine-toc-item {
-      background: rgba(14, 23, 44, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 12px;
-      border-radius: 6px;
+    .cine-author-box {
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 8px;
+      padding: 10px 12px;
       font-size: 0.8rem;
-      color: #cbd5e1;
-      font-weight: 600;
-      cursor: pointer;
+      color: #38bdf8;
+      font-weight: 700;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      transition: all 0.2s ease;
-    }
-
-    .cine-toc-item:hover, .cine-toc-item.active {
-      background: #0284c7;
-      color: #fff;
-      border-color: #38bdf8;
+      gap: 8px;
     }
 
     .cine-main {
@@ -361,48 +331,22 @@
 
     .cine-viewer-container {
       flex-grow: 1;
-      overflow: auto;
-      padding: 2rem;
+      overflow: hidden;
+      padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
     }
 
-    .cine-canvas-box {
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
-      border-radius: 6px;
+    .cine-embed-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
       background: #ffffff;
-      max-width: 100%;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
     }
-
-    .cine-nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(14, 23, 44, 0.9);
-      color: #ffffff;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.2s ease;
-    }
-
-    .cine-nav-btn:hover {
-      background: #0284c7;
-      border-color: #38bdf8;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .cine-nav-btn.prev { left: 2rem; }
-    .cine-nav-btn.next { right: 2rem; }
 
     @media (max-width: 992px) {
       .cine-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
@@ -486,7 +430,7 @@
           <button class="dergi-pill-btn" data-type="makale">Uzman Makalesi</button>
           <button class="dergi-pill-btn" data-type="mevzuat">Mevzuat Notu</button>
           <button class="dergi-pill-btn" data-type="gorus">Uzman Görüşü</button>
-          <button class="dergi-pill-btn" data-type="rehber">Rehber</button>
+          <button class="dergi-pill-btn" data-type="rehber">Rehber / Poster</button>
         </div>
 
         <!-- Row 2: Uzmanlık Alanı -->
@@ -505,7 +449,7 @@
         </div>
       </div>
 
-      <!-- DYNAMIC USER ARTICLES GRID (EKLENDİKÇE GÖRÜNECEK YAYINLAR) -->
+      <!-- DYNAMIC USER ARTICLES GRID -->
       <div id="dynamicArticlesContainer">
         <div class="cards-3-grid" id="dynamicGrid"></div>
       </div>
@@ -578,7 +522,7 @@
             <li><a href="#">Uzman Makaleleri</a></li>
             <li><a href="#">Mevzuat Notları</a></li>
             <li><a href="#">Uzman Görüşleri</a></li>
-            <li><a href="#">Rehberler</a></li>
+            <li><a href="#">Rehberler & Posterler</a></li>
             <li><a href="#">Tüm Yayınlar</a></li>
           </ul>
         </div>
@@ -609,65 +553,51 @@
   <!-- WhatsApp Widget & Upload Modal -->
   <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <!-- CINEMATIC FULLSCREEN PDF READER MODAL -->
+  <!-- CINEMATIC FULLSCREEN PDF READER MODAL (FAIL-SAFE DIRECT VIEWER) -->
   <div id="cinematicModal" class="cine-overlay">
     <div class="cine-layout">
       
-      <!-- Left Sidebar (TOC & Publication Meta) -->
+      <!-- Left Sidebar (Publication Meta & Details) -->
       <aside class="cine-sidebar">
         <div class="cine-sidebar-top">
-          <span class="cine-badge" id="cineBadge">YAYIN İNCELEME</span>
+          <span class="cine-badge" id="cineBadge">SİNEMATİK OKUYUCU</span>
           <h2 class="cine-title" id="cineTitle">Yayın Başlığı</h2>
           <div class="cine-meta" id="cineMeta">Tarih • Okuma Süresi</div>
           
-          <div class="cine-summary-card" id="cineSummary">
-            Makale özeti burada görüntülenecektir...
+          <div class="cine-author-box" id="cineAuthorBox">
+            <i class="fa-solid fa-user-pen"></i> <span id="cineAuthorName">Yazar: Talip BİLGİLİ</span>
           </div>
 
-          <div>
-            <div class="cine-toc-title"><i class="fa-solid fa-list-ol"></i> İçindekiler & Sayfalar</div>
-            <ul class="cine-toc-list" id="cineTocList">
-              <li class="cine-toc-item active" data-page="1"><span>Sayfa 1: Giriş ve Özet</span> <i class="fa-solid fa-chevron-right"></i></li>
-            </ul>
+          <div class="cine-summary-card" id="cineSummary">
+            Makale özeti burada görüntülenecektir...
           </div>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1rem;">
-          <a id="cineDownloadBtn" href="#" download class="btn-hero-primary" style="justify-content: center; padding: 10px; font-size: 0.8rem;">
-            <i class="fa-solid fa-file-arrow-down"></i> <span>Dokümanı İndir</span>
-          </a>
-          <button class="btn-hero-secondary trigger-modal" style="justify-content: center; padding: 10px; font-size: 0.8rem;">
-            <i class="fa-solid fa-comments"></i> <span>Uzman Mütalaası İste</span>
+          <button class="btn-hero-primary trigger-modal" style="justify-content: center; padding: 12px; font-size: 0.85rem;">
+            <i class="fa-solid fa-comments"></i> <span>Uzman Mütalaası Talep Et</span>
           </button>
         </div>
       </aside>
 
-      <!-- Main Workspace -->
+      <!-- Main Workspace (Direct Live PDF/Image Viewer) -->
       <main class="cine-main">
         <!-- Topbar -->
         <div class="cine-topbar">
-          <span style="font-size: 0.85rem; font-weight: 800; color: #38bdf8;" id="cinePageCounter">Sayfa 1 / 1</span>
+          <span style="font-size: 0.88rem; font-weight: 800; color: #38bdf8;" id="cineHeaderStatus">
+            <i class="fa-solid fa-book-open"></i> YAYIN OKUMA EKRANI
+          </span>
 
           <div class="cine-controls">
-            <button class="cine-btn" id="cineZoomOut"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button class="cine-btn" id="cineZoomIn"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button class="cine-btn" id="cineClose" style="background:#ef4444; color:#fff; border-color:#ef4444;"><i class="fa-solid fa-xmark"></i> <span>Kapat</span></button>
+            <button class="cine-btn" id="cineClose" style="background:#ef4444; color:#fff; border-color:#ef4444; padding: 8px 16px;">
+              <i class="fa-solid fa-xmark"></i> <span>Kapat</span>
+            </button>
           </div>
         </div>
 
-        <!-- Viewer Canvas Box -->
+        <!-- Viewer Container -->
         <div class="cine-viewer-container" id="cineViewerContainer">
-          <button class="cine-nav-btn prev" id="cinePrevBtn"><i class="fa-solid fa-chevron-left"></i></button>
-          
-          <div class="cine-canvas-box">
-            <canvas id="cineCanvas"></canvas>
-            <div id="cineHtmlViewer" style="display:none; background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:750px; width:100%;">
-              <div id="cineHtmlTitle" style="font-size:1.3rem; font-weight:900; color:#38bdf8; margin-bottom:1rem;"></div>
-              <div id="cineHtmlBody" style="font-size:0.95rem; line-height:1.75; color:#cbd5e1;"></div>
-            </div>
-          </div>
-
-          <button class="cine-nav-btn next" id="cineNextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+          <!-- Dynamically populated iframe / embed -->
         </div>
       </main>
 
@@ -676,178 +606,28 @@
 
   <script src="app.js"></script>
   <script>
-    // INDEXEDDB HELPER FOR RETRIEVING LARGE FILES (5MB, 10MB+)
-    const DB_NAME = 'AdliDocStore';
-    const DB_VERSION = 1;
-
-    function openDocDB() {
-      return new Promise((resolve, reject) => {
-        const req = indexedDB.open(DB_NAME, DB_VERSION);
-        req.onupgradeneeded = (e) => {
-          const db = e.target.result;
-          if (!db.objectStoreNames.contains('docs')) {
-            db.createObjectStore('docs');
-          }
-        };
-        req.onsuccess = (e) => resolve(e.target.result);
-        req.onerror = (e) => reject(e.target.error);
-      });
-    }
-
-    async function getDocBlob(id) {
-      try {
-        const db = await openDocDB();
-        return new Promise((resolve) => {
-          const tx = db.transaction('docs', 'readonly');
-          const store = tx.objectStore('docs');
-          const req = store.get(id);
-          req.onsuccess = () => resolve(req.result);
-          req.onerror = () => resolve(null);
-        });
-      } catch (e) {
-        return null;
-      }
-    }
-
-    // 4 DISTINCT FORENSIC ACCOUNTING / FINANCIAL CALCULATION IMAGES
-    const HESAP_IMAGES = [
-      'assets/hesap_thumb_1.png',
-      'assets/hesap_thumb_2.png',
-      'assets/hesap_thumb_3.png',
-      'assets/hesap_thumb_4.png'
-    ];
-
-    function getTopicImage(uzmanlik, index = 0) {
-      if (uzmanlik === 'hesap') {
-        const idx = Math.abs(index) % HESAP_IMAGES.length;
-        return HESAP_IMAGES[idx];
-      }
-      const TOPIC_IMAGES = {
-        bilisim: 'assets/uzman_makalesi_thumb.png',
-        siber: 'assets/uzman_makalesi_thumb.png',
-        muhendislik: 'assets/vaka_analizi_thumb.png',
-        yangin: 'assets/vaka_analizi_thumb.png',
-        hasar: 'assets/mevzuat_notu_thumb.png',
-        enerji: 'assets/vaka_analizi_thumb.png',
-        hukuk: 'assets/mevzuat_notu_thumb.png',
-        egitim: 'assets/hero_mockup_bg.jpg'
-      };
-      return TOPIC_IMAGES[uzmanlik] || 'assets/vaka_analizi_thumb.png';
-    }
-
     const CAT_NAME_MAP = {
       vaka: 'Vaka Analizi',
       makale: 'Uzman Makalesi',
       mevzuat: 'Mevzuat Notu',
       gorus: 'Uzman Görüşü',
-      rehber: 'Rehber'
+      rehber: 'Rehber / Poster'
     };
-
-    // -------------------------------------------------------------
-    // CINEMATIC FULLSCREEN PDF READER LOGIC
-    // -------------------------------------------------------------
-    if (window.pdfjsLib) {
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-    }
-
-    let pdfDoc = null;
-    let pageNum = 1;
-    let pageRendering = false;
-    let pageNumPending = null;
-    let scale = 1.3;
 
     const cinematicModal = document.getElementById('cinematicModal');
     const cineBadge = document.getElementById('cineBadge');
     const cineTitle = document.getElementById('cineTitle');
     const cineMeta = document.getElementById('cineMeta');
     const cineSummary = document.getElementById('cineSummary');
-    const cineTocList = document.getElementById('cineTocList');
-    const cinePageCounter = document.getElementById('cinePageCounter');
-    const cineDownloadBtn = document.getElementById('cineDownloadBtn');
-    const cineCanvas = document.getElementById('cineCanvas');
-    const cineHtmlViewer = document.getElementById('cineHtmlViewer');
-    const cineHtmlTitle = document.getElementById('cineHtmlTitle');
-    const cineHtmlBody = document.getElementById('cineHtmlBody');
-    const ctx = cineCanvas.getContext('2d');
-
-    function renderCinePage(num) {
-      pageRendering = true;
-      pdfDoc.getPage(num).then((page) => {
-        const viewport = page.getViewport({ scale: scale });
-        cineCanvas.height = viewport.height;
-        cineCanvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        const renderTask = page.render(renderContext);
-
-        renderTask.promise.then(() => {
-          pageRendering = false;
-          if (pageNumPending !== null) {
-            renderCinePage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-      });
-
-      cinePageCounter.textContent = `Sayfa ${num} / ${pdfDoc.numPages}`;
-      
-      // Update active state in TOC list
-      document.querySelectorAll('.cine-toc-item').forEach(item => {
-        if (parseInt(item.dataset.page) === num) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    }
-
-    function queueRenderCinePage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderCinePage(num);
-      }
-    }
-
-    function onCinePrevPage() {
-      if (pageNum <= 1) return;
-      pageNum--;
-      queueRenderCinePage(pageNum);
-    }
-
-    function onCineNextPage() {
-      if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      queueRenderCinePage(pageNum);
-    }
-
-    document.getElementById('cinePrevBtn').addEventListener('click', onCinePrevPage);
-    document.getElementById('cineNextBtn').addEventListener('click', onCineNextPage);
-
-    document.getElementById('cineZoomIn').addEventListener('click', () => {
-      scale += 0.2;
-      if (pdfDoc) queueRenderCinePage(pageNum);
-    });
-
-    document.getElementById('cineZoomOut').addEventListener('click', () => {
-      if (scale > 0.6) {
-        scale -= 0.2;
-        if (pdfDoc) queueRenderCinePage(pageNum);
-      }
-    });
+    const cineAuthorName = document.getElementById('cineAuthorName');
+    const cineViewerContainer = document.getElementById('cineViewerContainer');
 
     document.getElementById('cineClose').addEventListener('click', () => {
       cinematicModal.classList.remove('active');
     });
 
-    // Keyboard Arrow Navigation Support
     document.addEventListener('keydown', (e) => {
       if (!cinematicModal.classList.contains('active')) return;
-      if (e.key === 'ArrowLeft') onCinePrevPage();
-      if (e.key === 'ArrowRight') onCineNextPage();
       if (e.key === 'Escape') cinematicModal.classList.remove('active');
     });
 
@@ -855,17 +635,7 @@
       let activeType = 'all';
       let activeCat = 'all';
 
-      const STORAGE_KEY = 'adli_site_articles';
-
       function getAdminArticles() {
-        try {
-          const stored = localStorage.getItem(STORAGE_KEY);
-          if (stored) {
-            let list = JSON.parse(stored);
-            if (list && list.length > 0) return list;
-          }
-        } catch(e) { console.error(e); }
-
         if (window.YAYINLAR_DATA && Array.isArray(window.YAYINLAR_DATA)) {
           return window.YAYINLAR_DATA;
         }
@@ -890,28 +660,28 @@
         dynamicGrid.innerHTML = '';
 
         adminArts.forEach((art, index) => {
-          const docBadgeHTML = (art.fileName || art.hasFile) ? `<span style="background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.3); font-size:0.65rem; font-weight:800; padding:2px 6px; border-radius:4px; margin-left:6px;"><i class="fa-solid fa-file-pdf"></i> DOKÜMAN EKLİ</span>` : '';
-          
-          const coverImg = art.image || getTopicImage(art.uzmanlik || 'bilisim', index);
+          const coverImg = art.image || 'assets/vaka_analizi_thumb.png';
           const catLabel = CAT_NAME_MAP[art.category] || art.category || 'YAYIN';
 
           const card = document.createElement('div');
           card.className = 'art-card-item target-article-card';
           card.dataset.artId = art.id;
           card.dataset.pubType = art.category || 'vaka';
-          card.dataset.pubCat = art.uzmanlik || 'bilisim';
-          card.dataset.fileName = art.fileName || 'dokuman';
+          card.dataset.pubCat = art.uzmanlik || 'hesap';
+          card.dataset.fileName = art.fileName || '';
+          card.dataset.fileUrl = art.fileUrl || '';
           card.dataset.fullContent = art.content || art.summary;
+          card.dataset.author = art.author || 'Uzman Kadrosu';
 
           card.innerHTML = `
             <div class="art-card-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('${coverImg}');">
-              <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">${catLabel.toUpperCase()} ${docBadgeHTML}</span>
+              <span class="tag-blue-badge" style="position: absolute; top: 10px; left: 10px; font-size: 0.65rem;">${catLabel.toUpperCase()}</span>
             </div>
             <div class="art-card-content">
               <div class="meta-time-row">${art.date} • ⏱ ${art.readTime}</div>
               <h4 class="art-card-h4">${art.title}</h4>
               <p class="art-card-text">${art.summary}</p>
-              <button class="art-card-link-btn open-read-modal">🖥️ Sinematik Okuyucuda Aç →</button>
+              <button class="art-card-link-btn open-read-modal">📖 Ekranda Oku & İncele →</button>
             </div>
           `;
           dynamicGrid.appendChild(card);
@@ -977,90 +747,54 @@
 
       function attachReaderListeners() {
         document.querySelectorAll('.open-read-modal').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
+          btn.addEventListener('click', (e) => {
             e.preventDefault();
             const container = btn.closest('.target-article-card');
             if (container) {
-              const artId = container.dataset.artId || '';
               const title = container.querySelector('h4')?.textContent || 'Yayın Detayı';
               const meta = container.querySelector('.meta-time-row')?.textContent || '';
               const desc = container.dataset.fullContent || container.querySelector('.art-card-text')?.textContent || '';
-              const fileName = container.dataset.fileName || 'dokuman.pdf';
+              const fileName = container.dataset.fileName || '';
+              const fileUrl = container.dataset.fileUrl || '';
+              const author = container.dataset.author || 'Uzman Kadrosu';
               const catType = (container.dataset.pubType || 'YAYIN').toUpperCase();
 
               cineTitle.textContent = title;
               cineMeta.textContent = meta;
               cineSummary.textContent = desc;
-              cineBadge.textContent = `${catType} • SİNEMATİK OKUYUCU`;
+              cineAuthorName.textContent = `Yazar: ${author}`;
+              cineBadge.textContent = `${catType} • EKRANDA OKUMA`;
 
-              // Try getting file from dataset or IndexedDB
-              let fileUrl = container.dataset.fileUrl || '';
-              if (!fileUrl && artId) {
-                fileUrl = await getDocBlob(artId) || '';
-              }
-
+              // DIRECT 100% RELIABLE LIVE EMBEDDED VIEWER (NO DOWNLOAD BUTTONS)
               if (fileUrl) {
-                cineDownloadBtn.style.display = 'inline-flex';
-                cineDownloadBtn.href = fileUrl;
-                cineDownloadBtn.download = fileName;
-
-                // Load PDF via PDF.js for Cinematic Fullscreen Reader
-                if (fileUrl.includes('application/pdf') || fileName.toLowerCase().endsWith('.pdf') || fileUrl.startsWith('data:application/pdf')) {
-                  cineCanvas.style.display = 'block';
-                  cineHtmlViewer.style.display = 'none';
-                  pageNum = 1;
-                  scale = 1.3;
-
-                  window.pdfjsLib.getDocument(fileUrl).promise.then((pdf) => {
-                    pdfDoc = pdf;
-                    
-                    // Build TOC List in Sidebar
-                    cineTocList.innerHTML = '';
-                    for (let i = 1; i <= pdf.numPages; i++) {
-                      const li = document.createElement('li');
-                      li.className = `cine-toc-item ${i === 1 ? 'active' : ''}`;
-                      li.dataset.page = i;
-                      li.innerHTML = `<span>Sayfa ${i}: Mütalaa İnceleme</span> <i class="fa-solid fa-chevron-right"></i>`;
-                      li.addEventListener('click', () => {
-                        pageNum = i;
-                        queueRenderCinePage(pageNum);
-                      });
-                      cineTocList.appendChild(li);
-                    }
-
-                    renderCinePage(pageNum);
-                  }).catch(err => {
-                    console.error('PDF.js Error:', err);
-                    cineCanvas.style.display = 'none';
-                    cineHtmlViewer.style.display = 'block';
-                    cineHtmlTitle.textContent = title;
-                    cineHtmlBody.innerHTML = `<p style="margin-bottom:1rem;">${desc}</p><p><a href="${fileUrl}" download="${fileName}" class="btn-hero-primary"><i class="fa-solid fa-download"></i> Dokümanı İndir (${fileName})</a></p>`;
-                  });
-                } else {
-                  // Word Document
-                  cineCanvas.style.display = 'none';
-                  cineHtmlViewer.style.display = 'block';
-                  cineHtmlTitle.textContent = title;
-                  cineHtmlBody.innerHTML = `
-                    <div style="text-align:center; padding:1.5rem;">
-                      <i class="fa-solid fa-file-word" style="font-size:3.5rem; color:#38bdf8; margin-bottom:1rem;"></i>
-                      <h4 style="font-size:1.1rem; color:#fff; margin-bottom:8px;">${fileName}</h4>
-                      <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:1.5rem;">${desc}</p>
-                      <a href="${fileUrl}" download="${fileName}" class="btn-hero-primary" style="display:inline-flex;">
-                        <i class="fa-solid fa-download"></i> <span>Word Dokümanını İndir</span>
-                      </a>
+                if (fileUrl.toLowerCase().endsWith('.pdf') || fileName.toLowerCase().endsWith('.pdf')) {
+                  // Direct HTML5 PDF Embed (Works on Chrome, Edge, Safari, Firefox)
+                  cineViewerContainer.innerHTML = `
+                    <iframe src="${fileUrl}#toolbar=0&navpanes=0" class="cine-embed-frame" title="${title}"></iframe>
+                  `;
+                } else if (fileUrl.toLowerCase().endsWith('.jpg') || fileUrl.toLowerCase().endsWith('.jpeg') || fileUrl.toLowerCase().endsWith('.png')) {
+                  // Direct Image Viewer
+                  cineViewerContainer.innerHTML = `
+                    <div style="width:100%; height:100%; overflow:auto; display:flex; align-items:center; justify-content:center; padding:1rem;">
+                      <img src="${fileUrl}" alt="${title}" style="max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 0 40px rgba(0,0,0,0.9); object-fit:contain;">
                     </div>
                   `;
-                  cinePageCounter.textContent = 'Doküman Hazır';
+                } else {
+                  // Fallback Text Container
+                  cineViewerContainer.innerHTML = `
+                    <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; overflow-y:auto; max-height:85vh; border:1px solid rgba(56,189,248,0.3);">
+                      <h3 style="font-size:1.3rem; color:#38bdf8; margin-bottom:1rem;">${title}</h3>
+                      <p style="line-height:1.8; color:#cbd5e1; font-size:0.95rem;">${desc}</p>
+                    </div>
+                  `;
                 }
               } else {
-                // Text-only publication
-                cineCanvas.style.display = 'none';
-                cineHtmlViewer.style.display = 'block';
-                cineHtmlTitle.textContent = title;
-                cineHtmlBody.innerHTML = `<p style="margin-bottom:1rem; line-height:1.75;">${desc}</p>`;
-                cineDownloadBtn.style.display = 'none';
-                cinePageCounter.textContent = 'Metin İçeriği';
+                cineViewerContainer.innerHTML = `
+                  <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; overflow-y:auto; max-height:85vh; border:1px solid rgba(56,189,248,0.3);">
+                    <h3 style="font-size:1.3rem; color:#38bdf8; margin-bottom:1rem;">${title}</h3>
+                    <p style="line-height:1.8; color:#cbd5e1; font-size:0.95rem;">${desc}</p>
+                  </div>
+                `;
               }
 
               cinematicModal.classList.add('active');

@@ -263,16 +263,6 @@
       const STORAGE_KEY = 'adli_site_articles';
 
       function getArticles() {
-        try {
-          const stored = localStorage.getItem(STORAGE_KEY);
-          if (stored) {
-            let list = JSON.parse(stored);
-            if (list && list.length > 0) return list;
-          }
-        } catch (e) {
-          console.error(e);
-        }
-        // Fallback to window.YAYINLAR_DATA from yayinlar.js
         if (window.YAYINLAR_DATA && Array.isArray(window.YAYINLAR_DATA)) {
           return window.YAYINLAR_DATA;
         }
