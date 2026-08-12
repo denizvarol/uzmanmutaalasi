@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="style.css">
   <script src="yayinlar.js"></script>
 
+  <!-- PDF.js Library for Mobile & Desktop Multi-Page PDF Rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
   <style>
     /* Dedicated Styles for Dergi & Yayınlar Page */
     .dergi-banner-hero {
@@ -198,7 +201,7 @@
     }
 
     /* -------------------------------------------------------------
-       CINEMATIC FULLSCREEN PDF READER STYLES
+       CINEMATIC FULLSCREEN PDF READER STYLES (MOBILE-PERFECT)
        ------------------------------------------------------------- */
     .cine-overlay {
       position: fixed;
@@ -331,27 +334,29 @@
 
     .cine-viewer-container {
       flex-grow: 1;
-      overflow: hidden;
-      padding: 1rem;
+      overflow-y: auto;
+      padding: 1.5rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      position: relative;
+      gap: 1.5rem;
+      background: #060b17;
+      scroll-behavior: smooth;
     }
 
-    .cine-embed-frame {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
+    .pdf-page-canvas {
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
       background: #ffffff;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+      max-width: 100%;
+      height: auto !important;
     }
 
     @media (max-width: 992px) {
       .cine-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
       .cine-sidebar { display: none; }
       .cards-3-grid { grid-template-columns: repeat(2, 1fr); }
+      .cine-viewer-container { padding: 0.75rem; gap: 1rem; }
     }
 
     @media (max-width: 650px) {
@@ -553,7 +558,7 @@
   <!-- WhatsApp Widget & Upload Modal -->
   <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
 
-  <!-- CINEMATIC FULLSCREEN PDF READER MODAL (FAIL-SAFE DIRECT VIEWER) -->
+  <!-- CINEMATIC FULLSCREEN PDF READER MODAL (MOBILE & DESKTOP MULTI-PAGE RENDERER) -->
   <div id="cinematicModal" class="cine-overlay">
     <div class="cine-layout">
       
@@ -580,7 +585,7 @@
         </div>
       </aside>
 
-      <!-- Main Workspace (Direct Live PDF/Image Viewer) -->
+      <!-- Main Workspace (Continuous Multi-Page Canvas / Live Viewer) -->
       <main class="cine-main">
         <!-- Topbar -->
         <div class="cine-topbar">
@@ -595,9 +600,9 @@
           </div>
         </div>
 
-        <!-- Viewer Container -->
+        <!-- Scrollable Multi-Page Container -->
         <div class="cine-viewer-container" id="cineViewerContainer">
-          <!-- Dynamically populated iframe / embed -->
+          <!-- Dynamically populated PDF.js multi-page canvases or poster images -->
         </div>
       </main>
 
@@ -613,6 +618,10 @@
       gorus: 'Uzman Görüşü',
       rehber: 'Rehber / Poster'
     };
+
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    }
 
     const cinematicModal = document.getElementById('cinematicModal');
     const cineBadge = document.getElementById('cineBadge');
@@ -630,6 +639,70 @@
       if (!cinematicModal.classList.contains('active')) return;
       if (e.key === 'Escape') cinematicModal.classList.remove('active');
     });
+
+    // RENDER ALL PDF PAGES CONTINUOUSLY (WORKS PERFECTLY ON ALL MOBILE PHONES & DESKTOPS)
+    async function renderMultiPagePdf(pdfUrl) {
+      cineViewerContainer.innerHTML = '<div style="color:#38bdf8; font-weight:700; padding:2rem; text-align:center;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Makale Sayfaları Yükleniyor...</div>';
+      
+      try {
+        const loadingTask = window.pdfjsLib.getDocument(pdfUrl);
+        const pdf = await loadingTask.promise;
+        cineViewerContainer.innerHTML = ''; // Clear loading spinner
+
+        // Determine scale based on screen width (Mobile vs Desktop)
+        const screenWidth = window.innerWidth;
+        let targetScale = 1.3;
+        if (screenWidth < 650) {
+          targetScale = (screenWidth - 30) / 600; // Auto-fit mobile screen
+          if (targetScale < 0.6) targetScale = 0.6;
+        }
+
+        // Render Page 1 to Page N sequentially
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const viewport = page.getViewport({ scale: targetScale });
+
+          const canvas = document.createElement('canvas');
+          canvas.className = 'pdf-page-canvas';
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: canvas.getContext('2d'),
+            viewport: viewport
+          };
+
+          const pageWrapper = document.createElement('div');
+          pageWrapper.style.position = 'relative';
+          pageWrapper.style.marginBottom = '1.5rem';
+          pageWrapper.appendChild(canvas);
+
+          // Add subtle page number tag at bottom right of each page
+          const pageLabel = document.createElement('div');
+          pageLabel.style.position = 'absolute';
+          pageLabel.style.bottom = '8px';
+          pageLabel.style.right = '12px';
+          pageLabel.style.background = 'rgba(14, 23, 44, 0.85)';
+          pageLabel.style.color = '#38bdf8';
+          pageLabel.style.fontSize = '0.7rem';
+          pageLabel.style.fontWeight = '800';
+          pageLabel.style.padding = '3px 8px';
+          pageLabel.style.borderRadius = '4px';
+          pageLabel.style.border = '1px solid rgba(56,189,248,0.3)';
+          pageLabel.textContent = `Sayfa ${pageNum} / ${pdf.numPages}`;
+          pageWrapper.appendChild(pageLabel);
+
+          cineViewerContainer.appendChild(pageWrapper);
+          await page.render(renderContext).promise;
+        }
+      } catch (err) {
+        console.error('PDF Render Error:', err);
+        // Fail-safe Iframe Fallback
+        cineViewerContainer.innerHTML = `
+          <iframe src="${pdfUrl}#toolbar=0&navpanes=0" class="cine-embed-frame" style="width:100%; height:100%; min-height:80vh;"></iframe>
+        `;
+      }
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
       let activeType = 'all';
@@ -747,7 +820,7 @@
 
       function attachReaderListeners() {
         document.querySelectorAll('.open-read-modal').forEach(btn => {
-          btn.addEventListener('click', (e) => {
+          btn.addEventListener('click', async (e) => {
             e.preventDefault();
             const container = btn.closest('.target-article-card');
             if (container) {
@@ -765,24 +838,22 @@
               cineAuthorName.textContent = `Yazar: ${author}`;
               cineBadge.textContent = `${catType} • EKRANDA OKUMA`;
 
-              // DIRECT 100% RELIABLE LIVE EMBEDDED VIEWER (NO DOWNLOAD BUTTONS)
               if (fileUrl) {
                 if (fileUrl.toLowerCase().endsWith('.pdf') || fileName.toLowerCase().endsWith('.pdf')) {
-                  // Direct HTML5 PDF Embed (Works on Chrome, Edge, Safari, Firefox)
-                  cineViewerContainer.innerHTML = `
-                    <iframe src="${fileUrl}#toolbar=0&navpanes=0" class="cine-embed-frame" title="${title}"></iframe>
-                  `;
+                  // RENDER ALL PDF PAGES CONTINUOUSLY FOR MOBILE & DESKTOP
+                  cinematicModal.classList.add('active');
+                  renderMultiPagePdf(fileUrl);
+                  return;
                 } else if (fileUrl.toLowerCase().endsWith('.jpg') || fileUrl.toLowerCase().endsWith('.jpeg') || fileUrl.toLowerCase().endsWith('.png')) {
-                  // Direct Image Viewer
+                  // Direct High-Resolution Poster Viewer
                   cineViewerContainer.innerHTML = `
-                    <div style="width:100%; height:100%; overflow:auto; display:flex; align-items:center; justify-content:center; padding:1rem;">
-                      <img src="${fileUrl}" alt="${title}" style="max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 0 40px rgba(0,0,0,0.9); object-fit:contain;">
+                    <div style="width:100%; height:100%; overflow:auto; display:flex; align-items:center; justify-content:center; padding:0.5rem;">
+                      <img src="${fileUrl}" alt="${title}" style="max-width:100%; border-radius:10px; box-shadow:0 0 40px rgba(0,0,0,0.9); object-fit:contain;">
                     </div>
                   `;
                 } else {
-                  // Fallback Text Container
                   cineViewerContainer.innerHTML = `
-                    <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; overflow-y:auto; max-height:85vh; border:1px solid rgba(56,189,248,0.3);">
+                    <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; border:1px solid rgba(56,189,248,0.3);">
                       <h3 style="font-size:1.3rem; color:#38bdf8; margin-bottom:1rem;">${title}</h3>
                       <p style="line-height:1.8; color:#cbd5e1; font-size:0.95rem;">${desc}</p>
                     </div>
@@ -790,7 +861,7 @@
                 }
               } else {
                 cineViewerContainer.innerHTML = `
-                  <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; overflow-y:auto; max-height:85vh; border:1px solid rgba(56,189,248,0.3);">
+                  <div style="background:#0e172c; color:#fff; padding:2.5rem; border-radius:12px; max-width:800px; width:100%; border:1px solid rgba(56,189,248,0.3);">
                     <h3 style="font-size:1.3rem; color:#38bdf8; margin-bottom:1rem;">${title}</h3>
                     <p style="line-height:1.8; color:#cbd5e1; font-size:0.95rem;">${desc}</p>
                   </div>
