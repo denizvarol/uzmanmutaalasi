@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Sheets ve GitHub’ı Kullanan Yeni Siber Casusluk Kampanyası: Kritik Altyapılar Hedefte | UZMAN İNCELEME</title>
+  <meta name="description" content="Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Acronis TRU teknik analizi.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Google Sheets ve GitHub’ı Kullanan Yeni Siber Casusluk Kampanyası: Kritik Altyapılar Hedefte">
+  <meta property="og:description" content="Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Acronis TRU teknik analizi.">
+  <meta property="og:image" content="assets/haber_cyber_espionage_cloud_hero.jpg">
+  <meta property="og:type" content="article">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dedicated Dark Navy Hero Banner Styles for News Detail */
+    .news-detail-hero {
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .news-detail-hero-title {
+      font-size: clamp(2rem, 4.5vw, 2.5rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.22;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .news-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
+    }
+
+    .news-cover-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Clean HTML Zone Badges */
+    .news-cover-overlay-zones {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 5;
+    }
+
+    .zone-pill {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zone-pill i {
+      color: #38bdf8;
+    }
+
+    /* Stats Grid Callout Box */
+    .news-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    /* Editorial Typography & High Contrast Rules */
+    .news-body-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #1e293b !important;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .news-body-text strong,
+    .news-body-text b {
+      color: #0f172a !important;
+      font-weight: 700;
+    }
+
+    .news-body-text h2, 
+    .news-body-text h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-left: 12px;
+      border-left: 4px solid #0284c7;
+      line-height: 1.3;
+    }
+
+    .news-callout-quote {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1 !important;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 3rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sources-list li {
+      font-size: 0.88rem;
+      color: #1e293b !important;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sources-list li strong {
+      color: #0f172a !important;
+    }
+
+    .sources-list li i {
+      color: #0284c7;
+      margin-top: 3px;
+    }
+
+    /* Dedicated Light Button for Content Area */
+    .btn-content-back {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #0f172a !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-content-back:hover {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 2rem 1.25rem;
+        margin-top: -1.5rem;
+      }
+      .news-cover-img {
+        height: 250px;
+      }
+      .news-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="logo-title-group">
+          <span class="logo-main-text">UZMAN İNCELEME</span>
+          <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li class="nav-dropdown-wrapper">
+          <a href="makaleler.html" class="nav-link nav-dropdown-trigger active">
+            <span>Yayınlar</span> <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+          </a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="makaleler.html"><i class="fa-solid fa-file-lines"></i> Uzman Makaleleri</a></li>
+            <li><a href="haberler.html" style="color: #38bdf8; font-weight: 700;"><i class="fa-solid fa-newspaper"></i> Haberler</a></li>
+          </ul>
+        </li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="tel:05326422657" class="phone-header-link data-phone-link">
+          <i class="fa-solid fa-phone-volume" style="color: #38bdf8;"></i>
+          <span class="data-phone-text">İletişim: 0532 642 26 57</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- News Detail Subpage Hero Banner -->
+  <section class="news-detail-hero">
+    <div class="container">
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
+        </ul>
+
+        <div class="news-category-badge">
+          <i class="fa-solid fa-shield-halved"></i> SİBER GÜVENLİK / KRİTİK ALTYAPI
+        </div>
+
+        <h1 class="news-detail-hero-title">
+          Google Sheets ve GitHub’ı Kullanan Yeni Siber Casusluk Kampanyası:<br>
+          <span class="cyan-text">Kritik Altyapılar Hedefte</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Araştırmacılara göre saldırganlar, kötü amaçlı iletişimi sıradan internet trafiğinin arasına gizlemek için Google Sheets ve GitHub Gists gibi yaygın kullanılan hizmetlerden de yararlanıyor.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item"><i class="fa-solid fa-calendar-days" style="color: #38bdf8;"></i> <span>13 Ağustos 2026</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-shield-cat" style="color: #38bdf8;"></i> <span>Acronis TRU Araştırması: 13 Ağustos 2026</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> <span>5 dk okuma</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL CONTENT BODY CONTAINER -->
+  <section style="padding-bottom: 5rem; background: #f8fafc;">
+    <div class="container">
+      
+      <article class="editorial-container">
+
+        <!-- Big Cover Image with Clean HTML Zone Badges -->
+        <div class="news-cover-wrapper">
+          <img src="assets/haber_cyber_espionage_cloud_hero.jpg" alt="Kritik Altyapılara Yönelik Siber Casusluk Kampanyası ve Bulut Servis C2 Kanalı" class="news-cover-img" />
+          
+          <div class="news-cover-overlay-zones">
+            <span class="zone-pill"><i class="fa-solid fa-bug"></i> 3 Yeni Zararlı Ailesi</span>
+            <span class="zone-pill"><i class="fa-solid fa-cloud"></i> Bulut Servis C2 Kanalı</span>
+            <span class="zone-pill"><i class="fa-solid fa-building-shield"></i> Kritik Altyapı Hedefli</span>
+          </div>
+        </div>
+
+        <!-- Highlights & Key Statistics Grid -->
+        <div class="news-stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">3 ZARARLI</div>
+            <div class="stat-label">Yeni Yazılım Ailesi</div>
+            <div class="stat-sub">PATCHCORD • SHEETCORD • HACKERAI</div>
+          </div>
+          <div class="stat-box" style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+            <div class="stat-number">C2 KANALI</div>
+            <div class="stat-label">Meşru İnternet Servisleri</div>
+            <div class="stat-sub">Google Sheets & GitHub Gists</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">HEDEF SEKTÖR</div>
+            <div class="stat-label">Kritik Altyapılar</div>
+            <div class="stat-sub">Telekom • Kamu • Savunma • Enerji</div>
+          </div>
+        </div>
+
+        <!-- Full News Article Body -->
+        <div class="news-body-text">
+          <p>
+            Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Araştırmacılara göre saldırganlar, kötü amaçlı iletişimi sıradan internet trafiğinin arasına gizlemek için Google Sheets ve GitHub Gists gibi yaygın kullanılan hizmetlerden de yararlanıyor.
+          </p>
+
+          <p>
+            Acronis Threat Research Unit (TRU), <strong>13 Ağustos 2026 tarihinde</strong> yayımladığı teknik araştırmada Güney Asya’daki kritik altyapıları hedefleyen bir siber casusluk kampanyasının ayrıntılarını açıkladı.
+          </p>
+
+          <p>
+            Araştırmada daha önce belgelenmemiş üç zararlı yazılım ailesi tanımlandı: <strong>PATCHCORD, SHEETCORD ve HACKERAI C2 Agent.</strong>
+          </p>
+
+          <p>
+            Soruşturmanın başlangıcı Haziran 2026’ya uzanıyor. Araştırmacılar VirusTotal’a yüklenen şüpheli bir ZIP dosyasında, Afgan Telecom’u taklit edecek biçimde hazırlanmış zararlı bir kurulum paketi tespit etti. Teknik incelemede PATCHCORD adlı arka kapı yazılımı ortaya çıkarıldı.
+          </p>
+
+          <h2>Saldırganların yeni kamuflajı: Meşru internet hizmetleri</h2>
+          <p>
+            Kampanyanın en dikkat çekici özelliklerinden biri komuta-kontrol iletişiminde kullanılan yöntemler.
+          </p>
+          <p>
+            Acronis’in analizine göre <strong>SHEETCORD, Google Sheets’i komuta-kontrol amacıyla kötüye kullanabiliyor. HACKERAI C2 Agent ise GitHub Gists üzerinden iletişim kurabiliyor.</strong>
+          </p>
+          <p>
+            Bu yöntem kurumlar açısından önemli bir güvenlik problemi oluşturuyor. Çünkü Google ve GitHub gibi meşru hizmetlere yönelik normal kullanıcı trafiği ile saldırganların oluşturduğu kötü amaçlı iletişimin birbirinden ayrılması daha güç hale gelebiliyor.
+          </p>
+
+          <h2>Hedefler telekomla sınırlı değil</h2>
+          <p>
+            Araştırmacılar kampanyanın Afganistan’daki telekom sektörünü hedeflediğini, ancak incelemenin Hindistan’daki <strong>kamu, savunma ve enerji kuruluşlarıyla ilişkili hedeflere</strong> kadar uzandığını bildiriyor.
+          </p>
+          <p>
+            Zararlı yazılım dağıtımında Hindistan’ın National Informatics Centre kurumunu taklit eden bir alan adının da kullanıldığı tespit edildi.
+          </p>
+          <p>
+            İncelenen saldırı altyapısında ayrıca çeşitli uzaktan erişim ve kimlik bilgisi toplama araçları ile <strong>CVE-2024-6387</strong>, diğer adıyla <em>regreSSHion</em>, güvenlik açığından yararlanmaya yönelik araçlar bulundu.
+          </p>
+
+          <h2>Fail konusunda kesin hüküm yok</h2>
+          <p>
+            Acronis; hedef seçimi, altyapı, kullanılan araçlar ve saldırı yöntemlerini değerlendirerek kampanyanın <strong>APT36/Transparent Tribe ile örtüştüğünü orta güven düzeyinde</strong> değerlendiriyor.
+          </p>
+          <p>
+            Bu nedenle mevcut bulgular kesin bir fail tespiti değil, teknik tehdit istihbaratına dayanan bir atıf değerlendirmesi niteliğinde.
+          </p>
+
+          <h2>Enerji kuruluşunun hedeflenmesi, SCADA’nın ele geçirildiği anlamına gelmiyor</h2>
+          <p>
+            Kampanyanın enerji kuruluşlarıyla ilişkili hedeflere kadar uzanması kritik altyapı güvenliği açısından dikkat çekici.
+          </p>
+          <p>
+            Ancak mevcut araştırma <strong>SCADA, PLC veya fiziksel enerji proseslerinin saldırganlar tarafından ele geçirildiğini göstermiyor.</strong>
+          </p>
+          <p>
+            Bir saldırının operasyonel teknoloji sistemlerine ulaşıp ulaşmadığının belirlenebilmesi için ağ ve erişim kayıtları, güvenlik duvarları, kimlik doğrulama logları, mühendislik istasyonları ve varsa OT/SCADA kayıtlarının ayrıca incelenmesi gerekiyor.
+          </p>
+
+          <p>
+            PATCHCORD vakasının ortaya koyduğu risk ise oldukça açık:
+          </p>
+
+          <div class="news-callout-quote">
+            “Kritik altyapıya yönelik kötü amaçlı trafik artık yalnızca şüpheli bir saldırgan sunucusundan gelmeyebilir. Saldırganlar, kurumların her gün kullandığı meşru bulut ve internet hizmetlerini de iletişim kanalı olarak kullanabilir.”
+          </div>
+        </div>
+
+        <!-- Sources & References Box (Text Format as Requested) -->
+        <div class="sources-box">
+          <div class="sources-title">
+            <i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> <span>Kaynaklar</span>
+          </div>
+          <ul class="sources-list">
+            <li><i class="fa-solid fa-check"></i> <span>Acronis Threat Research Unit, <em>“PATCHCORD: New malware cluster targets Afghan telecom and South Asian critical infrastructure”</em>, <strong>13 Ağustos 2026</strong>.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Industrial Cyber, <em>PATCHCORD siber casusluk kampanyasına ilişkin değerlendirme</em>.</span></li>
+          </ul>
+        </div>
+
+        <!-- Footer Action & Share Bar -->
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="haberler.html" class="btn-content-back"><i class="fa-solid fa-arrow-left"></i> <span>Tüm Haberlere Dön</span></a>
+          
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: #64748b;">Haberi Paylaş:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:?subject=" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid-4">
+        <div>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="logo-title-group">
+              <span class="logo-main-text" style="color: #fff;">UZMAN İNCELEME</span>
+              <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
+            </div>
+          </a>
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim, yangın, hasar, adli hesap ve uzman mütalaası hizmetleri sunuyoruz.
+          </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@uzmaninceleme.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="kurumsal.html">Kurumsal</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="makaleler.html">Yayınlar & Dergi</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Yayın Kategorileri</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="makaleler.html">Uzman Makaleleri</a></li>
+            <li><a href="haberler.html">Kurumsal Haberler</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@uzmaninceleme.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget & App JS -->
+  <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bergama’da Rüzgâr Türbini Yangını: 16 Gün İçindeki İkinci Olay Dikkat Çekti | UZMAN İNCELEME</title>
+  <meta name="description" content="İzmir Bergama'da 13 Ağustos 2026'da meydana gelen rüzgâr türbini yangını, NFPA 850 standartları ve adli mühendislik yönüyle değerlendiriliyor.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Bergama’da Rüzgâr Türbini Yangını: 16 Gün İçindeki İkinci Olay Dikkat Çekti">
+  <meta property="og:description" content="İzmir Bergama'da 13 Ağustos 2026'da meydana gelen rüzgâr türbini yangını, NFPA 850 standartları ve adli mühendislik yönüyle değerlendiriliyor.">
+  <meta property="og:image" content="assets/haber_bergama_wind_turbine_fire_hero.jpg">
+  <meta property="og:type" content="article">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dedicated Dark Navy Hero Banner Styles for News Detail */
+    .news-detail-hero {
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .news-detail-hero-title {
+      font-size: clamp(1.9rem, 4.2vw, 2.45rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.24;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .news-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
+    }
+
+    .news-cover-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Clean HTML Zone Badges */
+    .news-cover-overlay-zones {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 5;
+    }
+
+    .zone-pill {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zone-pill i {
+      color: #38bdf8;
+    }
+
+    /* Stats Grid Callout Box */
+    .news-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    /* Editorial Typography & High Contrast Rules */
+    .news-body-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #1e293b !important;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .news-body-text strong,
+    .news-body-text b {
+      color: #0f172a !important;
+      font-weight: 700;
+    }
+
+    .news-body-text h2, 
+    .news-body-text h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-left: 12px;
+      border-left: 4px solid #0284c7;
+      line-height: 1.3;
+    }
+
+    .news-callout-quote {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1 !important;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 3rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sources-list li {
+      font-size: 0.88rem;
+      color: #1e293b !important;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sources-list li strong {
+      color: #0f172a !important;
+    }
+
+    .sources-list li i {
+      color: #0284c7;
+      margin-top: 3px;
+    }
+
+    /* Dedicated Light Button for Content Area */
+    .btn-content-back {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #0f172a !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-content-back:hover {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 2rem 1.25rem;
+        margin-top: -1.5rem;
+      }
+      .news-cover-img {
+        height: 250px;
+      }
+      .news-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="logo-title-group">
+          <span class="logo-main-text">UZMAN İNCELEME</span>
+          <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li class="nav-dropdown-wrapper">
+          <a href="makaleler.html" class="nav-link nav-dropdown-trigger active">
+            <span>Yayınlar</span> <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+          </a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="makaleler.html"><i class="fa-solid fa-file-lines"></i> Uzman Makaleleri</a></li>
+            <li><a href="haberler.html" style="color: #38bdf8; font-weight: 700;"><i class="fa-solid fa-newspaper"></i> Haberler</a></li>
+          </ul>
+        </li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="tel:05326422657" class="phone-header-link data-phone-link">
+          <i class="fa-solid fa-phone-volume" style="color: #38bdf8;"></i>
+          <span class="data-phone-text">İletişim: 0532 642 26 57</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- News Detail Subpage Hero Banner -->
+  <section class="news-detail-hero">
+    <div class="container">
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
+        </ul>
+
+        <div class="news-category-badge">
+          <i class="fa-solid fa-bolt"></i> ENERJİ SİSTEMLERİ / ADLİ MÜHENDİSLİK
+        </div>
+
+        <h1 class="news-detail-hero-title">
+          Bergama’da Rüzgâr Türbini Yangını:<br>
+          <span class="cyan-text">16 Gün İçindeki İkinci Olay Dikkat Çekti</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          İzmir’in Bergama ilçesinde 13 Ağustos 2026’da bir rüzgâr türbininde çıkan yangın, türbini kullanılamaz hale getirdi. Aynı ilçede 28 Temmuz’da da başka bir rüzgâr türbini yangını yaşanmış olması dikkat çekti. Ancak iki olay arasında teknik bir bağlantı bulunduğuna ilişkin şu ana kadar doğrulanmış bir bilgi bulunmuyor.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item"><i class="fa-solid fa-calendar-days" style="color: #38bdf8;"></i> <span>13 Ağustos 2026</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-newspaper" style="color: #38bdf8;"></i> <span>13 Ağustos 2026 İHA Haber</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> <span>5 dk okuma</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL CONTENT BODY CONTAINER -->
+  <section style="padding-bottom: 5rem; background: #f8fafc;">
+    <div class="container">
+      
+      <article class="editorial-container">
+
+        <!-- Big Cover Image with Clean HTML Zone Badges -->
+        <div class="news-cover-wrapper">
+          <img src="assets/haber_bergama_wind_turbine_fire_hero.jpg" alt="Bergama Rüzgâr Türbini Yangını Adli İncelemesi" class="news-cover-img" />
+          
+          <div class="news-cover-overlay-zones">
+            <span class="zone-pill"><i class="fa-solid fa-wind"></i> Rüzgâr Türbini & RES</span>
+            <span class="zone-pill"><i class="fa-solid fa-fire-extinguisher"></i> NFPA 850 Yangın Riski</span>
+            <span class="zone-pill"><i class="fa-solid fa-scale-balanced"></i> Kök Neden & Zaman Dizini</span>
+          </div>
+        </div>
+
+        <!-- Highlights & Key Statistics Grid -->
+        <div class="news-stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">16 GÜN FARK</div>
+            <div class="stat-label">İki Ayrı Yangın</div>
+            <div class="stat-sub">Bergama Rüzgâr Santralleri</div>
+          </div>
+          <div class="stat-box" style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+            <div class="stat-number">NFPA 850</div>
+            <div class="stat-label">2026 Standardı</div>
+            <div class="stat-sub">Rüzgâr Türbini Koruma</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">KÖK NEDEN</div>
+            <div class="stat-label">SCADA & Alarmlar</div>
+            <div class="stat-sub">Adli Mühendislik Analizi</div>
+          </div>
+        </div>
+
+        <!-- Full News Article Body -->
+        <div class="news-body-text">
+          <p>
+            İhlas Haber Ajansı’nın (İHA) aktardığına göre son olay, 13 Ağustos Perşembe günü öğleden sonra <strong>Batı Anadolu Serbest Bölgesi yakınlarında bulunan bir rüzgâr enerji santralinde</strong> meydana geldi.
+          </p>
+
+          <p>
+            Türbinin kanat bölümünde alevlerin görüldüğü, yangının büyümesiyle yoğun siyah duman oluştuğu ve türbinin kullanılamaz hale geldiği bildirildi.
+          </p>
+
+          <p>
+            <strong>Yangının kesin çıkış nedeni henüz açıklanmadı.</strong>
+          </p>
+
+          <p>
+            Batı Anadolu Serbest Bölgesi’nin Bergama’da bulunduğu T.C. Ticaret Bakanlığı kayıtlarıyla da doğrulanıyor. Bölge, 2,3 milyon metrekarelik alan üzerinde kuruldu ve 18 Mart 2024’te törenle açıldı.
+          </p>
+
+          <h2>16 Gün Önce de Türbin Yanmıştı</h2>
+          <p>
+            Bergama’da <strong>28 Temmuz 2026’da</strong> başka bir rüzgâr türbini yangını meydana geldi.
+          </p>
+
+          <p>
+            İHA’nın haberine göre Koyuneli Mahallesi’ndeki türbinde henüz belirlenemeyen nedenle çıkan yangına, alevlerin çevredeki ormanlık alana sıçrama riski nedeniyle helikopterle müdahale edildi.
+          </p>
+
+          <p>
+            28 Temmuz ile 13 Ağustos arasında <strong>16 gün</strong> bulunuyor.
+          </p>
+
+          <p>
+            Ancak bu zaman yakınlığı, iki olayın aynı teknik nedene sahip olduğunu göstermez. Açık kaynaklarda yangınların aynı santrale, aynı işletmeciye veya aynı türbin modeline ait olduğunu doğrulayan bir bilgi bulunmuyor.
+          </p>
+
+          <h2>Rüzgâr Türbinlerinde Yangın Riski Nerede?</h2>
+          <p>
+            Rüzgâr türbinleri elektriksel ve mekanik sistemlerin aynı yapıda çalıştığı karmaşık enerji üretim tesisleri.
+          </p>
+
+          <p>
+            <strong>NFPA 850 – Standard for Fire Protection for Electric Generating Plants and High-Voltage Direct Current Converter Stations’ın 2026 sürümünde</strong>, rüzgâr türbinleri ve rüzgâr santralleri için ayrı hükümler bulunuyor.
+          </p>
+
+          <p>
+            NFPA’nın güncel teknik metninde <strong>nacelle trafoları, nacelle içerisindeki yağlama sistemleri, yıldırım ve çevresel yangınlar</strong> rüzgâr türbinleriyle ilişkili başlıca yangın ve patlama tehlikeleri arasında gösteriliyor.
+          </p>
+
+          <p>
+            Ancak bunların hiçbiri <strong>Bergama’daki yangının belirlenmiş nedeni değildir.</strong>
+          </p>
+
+          <h2>Alevin Görüldüğü Yer, Yangının Başladığı Yer Olmayabilir</h2>
+          <p>
+            Olay haberinde türbinin kanat bölümünde alevlerin görüldüğü aktarılıyor.
+          </p>
+
+          <p>
+            Fakat adli yangın incelemesi açısından bu gözlem tek başına yangının kanatta başladığını kanıtlamaz.
+          </p>
+
+          <p>
+            İlk tutuşma bölgesi ile yangının dışarıdan ilk fark edildiği nokta farklı olabilir. Bu nedenle teknik inceleme tamamlanmadan üretici, işletmeci, bakım firması veya çalışanlara kusur yüklenmesi doğru olmaz.
+          </p>
+
+          <div class="news-callout-quote">
+            “Adli mühendislik açısından zaman yakınlığı bir araştırma sebebidir; tek başına nedensellik delili değildir.”
+          </div>
+
+          <h2>Sonuç Yorumlaması</h2>
+          <p>
+            Böyle bir olayda kök neden araştırmasının yalnızca yangın sonrası görüntülere dayandırılması yeterli değildir.
+          </p>
+
+          <p>
+            Mevcutsa <strong>SCADA alarm ve olay kayıtları, türbin kontrol sistemi kayıtları, elektriksel koruma açmaları, bakım ve arıza geçmişi ile yıldırım kayıtlarının</strong> korunması ve fiziksel yangın bulgularıyla birlikte değerlendirilmesi teknik incelemeyi güçlendirebilir.
+          </p>
+
+          <p>
+            Bergama’da 16 gün içinde iki ayrı rüzgâr türbini yangınının meydana gelmiş olması dikkat çekicidir. Ancak iki olay arasında bağlantı kurulabilmesi için ortak teknik bulguların ortaya konulması gerekir.
+          </p>
+
+          <p>
+            <strong>Adli mühendislik açısından zaman yakınlığı bir araştırma sebebidir; tek başına nedensellik delili değildir.</strong>
+          </p>
+        </div>
+
+        <!-- Sources & References Box (Text Format as Requested) -->
+        <div class="sources-box">
+          <div class="sources-title">
+            <i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> <span>KAYNAKLAR</span>
+          </div>
+          <ul class="sources-list">
+            <li><i class="fa-solid fa-check"></i> <span><strong>Ana haber kaynağı:</strong> İhlas Haber Ajansı (İHA), <em>“İzmir’de rüzgar gülü yandı”</em>, <strong>13 Ağustos 2026</strong>.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Önceki olay:</strong> İhlas Haber Ajansı (İHA), <em>“İzmir’de rüzgar türbinindeki yangına helikopterle müdahale”</em>, <strong>28 Temmuz 2026</strong>.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Resmî yer doğrulaması:</strong> T.C. Ticaret Bakanlığı, <em>“Batı Anadolu Serbest Bölgesi Törenle Açıldı”</em>, <strong>22 Mart 2024</strong>.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Teknik kaynak:</strong> National Fire Protection Association, <strong>NFPA 850 – Standard for Fire Protection for Electric Generating Plants and High-Voltage Direct Current (HVDC) Converter Stations, 2026 Edition</strong>, Chapter 13 – Wind Turbines.</span></li>
+          </ul>
+        </div>
+
+        <!-- Footer Action & Share Bar -->
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="haberler.html" class="btn-content-back"><i class="fa-solid fa-arrow-left"></i> <span>Tüm Haberlere Dön</span></a>
+          
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: #64748b;">Haberi Paylaş:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:?subject=" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid-4">
+        <div>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="logo-title-group">
+              <span class="logo-main-text" style="color: #fff;">UZMAN İNCELEME</span>
+              <span class="logo-sub-text">ADLİ MÜHENDİSLİK & BİLİŞİM</span>
+            </div>
+          </a>
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim, yangın, hasar, adli hesap ve uzman mütalaası hizmetleri sunuyoruz.
+          </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@uzmaninceleme.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="kurumsal.html">Kurumsal</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="makaleler.html">Yayınlar & Dergi</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Yayın Kategorileri</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="makaleler.html">Uzman Makaleleri</a></li>
+            <li><a href="haberler.html">Kurumsal Haberler</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> <strong style="color: #fff;" class="data-phone-val">0532 642 26 57</strong></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@uzmaninceleme.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget & App JS -->
+  <div class="whatsapp-float-container"><div class="whatsapp-label-badge"><span class="whatsapp-status-dot"></span><span>WhatsApp Destek Hattı</span></div><a href="https://wa.me/905326422657" target="_blank" class="whatsapp-float-btn id-wa-link"><div class="whatsapp-pulse-ring"></div><i class="fa-brands fa-whatsapp"></i></a></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

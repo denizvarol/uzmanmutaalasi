@@ -55,17 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkHref = link.getAttribute('href');
     if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
       link.classList.add('active');
+    } else if (currentPath === 'makaleler.html' && link.classList.contains('nav-dropdown-trigger')) {
+      link.classList.add('active');
     } else {
       link.classList.remove('active');
     }
   });
 
-  // 3. INJECT FIXED MOBILE BOTTOM NAVIGATION BAR (MOCKUP BİREBİR)
+  // 3. INJECT FIXED MOBILE BOTTOM NAVIGATION BAR
   if (!document.querySelector('.mobile-bottom-nav')) {
     const isIndex = currentPath === 'index.html' || currentPath === '';
+    const isKurumsal = currentPath === 'kurumsal.html';
     const isUzmanlik = currentPath === 'uzmanliklar.html';
     const isDergi = currentPath === 'makaleler.html';
-    const isEgitim = currentPath === 'egitimler.html';
     const isIletisim = currentPath === 'iletisim.html';
 
     const mobileNavHTML = `
@@ -74,17 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <i class="fa-solid fa-house"></i>
           <span>Ana Sayfa</span>
         </a>
+        <a href="kurumsal.html" class="mobile-bottom-nav-item ${isKurumsal ? 'active' : ''}">
+          <i class="fa-solid fa-building"></i>
+          <span>Kurumsal</span>
+        </a>
         <a href="uzmanliklar.html" class="mobile-bottom-nav-item ${isUzmanlik ? 'active' : ''}">
           <i class="fa-solid fa-briefcase"></i>
           <span>Uzmanlık</span>
         </a>
         <a href="makaleler.html" class="mobile-bottom-nav-item ${isDergi ? 'active' : ''}">
           <i class="fa-solid fa-book-open"></i>
-          <span>Dergi</span>
-        </a>
-        <a href="egitimler.html" class="mobile-bottom-nav-item ${isEgitim ? 'active' : ''}">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <span>Eğitim</span>
+          <span>Yayınlar</span>
         </a>
         <a href="iletisim.html" class="mobile-bottom-nav-item ${isIletisim ? 'active' : ''}">
           <i class="fa-solid fa-envelope"></i>
@@ -93,6 +95,103 @@ document.addEventListener('DOMContentLoaded', () => {
       </nav>
     `;
     document.body.insertAdjacentHTML('beforeend', mobileNavHTML);
+  }
+
+  // 4. HERO 5-SLIDE CAROUSEL ENGINE (AUTOMATIC 5-SECOND TIMER)
+  const heroCarouselWrap = document.querySelector('.hero-carousel-wrap');
+  if (heroCarouselWrap) {
+    const slides = heroCarouselWrap.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('heroPrevBtn');
+    const nextBtn = document.getElementById('heroNextBtn');
+    let currentSlide = 0;
+    let autoSlideInterval = null;
+
+    function showSlide(index) {
+      if (slides.length === 0) return;
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.add('active');
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.classList.remove('active');
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoSlide();
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        showSlide(idx);
+        startAutoSlide();
+      });
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    heroCarouselWrap.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroCarouselWrap.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+        startAutoSlide();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+        startAutoSlide();
+      }
+    }, { passive: true });
+
+    // Initialize first slide and start 5-second automatic timer
+    showSlide(0);
+    startAutoSlide();
   }
 
   // 4. Mobile Menu Drawer Toggle
@@ -150,5 +249,88 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay?.classList.remove('active');
     modalForm.reset();
   });
+
+  // 7. DYNAMIC RENDERER FOR HOMEPAGE "UZMAN İNCELEME YAYINLARI"
+  function renderHomepageArticles() {
+    const gridContainer = document.getElementById('homepageArticlesGrid');
+    if (!gridContainer) return;
+
+    function getArticlesData() {
+      const localData = localStorage.getItem('uzman_yayinlar_data');
+      if (localData) {
+        try {
+          const parsed = JSON.parse(localData);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        } catch(e) {}
+      }
+      if (window.YAYINLAR_DATA && Array.isArray(window.YAYINLAR_DATA)) {
+        return window.YAYINLAR_DATA;
+      }
+      return [];
+    }
+
+    const allArticles = getArticlesData();
+
+    // Filter ONLY "Uzman Makaleleri" (category: "makale")
+    const makalelerOnly = allArticles.filter(art => {
+      const cat = (art.category || '').toLowerCase();
+      return cat === 'makale' || cat === 'uzman makalesi';
+    });
+
+    if (makalelerOnly.length === 0) {
+      gridContainer.innerHTML = `
+        <div style="grid-column: 1 / -1; background: #0e172c; border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 2.5rem; text-align: center; color: #cbd5e1;">
+          <h3 style="font-size: 1rem; color: #94a3b8; font-weight: 600;">Henüz yayınlanmış uzman makalesi bulunmamaktadır.</h3>
+        </div>
+      `;
+      return;
+    }
+
+    // Helper to parse Turkish date strings like "12 Ağustos 2026"
+    function parseTurkishDate(dateStr) {
+      if (!dateStr) return new Date(0);
+      const monthMap = {
+        "ocak": 0, "şubat": 1, "mart": 2, "nisan": 3, "mayıs": 4, "haziran": 5,
+        "temmuz": 6, "ağustos": 7, "eylül": 8, "ekim": 9, "kasım": 10, "aralık": 11
+      };
+      const parts = dateStr.trim().toLowerCase().split(/\s+/);
+      if (parts.length === 3) {
+        const day = parseInt(parts[0], 10);
+        const month = monthMap[parts[1]];
+        const year = parseInt(parts[2], 10);
+        if (!isNaN(day) && month !== undefined && !isNaN(year)) {
+          return new Date(year, month, day);
+        }
+      }
+      const parsed = new Date(dateStr);
+      return isNaN(parsed.getTime()) ? new Date(0) : parsed;
+    }
+
+    // Sort newest to oldest
+    makalelerOnly.sort((a, b) => parseTurkishDate(b.date) - parseTurkishDate(a.date));
+
+    // Pick top 3 latest articles
+    const top3 = makalelerOnly.slice(0, 3);
+
+    gridContainer.innerHTML = top3.map(art => {
+      const coverImg = art.image || 'assets/uzman_makalesi_thumb.png';
+      const authorText = art.author ? ` • ✍️ ${art.author}` : '';
+      return `
+        <div class="dergi-card light-card">
+          <div class="dergi-card-img-box" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('${coverImg}');">
+            <span class="dergi-card-tag" style="background: #0284c7;">UZMAN MAKALESİ</span>
+          </div>
+          <div class="dergi-card-body">
+            <span class="dergi-card-date">${art.date || ''}${authorText}</span>
+            <h4 class="dergi-card-title">${art.title || 'Uzman Makalesi'}</h4>
+            <p class="dergi-card-desc">${art.summary || ''}</p>
+            <a href="makaleler.html?id=${encodeURIComponent(art.id)}" class="dergi-card-link">Devamını Oku →</a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  renderHomepageArticles();
 
 });

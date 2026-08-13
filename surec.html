@@ -199,9 +199,17 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
         <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
-        <li><a href="makaleler.html" class="nav-link">Dergi & Yayınlar</a></li>
-        <li><a href="egitimler.html" class="nav-link">Eğitimler</a></li>
+        <li class="nav-dropdown-wrapper">
+          <a href="makaleler.html" class="nav-link nav-dropdown-trigger">
+            <span>Yayınlar</span> <i class="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
+          </a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="makaleler.html"><i class="fa-solid fa-file-lines"></i> Uzman Makaleleri</a></li>
+            <li><a href="haberler.html"><i class="fa-solid fa-newspaper"></i> Haberler</a></li>
+          </ul>
+        </li>
         <li><a href="surec.html" class="nav-link active">Süreç</a></li>
         <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
       </ul>
