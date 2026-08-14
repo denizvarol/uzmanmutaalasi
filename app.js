@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. DEFAULT SITE SETTINGS
   const DEFAULT_SETTINGS = {
-    phone: '0532 642 26 57',
     email: 'info@uzmaninceleme.com',
     office: 'Ankara, Türkiye',
     heroTitle: 'Teknik Doğruluk. Hukuki Güç.',
@@ -26,19 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Apply settings to DOM
   function applySettings(settings) {
-    document.querySelectorAll('.data-phone-val').forEach(el => el.textContent = settings.phone);
-    document.querySelectorAll('.data-phone-text').forEach(el => el.textContent = `İletişim: ${settings.phone}`);
-
-    const cleanPhoneNum = settings.phone.replace(/\D/g, '');
-    const formattedTel = cleanPhoneNum.startsWith('90') ? cleanPhoneNum : (cleanPhoneNum.startsWith('0') ? '9' + cleanPhoneNum : '90' + cleanPhoneNum);
-
-    document.querySelectorAll('.data-phone-link').forEach(el => el.setAttribute('href', `tel:${cleanPhoneNum}`));
-
-    const waLink = document.querySelector('.id-wa-link');
-    if (waLink) {
-      waLink.setAttribute('href', `https://wa.me/${formattedTel}?text=Merhaba,%20uzman%20m%C3%BCtalaas%C4%B1%20ve%20dan%C4%B1%C5%9Fmanl%C4%B1k%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`);
-    }
-
     document.querySelectorAll('.data-email-val').forEach(el => el.textContent = settings.email);
     document.querySelectorAll('.data-email-link').forEach(el => el.setAttribute('href', `mailto:${settings.email}`));
 

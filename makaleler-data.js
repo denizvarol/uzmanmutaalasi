@@ -2,13 +2,35 @@
  * UZMAN İNCELEME - UZMAN MAKALELERİ & YAYINLAR VERİ DOSYASI
  * C:\Users\User\Desktop\Projeler\Danışmanlık\makaleler-data.js
  * 
- * Toplam 12 gerçek yayın ve bunlara ait fiziksel doküman eşleşmeleri:
- * - 6 Adli Mühendislik & Bilişim Makalesi / Posteri
+ * Toplam 9 Aktif Yayın (4 Adli Hesap makalesi geçici olarak gizlendi, PDF'leri korundu):
+ * - 7 Adli Bilişim & Siber Güvenlik Makalesi / Posteri
  * - 2 Hasar & Sigorta Mühendisliği Makalesi / Posteri
- * - 4 Adli Hesap Uzmanlığı Makalesi
  */
 
 window.MAKALELER_DATA = [
+  {
+    id: "art-siber-olaydan-adli-delile",
+    title: "Siber Olaydan Adli Delile",
+    category: "makale",
+    categoryLabel: "Uzman Makalesi",
+    uzmanlik: "muhendislik",
+    uzmanlikLabel: "Adli Bilişim & Siber Güvenlik",
+    author: "Deniz Varol",
+    date: "13 Ağustos 2026",
+    readTime: "7 sf okuma",
+    image: "assets/siber_olaydan_adli_delile_hero.jpg",
+    pdfUrl: "assets/docs/siber_olaydan_adli_delile.pdf",
+    fileType: "pdf",
+    pageCount: 7,
+    summary: "Bilgi güvenliği ihlallerinde dijital iz, log korelasyonu, KVKK ve bilirkişilik açısından siber olayın denetlenebilir adli delile dönüşümünü ele alan teknik-hukuki inceleme.",
+    detailUrl: "makale-detay.html?id=art-siber-olaydan-adli-delile",
+    highlights: [
+      { num: "NIST CSF 2.0", label: "GOVERN & SP 800-61", sub: "Bütünleşik Güvenlik & Delil" },
+      { num: "ISO 27037/50", label: "Delil Zinciri", sub: "Dijital Bulgu & Korelasyon" },
+      { num: "18 NOKTA", label: "Kontrol Protokolü", sub: "Adli Siber İnceleme Matrisi" }
+    ],
+    content: "Bir siber olayın gerçekleşmiş olması ile o olayın mahkemede teknik olarak ispatlanabilir hâle gelmesi aynı şey değildir. Güvenilir inceleme, güvenlik mimarisi ile delil mimarisini aynı zaman çizelgesinde buluşturur. Bilgi güvenliği ihlallerinde dijital iz, log korelasyonu, KVKK ve bilirkişilik."
+  },
   {
     id: "art-fabrikalar-siber-hasar-makale",
     title: "Fabrikalar Artık Sadece Yanmıyor, Verileri de Çalınıyor (Makale)",
@@ -185,6 +207,8 @@ window.MAKALELER_DATA = [
     ],
     content: "Hasarın bedeli yanan şeylerin toplamı değildir. Nedensellik + teknik değer + üretim etkisi + poliçe sınırı birlikte okunur. 12 noktalı ideal veri seti ve 6 katmanlı teknik değerlendirme içeren infografik poster."
   },
+  /*
+  TEMPORARILY HIDDEN FOR LAUNCH - ADLİ HESAP ARTICLES (CAN BE RESTORED ANYTIME)
   {
     id: "art-hesap-rakam-delil",
     title: "Mahkemede Rakam Tek Başına Delil Değildir (Uzman Makalesi)",
@@ -273,4 +297,5 @@ window.MAKALELER_DATA = [
     ],
     content: "Faiz hesabı, ana paraya bir yüzde yazıp gün sayısıyla çarpmaktan ibaret değildir."
   }
+  */
 ];

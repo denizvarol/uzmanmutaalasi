@@ -129,6 +129,8 @@ window.YAYINLAR_DATA = [
     "summary": "Küresel Hasar Verileri (%21 Yangın, %36 İş Durması), Kök Neden - Hasar - Tazminat Zinciri ve 12 Noktalı İdeal Veri Seti (İnfografik Poster).",
     "content": "Hasarın bedeli yanan şeylerin toplamı değildir. Nedensellik + teknik değer + üretim etkisi + poliçe sınırı birlikte okunur. 12 noktalı ideal veri seti ve 6 katmanlı teknik değerlendirme içeren infografik poster."
   },
+  /*
+  TEMPORARILY HIDDEN FOR LAUNCH - ADLİ HESAP ARTICLES (CAN BE RESTORED ANYTIME)
   {
     "id": "art-hesap-rakam-delil",
     "title": "Mahkemede Rakam Tek Başına Delil Değildir (Uzman Makalesi)",
@@ -189,4 +191,5 @@ window.YAYINLAR_DATA = [
     "summary": "Faiz hesabında yanlış oran, yanlış başlangıç tarihi ve 1 Eylül 2026 eşiği (Kanuni faiz %24, ticari temerrüt %39,75, TTK m.1530 %43 incelemesi).",
     "content": "Faiz hesabı, ana paraya bir yüzde yazıp gün sayısıyla çarpmaktan ibaret değildir. Alacağın hukuki kaynağı, temerrüt tarihi, faiz türü, sözleşmesel oran, ticari iş niteliği, dönemsel oran değişiklikleri ve kısmi ödemeler sonucu doğrudan etkiler. 7589 sayılı Kanunla 1 Eylül 2026'dan itibaren TCMB reeskont oranına bağlı değişken faiz sistemine geçilmektedir."
   }
+  */
 ];
