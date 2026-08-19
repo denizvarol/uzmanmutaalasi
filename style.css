@@ -71,42 +71,45 @@ input, select, textarea { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 84px;
 }
 
 /* Brand Logo */
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   font-weight: 800;
   font-size: 1.2rem;
   color: #ffffff;
   letter-spacing: -0.5px;
+  text-decoration: none;
 }
 
 .logo-icon {
-  width: 44px; height: 44px;
-  background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  color: #38bdf8; font-size: 1.3rem;
-  box-shadow: 0 0 15px rgba(2, 132, 199, 0.3);
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  padding: 6px;
+  padding: 0;
 }
 .logo-emblem-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 3px rgba(65, 201, 226, 0.6));
+  filter: drop-shadow(0 0 6px rgba(65, 201, 226, 0.45));
 }
 
-.logo-title-group { display: flex; flex-direction: column; }
-.logo-main-text { font-size: 1.1rem; font-weight: 900; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; }
-.logo-sub-text { font-size: 0.68rem; font-weight: 700; color: #38bdf8; letter-spacing: 1px; text-transform: none; }
+.logo-title-group { display: flex; flex-direction: column; justify-content: center; }
+.logo-main-text { font-size: 1.22rem; font-weight: 900; line-height: 1.1; color: #ffffff; letter-spacing: 0.6px; }
+.logo-sub-text { font-size: 0.74rem; font-weight: 700; color: #38bdf8; letter-spacing: 1.2px; text-transform: none; margin-top: 2px; }
 
 /* Nav Menu */
 /* Nav Menu & Dropdown */
@@ -553,6 +556,9 @@ input, select, textarea { font-family: inherit; }
 
 @media (max-width: 900px) {
   .navbar { height: 75px; }
+  .logo-icon { width: 48px; height: 48px; }
+  .logo-main-text { font-size: 1.05rem; }
+  .logo-sub-text { font-size: 0.66rem; letter-spacing: 1px; }
   .mobile-toggle { display: flex; }
   .nav-links { position: fixed; top: 75px; left: 0; right: 0; background: #070d1e; border-bottom: 1px solid var(--border-color); flex-direction: column; padding: 1.5rem; gap: 1.25rem; transform: translateY(-150%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
   .nav-links.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
