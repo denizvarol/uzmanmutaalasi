@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter ONLY "Uzman Makaleleri" (category: "makale")
     const makalelerOnly = allArticles.filter(art => {
-      const cat = (art.category || '').toLowerCase();
+      const cat = (art.category || '').toLocaleLowerCase('tr-TR');
       return cat === 'makale' || cat === 'uzman makalesi';
     });
 
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "ocak": 0, "şubat": 1, "mart": 2, "nisan": 3, "mayıs": 4, "haziran": 5,
         "temmuz": 6, "ağustos": 7, "eylül": 8, "ekim": 9, "kasım": 10, "aralık": 11
       };
-      const parts = dateStr.trim().toLowerCase().split(/\s+/);
+      const parts = dateStr.trim().toLocaleLowerCase('tr-TR').split(/\s+/);
       if (parts.length === 3) {
         const day = parseInt(parts[0], 10);
         const month = monthMap[parts[1]];
