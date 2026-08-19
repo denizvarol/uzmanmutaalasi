@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="uiTraceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#41C9E2"/>
+      <stop offset="100%" stop-color="#008DDA"/>
+    </linearGradient>
+    <filter id="circuitGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#41C9E2" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#circuitGlow)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 16V98" stroke="url(#uiTraceGrad)" stroke-width="4.5"/>
+    <path d="M64 48L54 58V72" stroke="url(#uiTraceGrad)" stroke-width="2.5"/>
+    <path d="M64 48L74 58V72" stroke="url(#uiTraceGrad)" stroke-width="2.5"/>
+    <circle cx="54" cy="72" r="2.5" fill="#41C9E2"/>
+    <circle cx="74" cy="72" r="2.5" fill="#41C9E2"/>
+
+    <path d="M28 44L46 34H64H82L100 44" stroke="url(#uiTraceGrad)" stroke-width="4"/>
+
+    <path d="M28 44L14 74H42L28 44Z" stroke="url(#uiTraceGrad)" stroke-width="3.5"/>
+    <path d="M22 66V58M28 66V54M34 66V60" stroke="url(#uiTraceGrad)" stroke-width="2"/>
+    <circle cx="22" cy="56" r="1.5" fill="#41C9E2"/>
+    <circle cx="28" cy="52" r="1.5" fill="#41C9E2"/>
+    <circle cx="34" cy="58" r="1.5" fill="#41C9E2"/>
+
+    <path d="M100 44L86 74H114L100 44Z" stroke="url(#uiTraceGrad)" stroke-width="3.5"/>
+    <path d="M94 66V60M100 66V54M106 66V58" stroke="url(#uiTraceGrad)" stroke-width="2"/>
+    <circle cx="94" cy="58" r="1.5" fill="#41C9E2"/>
+    <circle cx="100" cy="52" r="1.5" fill="#41C9E2"/>
+    <circle cx="106" cy="56" r="1.5" fill="#41C9E2"/>
+
+    <circle cx="64" cy="20" r="5" fill="#0B192C" stroke="url(#uiTraceGrad)" stroke-width="3"/>
+    <circle cx="64" cy="20" r="2" fill="#41C9E2"/>
+    <circle cx="28" cy="44" r="3" fill="#41C9E2"/>
+    <circle cx="100" cy="44" r="3" fill="#41C9E2"/>
+
+    <path d="M48 98H80" stroke="url(#uiTraceGrad)" stroke-width="4"/>
+    <path d="M54 104H74" stroke="url(#uiTraceGrad)" stroke-width="3"/>
+  </g>
+</svg>
