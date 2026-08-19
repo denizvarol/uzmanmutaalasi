@@ -94,6 +94,14 @@ input, select, textarea { font-family: inherit; }
   color: #38bdf8; font-size: 1.3rem;
   box-shadow: 0 0 15px rgba(2, 132, 199, 0.3);
   flex-shrink: 0;
+  padding: 6px;
+}
+.logo-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 3px rgba(65, 201, 226, 0.6));
 }
 
 .logo-title-group { display: flex; flex-direction: column; }
