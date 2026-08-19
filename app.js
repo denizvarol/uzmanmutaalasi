@@ -50,36 +50,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. INJECT FIXED MOBILE BOTTOM NAVIGATION BAR
   if (!document.querySelector('.mobile-bottom-nav')) {
-    const isIndex = currentPath === 'index.html' || currentPath === '';
+        const isIndex = currentPath === 'index.html' || currentPath === '';
     const isKurumsal = currentPath === 'kurumsal.html';
     const isUzmanlik = currentPath === 'uzmanliklar.html';
-    const isDergi = currentPath === 'makaleler.html';
+    const isHaberler = currentPath === 'haberler.html' || currentPath.startsWith('haber-');
     const isIletisim = currentPath === 'iletisim.html';
 
-    const mobileNavHTML = `
+    const mobileNavHTML = 
       <nav class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-bottom-nav-item ${isIndex ? 'active' : ''}">
+        <a href="index.html" class="mobile-bottom-nav-item ">
           <i class="fa-solid fa-house"></i>
           <span>Ana Sayfa</span>
         </a>
-        <a href="kurumsal.html" class="mobile-bottom-nav-item ${isKurumsal ? 'active' : ''}">
+        <a href="kurumsal.html" class="mobile-bottom-nav-item ">
           <i class="fa-solid fa-building"></i>
           <span>Kurumsal</span>
         </a>
-        <a href="uzmanliklar.html" class="mobile-bottom-nav-item ${isUzmanlik ? 'active' : ''}">
+        <a href="uzmanliklar.html" class="mobile-bottom-nav-item ">
           <i class="fa-solid fa-briefcase"></i>
-          <span>Uzmanlık</span>
+          <span>UzmanlÄ±k</span>
         </a>
-        <a href="makaleler.html" class="mobile-bottom-nav-item ${isDergi ? 'active' : ''}">
-          <i class="fa-solid fa-book-open"></i>
-          <span>Yayınlar</span>
+        <a href="haberler.html" class="mobile-bottom-nav-item ">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Haberler</span>
         </a>
-        <a href="iletisim.html" class="mobile-bottom-nav-item ${isIletisim ? 'active' : ''}">
+        <a href="iletisim.html" class="mobile-bottom-nav-item ">
           <i class="fa-solid fa-envelope"></i>
-          <span>İletişim</span>
+          <span>Ä°letiÅŸim</span>
         </a>
       </nav>
-    `;
+    ;
     document.body.insertAdjacentHTML('beforeend', mobileNavHTML);
   }
 
@@ -317,6 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
-  renderHomepageArticles();
+  // renderHomepageArticles(); // Temporarily hidden for launch
 
 });
