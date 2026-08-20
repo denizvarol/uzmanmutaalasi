@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadSettings() {
     try {
       const saved = localStorage.getItem('adli_site_settings');
-      if (saved) return { ...DEFAULT_SETTINGS, ...JSON.parse(saved) };
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.email === 'info@uzmaninceleme.com' || parsed.email === 'bilgi@adlimutalaa.com') {
+          parsed.email = 'info@adlimutalaa.com';
+          localStorage.setItem('adli_site_settings', JSON.stringify(parsed));
+        }
+        return { ...DEFAULT_SETTINGS, ...parsed };
+      }
     } catch (e) {
       console.error('Settings parse error:', e);
     }
