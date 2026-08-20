@@ -18,22 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const saved = localStorage.getItem('adli_site_settings');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.email === 'info@uzmaninceleme.com' || parsed.email === 'bilgi@adlimutalaa.com') {
-          parsed.email = 'info@adlimutalaa.com';
+        if (parsed.email) {
+          delete parsed.email;
           localStorage.setItem('adli_site_settings', JSON.stringify(parsed));
         }
-        return { ...DEFAULT_SETTINGS, ...parsed };
+        return { ...DEFAULT_SETTINGS, ...parsed, email: 'info@adlimutalaa.com' };
       }
     } catch (e) {
       console.error('Settings parse error:', e);
     }
-    return DEFAULT_SETTINGS;
+    return { ...DEFAULT_SETTINGS, email: 'info@adlimutalaa.com' };
   }
 
   // Apply settings to DOM
   function applySettings(settings) {
-    document.querySelectorAll('.data-email-val').forEach(el => el.textContent = settings.email);
-    document.querySelectorAll('.data-email-link').forEach(el => el.setAttribute('href', `mailto:${settings.email}`));
+    document.querySelectorAll('.data-email-val').forEach(el => el.textContent = 'info@adlimutalaa.com');
+    document.querySelectorAll('.data-email-link').forEach(el => el.setAttribute('href', 'mailto:info@adlimutalaa.com'));
 
     document.querySelectorAll('.data-office-val').forEach(el => el.textContent = settings.office);
   }
