@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. DEFAULT SITE SETTINGS
   const DEFAULT_SETTINGS = {
-    email: 'info@uzmaninceleme.com',
+    email: 'info@adlimutalaa.com',
     office: 'Ankara, Türkiye',
     heroTitle: 'Teknik Doğruluk. Hukuki Güç.',
     heroSub: 'Elektrik, elektronik, enerji, dijital delil, yangın, sigorta, adli hesap ve teknik uyuşmazlıklarda uzman inceleme, raporlama ve uzman mütalaası hizmetleri.'
