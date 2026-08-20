@@ -50,36 +50,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. INJECT FIXED MOBILE BOTTOM NAVIGATION BAR
   if (!document.querySelector('.mobile-bottom-nav')) {
-        const isIndex = currentPath === 'index.html' || currentPath === '';
+    const isIndex = currentPath === 'index.html' || currentPath === '';
     const isKurumsal = currentPath === 'kurumsal.html';
     const isUzmanlik = currentPath === 'uzmanliklar.html';
     const isHaberler = currentPath === 'haberler.html' || currentPath.startsWith('haber-');
     const isIletisim = currentPath === 'iletisim.html';
 
-    const mobileNavHTML = 
+    const mobileNavHTML = `
       <nav class="mobile-bottom-nav">
-        <a href="index.html" class="mobile-bottom-nav-item ">
+        <a href="index.html" class="mobile-bottom-nav-item ${isIndex ? 'active' : ''}">
           <i class="fa-solid fa-house"></i>
           <span>Ana Sayfa</span>
         </a>
-        <a href="kurumsal.html" class="mobile-bottom-nav-item ">
+        <a href="kurumsal.html" class="mobile-bottom-nav-item ${isKurumsal ? 'active' : ''}">
           <i class="fa-solid fa-building"></i>
           <span>Kurumsal</span>
         </a>
-        <a href="uzmanliklar.html" class="mobile-bottom-nav-item ">
+        <a href="uzmanliklar.html" class="mobile-bottom-nav-item ${isUzmanlik ? 'active' : ''}">
           <i class="fa-solid fa-briefcase"></i>
-          <span>UzmanlÄ±k</span>
+          <span>Uzmanlık</span>
         </a>
-        <a href="haberler.html" class="mobile-bottom-nav-item ">
+        <a href="haberler.html" class="mobile-bottom-nav-item ${isHaberler ? 'active' : ''}">
           <i class="fa-solid fa-newspaper"></i>
           <span>Haberler</span>
         </a>
-        <a href="iletisim.html" class="mobile-bottom-nav-item ">
+        <a href="iletisim.html" class="mobile-bottom-nav-item ${isIletisim ? 'active' : ''}">
           <i class="fa-solid fa-envelope"></i>
-          <span>Ä°letiÅŸim</span>
+          <span>İletişim</span>
         </a>
       </nav>
-    ;
+    `;
     document.body.insertAdjacentHTML('beforeend', mobileNavHTML);
   }
 
@@ -137,21 +137,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         prevSlide();
         startAutoSlide();
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         nextSlide();
         startAutoSlide();
       });
     }
 
     dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
         showSlide(idx);
         startAutoSlide();
       });
