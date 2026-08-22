@@ -12,7 +12,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/hero_adli_muhendislik.jpg",
     summary: "Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.",
-    detailUrl: "assets/docs/cayirhan-maden-kazasi-22-agustos-2026.pdf",
+    detailUrl: "haber-cayirhan-maden-kazasi.html",
     highlightStats: [
       { num: "21 AĞUSTOS 2026", label: "Olay Tarihi", sub: "Çayırhan Maden İşletmesi" },
       { num: "İKİ TEKNİK GÖRÜŞ", label: "Kök Neden", sub: "Tavan Çökmesi vs Basınçlı Hava" },
@@ -28,7 +28,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/hero_enerji_sistemleri.jpg",
     summary: "Mardin'de forkliftle kaldırıldığı sırada düşen elektrik trafosunun altında kalan bir işçi hayatını kaybetti. Kazada forklift kapasitesi, yük merkezi, sabitleme yöntemi ve iş güvenliği düzeni kritik inceleme başlıkları arasında.",
-    detailUrl: "assets/docs/mardin-trafo-kazasi-14-agustos-2026.pdf",
+    detailUrl: "haber-mardin-trafo-kazasi.html",
     highlightStats: [
       { num: "14 AĞUSTOS 2026", label: "Kaza Tarihi", sub: "Mardin Artuklu Tavuk Çiftliği" },
       { num: "FORKLİFT & TRAFO", label: "Kaldırma Operasyonu", sub: "Kapasite & Yük Merkezi Tespiti" },

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çayırhan’da 1 Madenci Öldü: Göçük mü, Basınçlı Hava Patlaması mı? | Uzman İnceleme</title>
+  <meta name="description" content="Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.">
+  
+  <!-- Open Graph Meta Tags -->
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dedicated Dark Navy Hero Banner Styles for News Detail */
+    .news-detail-hero {
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      text-transform: none;
+      letter-spacing: 0.5px;
+    }
+
+    .news-detail-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .news-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
+    }
+
+    .news-cover-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Clean HTML Zone Badges */
+    .news-cover-overlay-zones {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 5;
+    }
+
+    .zone-pill {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zone-pill i {
+      color: #38bdf8;
+    }
+
+    /* Stats Grid Callout Box */
+    .news-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    /* Editorial Typography & High Contrast Rules */
+    .news-body-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #1e293b !important;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .news-body-text strong,
+    .news-body-text b {
+      color: #0f172a !important;
+      font-weight: 700;
+    }
+
+    .news-body-text h2, 
+    .news-body-text h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-left: 12px;
+      border-left: 4px solid #0284c7;
+      line-height: 1.3;
+    }
+
+    .news-callout-quote {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0369a1 !important;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 3rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a !important;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sources-list li {
+      font-size: 0.88rem;
+      color: #1e293b !important;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sources-list li strong {
+      color: #0f172a !important;
+    }
+
+    .sources-list li i {
+      color: #0284c7;
+      margin-top: 3px;
+    }
+
+    .btn-content-back {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #0f172a !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-content-back:hover {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 2rem 1.25rem;
+        margin-top: -1.5rem;
+      }
+      .news-cover-img {
+        height: 240px;
+      }
+      .news-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
+  <link rel="canonical" href="https://adlimutalaa.com/haber-cayirhan-maden-kazasi">
+  <meta property="og:title" content="Çayırhan’da 1 Madenci Öldü: Göçük mü, Basınçlı Hava Patlaması mı? | Uzman İnceleme">
+  <meta property="og:description" content="Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.">
+  <meta property="og:url" content="https://adlimutalaa.com/haber-cayirhan-maden-kazasi">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Uzman İnceleme">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    (function(){try{var s=localStorage.getItem('adli_site_settings');if(s){var p=JSON.parse(s);if(p&&p.email){delete p.email;localStorage.setItem('adli_site_settings',JSON.stringify(p));}}}catch(e){}})();
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Amblemi" class="logo-emblem-img" /></div>
+        <div class="logo-title-group">
+          <span class="logo-main-text">UZMAN İNCELEME</span>
+          <span class="logo-sub-text">Adli Mühendislik &amp; Bilişim</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li><a href="haberler.html" class="nav-link active">Haberler</a></li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- News Detail Subpage Hero Banner -->
+  <section class="news-detail-hero">
+    <div class="container">
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
+        </ul>
+
+        <div class="news-category-badge">
+          <i class="fa-solid fa-helmet-safety"></i> ADLİ MÜHENDİSLİK / MADEN KAZASI
+        </div>
+
+        <h1 class="news-detail-hero-title">
+          Çayırhan’da 1 Madenci Öldü:<br>
+          <span class="cyan-text">Göçük mü, Basınçlı Hava Patlaması mı? Bilirkişiler Kök Nedeni Arıyor</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item"><i class="fa-solid fa-calendar-days" style="color: #38bdf8;"></i> <span>22 Ağustos 2026</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-newspaper" style="color: #38bdf8;"></i> <span>Anadolu Ajansı & Başsavcılık</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> <span>5 dk okuma</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL CONTENT BODY CONTAINER -->
+  <section style="padding-bottom: 5rem; background: #f8fafc;">
+    <div class="container">
+      
+      <article class="editorial-container">
+
+        <!-- Cover Image with Overlay Badges -->
+        <div class="news-cover-wrapper">
+          <img src="assets/hero_adli_muhendislik.jpg" alt="Çayırhan Maden Kazası İncelemesi" class="news-cover-img" />
+          
+          <div class="news-cover-overlay-zones">
+            <span class="zone-pill"><i class="fa-solid fa-helmet-safety"></i> Yeraltı Maden İşletmesi</span>
+            <span class="zone-pill"><i class="fa-solid fa-wind"></i> Basınçlı Hava Tesisatı</span>
+            <span class="zone-pill"><i class="fa-solid fa-scale-balanced"></i> Bilirkişi Kök Neden Analizi</span>
+          </div>
+        </div>
+
+        <!-- Highlights & Key Statistics Grid -->
+        <div class="news-stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">21 AĞUSTOS 2026</div>
+            <div class="stat-label">Olay Tarihi</div>
+            <div class="stat-sub">Çayırhan Maden İşletmesi</div>
+          </div>
+          <div class="stat-box" style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+            <div class="stat-number">İKİ TEKNİK GÖRÜŞ</div>
+            <div class="stat-label">Kök Neden Açıklaması</div>
+            <div class="stat-sub">Tavan Çökmesi vs Basınçlı Hava</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">BİLİRKİŞİ İNCELEMESİ</div>
+            <div class="stat-label">Teknik Soruşturma</div>
+            <div class="stat-sub">Mühendislik &amp; İSG Analizi</div>
+          </div>
+        </div>
+
+        <!-- Full News Article Body -->
+        <div class="news-body-text">
+          <p>
+            <strong>ANKARA — 22 Ağustos 2026</strong> — Ankara’nın Beypazarı ilçesi Hırkatepe Mahallesi’ndeki Çayırhan Enerji İşletmesi sahasında 21 Ağustos 2026 saat 18.00 sıralarında meydana gelen maden kazasında bir madenci hayatını kaybetti. Ankara Valiliğinin açıklamasına göre olaydan toplam 20 kişi etkilendi. Ankara Vali Yakup Canbolat, bunların bir bölümünün yaralandığını, bir bölümünün ise duman, gaz, kömür ve basınçtan etkilendiğini; dört kişinin durumunun ağır olduğunu açıkladı.
+          </p>
+
+          <p>
+            Kazayla ilgili soruşturma başlatıldı. Ancak olayın ilk saatlerinde kamuoyuna açıklanan iki farklı teknik değerlendirme, kazanın gerçek kök nedeninin bilirkişi incelemesiyle belirlenmesini özellikle önemli hale getiriyor.
+          </p>
+
+          <h2>Valilik Tavan Çökmesine, Başsavcılık Basınçlı Hava Sistemine İşaret Etti</h2>
+          <p>
+            Ankara Valiliğinin ilk açıklamasında kazanın, çalışma sahasının arkasında meydana gelen tavan çökmesinin oluşturduğu basınca bağlı savrulmalar sonucunda gerçekleştiği bildirildi. Vali Canbolat da daha sonra bir kömür bloğunun düşmesi sonucu oluşan hava basıncından söz etti.
+          </p>
+
+          <p>
+            Ankara Batı Cumhuriyet Başsavcılığının açıklamasında ise farklı bir ilk belirlemeye yer verildi. Açıklamaya göre olay, maden işletmesinde kullanılan basınçlı hava sisteminde meydana gelen patlama sonucunda gerçekleşti. Başsavcılık, olayda bir kişinin hayatını kaybettiğini ve 4’ü ağır 11 kişinin yaralandığını bildirdi.
+          </p>
+
+          <p>
+            Bu iki açıklama birbirinin yerine kullanılabilecek ifadeler değil. Dolayısıyla soruşturma tamamlanmadan <em>“kazanın nedeni göçüktür”</em> veya <em>“kazanın nedeni basınçlı hava sistemi patlamasıdır”</em> şeklinde kesin hüküm kurulması doğru değil.
+          </p>
+
+          <p>
+            Başsavcılık, soruşturmanın etkin ve kapsamlı yürütülmesi amacıyla Beypazarı Cumhuriyet Başsavcısı koordinasyonunda iki Cumhuriyet savcısı ile alanında uzman bilirkişilerin görevlendirildiğini açıkladı.
+          </p>
+
+          <h2>Aynı Sahada 2025’te de Ciddi Bir Kaza Yaşandı</h2>
+          <p>
+            Çayırhan’da bu, yakın dönemde yaşanan ilk ciddi maden kazası değil.
+          </p>
+
+          <p>
+            10 Nisan 2025’te Çayırhan Yeraltı Maden İşletmesi’nde meydana gelen başka bir olayda 14 işçi yaralanmıştı. Enerji ve Tabii Kaynaklar Bakanlığının o dönemde aktarılan açıklamasında olayın, çalışanların bulunmadığı bölgede <strong>“ayak arkası tavan taşının kırılması”</strong> sonucunda meydana geldiği belirtilmişti. Kırılmanın oluşturduğu ters hava akımının çalışanları etkilediği bildirilmişti.
+          </p>
+
+          <p>
+            Bu önceki olay, 21 Ağustos 2026 kazasının nedenini kanıtlamaz. Ancak aynı işletmede tavan hareketi ve ani hava basıncı etkilerinin daha önce de incelenmiş olması nedeniyle, geçmiş kazaya ait teknik inceleme, tahkimat, jeoteknik değerlendirme ve alınan düzeltici tedbir kayıtlarının yeni soruşturmada karşılaştırılması önem taşıyabilir.
+          </p>
+
+          <h2>Kritik Soru: Hangisi Neden, Hangisi Sonuç?</h2>
+          <p>
+            Kazanın teknik incelemesinde en önemli meselelerden biri olay sırasının ortaya çıkarılması olacak.
+          </p>
+
+          <p>
+            Eğer tavan veya kömür bloğu hareketi önce gerçekleşmiş ve bunun sonucunda ani hava basıncı oluşmuşsa, basınç kazanın sonuç mekanizmalarından biri olabilir.
+          </p>
+
+          <p>
+            Buna karşılık basınçlı hava tesisatında meydana gelen bir arıza veya patlama önce gerçekleşmişse, fiziksel hasarın ve çalışanların savrulmasının nedeni farklı bir teknik zincire dayanabilir.
+          </p>
+
+          <p>
+            Bu nedenle olay yerindeki tavan ve tahkimat yapısı, basınçlı hava boruları ve bağlantıları, kompresör ve varsa hava tankları, emniyet elemanları, işletme basınçları, bakım ve periyodik kontrol kayıtları ile kırılma ve deformasyon izlerinin birlikte değerlendirilmesi gerekir.
+          </p>
+
+          <p>
+            Özellikle fiziksel deformasyonun yönü ve niteliği, olayın hangi noktadan başladığının belirlenmesinde önemli delillerden biri olabilir.
+          </p>
+
+          <h2>Mevzuat İşverene Riskleri Önleme Yükümlülüğü Getiriyor</h2>
+          <p>
+            Maden işletmeleri bakımından temel düzenlemelerden biri <strong>6331 sayılı İş Sağlığı ve Güvenliği Kanunu</strong>.
+          </p>
+
+          <p>
+            Kanunun 4. maddesi; işverene çalışanların işle ilgili sağlık ve güvenliğini sağlama, mesleki risklerin önlenmesi için gerekli tedbirleri alma, tedbirlerin uygulanmasını izleme ve risk değerlendirmesi yapma veya yaptırma yükümlülüğü getiriyor.
+          </p>
+
+          <p>
+            Bu genel yükümlülüklerin varlığı, somut kazada herhangi bir kişi veya işletmenin kusurlu olduğu anlamına gelmez. Kusurun bulunup bulunmadığı somut deliller, soruşturma ve teknik inceleme sonucunda belirlenebilir.
+          </p>
+
+          <p>
+            Madenler için ayrıca 19 Eylül 2013 tarihli ve 28770 sayılı Resmî Gazete’de yayımlanan <strong>Maden İşyerlerinde İş Sağlığı ve Güvenliği Yönetmeliği</strong> bulunuyor. Yönetmelik, yeraltı ve yerüstü maden işyerlerinde çalışanların sağlık ve güvenliğinin korunması için uygulanması gereken asgari şartları düzenliyor.
+          </p>
+
+          <div class="news-callout-quote">
+            “Hasar gören ekipman her zaman kazayı başlatan ekipman değildir; kök neden fiziksel delile, teknik kayıtlara ve mühendislik bulgularına dayanmalıdır.”
+          </div>
+
+          <h2>Bilirkişi Değerlendirmesi | İlk Tespit, Nihai Kök Neden Değildir</h2>
+          <p>
+            Çayırhan kazasının teknik açıdan en önemli özelliği, daha soruşturmanın başlangıcında iki farklı olay mekanizmasının kamuoyuna açıklanmış olmasıdır.
+          </p>
+
+          <p>
+            Bilirkişi incelemesinde bu nedenle önce bir olay zaman çizelgesi kurulmalı; fiziksel hasarın nerede başladığı, basınç değişiminin kaynağı, tavan hareketinin zamanı ve basınçlı hava sistemindeki olası hasarın neden mi yoksa sonuç mu olduğu birbirinden ayrılmalıdır.
+          </p>
+
+          <p>
+            Hasar gören ekipman her zaman kazayı başlatan ekipman değildir. Aynı şekilde olay yerinde görülen göçük de tek başına göçüğün ilk neden olduğunu kanıtlamaz.
+          </p>
+
+          <p>
+            Kök neden; ilk açıklamaya değil, fiziksel delile, teknik kayıtlara ve birbirini doğrulayan mühendislik bulgularına dayanmalıdır.
+          </p>
+        </div>
+
+        <!-- Sources Box -->
+        <div class="sources-box">
+          <div class="sources-title">
+            <i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> <span>KAYNAKLAR</span>
+          </div>
+          <ul class="sources-list">
+            <li><i class="fa-solid fa-check"></i> <span><strong>Anadolu Ajansı:</strong> <em>“Beypazarı'nda maden kazasında 1 kişi öldü”</em> — Ankara Valiliği açıklaması ve ilk teknik değerlendirmeler. <a href="https://www.aa.com.tr/tr/gundem/beypazarinda-maden-kazasinda-1-kisi-oldu/4034226" target="_blank" rel="noopener">aa.com.tr</a></span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Ankara Batı Cumhuriyet Başsavcılığı:</strong> Basınçlı hava sistemi ve bilirkişi görevlendirmesi açıklaması. <a href="https://www.canligaste.com/beypazari-nda-1-kisinin-oldugu-maden-kazasina-iliskin-sorusturma-baslatildi-guncelleme/897338/" target="_blank" rel="noopener">canligaste.com</a></span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Mevzuat:</strong> 6331 sayılı İş Sağlığı ve Güvenliği Kanunu, md. 4 &amp; Maden İşyerlerinde İSG Yönetmeliği.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Geçmiş Olay Kaydı:</strong> 10 Nisan 2025 Çayırhan kazası açıklaması. <a href="https://bianet.org/haber/ankara-da-maden-ocaginda-gocuk-14-isci-yaralandi-306316" target="_blank" rel="noopener">bianet.org</a></span></li>
+          </ul>
+        </div>
+
+        <!-- Footer Action & Share Bar -->
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="haberler.html" class="btn-content-back"><i class="fa-solid fa-arrow-left"></i> <span>Tüm Haberlere Dön</span></a>
+          
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: #64748b;">Haberi Paylaş:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=" target="_blank" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:?subject=" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid-4">
+        <div>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Amblemi" class="logo-emblem-img" /></div>
+            <div class="logo-title-group">
+              <span class="logo-main-text" style="color: #fff;">UZMAN İNCELEME</span>
+              <span class="logo-sub-text">Adli Mühendislik &amp; Bilişim</span>
+            </div>
+          </a>
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim, yangın, hasar, adli hesap ve uzman mütalaası hizmetleri sunuyoruz.
+          </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@adlimutalaa.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="kurumsal.html">Kurumsal</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Yayın Kategorileri</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="haberler.html">Kurumsal Haberler</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@adlimutalaa.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=20260822_1"></script>
+</body>
+</html>
