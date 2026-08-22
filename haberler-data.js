@@ -4,6 +4,23 @@
 
 window.HABERLER_DATA = [
   {
+    id: "us-bank-dorduncu-taraf-siber-riski-22-agustos-2026",
+    title: "Banka Hacklenmedi, Tedarik Zinciri Hedef Oldu: U.S. Bank Olayı “Dördüncü Taraf” Siber Riskini Gündeme Taşıdı",
+    category: "ADLİ BİLİŞİM & SİBER GÜVENLİK",
+    categoryBadge: "SİBER GÜVENLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "22 Ağustos 2026",
+    readTime: "5 dk okuma",
+    image: "assets/hero_slide_siber.jpg",
+    summary: "U.S. Bancorp hakkında ortaya atılan fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösterdi. Bankanın kendi sistemlerinin veya veri depolarının ele geçirildiğine ilişkin kanıt bulunmadığı açıklanırken, olay dördüncü taraf siber risklerinin önemini yeniden gündeme taşıdı.",
+    detailUrl: "assets/docs/us-bank-dorduncu-taraf-siber-riski-22-agustos-2026.pdf",
+    highlightStats: [
+      { num: "22 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
+      { num: "DÖRDÜNCÜ TARAF", label: "Siber Risk", sub: "Tedarik Zinciri Zafiyeti" },
+      { num: "ADLİ BİLİŞİM", label: "İnceleme", sub: "Finansal Sistem Güvenliği" }
+    ]
+  },
+  {
     id: "cayirhan-maden-kazasi-22-agustos-2026",
     title: "Çayırhan’da 1 Madenci Öldü: Göçük mü, Basınçlı Hava Patlaması mı? Bilirkişiler Kök Nedeni Arıyor",
     category: "ADLİ MÜHENDİSLİK / MADEN KAZASI",
