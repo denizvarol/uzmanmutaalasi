@@ -74,7 +74,7 @@ input, select, textarea { font-family: inherit; }
   height: 104px;
 }
 
-/* Brand Logo */
+/* Brand Logo & Header Banner */
 .logo {
   display: flex;
   align-items: center;
@@ -84,6 +84,16 @@ input, select, textarea { font-family: inherit; }
   color: #ffffff;
   letter-spacing: -0.5px;
   text-decoration: none;
+  padding: 4px 0;
+}
+
+.header-brand-banner {
+  height: 68px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  transition: var(--transition-fast);
 }
 
 .logo-icon {
@@ -557,6 +567,7 @@ input, select, textarea { font-family: inherit; }
 
 @media (max-width: 900px) {
   .navbar { height: 80px; }
+  .header-brand-banner { height: 52px; max-width: calc(100vw - 80px); }
   .logo-icon { width: 60px; height: 60px; }
   .logo-emblem-img { transform: none; }
   .logo-main-text { font-size: 1.1rem; }
@@ -565,6 +576,10 @@ input, select, textarea { font-family: inherit; }
   .nav-links { position: fixed; top: 80px; left: 0; right: 0; background: #070d1e; border-bottom: 1px solid var(--border-color); flex-direction: column; padding: 1.5rem; gap: 1.25rem; transform: translateY(-150%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
   .nav-links.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .articles-3-col-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .header-brand-banner { height: 42px; max-width: calc(100vw - 70px); }
 }
 
 /* MOBİL TASARIM (MAX-WIDTH 768PX BİREBİR MOBİL MOCKUP) */
