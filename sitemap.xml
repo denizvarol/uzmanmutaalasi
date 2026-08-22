@@ -26,9 +26,21 @@
   </url>
   <url>
     <loc>https://adlimutalaa.com/haberler</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/assets/docs/cayirhan-maden-kazasi-22-agustos-2026.pdf</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/assets/docs/mardin-trafo-kazasi-14-agustos-2026.pdf</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adlimutalaa.com/surec</loc>

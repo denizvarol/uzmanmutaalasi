@@ -1,9 +1,40 @@
 /**
  * UZMAN İNCELEME - KURUMSAL HABERLER VERİ DOSYASI
- * C:\Users\User\Desktop\Projeler\Danışmanlık\haberler-data.js
  */
 
 window.HABERLER_DATA = [
+  {
+    id: "cayirhan-maden-kazasi-22-agustos-2026",
+    title: "Çayırhan’da 1 Madenci Öldü: Göçük mü, Basınçlı Hava Patlaması mı? Bilirkişiler Kök Nedeni Arıyor",
+    category: "ADLİ MÜHENDİSLİK / MADEN KAZASI",
+    categoryBadge: "ADLİ MÜHENDİSLİK",
+    date: "22 Ağustos 2026",
+    readTime: "5 dk okuma",
+    image: "assets/hero_adli_muhendislik.jpg",
+    summary: "Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.",
+    detailUrl: "assets/docs/cayirhan-maden-kazasi-22-agustos-2026.pdf",
+    highlightStats: [
+      { num: "21 AĞUSTOS 2026", label: "Olay Tarihi", sub: "Çayırhan Maden İşletmesi" },
+      { num: "İKİ TEKNİK GÖRÜŞ", label: "Kök Neden", sub: "Tavan Çökmesi vs Basınçlı Hava" },
+      { num: "BİLİRKİŞİ İNCELEMESİ", label: "Soruşturma", sub: "Mühendislik & İSG Değerlendirmesi" }
+    ]
+  },
+  {
+    id: "mardin-trafo-kazasi-14-agustos-2026",
+    title: "Forkliftle Kaldırılan Trafo Can Aldı: Mardin’deki Kazada Kritik Soru, Yük Neden Düştü?",
+    category: "İŞ SAĞLIĞI & GÜVENLİĞİ / ELEKTRİK BİLİRKİŞİLİĞİ",
+    categoryBadge: "İŞ GÜVENLİĞİ & ELEKTRİK",
+    date: "14 Ağustos 2026",
+    readTime: "4 dk okuma",
+    image: "assets/hero_enerji_sistemleri.jpg",
+    summary: "Mardin'de forkliftle kaldırıldığı sırada düşen elektrik trafosunun altında kalan bir işçi hayatını kaybetti. Kazada forklift kapasitesi, yük merkezi, sabitleme yöntemi ve iş güvenliği düzeni kritik inceleme başlıkları arasında.",
+    detailUrl: "assets/docs/mardin-trafo-kazasi-14-agustos-2026.pdf",
+    highlightStats: [
+      { num: "14 AĞUSTOS 2026", label: "Kaza Tarihi", sub: "Mardin Artuklu Tavuk Çiftliği" },
+      { num: "FORKLİFT & TRAFO", label: "Kaldırma Operasyonu", sub: "Kapasite & Yük Merkezi Tespiti" },
+      { num: "6331 SAYILI İSG", label: "Mevzuat Analizi", sub: "Ekipman Kontrolü & Güvenlik Düzeni" }
+    ]
+  },
   {
     id: "turkiye-ruzgarda-denize-aciliyor-offshore-res",
     title: "Türkiye Rüzgârda Denize Açılıyor: İlk Offshore RES İçin Dört Bölge Masada",

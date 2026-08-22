@@ -396,8 +396,13 @@
         if (item.category.includes("SİBER")) categoryIcon = "fa-shield-halved";
         else if (item.category.includes("KVKK")) categoryIcon = "fa-user-shield";
         else if (item.category.includes("ENERJİ")) categoryIcon = "fa-bolt";
+        else if (item.category.includes("MADEN")) categoryIcon = "fa-helmet-safety";
+        else if (item.category.includes("İŞ SAĞLIĞI") || item.category.includes("İŞ GÜVENLİĞİ")) categoryIcon = "fa-triangle-exclamation";
         else if (item.category.includes("ADLİ") || item.category.includes("YANGIN")) categoryIcon = "fa-fire-flame-curved";
         
+        const isPdf = item.detailUrl && item.detailUrl.endsWith('.pdf');
+        const linkTarget = isPdf ? 'target="_blank" rel="noopener"' : '';
+
         const pillsHtml = (item.highlightStats || []).map(stat => `
           <span class="news-highlight-pill"><i class="fa-solid fa-check" style="color: #0284c7;"></i> ${stat.num} — ${stat.sub}</span>
         `).join('');
@@ -411,7 +416,7 @@
               <div>
                 <span class="news-badge"><i class="fa-solid ${categoryIcon}"></i> ${item.category}</span>
                 <h3 class="featured-news-title">
-                  <a href="${item.detailUrl}">${item.title}</a>
+                  <a href="${item.detailUrl}" ${linkTarget}>${item.title}</a>
                 </h3>
                 <p class="featured-news-summary">${item.summary}</p>
                 
@@ -426,7 +431,7 @@
                   <span><i class="fa-solid fa-clock" style="color: #0284c7;"></i> ${item.readTime}</span>
                 </div>
 
-                <a href="${item.detailUrl}" class="btn-hero-primary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
+                <a href="${item.detailUrl}" ${linkTarget} class="btn-hero-primary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
                   <span>Haberi Oku</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
@@ -436,7 +441,7 @@
       }).join('');
     });
   </script>
-  <script src="app.js?v=20260820_3"></script>
+  <script src="app.js?v=20260822_1"></script>
 </body>
 </html>
 
