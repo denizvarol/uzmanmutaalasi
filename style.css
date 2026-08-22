@@ -59,7 +59,7 @@ input, select, textarea { font-family: inherit; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(7, 13, 30, 0.95);
+  background: linear-gradient(90deg, #122045 0%, #142249 25%, #13192f 60%, #141a30 100%);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   transition: var(--transition-fast);
@@ -582,7 +582,7 @@ input, select, textarea { font-family: inherit; }
   .logo-main-text { font-size: 1.1rem; }
   .logo-sub-text { font-size: 0.68rem; letter-spacing: 1px; }
   .mobile-toggle { display: flex; }
-  .nav-links { position: fixed; top: 76px; left: 0; right: 0; background: #070d1e; border-bottom: 1px solid var(--border-color); flex-direction: column; padding: 1.5rem; gap: 1.25rem; transform: translateY(-150%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
+  .nav-links { position: fixed; top: 76px; left: 0; right: 0; background: #13192f; border-bottom: 1px solid var(--border-color); flex-direction: column; padding: 1.5rem; gap: 1.25rem; transform: translateY(-150%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
   .nav-links.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .articles-3-col-grid { grid-template-columns: 1fr; }
 }

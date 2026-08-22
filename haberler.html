@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -241,8 +241,12 @@
   <!-- Header -->
   <header class="header">
     <div class="container navbar">
-            <a href="index.html" class="logo">
-        <img src="assets/images/uzman-inceleme-header.png" alt="Uzman Ä°nceleme - Adli MÃ¼hendislik &amp; BiliÅŸim" class="header-brand-banner" />
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman Ä°nceleme Amblemi" class="logo-emblem-img" /></div>
+        <div class="logo-title-group">
+          <span class="logo-main-text">UZMAN İNCELEME</span>
+          <span class="logo-sub-text">Adli Mühendislik &amp; Bilişim</span>
+        </div>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -381,13 +385,14 @@
       const container = document.getElementById("haberlerContainer");
       const countLabel = document.getElementById("newsCountLabel");
 
-      if (!container || !window.HABERLER_DATA || window.HABERLER_DATA.length === 0) return;
+      const activeNews = (window.HABERLER_DATA || []).filter(item => item.active !== false);
+      if (!container || activeNews.length === 0) return;
 
       if (countLabel) {
-        countLabel.textContent = `Toplam ${window.HABERLER_DATA.length} Güncel Haber`;
+        countLabel.textContent = `Toplam ${activeNews.length} Güncel Haber`;
       }
 
-      container.innerHTML = window.HABERLER_DATA.map(item => {
+      container.innerHTML = activeNews.map(item => {
         let categoryIcon = "fa-newspaper";
         if (item.category.includes("SİBER")) categoryIcon = "fa-shield-halved";
         else if (item.category.includes("KVKK")) categoryIcon = "fa-user-shield";

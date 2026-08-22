@@ -104,6 +104,7 @@ window.HABERLER_DATA = [
   },
   {
     id: "maltepede-elektrikli-arac-yangini-adli-muhendislik-degerlendirmesi",
+    active: false,
     title: "Maltepe’de Elektrikli Araç Yangını: Bataryada Başlayan Olay Adli Mühendislik Açısından Ne Söylüyor?",
     category: "ADLİ MÜHENDİSLİK / YANGIN",
     categoryBadge: "ADLİ MÜHENDİSLİK",

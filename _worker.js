@@ -68,12 +68,6 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://adlimutalaa.com/haber-maltepe-elektrikli-arac-yangini</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://adlimutalaa.com/haber-bergama-ruzgar-turbini-yangini</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
