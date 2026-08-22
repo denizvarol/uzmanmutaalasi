@@ -32,7 +32,7 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://adlimutalaa.com/assets/docs/us-bank-dorduncu-taraf-siber-riski-22-agustos-2026.pdf</loc>
+    <loc>https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

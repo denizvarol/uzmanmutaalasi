@@ -11,9 +11,9 @@ window.HABERLER_DATA = [
     author: "Melike Özlem BİLGİLİ - Adli Mühendis",
     date: "22 Ağustos 2026",
     readTime: "5 dk okuma",
-    image: "assets/hero_slide_siber.jpg",
+    image: "assets/siber_olaydan_adli_delile_hero.jpg",
     summary: "U.S. Bancorp hakkında ortaya atılan fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösterdi. Bankanın kendi sistemlerinin veya veri depolarının ele geçirildiğine ilişkin kanıt bulunmadığı açıklanırken, olay dördüncü taraf siber risklerinin önemini yeniden gündeme taşıdı.",
-    detailUrl: "assets/docs/us-bank-dorduncu-taraf-siber-riski-22-agustos-2026.pdf",
+    detailUrl: "haber-us-bank-dorduncu-taraf-siber-riski.html",
     highlightStats: [
       { num: "22 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
       { num: "DÖRDÜNCÜ TARAF", label: "Siber Risk", sub: "Tedarik Zinciri Zafiyeti" },

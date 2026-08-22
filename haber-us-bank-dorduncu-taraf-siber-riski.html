@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banka Hacklenmedi, Tedarik Zinciri Hedef Oldu: U.S. Bank Olayı “Dördüncü Taraf” Siber Riskini Gündeme Taşıdı | Uzman İnceleme</title>
+  <meta name="description" content="U.S. Bancorp hakkındaki fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu ortaya koydu.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Banka Hacklenmedi, Tedarik Zinciri Hedef Oldu: U.S. Bank Olayı “Dördüncü Taraf” Siber Riskini Gündeme Taşıdı">
+  <meta property="og:description" content="U.S. Bancorp olayının bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösteren adli bilişim analizi.">
+  <meta property="og:url" content="https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Uzman İnceleme">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dedicated Dark Navy Hero Banner Styles for News Detail */
+    .news-detail-hero {
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      text-transform: none;
+      letter-spacing: 0.5px;
+    }
+
+    .news-detail-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .news-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
+    }
+
+    .news-cover-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Clean HTML Zone Badges */
+    .news-cover-overlay-zones {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 5;
+    }
+
+    .zone-pill {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .key-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0284c7;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-subtext {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .article-body {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .article-body h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .article-body p {
+      margin-bottom: 1.35rem;
+    }
+
+    .callout-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box p {
+      margin: 0;
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.85rem;
+      color: #334155;
+      font-size: 1.02rem;
+    }
+
+    .checklist li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #0284c7;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    .sources-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .sources-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 1.75rem 1.25rem;
+        margin-top: -1.5rem;
+        border-radius: 12px;
+      }
+      .key-stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-cover-img {
+        height: 240px;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/images/uzman-inceleme-header.png" alt="Uzman İnceleme - Adli Mühendislik &amp; Bilişim" class="header-brand-banner" />
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li><a href="haberler.html" class="nav-link active">Haberler</a></li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="tel:+905322312674" class="phone-header-link">
+          <i class="fa-solid fa-phone" style="color: #38bdf8;"></i>
+          <span>0532 231 26 74</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- News Detail Hero Section -->
+  <section class="news-detail-hero">
+    <div class="container">
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li><a href="haberler.html">Haberler</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li>U.S. Bank Dördüncü Taraf Siber Riski</li>
+        </ul>
+
+        <span class="news-category-badge">
+          <i class="fa-solid fa-shield-halved"></i> ADLİ BİLİŞİM &amp; SİBER GÜVENLİK
+        </span>
+
+        <h1 class="news-detail-hero-title">
+          Banka Hacklenmedi, Tedarik Zinciri Hedef Oldu: <span class="cyan-text">U.S. Bank Olayı “Dördüncü Taraf” Siber Riskini Gündeme Taşıdı</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          ABD’nin büyük bankalarından U.S. Bancorp, bir fidye yazılımı grubunun kendisini hedef aldığı yönündeki iddiaların ardından yaptığı incelemede, olayın bankanın kendi sistemlerinden değil, üçüncü tarafla bağlantılı bir yükleniciyi kapsayan “dördüncü taraf” bir siber olaydan kaynaklandığını açıkladı.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item">
+            <i class="fa-solid fa-user-pen" style="color: #38bdf8;"></i>
+            <span><strong>Melike Özlem BİLGİLİ</strong> — Adli Mühendis</span>
+          </div>
+          <div class="news-meta-item">
+            <i class="fa-solid fa-calendar-days" style="color: #38bdf8;"></i>
+            <span>22 Ağustos 2026</span>
+          </div>
+          <div class="news-meta-item">
+            <i class="fa-solid fa-clock" style="color: #38bdf8;"></i>
+            <span>5 dk okuma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Main Content Area -->
+  <main class="container" style="margin-bottom: 4rem;">
+    <article class="editorial-container">
+      
+      <!-- Hero Cover Image -->
+      <div class="news-cover-wrapper">
+        <img src="assets/siber_olaydan_adli_delile_hero.jpg" alt="U.S. Bank Dördüncü Taraf Siber Risk Analizi" class="news-cover-img" />
+        <div class="news-cover-overlay-zones">
+          <span class="zone-pill"><i class="fa-solid fa-building-columns" style="color: #38bdf8;"></i> U.S. BANCORP</span>
+          <span class="zone-pill"><i class="fa-solid fa-link-slash" style="color: #38bdf8;"></i> DÖRDÜNCÜ TARAF RİSKİ</span>
+          <span class="zone-pill"><i class="fa-solid fa-network-wired" style="color: #38bdf8;"></i> TEDARİK ZİNCİRİ ANALİZİ</span>
+        </div>
+      </div>
+
+      <!-- Key Highlights Grid -->
+      <div class="key-stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">22 AĞUSTOS 2026</div>
+          <div class="stat-label">Yayın Tarihi</div>
+          <div class="stat-subtext">Melike Özlem BİLGİLİ</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">DÖRDÜNCÜ TARAF</div>
+          <div class="stat-label">Siber Risk</div>
+          <div class="stat-subtext">Tedarik Zinciri Zafiyeti</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">ADLİ BİLİŞİM</div>
+          <div class="stat-label">İnceleme</div>
+          <div class="stat-subtext">Finansal Sistem Güvenliği</div>
+        </div>
+      </div>
+
+      <!-- Article Main Body -->
+      <div class="article-body">
+        <p>
+          ABD’nin büyük bankalarından <strong>U.S. Bancorp</strong>, bir fidye yazılımı grubunun kendisini hedef aldığı yönündeki iddiaların ardından yaptığı incelemede, olayın bankanın kendi sistemlerinden değil, üçüncü tarafla bağlantılı bir yükleniciyi kapsayan <strong>“dördüncü taraf”</strong> bir siber olaydan kaynaklandığını açıkladı. Banka sözcüsü <em>Recorded Future News</em>’e yaptığı açıklamada, şu aşamada U.S. Bancorp’un kendi sistemlerinin, ağlarının veya veri depolarının ele geçirildiğine ilişkin herhangi bir kanıt bulunmadığını bildirdi. Banka ayrıca ilgili teknik bilgileri kolluk kuvvetleriyle paylaştığını ve soruşturmaya destek verdiğini belirtti.
+        </p>
+
+        <div class="callout-box">
+          <p><i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> Banka sözcüsü, U.S. Bancorp’un kendi ağlarının veya veri depolarının ihlal edildiğine dair doğrudan bir kanıt bulunmadığını açıklarken, olay siber güvenlikte "dördüncü taraf riski" kavramının önemini bir kez daha gösterdi.</p>
+        </div>
+
+        <h2>Sızıntı Listeleri Tek Başına Doğrudan İhlali Kanıtlamıyor</h2>
+        <p>
+          Olay, fidye yazılımı gruplarının yayımladığı mağdur listelerinin tek başına bir kurumun doğrudan ihlal edildiğini kanıtlamadığını da gösteriyor. LockBit grubunun U.S. Bancorp adını sızıntı sitesinde yayımlaması üzerine yapılan inceleme, iddianın bankanın kendi ağı yerine hizmet zincirinin daha aşağısındaki bir kuruluşla bağlantılı olduğunu ortaya koydu. Bu nedenle <em>“U.S. Bank hacklendi”</em> veya <em>“bankanın müşteri verileri çalındı”</em> şeklinde kesin bir ifade mevcut doğrulanmış verilerle desteklenmiyor.
+        </p>
+
+        <h2>Neden Önemli? Üçüncü Taraf Yetmiyor, Dördüncü Taraf Da İncelenmeli</h2>
+        <p>
+          Siber güvenlikte <strong>üçüncü taraf riski</strong>, bir kurumun doğrudan hizmet aldığı tedarikçi veya hizmet sağlayıcıdan doğan riski ifade ediyor. <strong>Dördüncü taraf riski</strong> ise bu tedarikçinin kendi alt yüklenicileri ve hizmet sağlayıcıları üzerinden oluşabiliyor. Böylece hedef kurumun kendi ağı ihlal edilmese bile adı, verisi veya operasyonu başka bir şirketin güvenlik olayıyla ilişkilendirilebiliyor.
+        </p>
+
+        <p>
+          U.S. Bancorp’un kendi kamuya açık risk bildirimleri de üçüncü tarafların operasyonel, teknoloji veya güvenlik sistemlerindeki ihlallerin banka açısından risk yaratabileceğini kabul ediyor. Bankanın iş sürekliliği belgelerinde kritik üçüncü taraf hizmetlerinin kesintiye uğramasına karşı özel müdahale planlarının bulunduğu belirtiliyor. Güncel olay ise bu zincirin bir adım daha aşağısına, yani <strong>tedarikçinin tedarikçisine</strong> kadar uzanan görünürlüğün önemini somutlaştırıyor.
+        </p>
+
+        <h2>Adli Bilirkişi Değerlendirmesi</h2>
+        <p>
+          Bu tür bir siber olayda adli bilişim bilirkişi incelemesinin ilk sorusu <em>“hangi kurumun adı sızıntı sitesinde yer aldı?”</em> değil, verinin ve erişimin gerçek kaynağının neresi olduğudur. Ana kurum, doğrudan tedarikçi ve alt yüklenici arasındaki teknik ve sözleşmesel veri akışı ayrı ayrı haritalanmalıdır.
+        </p>
+
+        <p>Aşamalı adli bilişim inceleme kriterleri şu başlıkları kapsar:</p>
+
+        <ul class="checklist">
+          <li><strong>Erişim ve Log Analizi:</strong> Kimlik doğrulama kayıtları, VPN, uzaktan erişim logları, API bağlantıları ve bulut denetim loglarının bütünlüğü korunmalıdır.</li>
+          <li><strong>Veri Doğrulama ve Hash Karşılaştırması:</strong> İddia edilen sızıntı örneklerinin hash değerleri ve metadata bilgileri, kurumların gerçek veri setleriyle kontrollü biçimde karşılaştırılmalıdır.</li>
+          <li><strong>Sorumluluk Zinciri Tespiti:</strong> Saldırının gerçekleştiği ortamın fiziki ve mantıksal olarak hangi tarafın kontrol alanında olduğu teknik delillerle netleştirilmelidir.</li>
+        </ul>
+
+        <p>
+          İkinci aşamada şu kritik sorular cevaplanmalıdır: Veri gerçekten U.S. Bancorp’a mı aitti? Veriye hangi kuruluşun sisteminden erişildi? Ana bankanın sistemlerine herhangi bir geçiş gerçekleşti mi? Dördüncü tarafın hangi yetkilerle hangi verilere erişimi vardı? Alt yüklenici kullanımı sözleşme ve güvenlik politikaları kapsamında bildiriliyor ve denetleniyor muydu? Olayın tespitinden sonra erişim anahtarları, token’lar ve kimlik bilgileri zamanında iptal edildi mi?
+        </p>
+
+        <h2>Hukuki ve Sözleşmesel Sorumluluk Değerlendirmesi</h2>
+        <p>
+          Sigorta, tazminat veya rücu uyuşmazlığında da yalnız saldırının varlığı yeterli değildir. Zararın hangi sistemde doğduğu, hangi tarafın kontrol alanında gerçekleştiği, veri veya hizmet bağımlılığının sözleşmeyle nasıl dağıtıldığı ve alınması gereken teknik tedbirlerin olay tarihindeki somut koşullarda yerine getirilip getirilmediği ayrıca değerlendirilmelidir. Teknik bilirkişi, ceza veya hukuki sorumluluk konusunda hüküm kurmak yerine olay zincirini, teknik kontrol alanlarını ve doğrulanabilir bulguları ortaya koymalıdır.
+        </p>
+
+        <!-- Sources Box -->
+        <div class="sources-box">
+          <div class="sources-title">
+            <i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> İnceleme ve Bilgi Kaynakları
+          </div>
+          <ul class="sources-list">
+            <li>• <strong>Recorded Future News / The Record (21 Ağustos 2026):</strong> <em>“U.S. Bank says breach claims related to fourth-party incident.”</em> Banka sözcüsünün olayın dördüncü taraf kaynaklı olduğuna, bankanın kendi sistemlerinde ihlal kanıtı bulunmadığına ve kolluk kuvvetlerinin bilgilendirildiğine ilişkin açıklaması.</li>
+            <li>• <strong>U.S. Bancorp Kamuya Açık Enterprise Resiliency Program Bildirimleri:</strong> Kritik üçüncü taraf hizmetlerine ilişkin kesinti ve iş sürekliliği planları.</li>
+            <li>• <strong>U.S. Bancorp / SEC 2026 Dönemsel Risk Bildirimleri:</strong> U.S. Bancorp’un veya üçüncü tarafların operasyonel, teknoloji ve güvenlik altyapılarındaki ihlallerin kurumsal risk olarak tanımlanması.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Action Bar -->
+      <div class="article-action-bar">
+        <a href="haberler.html" class="btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
+          <i class="fa-solid fa-arrow-left"></i> Tüm Haberlere Dön
+        </a>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="font-size: 0.82rem; color: #64748b; font-weight: 600;">Paylaş:</span>
+          <a href="https://api.whatsapp.com/send?text=U.S.%20Bank%20D%C3%B6rd%C3%BCnc%C3%BC%20Taraf%20Siber%20Riski%20https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="WhatsApp'ta Paylaş" style="color: #25d366; font-size: 1.2rem;"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="LinkedIn'de Paylaş" style="color: #0a66c2; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://twitter.com/intent/tweet?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="Twitter'da Paylaş" style="color: #1da1f2; font-size: 1.2rem;"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="margin-bottom: 1.25rem;">
+            <img src="assets/images/uzman-inceleme-header.png" alt="Uzman İnceleme" style="height: 48px; width: auto; object-fit: contain;" />
+          </div>
+          <p class="footer-desc">
+            Adli mühendislik, siber güvenlik, dijital delil incelemesi ve teknik mütalaa konularında bağımsız ve bilimsel uzmanlık hizmetleri.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="kurumsal.html">Kurumsal</a></li>
+            <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
+            <li><a href="haberler.html">Haberler &amp; Analizler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Uzmanlık Alanları</h4>
+          <ul class="footer-links">
+            <li><a href="uzmanliklar.html">Adli Bilişim &amp; Siber Güvenlik</a></li>
+            <li><a href="uzmanliklar.html">Yangın Kök Neden Analizi</a></li>
+            <li><a href="uzmanliklar.html">İş Kazaları &amp; İSG İncelemesi</a></li>
+            <li><a href="uzmanliklar.html">Elektrik &amp; Enerji Sistemleri</a></li>
+            <li><a href="uzmanliklar.html">Hasar &amp; Kusur Tespiti</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">İletişim Bilgileri</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@adlimutalaa.com">info@adlimutalaa.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+905322312674">0532 231 26 74</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Ankara, Türkiye</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 Uzman İnceleme. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="iletisim.html" style="color: #64748b;">Gizlilik Politikası</a>
+          <a href="iletisim.html" style="color: #64748b;">KVKK</a>
+          <a href="iletisim.html" style="color: #64748b;">Kullanım Şartları</a>
+          <a href="admin.html" style="color: #38bdf8; margin-left: 10px;"><i class="fa-solid fa-gear"></i> Yönetici Paneli</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=20260822_1"></script>
+</body>
+</html>
