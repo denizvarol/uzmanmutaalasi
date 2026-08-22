@@ -24,6 +24,9 @@
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function(){try{var s=localStorage.getItem('adli_site_settings');if(s){var p=JSON.parse(s);if(p&&p.email){delete p.email;localStorage.setItem('adli_site_settings',JSON.stringify(p));}}}catch(e){}})();
+  </script>
   
   <style>
     /* Dedicated Dark Navy Hero Banner Styles for News Detail */
@@ -335,10 +338,6 @@
       </ul>
 
       <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="tel:+905322312674" class="phone-header-link">
-          <i class="fa-solid fa-phone" style="color: #38bdf8;"></i>
-          <span>0532 231 26 74</span>
-        </a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -352,10 +351,10 @@
       <div class="news-detail-hero-box">
         <ul class="breadcrumb-list">
           <li><a href="index.html">Ana Sayfa</a></li>
-          <li><i class="fa-solid fa-chevron-right"></i></li>
-          <li><a href="haberler.html">Haberler</a></li>
-          <li><i class="fa-solid fa-chevron-right"></i></li>
-          <li>U.S. Bank Dördüncü Taraf Siber Riski</li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
         </ul>
 
         <span class="news-category-badge">
@@ -394,7 +393,7 @@
       
       <!-- Hero Cover Image -->
       <div class="news-cover-wrapper">
-        <img src="assets/siber_olaydan_adli_delile_hero.jpg" alt="U.S. Bank Dördüncü Taraf Siber Risk Analizi" class="news-cover-img" />
+        <img src="assets/haber_us_bank_fourth_party_risk_hero.jpg" alt="U.S. Bank Dördüncü Taraf Siber Risk Analizi" class="news-cover-img" />
         <div class="news-cover-overlay-zones">
           <span class="zone-pill"><i class="fa-solid fa-building-columns" style="color: #38bdf8;"></i> U.S. BANCORP</span>
           <span class="zone-pill"><i class="fa-solid fa-link-slash" style="color: #38bdf8;"></i> DÖRDÜNCÜ TARAF RİSKİ</span>
@@ -481,15 +480,16 @@
       </div>
 
       <!-- Action Bar -->
-      <div class="article-action-bar">
-        <a href="haberler.html" class="btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 1rem;">
+        <a href="haberler.html" class="btn-hero-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
           <i class="fa-solid fa-arrow-left"></i> Tüm Haberlere Dön
         </a>
-        <div style="display: flex; gap: 10px; align-items: center;">
-          <span style="font-size: 0.82rem; color: #64748b; font-weight: 600;">Paylaş:</span>
-          <a href="https://api.whatsapp.com/send?text=U.S.%20Bank%20D%C3%B6rd%C3%BCnc%C3%BC%20Taraf%20Siber%20Riski%20https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="WhatsApp'ta Paylaş" style="color: #25d366; font-size: 1.2rem;"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="LinkedIn'de Paylaş" style="color: #0a66c2; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://twitter.com/intent/tweet?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" aria-label="Twitter'da Paylaş" style="color: #1da1f2; font-size: 1.2rem;"><i class="fa-brands fa-x-twitter"></i></a>
+        
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #64748b;">Haberi Paylaş:</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/intent/tweet?url=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" target="_blank" rel="noopener" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="mailto:?subject=U.S.%20Bank%20D%C3%B6rd%C3%BCnc%C3%BC%20Taraf%20Siber%20Riski&body=https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski" class="footer-social-icon" style="background: #e2e8f0; color: #0f172a;"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
 
@@ -499,53 +499,48 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div style="margin-bottom: 1.25rem;">
-            <img src="assets/images/uzman-inceleme-header.png" alt="Uzman İnceleme" style="height: 48px; width: auto; object-fit: contain;" />
-          </div>
-          <p class="footer-desc">
-            Adli mühendislik, siber güvenlik, dijital delil incelemesi ve teknik mütalaa konularında bağımsız ve bilimsel uzmanlık hizmetleri.
+      <div class="footer-grid-4">
+        <div>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Amblemi" class="logo-emblem-img" /></div>
+            <div class="logo-title-group">
+              <span class="logo-main-text" style="color: #fff;">UZMAN İNCELEME</span>
+              <span class="logo-sub-text">Adli Mühendislik &amp; Bilişim</span>
+            </div>
+          </a>
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem;">
+            Teknik doğruluk, hukuki güç ve bilimsel yaklaşım ilkesiyle; elektrik, elektronik, enerji, bilişim, yangın, hasar, adli hesap ve uzman mütalaası hizmetleri sunuyoruz.
           </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:info@adlimutalaa.com" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
 
         <div>
-          <h4 class="footer-title">Hızlı Bağlantılar</h4>
-          <ul class="footer-links">
+          <h4 class="footer-col-title">Hızlı Linkler</h4>
+          <ul class="footer-links-list">
             <li><a href="index.html">Ana Sayfa</a></li>
             <li><a href="kurumsal.html">Kurumsal</a></li>
             <li><a href="uzmanliklar.html">Uzmanlık Alanlarımız</a></li>
-            <li><a href="haberler.html">Haberler &amp; Analizler</a></li>
             <li><a href="iletisim.html">İletişim</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-title">Uzmanlık Alanları</h4>
-          <ul class="footer-links">
-            <li><a href="uzmanliklar.html">Adli Bilişim &amp; Siber Güvenlik</a></li>
-            <li><a href="uzmanliklar.html">Yangın Kök Neden Analizi</a></li>
-            <li><a href="uzmanliklar.html">İş Kazaları &amp; İSG İncelemesi</a></li>
-            <li><a href="uzmanliklar.html">Elektrik &amp; Enerji Sistemleri</a></li>
-            <li><a href="uzmanliklar.html">Hasar &amp; Kusur Tespiti</a></li>
+          <h4 class="footer-col-title">Yayın Kategorileri</h4>
+          <ul class="footer-links-list" style="font-size: 0.82rem;">
+            <li><a href="haberler.html">Kurumsal Haberler</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-title">İletişim Bilgileri</h4>
-          <ul class="footer-contact">
-            <li>
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:info@adlimutalaa.com">info@adlimutalaa.com</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-phone"></i>
-              <a href="tel:+905322312674">0532 231 26 74</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Ankara, Türkiye</span>
-            </li>
+          <h4 class="footer-col-title">İletişim</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-office-val">Ankara, Türkiye</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <span class="data-email-val">info@adlimutalaa.com</span></li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-clock" style="color: #38bdf8; margin-right: 8px;"></i> <span>Pzt - Cum: 09:00 - 18:00</span></li>
           </ul>
         </div>
       </div>
