@@ -1,52 +1,63 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haberler & Teknik Analizler | Adli Bilişim ve Siber Güvenlik</title>
-  <meta name="description" content="Adli bilişim, siber güvenlik, dijital delil incelemesi, yangın kök neden analizi ve teknik mütalaa alanlarında güncel mühendislik analizleri.">
-  
-  <!-- Open Graph Meta Tags -->
-  <!-- Google Fonts & Font Awesome Icons -->
+  <title>Kurumsal Haberler ve Basın Duyuruları | Uzman İnceleme</title>
+  <meta name="description" content="Uzman İnceleme kurumsal haberleri, mevzuat duyuruları, adli mühendislik, siber güvenlik ve teknik mütalaa alanlarındaki güncel basın açıklamaları.">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-  
   <style>
-    /* Dedicated Dark Navy Hero Banner Styles for Haberler Page */
+    /* Header Custom Branding Banner Styling */
+    .header-brand-banner {
+      height: 48px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 768px) {
+      .header-brand-banner {
+        height: 38px;
+      }
+    }
+
+    /* Haberler Hero Banner Custom Styles */
     .haberler-banner-hero {
-      position: relative;
-      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
-      padding: 3.5rem 0 3.25rem 0;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 40%, #132447 75%, #1a345c 100%);
+      padding: 3.5rem 0 3rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
     }
 
     .haberler-hero-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
       align-items: center;
     }
 
     .haberler-banner-box {
-      max-width: 580px;
+      color: #ffffff;
     }
 
     .haberler-banner-box .breadcrumb-list {
-      margin-bottom: 0.5rem;
-    }
-
-    .haberler-banner-box .breadcrumb-list,
-    .haberler-banner-box .breadcrumb-list li {
-      color: #94a3b8 !important;
+      display: flex;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      font-size: 0.82rem;
+      color: #94a3b8;
     }
 
     .haberler-banner-box .breadcrumb-list a {
-      color: #38bdf8 !important;
+      color: #38bdf8;
+      text-decoration: none;
     }
 
     .haberler-banner-box .subpage-banner-title {
@@ -96,7 +107,7 @@
       overflow: hidden;
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      margin-bottom: 3rem;
+      margin-bottom: 2.25rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -124,7 +135,7 @@
     }
 
     .featured-news-content {
-      padding: 2.5rem;
+      padding: 2.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -146,15 +157,16 @@
     }
 
     .featured-news-title {
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.35;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .featured-news-title a {
-      color: #0f172a;
+      color: inherit;
+      text-decoration: none;
       transition: color 0.2s ease;
     }
 
@@ -163,16 +175,16 @@
     }
 
     .featured-news-summary {
-      font-size: 0.96rem;
       color: #475569;
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
     }
 
     .news-highlights-bar {
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 1.5rem;
     }
 
@@ -201,6 +213,119 @@
       gap: 14px;
     }
 
+    /* Header Controls & Pagination Component Styling */
+    .news-list-header {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .news-controls-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .news-count-badge {
+      font-size: 0.85rem;
+      color: #475569;
+      font-weight: 700;
+      background: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .per-page-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #475569;
+      font-weight: 700;
+    }
+
+    .per-page-select {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .per-page-select:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Pagination Bar Styling */
+    .pagination-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .pagination-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .pagination-btn:hover:not(.disabled):not(.active) {
+      background: #f1f5f9;
+      border-color: #0284c7;
+      color: #0284c7;
+    }
+
+    .pagination-btn.active {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .pagination-btn.disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #94a3b8;
+    }
+
+    .pagination-ellipsis {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 40px;
+      color: #64748b;
+      font-weight: 700;
+    }
+
     @media (max-width: 992px) {
       .haberler-hero-split {
         grid-template-columns: 1fr;
@@ -216,21 +341,21 @@
         grid-template-columns: 1fr;
       }
       .featured-news-img-box {
-        height: 250px;
+        height: 240px;
         min-height: auto;
       }
       .featured-news-content {
-        padding: 1.75rem 1.25rem;
+        padding: 1.5rem 1.25rem;
       }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
   <link rel="canonical" href="https://adlimutalaa.com/haberler">
-  <meta property="og:title" content="Haberler & Teknik Analizler | Adli Bilişim ve Siber Güvenlik">
+  <meta property="og:title" content="Haberler &amp; Teknik Analizler | Adli Bilişim ve Siber Güvenlik">
   <meta property="og:description" content="Adli bilişim, siber güvenlik, dijital delil incelemesi, yangın kök neden analizi ve teknik mütalaa alanlarında güncel mühendislik analizleri.">
   <meta property="og:url" content="https://adlimutalaa.com/haberler">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Uzman \u0130nceleme">
+  <meta property="og:site_name" content="Uzman İnceleme">
   <meta name="twitter:card" content="summary_large_image">
   <script>
     (function(){try{var s=localStorage.getItem('adli_site_settings');if(s){var p=JSON.parse(s);if(p&&p.email){delete p.email;localStorage.setItem('adli_site_settings',JSON.stringify(p));}}}catch(e){}})();
@@ -294,19 +419,33 @@
   <section style="padding: 4rem 0; background: #f8fafc; border-bottom: 1px solid #e2e8f0; min-height: 50vh;">
     <div class="container">
 
-      <!-- SECTION TITLE -->
-      <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <!-- SECTION TITLE & CONTROLS HEADER -->
+      <div class="news-list-header">
         <div>
           <span style="font-size: 0.82rem; font-weight: 800; color: #0284c7; text-transform: none; letter-spacing: 0.5px;"><i class="fa-solid fa-newspaper"></i> Güncel Gelişmeler</span>
           <h2 style="font-size: 1.75rem; font-weight: 900; color: #0f172a; margin-top: 4px;">Son Yayınlanan Haberler</h2>
         </div>
-        <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;" id="newsCountLabel">Toplam 8 Güncel Haber</span>
+
+        <div class="news-controls-group">
+          <span id="newsCountLabel" class="news-count-badge">Yükleniyor...</span>
+          <div class="per-page-box">
+            <label for="perPageSelect">Sayfa başına:</label>
+            <select id="perPageSelect" class="per-page-select" aria-label="Sayfa başına gösterilecek haber sayısı">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <!-- DYNAMIC NEWS CONTAINER -->
       <div id="haberlerContainer">
         <!-- Rendered via JavaScript from HABERLER_DATA -->
       </div>
+
+      <!-- PAGINATION CONTROLS CONTAINER -->
+      <nav id="paginationContainer" class="pagination-nav" aria-label="Haberler sayfalama navigasyonu"></nav>
 
     </div>
   </section>
@@ -317,7 +456,7 @@
       <div class="footer-grid-4">
         <div>
           <a href="index.html" class="logo" style="color: #fff; margin-bottom: 1rem; display: inline-flex;">
-            <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman Ä°nceleme Amblemi" class="logo-emblem-img" /></div>
+            <div class="logo-icon"><img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Amblemi" class="logo-emblem-img" /></div>
             <div class="logo-title-group">
               <span class="logo-main-text" style="color: #fff;">UZMAN İNCELEME</span>
               <span class="logo-sub-text">Adli Mühendislik &amp; Bilişim</span>
@@ -372,74 +511,165 @@
     </div>
   </footer>
 
-  </div>
-
-  <!-- News Data Script & Scalable Renderer -->
-  <script src="haberler-data.js?v=20260822_3"></script>
+  <!-- News Data Script & Pagination Renderer -->
+  <script src="haberler-data.js?v=20260824_1"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const container = document.getElementById("haberlerContainer");
+      const paginationNav = document.getElementById("paginationContainer");
       const countLabel = document.getElementById("newsCountLabel");
+      const perPageSelect = document.getElementById("perPageSelect");
 
       const activeNews = (window.HABERLER_DATA || []).filter(item => item.active !== false);
       if (!container || activeNews.length === 0) return;
 
-      if (countLabel) {
-        countLabel.textContent = `Toplam ${activeNews.length} Güncel Haber`;
+      // Parse Initial URL Query Parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      let perPageParam = parseInt(urlParams.get("perPage"), 10);
+      const validPerPage = [5, 10, 20];
+      let perPage = validPerPage.includes(perPageParam) ? perPageParam : 10;
+      
+      let pageParam = parseInt(urlParams.get("page"), 10);
+      let currentPage = (!isNaN(pageParam) && pageParam > 0) ? pageParam : 1;
+
+      if (perPageSelect) {
+        perPageSelect.value = String(perPage);
+        perPageSelect.addEventListener("change", function() {
+          const newPerPage = parseInt(this.value, 10);
+          if (validPerPage.includes(newPerPage)) {
+            perPage = newPerPage;
+            currentPage = 1; // Reset to page 1 on perPage change
+            renderPage();
+          }
+        });
       }
 
-      container.innerHTML = activeNews.map(item => {
-        let categoryIcon = "fa-newspaper";
-        if (item.category.includes("SİBER")) categoryIcon = "fa-shield-halved";
-        else if (item.category.includes("KVKK")) categoryIcon = "fa-user-shield";
-        else if (item.category.includes("ENERJİ")) categoryIcon = "fa-bolt";
-        else if (item.category.includes("MADEN")) categoryIcon = "fa-helmet-safety";
-        else if (item.category.includes("İŞ SAĞLIĞI") || item.category.includes("İŞ GÜVENLİĞİ")) categoryIcon = "fa-triangle-exclamation";
-        else if (item.category.includes("ADLİ") || item.category.includes("YANGIN")) categoryIcon = "fa-fire-flame-curved";
-        
-        const isPdf = item.detailUrl && item.detailUrl.endsWith('.pdf');
-        const linkTarget = isPdf ? 'target="_blank" rel="noopener"' : '';
+      function updateUrlState() {
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set("page", currentPage);
+        newUrl.searchParams.set("perPage", perPage);
+        window.history.replaceState({}, "", newUrl.toString());
+      }
 
-        const pillsHtml = (item.highlightStats || []).map(stat => `
-          <span class="news-highlight-pill"><i class="fa-solid fa-check" style="color: #0284c7;"></i> ${stat.num} — ${stat.sub}</span>
-        `).join('');
+      function renderPage() {
+        const totalItems = activeNews.length;
+        const totalPages = Math.max(1, Math.ceil(totalItems / perPage));
 
-        return `
-          <article class="featured-news-card">
-            <div class="featured-news-img-box">
-              <img src="${item.image}" alt="${item.title}" class="featured-news-img" />
-            </div>
-            <div class="featured-news-content">
-              <div>
-                <span class="news-badge"><i class="fa-solid ${categoryIcon}"></i> ${item.category}</span>
-                <h3 class="featured-news-title">
-                  <a href="${item.detailUrl}" ${linkTarget}>${item.title}</a>
-                </h3>
-                <p class="featured-news-summary">${item.summary}</p>
-                
-                <div class="news-highlights-bar">
-                  ${pillsHtml}
+        // Clamp currentPage to valid bounds
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        updateUrlState();
+
+        if (countLabel) {
+          countLabel.textContent = `Toplam ${totalItems} Güncel Haber (Sayfa ${currentPage} / ${totalPages})`;
+        }
+
+        // Slice items for current page
+        const startIndex = (currentPage - 1) * perPage;
+        const endIndex = startIndex + perPage;
+        const pageItems = activeNews.slice(startIndex, endIndex);
+
+        // Render News Cards
+        container.innerHTML = pageItems.map(item => {
+          let categoryIcon = "fa-newspaper";
+          if (item.category.includes("SİBER")) categoryIcon = "fa-shield-halved";
+          else if (item.category.includes("KVKK")) categoryIcon = "fa-user-shield";
+          else if (item.category.includes("ENERJİ")) categoryIcon = "fa-bolt";
+          else if (item.category.includes("MADEN")) categoryIcon = "fa-helmet-safety";
+          else if (item.category.includes("İŞ SAĞLIĞI") || item.category.includes("İŞ GÜVENLİĞİ")) categoryIcon = "fa-triangle-exclamation";
+          else if (item.category.includes("ADLİ") || item.category.includes("YANGIN") || item.category.includes("HAVACILIK")) categoryIcon = "fa-fire-flame-curved";
+          
+          const pillsHtml = (item.highlightStats || []).map(stat => `
+            <span class="news-highlight-pill"><i class="fa-solid fa-check" style="color: #0284c7;"></i> ${stat.num} — ${stat.sub}</span>
+          `).join('');
+
+          return `
+            <article class="featured-news-card">
+              <div class="featured-news-img-box">
+                <img src="${item.image}" alt="${item.title}" class="featured-news-img" />
+              </div>
+              <div class="featured-news-content">
+                <div>
+                  <span class="news-badge"><i class="fa-solid ${categoryIcon}"></i> ${item.category}</span>
+                  <h3 class="featured-news-title">
+                    <a href="${item.detailUrl}">${item.title}</a>
+                  </h3>
+                  <p class="featured-news-summary">${item.summary}</p>
+                  
+                  <div class="news-highlights-bar">
+                    ${pillsHtml}
+                  </div>
+                </div>
+
+                <div class="news-card-meta">
+                  <div class="news-meta-info">
+                    <span><i class="fa-solid fa-calendar-days" style="color: #0284c7;"></i> ${item.date}</span>
+                    <span><i class="fa-solid fa-clock" style="color: #0284c7;"></i> ${item.readTime}</span>
+                  </div>
+
+                  <a href="${item.detailUrl}" class="btn-hero-primary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
+                    <span>Haberi Oku</span> <i class="fa-solid fa-arrow-right"></i>
+                  </a>
                 </div>
               </div>
+            </article>
+          `;
+        }).join('');
 
-              <div class="news-card-meta">
-                <div class="news-meta-info">
-                  <span><i class="fa-solid fa-calendar-days" style="color: #0284c7;"></i> ${item.date}</span>
-                  <span><i class="fa-solid fa-clock" style="color: #0284c7;"></i> ${item.readTime}</span>
-                </div>
+        // Render Pagination Controls
+        renderPaginationBar(totalPages);
+      }
 
-                <a href="${item.detailUrl}" ${linkTarget} class="btn-hero-primary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
-                  <span>Haberi Oku</span> <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-        `;
-      }).join('');
+      function renderPaginationBar(totalPages) {
+        if (!paginationNav) return;
+        if (totalPages <= 1) {
+          paginationNav.innerHTML = "";
+          return;
+        }
+
+        let html = "";
+
+        // Previous Button
+        const prevDisabled = currentPage === 1 ? "disabled" : "";
+        html += `<button type="button" class="pagination-btn ${prevDisabled}" data-page="${currentPage - 1}" ${prevDisabled ? 'disabled aria-disabled="true"' : ''} aria-label="Önceki Sayfa"><i class="fa-solid fa-chevron-left"></i> Önceki</button>`;
+
+        // Page Number Buttons
+        for (let i = 1; i <= totalPages; i++) {
+          const activeClass = i === currentPage ? "active" : "";
+          const ariaCurrent = i === currentPage ? 'aria-current="page"' : '';
+          html += `<button type="button" class="pagination-btn ${activeClass}" data-page="${i}" ${ariaCurrent} aria-label="Sayfa ${i}">${i}</button>`;
+        }
+
+        // Next Button
+        const nextDisabled = currentPage === totalPages ? "disabled" : "";
+        html += `<button type="button" class="pagination-btn ${nextDisabled}" data-page="${currentPage + 1}" ${nextDisabled ? 'disabled aria-disabled="true"' : ''} aria-label="Sonraki Sayfa">Sonraki <i class="fa-solid fa-chevron-right"></i></button>`;
+
+        paginationNav.innerHTML = html;
+
+        // Attach Click Listeners to Pagination Buttons
+        const buttons = paginationNav.querySelectorAll(".pagination-btn");
+        buttons.forEach(btn => {
+          btn.addEventListener("click", function() {
+            if (this.classList.contains("disabled") || this.classList.contains("active")) return;
+            const targetPage = parseInt(this.getAttribute("data-page"), 10);
+            if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages) {
+              currentPage = targetPage;
+              renderPage();
+              // Smooth scroll back to news container header
+              const newsHeader = document.querySelector(".news-list-header");
+              if (newsHeader) {
+                newsHeader.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }
+          });
+        });
+      }
+
+      // Initial Render Call
+      renderPage();
     });
   </script>
   <script src="app.js?v=20260822_1"></script>
 </body>
 </html>
-
-

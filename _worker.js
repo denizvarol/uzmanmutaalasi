@@ -1,4 +1,4 @@
-// Cloudflare Pages Worker with Strict KV Rate Limiting & Admin Auth (Fail-Closed)
+﻿// Cloudflare Pages Worker with Strict KV Rate Limiting & Admin Auth (Fail-Closed)
 const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -27,9 +27,27 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haberler</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-turkiye-18-ilde-siber-suc-operasyonu</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-samsun-tekkekoy-kumanda-odasi-patlamasi</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-atlanta-dallas-lityum-batarya-yangini</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haber-ingiltere-enerji-tesisi-siber-saldiri</loc>

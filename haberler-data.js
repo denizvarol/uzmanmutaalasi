@@ -1,23 +1,74 @@
-/**
+﻿/**
  * UZMAN İNCELEME - KURUMSAL HABERLER VERİ DOSYASI
  */
 
 window.HABERLER_DATA = [
   {
+    id: "turkiye-18-ilde-siber-suc-operasyonu-23-agustos-2026",
+    title: "Türkiye’de 18 İlde Siber Suç Operasyonu: 77 Şüpheli, 37 Tutuklama; Dijital Delil ile Para Hareketi Aynı Zincirde İncelenmeli",
+    category: "ADLİ BİLİŞİM & SİBER GÜVENLİK",
+    categoryBadge: "ADLİ BİLİŞİM & SİBER GÜVENLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "23 Ağustos 2026",
+    readTime: "5 dk okuma",
+    image: "assets/haber_siber_suc_operasyonu_hero.jpg",
+    summary: "18 ilde düzenlenen siber suç operasyonlarında 77 şüpheli yakalandı. Dijital cihaz, hesap, IP ve finansal hareketlerin aynı kronoloji üzerinde değerlendirilmesi adli inceleme açısından önem taşıyor.",
+    detailUrl: "haber-turkiye-18-ilde-siber-suc-operasyonu.html",
+    highlightStats: [
+      { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
+      { num: "18 İLDE OPERASYON", label: "77 Şüpheli", sub: "37 Tutuklama • MASAK & EGM" },
+      { num: "ADLİ BİLİŞİM", label: "Zaman Çizelgesi", sub: "Dijital Delil & Finansal İz" }
+    ]
+  },
+  {
+    id: "samsun-tekkekoy-kumanda-odasi-patlamasi-23-agustos-2026",
+    title: "Samsun-Tekkeköy’de Fabrikanın Kumanda Odasında Patlama: İki İşçi Yaralandı, Kök Neden Teknik Delillerle Belirlenecek",
+    category: "ADLİ MÜHENDİSLİK / ENDÜSTRİYEL KAZA",
+    categoryBadge: "ADLİ MÜHENDİSLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "23 Ağustos 2026",
+    readTime: "4 dk okuma",
+    image: "assets/haber_samsun_tekkekoy_patlama_hero.jpg",
+    summary: "Samsun Tekkeköy OSB'deki demir çelik fabrikasının kumanda odasında ilk enerjilenme anında patlama meydana geldi. İki işçi yaralandı; röle ve pano kayıtlarının adli mühendislik analizi kritik önem taşıyor.",
+    detailUrl: "haber-samsun-tekkekoy-kumanda-odasi-patlamasi.html",
+    highlightStats: [
+      { num: "23 AĞUSTOS 2026", label: "Olay Tarihi", sub: "Samsun Tekkeköy OSB" },
+      { num: "İLK ENERJİLENME", label: "Kumanda Odası", sub: "Elektrik Arkı & Pano Analizi" },
+      { num: "KÖK NEDEN", label: "Bilirkişi İncelemesi", sub: "Röle & SCADA Kayıtları" }
+    ]
+  },
+  {
+    id: "atlanta-dallas-lityum-batarya-yangini-23-agustos-2026",
+    title: "ABD’de Atlanta–Dallas Uçuşunda Dizüstü Bilgisayar Alev Aldı: Lityum Batarya Yangınında Kritik Soru, Termal Kaçağı Ne Tetikledi?",
+    category: "ADLİ MÜHENDİSLİK / HAVACILIK GÜVENLİĞİ",
+    categoryBadge: "HAVACILIK & LİTYUM BATARYA",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "23 Ağustos 2026",
+    readTime: "4 dk okuma",
+    image: "assets/haber_dallas_lityum_batarya_hero.jpg",
+    summary: "American Airlines'ın Atlanta-Dallas uçuşunda yolcu bilgisayarından çıkan lityum batarya yangını kontrol altına alındı. Adli mühendislik incelemesinde termal kaçağı tetikleyen kök nedenin belirlenmesi hedefleniyor.",
+    detailUrl: "haber-atlanta-dallas-lityum-batarya-yangini.html",
+    highlightStats: [
+      { num: "21 AĞUSTOS 2026", label: "Uçuş Tarihi", sub: "American Airlines 2398" },
+      { num: "TERMAL KAÇAK", label: "Lityum Batarya", sub: "Dizüstü Bilgisayar Yangını" },
+      { num: "ADLİ MÜHENDİSLİK", label: "Hücre Analizi", sub: "Şarj & BMS İncelemesi" }
+    ]
+  },
+  {
     id: "ingiltere-enerji-tesisi-siber-saldiri-23-agustos-2026",
-    title: "İngiltere'de Enerji Tesisi Dört Gün Devre Dışı Kaldı: Siber Saldırıda OT Delil Zinciri Kritik",
+    title: "İngiltere’de 15 MW’lık Gaz Santraline Siber Saldırı: Dört Günlük Duruşta PLC ve OT Delil Zinciri Kritik",
     category: "ENERJİ SİSTEMLERİ & SİBER GÜVENLİK",
     categoryBadge: "ENERJİ & SİBER GÜVENLİK",
     author: "Melike Özlem BİLGİLİ - Adli Mühendis",
     date: "23 Ağustos 2026",
     readTime: "5 dk okuma",
-    image: "assets/haber_offshore_res_hero.jpg",
-    summary: "İngiltere'de bir enerji üretim tesisinin temmuz ayında gerçekleşen bir siber olay nedeniyle dört gün boyunca devre dışı kaldığı açıklandı. Olay, endüstriyel kontrol altyapılarında (OT/SCADA) adli bilişim ve kök neden analizinin önemini bir kez daha ortaya koydu.",
+    image: "assets/haber_ingiltere_peaker_plant_hero.jpg",
+    summary: "İngiltere'de 15 MW gaz yakıtlı bir peaker santralinin siber saldırı nedeniyle dört gün boyunca devre dışı kaldığı açıklandı. Olay, endüstriyel kontrol altyapılarında (OT/PLC) adli bilişim ve delil zincirinin önemini ortaya koydu.",
     detailUrl: "haber-ingiltere-enerji-tesisi-siber-saldiri.html",
     highlightStats: [
       { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
-      { num: "4 GÜN DURUŞ", label: "İşletme Kaybı", sub: "Enerji Üretim Tesisi" },
-      { num: "OT & SCADA", label: "Adli Bilişim", sub: "Kök Neden & Delil Zinciri" }
+      { num: "15 MW PEAKER", label: "4 Gün Duruş", sub: "Gaz Yakıtlı Üretim Tesis" },
+      { num: "PLC & OT", label: "Adli Bilişim", sub: "Kök Neden & Delil Zinciri" }
     ]
   },
   {
@@ -46,7 +97,7 @@ window.HABERLER_DATA = [
     date: "22 Ağustos 2026",
     readTime: "5 dk okuma",
     image: "assets/haber_us_bank_fourth_party_risk_hero.jpg",
-    summary: "U.S. Bancorp hakkında ortaya atılan fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösterdi. Bankanın kendi sistemlerinin veya veri depolarının ele geçirildiğine ilişkin kanıt bulunmadığı açıklanırken, olay dördüncü taraf siber risklerinin önemini yeniden gündeme taşıdı.",
+    summary: "U.S. Bancorp hakkında ortaya atılan fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösterdi.",
     detailUrl: "haber-us-bank-dorduncu-taraf-siber-riski.html",
     highlightStats: [
       { num: "22 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
@@ -111,7 +162,7 @@ window.HABERLER_DATA = [
     reportDate: "10 Ağustos 2026 CISA Danışmanı",
     readTime: "4 dk okuma",
     image: "assets/haber_gunra_ransomware_hero.jpg",
-    summary: "CISA'nın 10 Ağustos 2026 tarihli ortak güvenlik danışmanı, Gunra fidye yazılımını yeniden gündeme taşıdı. Tehdit istihbaratı raporlarında Türkiye'deki işletmelerde de Gunra aktivitesi tespit edilmiş olması, gelişmeyi Türkiye açısından önemli hale getiriyor.",
+    summary: "CISA'nın 10 Ağustos 2026 tarihli ortak güvenlik danışmanı, Gunra fidye yazılımını yeniden gündeme taşıdı. Tehdit istihbaratı raporlarında Türkiye'deki işletmelerde de Gunra aktivitesi tespit edilmiş olması dikkat çekiyor.",
     detailUrl: "haber-gunra-fidye-yazilimi-tehdidi.html",
     highlightStats: [
       { num: "CISA", label: "10 Ağus. 2026", sub: "#StopRansomware Danışmanı" },
@@ -128,7 +179,7 @@ window.HABERLER_DATA = [
     reportDate: "13 Ağustos 2026 KVKK Duyurusu",
     readTime: "5 dk okuma",
     image: "assets/haber_kvkk_sadakat_kart_hero.jpg",
-    summary: "Market, kozmetik, teknoloji, yapı market ve giyim mağazalarında sık rastlanan “telefon numarasını söyle, indirimdan yararlan” uygulamasında kurallar değişiyor. KVKK, başka bir kişinin telefon veya sadakat kartı numarasıyla doğrulama yapılmadan alışveriş gerçekleştirilmesine karşı getirilen yeni sisteme uyum için işletmelere verilen süreyi 28 Şubat 2027'ye kadar uzattı.",
+    summary: "Market, kozmetik ve giyim mağazalarında sık rastlanan “telefon numarasını söyle, indirimdan yararlan” uygulamasında kurallar değişiyor. KVKK, doğrulama yapılmadan alışveriş gerçekleştirilmesine karşı uyum süresini 28 Şubat 2027'ye uzattı.",
     detailUrl: "haber-kvkk-sadakat-kart-dogrulama.html",
     highlightStats: [
       { num: "28 ŞUBAT 2027", label: "Yeni Uyum Tarihi", sub: "Uzatılan Son Tarih" },
@@ -145,7 +196,7 @@ window.HABERLER_DATA = [
     reportDate: "13 Ağustos 2026 Acronis TRU",
     readTime: "5 dk okuma",
     image: "assets/haber_cyber_espionage_cloud_hero.jpg",
-    summary: "Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Araştırmacılara göre saldırganlar, kötü amaçlı iletişimi sıradan internet trafiğinin arasına gizlemek için Google Sheets ve GitHub Gists gibi yaygın kullanılan hizmetlerden de yararlanıyor.",
+    summary: "Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Saldırganlar Google Sheets ve GitHub Gists hizmetlerinden yararlanıyor.",
     detailUrl: "haber-google-sheets-github-siber-casusluk.html",
     highlightStats: [
       { num: "3 YENİ ZARARLI", label: "Zararlı Aileleri", sub: "PATCHCORD • SHEETCORD • HACKERAI" },
@@ -163,7 +214,7 @@ window.HABERLER_DATA = [
     reportDate: "7 Nisan 2025 İBB İtfaiye Olayı",
     readTime: "4 dk okuma",
     image: "assets/haber_ev_fire_forensic_hero.jpg",
-    summary: "İstanbul Maltepe’de bir sitenin kapalı otoparkında bulunan elektrikli aracın batarya bölümünde çıkan yangın, elektrikli araçlarda yangın nedeninin belirlenmesi ve olası hukuki sorumluluğun tespiti açısından dikkat çekici bir teknik vaka oluşturdu.",
+    summary: "İstanbul Maltepe’de bir sitenin kapalı otoparkında bulunan elektrikli aracın batarya bölümünde çıkan yangın, elektrikli araçlarda yangın nedeninin belirlenmesi açısından teknik bir vaka oluşturdu.",
     detailUrl: "haber-maltepe-elektrikli-arac-yangini.html",
     highlightStats: [
       { num: "7 NİSAN 2025", label: "İBB İtfaiye İhbarı", sub: "Maltepe Kapalı Otopark" },
@@ -180,7 +231,7 @@ window.HABERLER_DATA = [
     reportDate: "13 Ağustos 2026 İHA Haber",
     readTime: "5 dk okuma",
     image: "assets/haber_bergama_wind_turbine_fire_hero.jpg",
-    summary: "İzmir’in Bergama ilçesinde 13 Ağustos 2026’da bir rüzgâr türbininde çıkan yangın, türbini kullanılamaz hale getirdi. Aynı ilçede 28 Temmuz’da da başka bir rüzgâr türbini yangını yaşanmış olması dikkat çekti. Ancak iki olay arasında teknik bir bağlantı bulunduğuna ilişkin şu ana kadar doğrulanmış bir bilgi bulunmuyor.",
+    summary: "İzmir’in Bergama ilçesinde 13 Ağustos 2026’da bir rüzgâr türbininde çıkan yangın, türbini kullanılamaz hale getirdi. Aynı ilçede 28 Temmuz’da da başka bir rüzgâr türbini yangını yaşanmış olması dikkat çekti.",
     detailUrl: "haber-bergama-ruzgar-turbini-yangini.html",
     highlightStats: [
       { num: "16 GÜN FARK", label: "İki Ayrı Yangın", sub: "Bergama Rüzgâr Santralleri" },
