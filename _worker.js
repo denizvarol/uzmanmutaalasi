@@ -380,8 +380,26 @@ export default {
       });
     }
 
-    // Default static assets handling
+    // Default static assets handling & extensionless HTML route resolution
     if (env && env.ASSETS) {
+      const pathname = url.pathname;
+
+      // Resolve extensionless paths (e.g., /haber-turkiye-18-ilde-siber-suc-operasyonu -> /haber-turkiye-18-ilde-siber-suc-operasyonu.html)
+      if (!pathname.includes('.') && !pathname.endsWith('/') && !pathname.startsWith('/api/')) {
+        const htmlUrl = new URL(request.url);
+        htmlUrl.pathname = `${pathname}.html`;
+        const htmlResponse = await env.ASSETS.fetch(new Request(htmlUrl.toString(), request));
+        if (htmlResponse.status === 200) {
+          const contentType = htmlResponse.headers.get("Content-Type") || "";
+          if (contentType.includes("text/html") && !contentType.includes("charset")) {
+            const newHeaders = new Headers(htmlResponse.headers);
+            newHeaders.set("Content-Type", "text/html; charset=utf-8");
+            return new Response(htmlResponse.body, { status: 200, statusText: htmlResponse.statusText, headers: newHeaders });
+          }
+          return htmlResponse;
+        }
+      }
+
       const response = await env.ASSETS.fetch(request);
       const contentType = response.headers.get("Content-Type") || "";
       if (contentType.includes("text/html") && !contentType.includes("charset")) {
