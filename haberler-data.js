@@ -1,4 +1,4 @@
-﻿/**
+/**
  * UZMAN İNCELEME - KURUMSAL HABERLER VERİ DOSYASI
  */
 
@@ -13,7 +13,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_siber_suc_operasyonu_hero.jpg",
     summary: "18 ilde düzenlenen siber suç operasyonlarında 77 şüpheli yakalandı. Dijital cihaz, hesap, IP ve finansal hareketlerin aynı kronoloji üzerinde değerlendirilmesi adli inceleme açısından önem taşıyor.",
-    detailUrl: "haber-turkiye-18-ilde-siber-suc-operasyonu.html",
+    detailUrl: "haber-turkiye-18-ilde-siber-suc-operasyonu",
     highlightStats: [
       { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
       { num: "18 İLDE OPERASYON", label: "77 Şüpheli", sub: "37 Tutuklama • MASAK & EGM" },
@@ -30,7 +30,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/haber_samsun_tekkekoy_patlama_hero.jpg",
     summary: "Samsun Tekkeköy OSB'deki demir çelik fabrikasının kumanda odasında ilk enerjilenme anında patlama meydana geldi. İki işçi yaralandı; röle ve pano kayıtlarının adli mühendislik analizi kritik önem taşıyor.",
-    detailUrl: "haber-samsun-tekkekoy-kumanda-odasi-patlamasi.html",
+    detailUrl: "haber-samsun-tekkekoy-kumanda-odasi-patlamasi",
     highlightStats: [
       { num: "23 AĞUSTOS 2026", label: "Olay Tarihi", sub: "Samsun Tekkeköy OSB" },
       { num: "İLK ENERJİLENME", label: "Kumanda Odası", sub: "Elektrik Arkı & Pano Analizi" },
@@ -47,7 +47,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/haber_dallas_lityum_batarya_hero.jpg",
     summary: "American Airlines'ın Atlanta-Dallas uçuşunda yolcu bilgisayarından çıkan lityum batarya yangını kontrol altına alındı. Adli mühendislik incelemesinde termal kaçağı tetikleyen kök nedenin belirlenmesi hedefleniyor.",
-    detailUrl: "haber-atlanta-dallas-lityum-batarya-yangini.html",
+    detailUrl: "haber-atlanta-dallas-lityum-batarya-yangini",
     highlightStats: [
       { num: "21 AĞUSTOS 2026", label: "Uçuş Tarihi", sub: "American Airlines 2398" },
       { num: "TERMAL KAÇAK", label: "Lityum Batarya", sub: "Dizüstü Bilgisayar Yangını" },
@@ -64,7 +64,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_ingiltere_peaker_plant_hero.jpg",
     summary: "İngiltere'de 15 MW gaz yakıtlı bir peaker santralinin siber saldırı nedeniyle dört gün boyunca devre dışı kaldığı açıklandı. Olay, endüstriyel kontrol altyapılarında (OT/PLC) adli bilişim ve delil zincirinin önemini ortaya koydu.",
-    detailUrl: "haber-ingiltere-enerji-tesisi-siber-saldiri.html",
+    detailUrl: "haber-ingiltere-enerji-tesisi-siber-saldiri",
     highlightStats: [
       { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
       { num: "15 MW PEAKER", label: "4 Gün Duruş", sub: "Gaz Yakıtlı Üretim Tesis" },
@@ -81,7 +81,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_kvkk_sadakat_kart_hero.jpg",
     summary: "KiPoint Verileri Koruma Kurulunun fidye yazılımı kararı, siber saldırılarda yalnız saldırganın değil, saldırıya açılan erişim zincirinin de teknik olarak incelenmesi gerektiğini ortaya koydu.",
-    detailUrl: "haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri.html",
+    detailUrl: "haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri",
     highlightStats: [
       { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
       { num: "TEDARİKÇİ ERİŞİMİ", label: "İlk Sızma Noktası", sub: "Erişim Zinciri Analizi" },
@@ -98,7 +98,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_us_bank_fourth_party_risk_hero.jpg",
     summary: "U.S. Bancorp hakkında ortaya atılan fidye yazılımı iddialarının ardından yapılan inceleme, olayın bankanın kendi sistemlerinden değil, hizmet zincirindeki dördüncü taraf bir kuruluşla bağlantılı olduğunu gösterdi.",
-    detailUrl: "haber-us-bank-dorduncu-taraf-siber-riski.html",
+    detailUrl: "haber-us-bank-dorduncu-taraf-siber-riski",
     highlightStats: [
       { num: "22 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
       { num: "DÖRDÜNCÜ TARAF", label: "Siber Risk", sub: "Tedarik Zinciri Zafiyeti" },
@@ -114,7 +114,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/hero_adli_muhendislik.jpg",
     summary: "Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti. Gerçek kök neden teknik deliller ve bilirkişi incelemesiyle ortaya çıkacak.",
-    detailUrl: "haber-cayirhan-maden-kazasi.html",
+    detailUrl: "haber-cayirhan-maden-kazasi",
     highlightStats: [
       { num: "21 AĞUSTOS 2026", label: "Olay Tarihi", sub: "Çayırhan Maden İşletmesi" },
       { num: "İKİ TEKNİK GÖRÜŞ", label: "Kök Neden", sub: "Tavan Çökmesi vs Basınçlı Hava" },
@@ -130,7 +130,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/hero_enerji_sistemleri.jpg",
     summary: "Mardin'de forkliftle kaldırıldığı sırada düşen elektrik trafosunun altında kalan bir işçi hayatını kaybetti. Kazada forklift kapasitesi, yük merkezi, sabitleme yöntemi ve iş güvenliği düzeni kritik inceleme başlıkları arasında.",
-    detailUrl: "haber-mardin-trafo-kazasi.html",
+    detailUrl: "haber-mardin-trafo-kazasi",
     highlightStats: [
       { num: "14 AĞUSTOS 2026", label: "Kaza Tarihi", sub: "Mardin Artuklu Tavuk Çiftliği" },
       { num: "FORKLİFT & TRAFO", label: "Kaldırma Operasyonu", sub: "Kapasite & Yük Merkezi Tespiti" },
@@ -146,7 +146,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_offshore_res_hero.jpg",
     summary: "Türkiye'nin ilk deniz üstü rüzgâr santralleri için Saros Körfezi, Gökçeada, Bozcaada ve Edremit açıklarında dört aday alan öne çıkıyor. 2035 hedefi ise 5.000 MW offshore rüzgâr kapasitesi.",
-    detailUrl: "haber-turkiye-offshore-res.html",
+    detailUrl: "haber-turkiye-offshore-res",
     highlightStats: [
       { num: "4", label: "Aday Bölge", sub: "Saros, Gökçeada, Bozcaada, Edremit" },
       { num: "5.000 MW", label: "2035 Hedefi", sub: "Offshore Rüzgâr Kapasitesi" },
@@ -163,7 +163,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/haber_gunra_ransomware_hero.jpg",
     summary: "CISA'nın 10 Ağustos 2026 tarihli ortak güvenlik danışmanı, Gunra fidye yazılımını yeniden gündeme taşıdı. Tehdit istihbaratı raporlarında Türkiye'deki işletmelerde de Gunra aktivitesi tespit edilmiş olması dikkat çekiyor.",
-    detailUrl: "haber-gunra-fidye-yazilimi-tehdidi.html",
+    detailUrl: "haber-gunra-fidye-yazilimi-tehdidi",
     highlightStats: [
       { num: "CISA", label: "10 Ağus. 2026", sub: "#StopRansomware Danışmanı" },
       { num: "RaaS", label: "Hizmet Tipi", sub: "Windows & Linux Tehdidi" },
@@ -180,7 +180,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_kvkk_sadakat_kart_hero.jpg",
     summary: "Market, kozmetik ve giyim mağazalarında sık rastlanan “telefon numarasını söyle, indirimdan yararlan” uygulamasında kurallar değişiyor. KVKK, doğrulama yapılmadan alışveriş gerçekleştirilmesine karşı uyum süresini 28 Şubat 2027'ye uzattı.",
-    detailUrl: "haber-kvkk-sadakat-kart-dogrulama.html",
+    detailUrl: "haber-kvkk-sadakat-kart-dogrulama",
     highlightStats: [
       { num: "28 ŞUBAT 2027", label: "Yeni Uyum Tarihi", sub: "Uzatılan Son Tarih" },
       { num: "SMS / QR / MOBİL", label: "Doğrulama", sub: "Rıza & Kimlik Doğrulama" },
@@ -197,7 +197,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_cyber_espionage_cloud_hero.jpg",
     summary: "Telekom, kamu, savunma ve enerji kuruluşlarını hedefleyen yeni bir siber casusluk kampanyasında üç yeni zararlı yazılım ailesi ortaya çıkarıldı. Saldırganlar Google Sheets ve GitHub Gists hizmetlerinden yararlanıyor.",
-    detailUrl: "haber-google-sheets-github-siber-casusluk.html",
+    detailUrl: "haber-google-sheets-github-siber-casusluk",
     highlightStats: [
       { num: "3 YENİ ZARARLI", label: "Zararlı Aileleri", sub: "PATCHCORD • SHEETCORD • HACKERAI" },
       { num: "C2 KANALLARI", label: "Bulut Servisleri", sub: "Google Sheets & GitHub Gists" },
@@ -215,7 +215,7 @@ window.HABERLER_DATA = [
     readTime: "4 dk okuma",
     image: "assets/haber_ev_fire_forensic_hero.jpg",
     summary: "İstanbul Maltepe’de bir sitenin kapalı otoparkında bulunan elektrikli aracın batarya bölümünde çıkan yangın, elektrikli araçlarda yangın nedeninin belirlenmesi açısından teknik bir vaka oluşturdu.",
-    detailUrl: "haber-maltepe-elektrikli-arac-yangini.html",
+    detailUrl: "haber-maltepe-elektrikli-arac-yangini",
     highlightStats: [
       { num: "7 NİSAN 2025", label: "İBB İtfaiye İhbarı", sub: "Maltepe Kapalı Otopark" },
       { num: "BMS & HATA LOGU", label: "Veri İncelemesi", sub: "Şarj & Tesisat Analizi" },
@@ -232,7 +232,7 @@ window.HABERLER_DATA = [
     readTime: "5 dk okuma",
     image: "assets/haber_bergama_wind_turbine_fire_hero.jpg",
     summary: "İzmir’in Bergama ilçesinde 13 Ağustos 2026’da bir rüzgâr türbininde çıkan yangın, türbini kullanılamaz hale getirdi. Aynı ilçede 28 Temmuz’da da başka bir rüzgâr türbini yangını yaşanmış olması dikkat çekti.",
-    detailUrl: "haber-bergama-ruzgar-turbini-yangini.html",
+    detailUrl: "haber-bergama-ruzgar-turbini-yangini",
     highlightStats: [
       { num: "16 GÜN FARK", label: "İki Ayrı Yangın", sub: "Bergama Rüzgâr Santralleri" },
       { num: "NFPA 850", label: "2026 Standardı", sub: "Rüzgâr Türbini Koruma" },

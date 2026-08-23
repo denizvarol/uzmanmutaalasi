@@ -1,4 +1,4 @@
-﻿// Cloudflare Pages Worker with Strict KV Rate Limiting & Admin Auth (Fail-Closed)
+// Cloudflare Pages Worker with Strict KV Rate Limiting & Admin Auth (Fail-Closed)
 const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -87,12 +87,6 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://adlimutalaa.com/egitimler</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://adlimutalaa.com/vaka-analizleri</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
