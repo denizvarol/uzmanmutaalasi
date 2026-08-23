@@ -27,9 +27,21 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haberler</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-ingiltere-enerji-tesisi-siber-saldiri</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haber-us-bank-dorduncu-taraf-siber-riski</loc>

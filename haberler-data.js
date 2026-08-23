@@ -4,6 +4,40 @@
 
 window.HABERLER_DATA = [
   {
+    id: "ingiltere-enerji-tesisi-siber-saldiri-23-agustos-2026",
+    title: "İngiltere'de Enerji Tesisi Dört Gün Devre Dışı Kaldı: Siber Saldırıda OT Delil Zinciri Kritik",
+    category: "ENERJİ SİSTEMLERİ & SİBER GÜVENLİK",
+    categoryBadge: "ENERJİ & SİBER GÜVENLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "23 Ağustos 2026",
+    readTime: "5 dk okuma",
+    image: "assets/haber_offshore_res_hero.jpg",
+    summary: "İngiltere'de bir enerji üretim tesisinin temmuz ayında gerçekleşen bir siber olay nedeniyle dört gün boyunca devre dışı kaldığı açıklandı. Olay, endüstriyel kontrol altyapılarında (OT/SCADA) adli bilişim ve kök neden analizinin önemini bir kez daha ortaya koydu.",
+    detailUrl: "haber-ingiltere-enerji-tesisi-siber-saldiri.html",
+    highlightStats: [
+      { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
+      { num: "4 GÜN DURUŞ", label: "İşletme Kaybı", sub: "Enerji Üretim Tesisi" },
+      { num: "OT & SCADA", label: "Adli Bilişim", sub: "Kök Neden & Delil Zinciri" }
+    ]
+  },
+  {
+    id: "kvkk-fidye-yazilimi-tedarikci-erisim-zinciri-23-agustos-2026",
+    title: "Fidye Yazılımında Tedarikçi Hesabı Yetmedi: KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı",
+    category: "KVKK & SİBER GÜVENLİK",
+    categoryBadge: "KVKK & SİBER GÜVENLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "23 Ağustos 2026",
+    readTime: "5 dk okuma",
+    image: "assets/haber_kvkk_sadakat_kart_hero.jpg",
+    summary: "KiPoint Verileri Koruma Kurulunun fidye yazılımı kararı, siber saldırılarda yalnız saldırganın değil, saldırıya açılan erişim zincirinin de teknik olarak incelenmesi gerektiğini ortaya koydu.",
+    detailUrl: "haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri.html",
+    highlightStats: [
+      { num: "23 AĞUSTOS 2026", label: "Yayın Tarihi", sub: "Melike Özlem BİLGİLİ" },
+      { num: "TEDARİKÇİ ERİŞİMİ", label: "İlk Sızma Noktası", sub: "Erişim Zinciri Analizi" },
+      { num: "ADLİ BİLİŞİM", label: "Bilirkişi İncelemesi", sub: "Yanal Hareket & Yetki Yükseltme" }
+    ]
+  },
+  {
     id: "us-bank-dorduncu-taraf-siber-riski-22-agustos-2026",
     title: "Banka Hacklenmedi, Tedarik Zinciri Hedef Oldu: U.S. Bank Olayı “Dördüncü Taraf” Siber Riskini Gündeme Taşıdı",
     category: "ADLİ BİLİŞİM & SİBER GÜVENLİK",
