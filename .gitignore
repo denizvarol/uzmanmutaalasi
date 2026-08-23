@@ -1,0 +1,4 @@
+CLOUDFLARE_SECRETS_PRIVATE.txt
+.env
+.env.local
+node_modules/

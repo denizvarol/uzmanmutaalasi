@@ -35,9 +35,11 @@
     /* Login Overlay */
     .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #040814; z-index: 10000; display: flex; align-items: center; justify-content: center; }
     .login-box { background: #0e172c; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; padding: 2.5rem; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 30px rgba(2, 132, 199, 0.2); }
+    .pass-input-wrapper { position: relative; width: 100%; }
+    .pass-toggle-btn { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 1rem; }
+    .login-error-msg { color: #ef4444; font-size: 0.85rem; font-weight: 700; margin-top: 10px; display: none; }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
-  <meta name="robots" content="noindex, nofollow">
   <script>
     (function(){try{var s=localStorage.getItem('adli_site_settings');if(s){var p=JSON.parse(s);if(p&&p.email){delete p.email;localStorage.setItem('adli_site_settings',JSON.stringify(p));}}}catch(e){}})();
   </script>
@@ -47,20 +49,24 @@
   <!-- LOGIN OVERLAY -->
   <div id="loginOverlay" class="login-overlay">
     <div class="login-box">
-      <div class="logo-icon" style="margin: 0 auto 1rem auto; width: 56px; height: 56px; font-size: 1.6rem;"><i class="fa-solid fa-lock"></i></div>
-      <h2 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 6px;">YÖNETİCİ GİRİÅİ</h2>
-      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem;">İçerik yönetim sistemine erişmek için PIN kodunuzu girin.</p>
+      <div class="logo-icon" style="margin: 0 auto 1rem auto; width: 56px; height: 56px; font-size: 1.6rem;"><i class="fa-solid fa-shield-halved"></i></div>
+      <h2 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 6px;">YÖNETİCİ GİRİŞİ</h2>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem;">İçerik yönetim sistemine erişmek için parolanızı girin.</p>
       <form id="loginForm">
-        <div class="form-group">
-          <input type="password" id="pinInput" class="form-input" placeholder="PIN Kodu (Varsayılan: 1234)" style="text-align: center; letter-spacing: 4px; font-size: 1.2rem;" required>
+        <div class="form-group pass-input-wrapper">
+          <input type="password" id="adminPassword" class="form-input" placeholder="Yönetici Parolası" style="text-align: center; font-size: 1.05rem; padding-right: 40px;" required autocomplete="current-password">
+          <button type="button" id="togglePasswordBtn" class="pass-toggle-btn" aria-label="Parolayı Göster/Gizle"><i class="fa-solid fa-eye" id="toggleIcon"></i></button>
         </div>
-        <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 12px;"><span>Sisteme Giriş Yap</span> <i class="fa-solid fa-right-to-bracket"></i></button>
+        <div id="loginErrorMsg" class="login-error-msg">Parola hatalı.</div>
+        <button type="submit" id="btnLoginSubmit" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;">
+          <span>Sisteme Giriş Yap</span> <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
       </form>
     </div>
   </div>
 
   <!-- MAIN ADMIN CONTENT -->
-  <main class="admin-container">
+  <main class="admin-container" id="mainAdminContent" style="display: none;">
     
     <!-- Top Header -->
     <div class="admin-header-bar">
@@ -77,6 +83,7 @@
         <button id="btnClearAll" class="btn-hero-secondary" style="background: rgba(239,68,68,0.2); border-color: #ef4444; color: #ef4444; padding: 8px 14px; font-size: 0.8rem;"><i class="fa-solid fa-trash-can"></i> <span>Tüm Yayınları Temizle</span></button>
         <a href="haberler.html" target="_blank" class="btn-hero-secondary" style="padding: 8px 16px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> <span>Haberleri Gör</span></a>
         <button id="btnNewArticle" class="btn-hero-primary"><i class="fa-solid fa-plus"></i> <span>Yeni Yayın Ekle</span></button>
+        <button id="btnLogout" class="btn-hero-secondary" style="background: rgba(255,255,255,0.05); padding: 8px 14px; font-size: 0.8rem;" title="Oturumu Kapat"><i class="fa-solid fa-right-from-bracket"></i> <span>Çıkış</span></button>
       </div>
     </div>
 
@@ -111,15 +118,15 @@
           <div>
             <label class="form-label" style="color: #fff;">2. Uzmanlık Alanı Seçimi</label>
             <select id="artUzmanlik" class="form-select">
-              <option value="bilisim">gÅÅÅ Adli Bilişim & Dijital Deliller</option>
-              <option value="siber">gÅÅÅ️ Siber Güvenlik & Dijital Dolandırıcılık</option>
+              <option value="bilisim">🔍 Adli Bilişim & Dijital Deliller</option>
+              <option value="siber">🛡️ Siber Güvenlik & Dijital Dolandırıcılık</option>
               <option value="muhendislik">⚙️ Adli Mühendislik (Elektrik & Elektronik)</option>
-              <option value="yangin">gÅÅÅ Yangın & Teknik Kök Neden Analizi</option>
-              <option value="hasar">gÅÅÅ Hasar, Sigorta Uyuşmazlıkları</option>
+              <option value="yangin">🔥 Yangın & Teknik Kök Neden Analizi</option>
+              <option value="hasar">📋 Hasar, Sigorta Uyuşmazlıkları</option>
               <option value="enerji">⚡ Enerji Sistemleri (GES/RES/HES)</option>
-              <option value="hesap">gÅÅÅ Adli Hesap Uzmanlığı</option>
+              <option value="hesap">📊 Adli Hesap Uzmanlığı</option>
               <option value="hukuk">⚖️ Hukuksal & Avukatlık Desteği</option>
-              <option value="egitim">gÅÅ Eğitim & Danışmanlık</option>
+              <option value="egitim">🎓 Eğitim & Danışmanlık</option>
             </select>
           </div>
         </div>
@@ -250,22 +257,85 @@
       return TOPIC_IMAGES[uzmanlik] || 'assets/vaka_analizi_thumb.png';
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. PIN Check
+    document.addEventListener('DOMContentLoaded', async () => {
       const loginOverlay = document.getElementById('loginOverlay');
+      const mainAdminContent = document.getElementById('mainAdminContent');
       const loginForm = document.getElementById('loginForm');
-      const pinInput = document.getElementById('pinInput');
+      const adminPassword = document.getElementById('adminPassword');
+      const loginErrorMsg = document.getElementById('loginErrorMsg');
+      const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const btnLogout = document.getElementById('btnLogout');
 
-      loginForm.addEventListener('submit', (e) => {
+      // Password visibility toggle
+      togglePasswordBtn.addEventListener('click', () => {
+        const isPass = adminPassword.type === 'password';
+        adminPassword.type = isPass ? 'text' : 'password';
+        toggleIcon.className = isPass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+      });
+
+      // Check Server-Side Session Status
+      async function checkSession() {
+        try {
+          const res = await fetch('/api/admin/session', { method: 'GET', headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.loggedIn) {
+              loginOverlay.style.display = 'none';
+              mainAdminContent.style.display = 'block';
+              return true;
+            }
+          }
+        } catch (e) {
+          console.warn('Server session check failed, falling back to overlay:', e);
+        }
+        loginOverlay.style.display = 'flex';
+        mainAdminContent.style.display = 'none';
+        return false;
+      }
+
+      await checkSession();
+
+      // Login Form Submit (Server-Side Authentication)
+      loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (pinInput.value === '1234') {
-          loginOverlay.style.display = 'none';
-        } else {
-          alert('Hatalı PIN Kodu! Tekrar deneyin (Varsayılan: 1234)');
+        loginErrorMsg.style.display = 'none';
+        const passwordVal = adminPassword.value;
+        if (!passwordVal) return;
+
+        try {
+          const res = await fetch('/api/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: passwordVal })
+          });
+
+          const data = await res.json();
+          if (res.ok && data.success) {
+            adminPassword.value = '';
+            loginOverlay.style.display = 'none';
+            mainAdminContent.style.display = 'block';
+            renderTable();
+          } else {
+            loginErrorMsg.textContent = data.error || 'Parola hatalı.';
+            loginErrorMsg.style.display = 'block';
+          }
+        } catch (err) {
+          loginErrorMsg.textContent = 'Giriş işlemi sırasında sunucu hatası oluştu.';
+          loginErrorMsg.style.display = 'block';
         }
       });
 
-      // 2. LocalStorage & yayinlar.js Synchronization
+      // Logout Handler
+      btnLogout?.addEventListener('click', async () => {
+        try {
+          await fetch('/api/admin/logout', { method: 'POST' });
+        } catch(e) {}
+        loginOverlay.style.display = 'flex';
+        mainAdminContent.style.display = 'none';
+      });
+
+      // LocalStorage & yayinlar.js Synchronization
       const STORAGE_KEY = 'adli_site_articles';
 
       function getArticles() {
@@ -292,7 +362,7 @@
 
 window.YAYINLAR_DATA = ${JSON.stringify(articles, null, 2)};
 `;
-        const blob = new Blob([content], { type: 'application/javascript' });
+        const blob = new Blob([content], { type: 'application/javascript; charset=utf-8' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
         a.download = 'yayinlar.js';
@@ -527,5 +597,3 @@ window.YAYINLAR_DATA = ${JSON.stringify(articles, null, 2)};
   </script>
 </body>
 </html>
-
-
