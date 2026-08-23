@@ -1,17 +1,51 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fidye Yazılımında Tedarikçi Hesabı Yetmedi: KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı | Uzman İnceleme</title>
   <meta name="description" content="KVKK'nın fidye yazılımı kararı, siber saldırılarda yalnızca saldırganın değil, tedarikçi ve üçüncü taraf erişim zincirinin adli bilişim açısından incelenmesi gerektiğini ortaya koydu.">
+  <link rel="canonical" href="https://adlimutalaa.com/haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Fidye Yazılımında Tedarikçi Hesabı Yetmedi: KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı">
   <meta property="og:description" content="KVKK kararı, fidye yazılımı vakalarında 'saldırı tedarikçiden geldi' tespitinin tek başına incelemeyi bitirmediğini ve erişim zincirinin teknik olarak doğrulanması gerektiğini vurguladı.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://adlimutalaa.com/haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri.html">
+  <meta property="og:url" content="https://adlimutalaa.com/haber-kvkk-fidye-yazilimi-tedarikci-erisim-zinciri">
   <meta property="og:image" content="https://adlimutalaa.com/assets/haber_kvkk_sadakat_kart_hero.jpg">
+  <meta property="og:site_name" content="Uzman İnceleme">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fidye Yazılımında Tedarikçi Hesabı Yetmedi">
+  <meta name="twitter:description" content="KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı.">
+  <meta name="twitter:image" content="https://adlimutalaa.com/assets/haber_kvkk_sadakat_kart_hero.jpg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Fidye Yazılımında Tedarikçi Hesabı Yetmedi: KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı",
+    "image": ["https://adlimutalaa.com/assets/haber_kvkk_sadakat_kart_hero.jpg"],
+    "datePublished": "2026-08-23T09:00:00+03:00",
+    "dateModified": "2026-08-23T09:00:00+03:00",
+    "author": {
+      "@type": "Person",
+      "name": "Melike Özlem BİLGİLİ",
+      "jobTitle": "Adli Mühendis"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Uzman İnceleme",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://adlimutalaa.com/assets/logo/uzman-inceleme-mark.svg"
+      }
+    },
+    "description": "KVKK fidye yazılımı kararı ve adli bilişim erişim zinciri incelemesi."
+  }
+  </script>
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,101 +55,334 @@
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
-
+  
   <style>
     .news-detail-hero {
-      background: linear-gradient(135deg, #060b19 0%, #0b152d 40%, #132447 75%, #1a345c 100%);
-      padding: 3.5rem 0 3rem 0;
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .news-badge {
-      display: inline-block;
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 1rem;
-    }
-    .news-detail-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1.3;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
       margin-bottom: 1.25rem;
+      text-transform: none;
+      letter-spacing: 0.5px;
     }
+
+    .news-detail-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
     .news-meta-bar {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
       color: #94a3b8;
-      font-size: 0.9rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .news-meta-item { display: flex; align-items: center; gap: 8px; }
-    .news-meta-item i { color: #38bdf8; }
-    .content-section { padding: 3rem 0; background: #ffffff; color: #1e293b; }
-    .article-body p { font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem; }
-    .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 2rem 0 1rem 0; padding-left: 12px; border-left: 4px solid #0284c7; }
-    .highlight-box { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
-    .highlight-box h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; }
-    .pdf-download-card { background: linear-gradient(135deg, #0e172c 0%, #162444 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 1.5rem; color: #ffffff; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin: 2.5rem 0; }
-    .pdf-download-card .pdf-info { display: flex; align-items: center; gap: 1rem; }
-    .pdf-download-card i.pdf-icon { font-size: 2.5rem; color: #ef4444; }
-    .pdf-download-btn { background: #0284c7; color: #ffffff; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; }
-    .pdf-download-btn:hover { background: #0369a1; }
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
+    }
+
+    .news-cover-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .key-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0284c7;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-subtext {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .article-body {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .article-body h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .article-body p {
+      margin-bottom: 1.35rem;
+    }
+
+    .callout-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box p {
+      margin: 0;
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    .sources-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .article-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 1.75rem 1.25rem;
+        margin-top: -1.5rem;
+        border-radius: 12px;
+      }
+      .key-stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-cover-img {
+        height: 240px;
+      }
+    }
   </style>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
 </head>
 <body>
-  
+
+  <!-- Standard Header -->
   <header class="header">
-    <div class="container header-container">
+    <div class="container navbar">
       <a href="index.html" class="logo">
-        <img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Logo" class="logo-img">
-        <div class="logo-text">UZMAN <span>İNCELEME</span></div>
+        <img src="assets/images/uzman-inceleme-header.png" alt="Uzman İnceleme - Adli Mühendislik &amp; Bilişim" class="header-brand-banner" />
       </a>
-      <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Ana Sayfa</a>
-        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
-        <a href="uzmanliklar.html" class="nav-link">Uzmanlıklar</a>
-        <a href="haberler.html" class="nav-link active">Haberler</a>
-        <a href="iletisim.html" class="nav-link btn-contact">İletişim</a>
-      </nav>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li><a href="haberler.html" class="nav-link active">Haberler</a></li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- News Detail Hero Section -->
   <section class="news-detail-hero">
     <div class="container">
-      <span class="news-badge">KVKK & SİBER GÜVENLİK</span>
-      <h1 class="news-detail-title">Fidye Yazılımında Tedarikçi Hesabı Yetmedi: KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı</h1>
-      <div class="news-meta-bar">
-        <div class="news-meta-item"><i class="fa-solid fa-calendar"></i> 23 Ağustos 2026</div>
-        <div class="news-meta-item"><i class="fa-solid fa-user-pen"></i> Melike Özlem BİLGİLİ - Adli Mühendis</div>
-        <div class="news-meta-item"><i class="fa-solid fa-clock"></i> 5 dk okuma</div>
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
+        </ul>
+
+        <span class="news-category-badge">
+          <i class="fa-solid fa-user-shield"></i> KVKK &amp; SİBER GÜVENLİK
+        </span>
+
+        <h1 class="news-detail-hero-title">
+          Fidye Yazılımında Tedarikçi Hesabı Yetmedi: <span class="cyan-text">KVKK Kararı Adli Bilişimde Erişim Zincirini Öne Çıkardı</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          KiPoint Verileri Koruma Kurulunun fidye yazılımı kararı, siber saldırılarda yalnız saldırganın değil, saldırıya açılan erişim zincirinin de teknik olarak incelenmesi gerektiğini ortaya koydu.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item"><i class="fa-solid fa-calendar" style="color: #38bdf8;"></i> 23 Ağustos 2026 | Ankara</div>
+          <div class="news-meta-item"><i class="fa-solid fa-user-pen" style="color: #38bdf8;"></i> Melike Özlem BİLGİLİ - Adli Mühendis</div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> 5 dk okuma</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
-    <div class="container" style="max-width: 900px;">
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="editorial-container">
       
-      <div class="pdf-download-card">
-        <div class="pdf-info">
-          <i class="fa-solid fa-file-pdf pdf-icon"></i>
-          <div>
-            <strong style="display: block; font-size: 1.05rem;">Resmi Rapor & Analiz Dokümanı (PDF)</strong>
-            <span style="font-size: 0.85rem; color: #94a3b8;">KVKK_Fidye_Yazilimi_Tedarikci_Erisim_Zinciri.pdf</span>
-          </div>
+      <div class="news-cover-wrapper">
+        <img src="assets/haber_kvkk_sadakat_kart_hero.jpg" alt="KVKK Fidye Yazılımı Tedarikçi Erişim Zinciri Analizi" class="news-cover-img">
+      </div>
+
+      <div class="key-stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">23 AĞUSTOS 2026</div>
+          <div class="stat-label">Yayın Tarihi</div>
+          <div class="stat-subtext">Melike Özlem BİLGİLİ</div>
         </div>
-        <a href="assets/docs/KVKK_Fidye_Yazilimi_Tedarikci_Erisim_Zinciri.pdf" target="_blank" class="pdf-download-btn">
-          <i class="fa-solid fa-download"></i> Raporu İndir / İncele
-        </a>
+        <div class="stat-box">
+          <div class="stat-number">TEDARİKÇİ ERİŞİMİ</div>
+          <div class="stat-label">İlk Sızma Noktası</div>
+          <div class="stat-subtext">Erişim Zinciri Analizi</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">ADLİ BİLİŞİM</div>
+          <div class="stat-label">Bilirkişi İncelemesi</div>
+          <div class="stat-subtext">Yanal Hareket &amp; Yetki Yükseltme</div>
+        </div>
       </div>
 
       <div class="article-body">
@@ -126,29 +393,30 @@
         <h2>Neden Önemli? Saldırının Başladığı Hesap İle Sorumluluk Alanı Aynı Şey Değil</h2>
         <p>Dosyanın adli bilişim bakımından dikkat çekici yönü, saldırının bir dış hizmet sağlayıcı hesabıyla ilişkilendirilmesine rağmen incelemenin veri sorumlusunun kendi güvenlik mimarisine kadar uzanması. Kararda ağ içinde yanal hareketin mümkün hale gelmesi, yönetici erişim bilgilerinin ele geçirilmesi ve saldırının altyapı boyunca ilerleyebilmesi teknik değerlendirmede önem taşıyan unsurlar arasında.</p>
 
-        <div class="highlight-box">
-          <h3>Adli Bilişim Açısından Kritik Çıkarım</h3>
-          <p>Bir fidye yazılımı olayında "saldırı tedarikçiden geldi" tespiti tek başına incelemeyi bitirmez. İlk erişim noktasından sonra saldırganın hangi yetkilerle ilerlediği, ağ segmentasyonunun bulunup bulunmadığı ve ayrıcalıklı hesapların nasıl yönetildiği ayrı delil başlıklarıdır.</p>
+        <div class="callout-box">
+          <p><strong>Adli Bilişim Açısından Kritik Çıkarım:</strong> Bir fidye yazılımı olayında "saldırı tedarikçiden geldi" tespiti tek başına incelemeyi bitirmez. İlk erişim noktasından sonra saldırganın hangi yetkilerle ilerlediği, ağ segmentasyonunun bulunup bulunmadığı ve ayrıcalıklı hesapların nasıl yönetildiği ayrı delil başlıklarıdır.</p>
         </div>
 
         <h2>Adli Bilirkişi Değerlendirmesi</h2>
         <p>Benzer bir uyuşmazlıkta bilirkişi incelemesi öncelikle ilk erişim, yetki yükseltme, yanal hareket, veri çıkarma ve şifreleme aşamalarını ayrı ayrı zamanlandırmalıdır. Active Directory ve kimlik doğrulama kayıtları, VPN ve uzaktan erişim logları, EDR/SIEM kayıtları ve ağ akış kayıtları zaman damgası bazında karşılaştırılmalıdır.</p>
       </div>
 
-      <div style="margin-top: 3rem; text-align: center;">
-        <a href="haberler.html" class="btn-hero-secondary" style="background: #0f172a; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
+      <div class="article-action-bar">
+        <a href="haberler.html" class="phone-header-link" style="background: #0f172a; border-color: #334155; color: #fff;">
           <i class="fa-solid fa-arrow-left"></i> Tüm Haberlere Dön
         </a>
       </div>
 
     </div>
-  </section>
+  </main>
 
-  <footer class="footer" style="background: #040814; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.9rem;">
-    <div class="container text-center">
+  <!-- Standard Footer -->
+  <footer class="footer" style="background: #040814; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.9rem; margin-top: 4rem;">
+    <div class="container text-center" style="text-align: center;">
       <p>&copy; 2026 Uzman İnceleme - Adli Bilişim ve Teknik Mütalaa Hizmetleri. Tüm hakları saklıdır.</p>
     </div>
   </footer>
 
+  <script src="app.js"></script>
 </body>
 </html>

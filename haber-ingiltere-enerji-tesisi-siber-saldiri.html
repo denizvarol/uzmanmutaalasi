@@ -13,6 +13,7 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://adlimutalaa.com/haber-ingiltere-enerji-tesisi-siber-saldiri">
   <meta property="og:image" content="https://adlimutalaa.com/assets/haber_ingiltere_peaker_plant_hero.jpg">
+  <meta property="og:site_name" content="Uzman İnceleme">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -54,107 +55,335 @@
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
-
+  
   <style>
+    /* Dedicated Dark Navy Hero Banner Styles for News Detail */
     .news-detail-hero {
-      background: linear-gradient(135deg, #060b19 0%, #0b152d 40%, #132447 75%, #1a345c 100%);
-      padding: 3.5rem 0 3rem 0;
+      position: relative;
+      background: linear-gradient(135deg, #060b19 0%, #0b152d 38%, #132447 70%, #1a345c 100%);
+      padding: 3.5rem 0 3.25rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .news-badge {
-      display: inline-block;
+
+    .news-detail-hero-box {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .news-detail-hero-box .breadcrumb-list {
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    .news-detail-hero-box .breadcrumb-list,
+    .news-detail-hero-box .breadcrumb-list li {
+      color: #94a3b8 !important;
+    }
+
+    .news-detail-hero-box .breadcrumb-list a {
+      color: #38bdf8 !important;
+    }
+
+    .news-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 1rem;
-    }
-    .news-detail-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1.3;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 30px;
       margin-bottom: 1.25rem;
+      text-transform: none;
+      letter-spacing: 0.5px;
     }
+
+    .news-detail-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      font-weight: 900;
+      color: #ffffff !important;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .news-detail-hero-title span.cyan-text {
+      color: #38bdf8 !important;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .news-detail-hero-spot {
+      color: #cbd5e1 !important;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      font-weight: 500 !important;
+      margin-bottom: 1.5rem;
+    }
+
     .news-meta-bar {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
       color: #94a3b8;
-      font-size: 0.9rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .news-meta-item { display: flex; align-items: center; gap: 8px; }
-    .news-meta-item i { color: #38bdf8; }
-    .content-section { padding: 3rem 0; background: #ffffff; color: #1e293b; }
-    .hero-article-img-box {
-      width: 100%;
-      max-height: 420px;
-      border-radius: 12px;
+
+    .news-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Editorial Content Area */
+    .editorial-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .news-cover-wrapper {
+      position: relative;
+      border-radius: 14px;
       overflow: hidden;
       margin-bottom: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border: 1px solid #cbd5e1;
     }
-    .hero-article-img-box img {
+
+    .news-cover-img {
       width: 100%;
-      height: 100%;
+      height: 400px;
       object-fit: cover;
+      object-position: center;
       display: block;
     }
-    .article-body p { font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem; }
-    .article-body h2 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 2.5rem 0 1.25rem 0; padding-left: 12px; border-left: 4px solid #0284c7; }
-    .highlight-box { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #38bdf8; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
-    .highlight-box h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; }
-    .sources-box { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1.5rem; margin-top: 3rem; }
-    .sources-box h3 { font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
-    .sources-list { list-style: none; padding: 0; margin: 0; }
-    .sources-list li { font-size: 0.92rem; color: #475569; margin-bottom: 0.5rem; position: relative; padding-left: 1.25rem; }
-    .sources-list li::before { content: "•"; position: absolute; left: 0; color: #0284c7; font-weight: bold; }
+
+    .key-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0284c7;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-subtext {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .article-body {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .article-body h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .article-body p {
+      margin-bottom: 1.35rem;
+    }
+
+    .callout-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box p {
+      margin: 0;
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .sources-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .sources-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    .sources-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .article-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-container {
+        padding: 1.75rem 1.25rem;
+        margin-top: -1.5rem;
+        border-radius: 12px;
+      }
+      .key-stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-cover-img {
+        height: 240px;
+      }
+    }
   </style>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/uzman-inceleme-mark.svg">
 </head>
 <body>
-  
+
+  <!-- Standard Header -->
   <header class="header">
-    <div class="container header-container">
+    <div class="container navbar">
       <a href="index.html" class="logo">
-        <img src="assets/logo/uzman-inceleme-mark.svg" alt="Uzman İnceleme Logo" class="logo-img">
-        <div class="logo-text">UZMAN <span>İNCELEME</span></div>
+        <img src="assets/images/uzman-inceleme-header.png" alt="Uzman İnceleme - Adli Mühendislik &amp; Bilişim" class="header-brand-banner" />
       </a>
-      <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Ana Sayfa</a>
-        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
-        <a href="uzmanliklar.html" class="nav-link">Uzmanlıklar</a>
-        <a href="haberler.html" class="nav-link active">Haberler</a>
-        <a href="iletisim.html" class="nav-link btn-contact">İletişim</a>
-      </nav>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html" class="nav-link">Kurumsal</a></li>
+        <li><a href="uzmanliklar.html" class="nav-link">Uzmanlık Alanlarımız</a></li>
+        <li><a href="haberler.html" class="nav-link active">Haberler</a></li>
+        <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- News Detail Hero Section -->
   <section class="news-detail-hero">
     <div class="container">
-      <span class="news-badge">ENERJİ SİSTEMLERİ & SİBER GÜVENLİK</span>
-      <h1 class="news-detail-title">İngiltere’de 15 MW’lık Gaz Santraline Siber Saldırı: Dört Günlük Duruşta PLC ve OT Delil Zinciri Kritik</h1>
-      <div class="news-meta-bar">
-        <div class="news-meta-item"><i class="fa-solid fa-calendar"></i> 23 Ağustos 2026 | Ankara</div>
-        <div class="news-meta-item"><i class="fa-solid fa-user-pen"></i> Melike Özlem BİLGİLİ - Adli Mühendis</div>
-        <div class="news-meta-item"><i class="fa-solid fa-clock"></i> 5 dk okuma</div>
+      <div class="news-detail-hero-box">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li>/</li>
+          <li><a href="haberler.html">Yayınlar & Haberler</a></li>
+          <li>/</li>
+          <li style="color: #cbd5e1;">Haber Detayı</li>
+        </ul>
+
+        <span class="news-category-badge">
+          <i class="fa-solid fa-bolt"></i> ENERJİ SİSTEMLERİ &amp; SİBER GÜVENLİK
+        </span>
+
+        <h1 class="news-detail-hero-title">
+          İngiltere’de 15 MW’lık Gaz Santraline Siber Saldırı: <span class="cyan-text">Dört Günlük Duruşta PLC ve OT Delil Zinciri Kritik</span>
+        </h1>
+
+        <p class="news-detail-hero-spot">
+          İngiltere'de 15 MW gaz yakıtlı bir peaker santralinin siber saldırı nedeniyle dört gün boyunca devre dışı kaldığı açıklandı. Olay, endüstriyel kontrol altyapılarında (OT/PLC) adli bilişim ve delil zincirinin önemini ortaya koydu.
+        </p>
+
+        <div class="news-meta-bar">
+          <div class="news-meta-item"><i class="fa-solid fa-calendar" style="color: #38bdf8;"></i> 23 Ağustos 2026 | Ankara</div>
+          <div class="news-meta-item"><i class="fa-solid fa-user-pen" style="color: #38bdf8;"></i> Melike Özlem BİLGİLİ - Adli Mühendis</div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> 5 dk okuma</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
-    <div class="container" style="max-width: 900px;">
+  <!-- Article Main Content -->
+  <main class="container">
+    <div class="editorial-container">
       
-      <div class="hero-article-img-box">
-        <img src="assets/haber_ingiltere_peaker_plant_hero.jpg" alt="İngiltere 15 MW Gaz Santrali Siber Saldırı Analizi">
+      <div class="news-cover-wrapper">
+        <img src="assets/haber_ingiltere_peaker_plant_hero.jpg" alt="İngiltere 15 MW Gaz Santrali Siber Saldırı Analizi" class="news-cover-img">
+      </div>
+
+      <div class="key-stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">23 AĞUSTOS 2026</div>
+          <div class="stat-label">Yayın Tarihi</div>
+          <div class="stat-subtext">Melike Özlem BİLGİLİ</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15 MW PEAKER</div>
+          <div class="stat-label">4 Gün Duruş</div>
+          <div class="stat-subtext">Gaz Yakıtlı Üretim Tesisi</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">PLC &amp; OT</div>
+          <div class="stat-label">Adli Bilişim</div>
+          <div class="stat-subtext">Kök Neden &amp; Delil Zinciri</div>
+        </div>
       </div>
 
       <div class="article-body">
@@ -167,9 +396,8 @@
         <h2>Neden Önemli? 15 MW Küçük Olabilir, OT İhlali Küçük Değildir</h2>
         <p>Yaklaşık 15 MW'lık bir peaker santralin ulusal şebeke açısından sınırlı büyüklükte olması olayın teknik önemini azaltmıyor. Uzaktan ve otomatik işletilen bir enerji tesisinin siber olay sonrasında günlerce güvenli biçimde işletilememesi; PLC, HMI, mühendislik istasyonu, uzaktan bakım erişimi, VPN, kimlik altyapısı ve proses kayıtlarının aynı delil zincirinde incelenmesini gerektirebilir.</p>
 
-        <div class="highlight-box">
-          <h3>Teknik Duruş ve İhlal Ayrımı</h3>
-          <p>"PLC ile işletilen tesis saldırıya uğradı" bilgisi, saldırganın PLC kodunu değiştirdiği anlamına gelmez. Tesis BT ağı, uzaktan erişim altyapısı veya başka bir destek sistemindeki ihlal nedeniyle tedbiren de durdurulmuş olabilir. Dört günlük sürenin ne kadarının saldırının doğrudan etkisinden, ne kadarının güvenli yeniden devreye alma ve adli doğrulama faaliyetlerinden kaynaklandığı ayrıştırılmalıdır.</p>
+        <div class="callout-box">
+          <p><strong>Teknik Duruş ve İhlal Ayrımı:</strong> "PLC ile işletilen tesis saldırıya uğradı" bilgisi, saldırganın PLC kodunu değiştirdiği anlamına gelmez. Tesis BT ağı, uzaktan erişim altyapısı veya başka bir destek sistemindeki ihlal nedeniyle tedbiren de durdurulmuş olabilir. Dört günlük sürenin ne kadarının saldırının doğrudan etkisinden, ne kadarının güvenli yeniden devreye alma ve adli doğrulama faaliyetlerinden kaynaklandığı ayrıştırılmalıdır.</p>
         </div>
 
         <h2>Adli Bilirkişi Değerlendirmesi</h2>
@@ -177,13 +405,12 @@
 
         <p>PLC veya HMI üzerinde değişiklik iddiası varsa yalnız ekran görüntüsü veya operatör beyanıyla yetinilmemeli; program hash'leri, proje dosyaları, yükleme/değişiklik zamanları ve mühendislik istasyonu artefaktları karşılaştırılmalıdır.</p>
 
-        <div class="highlight-box" style="border-left-color: #0284c7; background: #f0f9ff;">
-          <h3>Teknik Zarar ve İşletme Kaybı Analizi</h3>
-          <p>Dört günlük işletme kaybı da teknik zarar hesabı bakımından ayrıştırılmalıdır: saldırının doğrudan yol açtığı üretim kaybı, kontrollü duruş, adli inceleme, konfigürasyon doğrulaması ve yeniden devreye alma süreleri birbirine karıştırılmamalıdır.</p>
+        <div class="callout-box" style="border-left-color: #0284c7; background: #f0f9ff;">
+          <p><strong>Teknik Zarar ve İşletme Kaybı Analizi:</strong> Dört günlük işletme kaybı da teknik zarar hesabı bakımından ayrıştırılmalıdır: saldırının doğrudan yol açtığı üretim kaybı, kontrollü duruş, adli inceleme, konfigürasyon doğrulaması ve yeniden devreye alma süreleri birbirine karıştırılmamalıdır.</p>
         </div>
 
         <div class="sources-box">
-          <h3><i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> Kaynaklar</h3>
+          <div class="sources-title"><i class="fa-solid fa-bookmark" style="color: #0284c7;"></i> Kaynaklar</div>
           <ul class="sources-list">
             <li>Financial Times, 23 Ağustos 2026: "UK energy companies on alert after 'Iran-linked hackers' shut down 'peaker' plant."</li>
             <li>Birleşik Krallık hükümeti ve NCSC'nin enerji sektörü siber güvenliğine ilişkin 2026 açıklamaları.</li>
@@ -192,20 +419,22 @@
 
       </div>
 
-      <div style="margin-top: 3rem; text-align: center;">
-        <a href="haberler.html" class="btn-hero-secondary" style="background: #0f172a; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-arrow-left"></i> Tüm Haberlere Dön
+      <div class="article-action-bar">
+        <a href="haberler.html" class="phone-header-link" style="background: #0f172a; border-color: #334155; color: #fff;">
+          <i class="fa-solid fa-arrow-left"></i> tüm Haberlere Dön
         </a>
       </div>
 
     </div>
-  </section>
+  </main>
 
-  <footer class="footer" style="background: #040814; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.9rem;">
-    <div class="container text-center">
+  <!-- Standard Footer -->
+  <footer class="footer" style="background: #040814; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.9rem; margin-top: 4rem;">
+    <div class="container text-center" style="text-align: center;">
       <p>&copy; 2026 Uzman İnceleme - Adli Bilişim ve Teknik Mütalaa Hizmetleri. Tüm hakları saklıdır.</p>
     </div>
   </footer>
 
+  <script src="app.js"></script>
 </body>
 </html>
