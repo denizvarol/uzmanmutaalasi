@@ -4,6 +4,57 @@
 
 window.HABERLER_DATA = [
   {
+    id: "yargitay-sosyal-medya-aleniyet-yeniden-paylasim-24-agustos-2026",
+    title: "Bursa’da Yargıtay’dan Dikkat Çeken Karar: Sosyal Medyada Aleniyet, İzinsiz Yeniden Paylaşım Hakkı Vermiyor",
+    category: "ADLİ BİLİŞİM & KVKK",
+    categoryBadge: "ADLİ BİLİŞİM & KVKK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "24 Ağustos 2026",
+    readTime: "6 dk okuma",
+    image: "assets/haber_yargitay_sosyal_medya_hero.jpg",
+    summary: "Yargıtay 12. Ceza Dairesi, mağdurun kendi sosyal medya hesabında yayımladığı görüntüleri alarak kendi hesabından yeniden paylaşan sanığa verilen 1 yıl 8 ay hapis cezasını onadı.",
+    detailUrl: "haber-yargitay-sosyal-medya-aleniyet-yeniden-paylasim",
+    highlightStats: [
+      { num: "24 AĞUSTOS 2026", label: "Yargıtay Kararı", sub: "Yargıtay 12. Ceza Dairesi" },
+      { num: "1 YIL 8 AY HAPİS", label: "TCK 136 İhlali", sub: "Verileri Hukuka Aykırı Yayma" },
+      { num: "ADLİ BİLİŞİM", label: "Hesap Aidiyeti & Hash", sub: "Çapraz Delil Doğrulaması" }
+    ]
+  },
+  {
+    id: "lityum-batarya-sp188-konteyner-riski-24-agustos-2026",
+    title: "Deniz Taşımacılığında Lityum Batarya Açığı: Tek Tek “Küçük”, Konteynerde 700 kWh’lik Görünmeyen Risk",
+    category: "DENİZCİLİK & ENERJİ GÜVENLİĞİ",
+    categoryBadge: "DENİZCİLİK & ENERJİ GÜVENLİĞİ",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "24 Ağustos 2026",
+    readTime: "7 dk okuma",
+    image: "assets/haber_lityum_batarya_sp188_hero.jpg",
+    summary: "IMDG Code SP188 kapsamındaki küçük lityum bataryaların konteyner ölçeğindeki kümülatif yangın riski denizcilik sektöründe tartışılıyor. 10.000 dizüstü bataryası 700 kWh nominal enerji oluşturuyor.",
+    detailUrl: "haber-lityum-batarya-sp188-konteyner-riski",
+    highlightStats: [
+      { num: "24 AĞUSTOS 2026", label: "Sektör Analizi", sub: "Financial Times & IMO" },
+      { num: "700 kWh ENERJİ", label: "10.000 Batarya", sub: "Konteyner Kümülatif Yükü" },
+      { num: "IMDG SP188", label: "Düzenleme Dengesi", sub: "Görünürlük & Yangın Tedbiri" }
+    ]
+  },
+  {
+    id: "ingiltere-enerji-tesisi-ot-siber-saldiri-24-agustos-2026",
+    title: "İngiltere’de Enerji Tesisi Dört Gün Devre Dışı Kaldı: Siber Saldırıda Asıl Delil OT Kayıtlarında",
+    category: "ENERJİ & SİBER GÜVENLİK (OT/ICS)",
+    categoryBadge: "ENERJİ & SİBER GÜVENLİK",
+    author: "Melike Özlem BİLGİLİ - Adli Mühendis",
+    date: "24 Ağustos 2026",
+    readTime: "8 dk okuma",
+    image: "assets/haber_ingiltere_ot_siber_saldiri_hero.jpg",
+    summary: "İngiltere’de küçük ölçekli bir üretim tesisinin siber saldırı sonrası 4 gün kapalı kalması enerji güvenliği brifingine konu oldu. Siber erişim ile 4 günlük operasyon kaybı arasındaki nedensellik OT kayıtlarıyla kanıtlanmalı.",
+    detailUrl: "haber-ingiltere-enerji-tesisi-ot-siber-saldiri",
+    highlightStats: [
+      { num: "24 AĞUSTOS 2026", label: "DESNZ Brifingi", sub: "Reuters & Ofgem Rehberi" },
+      { num: "4 GÜN DURUŞ", label: "Küçük Ölçekli Üretici", sub: "Şebeke Kesintisi Yaşanmadı" },
+      { num: "OT/ICS ADLİ DELİLİ", label: "Nedensellik Zinciri", sub: "PLC & SCADA Log Analizi" }
+    ]
+  },
+  {
     id: "turkiye-18-ilde-siber-suc-operasyonu-23-agustos-2026",
     title: "Türkiye’de 18 İlde Siber Suç Operasyonu: 77 Şüpheli, 37 Tutuklama; Dijital Delil ile Para Hareketi Aynı Zincirde İncelenmeli",
     category: "ADLİ BİLİŞİM & SİBER GÜVENLİK",
