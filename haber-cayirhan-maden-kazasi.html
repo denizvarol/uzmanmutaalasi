@@ -328,6 +328,27 @@
   <script>
     (function(){try{var s=localStorage.getItem('adli_site_settings');if(s){var p=JSON.parse(s);if(p&&p.email){delete p.email;localStorage.setItem('adli_site_settings',JSON.stringify(p));}}}catch(e){}})();
   </script>
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Çayırhan’da 1 Madenci Öldü: Göçük mü, Basınçlı Hava Patlaması mı? Bilirkişiler Kök Nedeni Arıyor",
+    "image": ["https://adlimutalaa.com/assets/hero_adli_muhendislik.jpg"],
+    "datePublished": "2026-08-22T09:00:00+03:00",
+    "dateModified": "2026-08-22T09:00:00+03:00",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Uzman İnceleme",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://adlimutalaa.com/assets/logo/uzman-inceleme-mark.svg"
+      }
+    },
+    "description": "Çayırhan'daki ölümcül maden kazasında Valilik tavan çökmesine, Başsavcılık ise basınçlı hava sistemine işaret etti."
+  }
+  </script>
 </head>
 <body>
 
@@ -380,10 +401,12 @@
         </p>
 
         <div class="news-meta-bar">
-          <div class="news-meta-item"><i class="fa-solid fa-calendar-days" style="color: #38bdf8;"></i> <span>22 Ağustos 2026</span></div>
-          <div class="news-meta-item"><i class="fa-solid fa-newspaper" style="color: #38bdf8;"></i> <span>Anadolu Ajansı & Başsavcılık</span></div>
-          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> <span>5 dk okuma</span></div>
+          <div class="news-meta-item"><i class="fa-solid fa-calendar" style="color: #38bdf8;"></i> 22 Ağustos 2026 | Ankara</div>
+          <div class="news-meta-item"><i class="fa-solid fa-newspaper" style="color: #38bdf8;"></i> Kaynak: Anadolu Ajansı & Başsavcılık</div>
+          <div class="news-meta-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> 5 dk okuma</div>
         </div>
+      </div>
+      </div>
       </div>
     </div>
   </section>
