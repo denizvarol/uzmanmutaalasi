@@ -32,6 +32,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://adlimutalaa.com/haber-mahkeme-dosyasinda-gizli-ai-prompt-injection</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://adlimutalaa.com/haber-yargitay-sosyal-medya-aleniyet-yeniden-paylasim</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>

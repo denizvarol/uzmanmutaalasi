@@ -1,5 +1,34 @@
 window.HABERLER_DATA = [
   {
+    "id": "mahkeme-dosyasina-gizli-ai-komutu-yargic-prompt-injectioni-yakaladi",
+    "title": "Mahkeme Dosyasına Gizli AI Komutu: Yargıç “Prompt Injection”ı Yakaladı",
+    "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
+    "categoryBadge": "ADLİ BİLİŞİM & YAPAY ZEKÂ",
+    "author": "Melike Özlem BİLGİLİ - Adli Mühendis",
+    "date": "24 Ağustos 2026",
+    "readTime": "5 dk okuma",
+    "image": "assets/haber_mahkeme_gizli_ai_prompt_hero.jpg",
+    "summary": "Connecticut’ta bir davacının elektronik dilekçelere beyaz ve çok küçük puntolarla gizlediği yapay zekâ talimatları yaptırımla sonuçlandı. Olay, elektronik delilde “görünen belge” ile “makinenin okuyabildiği içerik” arasındaki farkı adli bilişimin gündemine taşıdı.",
+    "detailUrl": "haber-mahkeme-dosyasinda-gizli-ai-prompt-injection",
+    "highlightStats": [
+      {
+        "num": "6 AĞUSTOS 2026",
+        "label": "Mahkeme Kararı",
+        "sub": "Connecticut Superior Court"
+      },
+      {
+        "num": "PROMPT INJECTION",
+        "label": "Gizli AI Talimatı",
+        "sub": "Elektronik Delil İncelemesi"
+      },
+      {
+        "num": "YAPTIRIM",
+        "label": "E-Dosyalama İptali",
+        "sub": "Adli Bilişim Değerlendirmesi"
+      }
+    ]
+  },
+  {
     "id": "yargitay-sosyal-medya-aleniyet-yeniden-paylasim-24-agustos-2026",
     "title": "Bursa’da Yargıtay’dan Dikkat Çeken Karar: Sosyal Medyada Aleniyet, İzinsiz Yeniden Paylaşım Hakkı Vermiyor",
     "category": "ADLİ BİLİŞİM & KVKK",
