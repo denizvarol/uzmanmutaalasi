@@ -27,15 +27,45 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haberler</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://adlimutalaa.com/haber-mahkeme-dosyasinda-gizli-ai-prompt-injection</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://adlimutalaa.com/haber-denizolgun-otopsi-videosu-supheli-olum</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-gullu-17-dakikalik-zaman-zinciri</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-spectrum-building-yangini-sigorta-teknik-delil</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-bess-yangin-guvenligi-saha-denetimi</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-igdir-kati-atik-tesisi-yangini</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adlimutalaa.com/haber-mahkeme-dosyasinda-gizli-ai-prompt-injection</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haber-yargitay-sosyal-medya-aleniyet-yeniden-paylasim</loc>

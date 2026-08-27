@@ -1,5 +1,145 @@
 window.HABERLER_DATA = [
   {
+    "id": "denizolgun-otopsi-videosu-supheli-olum-26-agustos-2026",
+    "title": "10 Yıl Sonra Konuşan Kayıt: Otopsi Videosu Ölüm Dosyasının Yönünü Değiştirdi",
+    "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
+    "categoryBadge": "ADLİ BİLİŞİM & ADLİ TİP",
+    "date": "26 Ağustos 2026",
+    "readTime": "6 dk okuma",
+    "image": "assets/haber_denizolgun_otopsi_hero.jpg",
+    "summary": "2016'da beyin kanamasına bağlı doğal ölüm olarak kayda geçen ölüm dosyasında, 10 yıl sonra ortaya çıkan otopsi videosu ve yeni bilirkişi raporu adli inceleme süreçlerini yeniden başlattı.",
+    "detailUrl": "haber-denizolgun-otopsi-videosu-supheli-olum",
+    "highlightStats": [
+      {
+        "num": "25 AĞUSTOS 2026",
+        "label": "Bilirkişi Raporu",
+        "sub": "Şüpheli Ölüm Değerlendirmesi"
+      },
+      {
+        "num": "10 YIL SONRA",
+        "label": "Bulunan Otopsi Kaydı",
+        "sub": "Kurumsal Delil Yönetimi İncelemesi"
+      },
+      {
+        "num": "4 EKİMOTİK ALAN",
+        "label": "Asfiksi Şüphesi",
+        "sub": "Çapraz Delil Doğrulaması"
+      }
+    ]
+  },
+  {
+    "id": "gullu-17-dakikalik-zaman-zinciri-26-agustos-2026",
+    "title": "Güllü Dosyasında 17 Dakikalık Zaman Zinciri: Panik Görüntüsü Suçluluk Kanıtı mı?",
+    "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
+    "categoryBadge": "ADLİ BİLİŞİM & VİDEO ANALİZİ",
+    "date": "26 Ağustos 2026",
+    "readTime": "6 dk okuma",
+    "image": "assets/haber_gullu_zaman_zinciri_hero.jpg",
+    "summary": "Şarkıcı Gül Tut'un ölümüne ilişkin dosyada bugün ortaya çıkan güvenlik kamerası görüntüleri, kapı kolu optik yansıması ve dijital delil zaman çizelgesi incelemesi.",
+    "detailUrl": "haber-gullu-17-dakikalik-zaman-zinciri",
+    "highlightStats": [
+      {
+        "num": "17 DAKİKA",
+        "label": "Olay Sonrası Zaman Zinciri",
+        "sub": "Bina Güvenlik Kamera Kaydı"
+      },
+      {
+        "num": "OPTİK YANSIMA",
+        "label": "Kapı Kolu Metal Analizi",
+        "sub": "Kör Nokta Rekonstrüksiyonu"
+      },
+      {
+        "num": "SES DELİLİ",
+        "label": "İTÜ İncelemesi",
+        "sub": "Zaman & Aidiyet Doğrulaması"
+      }
+    ]
+  },
+  {
+    "id": "spectrum-building-yangini-sigorta-teknik-delil-26-agustos-2026",
+    "title": "Olmayan Evin Kredisi, Bitmeyen Enkaz: Spectrum Building Yangınında Sigorta ve Teknik Delil Çıkmazı",
+    "category": "ADLİ MÜHENDİSLİK / ENDÜSTRİYEL KAZA",
+    "categoryBadge": "ADLİ MÜHENDİSLİK & SİGORTA",
+    "date": "26 Ağustos 2026",
+    "readTime": "6 dk okuma",
+    "image": "assets/haber_spectrum_building_hero.jpg",
+    "summary": "Londra Spectrum Building yangınından iki yıl sonra kat maliklerinin devam eden kredi yükü, iskele yangın yayılımı ve sigorta/idare adli incelemesi.",
+    "detailUrl": "haber-spectrum-building-yangini-sigorta-teknik-delil",
+    "highlightStats": [
+      {
+        "num": "2 YIL SONRA",
+        "label": "Süren Mağduriyet",
+        "sub": "80+ Sakin & Mortgage Yükü"
+      },
+      {
+        "num": "İSKELE YAYILIMI",
+        "label": "Ahşap Kalas & Rüzgâr",
+        "sub": "London Fire Brigade Raporu"
+      },
+      {
+        "num": "SİGORTA & İDARE",
+        "label": "Tazminat Ayrımı",
+        "sub": "MHCLG Kararı & Rücu Analizi"
+      }
+    ]
+  },
+  {
+    "id": "bess-yangin-guvenligi-saha-denetimi-25-agustos-2026",
+    "title": "UL 9540A Belgeniz Gerçekte Neyi Kapsıyor? Norveç SafeBESS Araştırmasının Gösterdiği 4 Kritik Güvenlik Boşluğu",
+    "category": "ENERJİ SİSTEMLERİ & SİBER GÜVENLİK",
+    "categoryBadge": "ENERJİ GÜVENLİĞİ & BESS",
+    "date": "25 Ağustos 2026",
+    "readTime": "5 dk okuma",
+    "image": "assets/haber_bess_saha_denetimi_hero.jpg",
+    "summary": "Norveç SafeBESS araştırmasının 7 faal bina içi BESS kurulumundaki tespitleri: algılama, ayırma mesafesi, ikinci ömür bataryalar ve adli mühendislik analizi.",
+    "detailUrl": "haber-bess-yangin-guvenligi-saha-denetimi",
+    "highlightStats": [
+      {
+        "num": "6 / 7 (%85,7)",
+        "label": "Duman Algılama",
+        "sub": "Duman Algılamaya Dayanan Saha"
+      },
+      {
+        "num": "1 / 7 (%14,3)",
+        "label": "Gaz Dedektörü",
+        "sub": "Erken Gaz Algılama"
+      },
+      {
+        "num": "0 / 7 SAHA",
+        "label": "NFPA 855 Tam Uyum",
+        "sub": "0,9 m Ayırma Ölçütü Karşılaştırması"
+      }
+    ]
+  },
+  {
+    "id": "igdir-kati-atik-tesisi-yangini-25-agustos-2026",
+    "title": "Iğdır Katı Atık Tesisinde Yangın: “Kendiliğinden Tutuşma” İlk Değerlendirme, Kök Neden Henüz Değil",
+    "category": "ADLİ MÜHENDİSLİK / ENDÜSTRİYEL KAZA",
+    "categoryBadge": "ADLİ MÜHENDİSLİK & ENDÜSTRİYEL KAZA",
+    "date": "25 Ağustos 2026",
+    "readTime": "5 dk okuma",
+    "image": "assets/haber_igdir_kati_atik_hero.jpg",
+    "summary": "Iğdır Katı Atık Tesisindeki yangında kendiliğinden ısınma ve kendiliğinden tutuşma teknik ayrımı, meteorolojik veriler ve adli mühendislik inceleme esasları.",
+    "detailUrl": "haber-igdir-kati-atik-tesisi-yangini",
+    "highlightStats": [
+      {
+        "num": "24 AĞUSTOS 2024",
+        "label": "Yangın Olayı",
+        "sub": "Biyokütle Santrali Bölgesi"
+      },
+      {
+        "num": "İLK HİPOTEZ",
+        "label": "Kendiliğinden Isınma",
+        "sub": "Ekzotermik Oksidasyon Analizi"
+      },
+      {
+        "num": "KÖK NEDEN",
+        "label": "Bilirkişi İncelemesi",
+        "sub": "NFPA 921 & NFPA 850 Esasları"
+      }
+    ]
+  },
+  {
     "id": "mahkeme-dosyasina-gizli-ai-komutu-yargic-prompt-injectioni-yakaladi",
     "title": "Mahkeme Dosyasına Gizli AI Komutu: Yargıç “Prompt Injection”ı Yakaladı",
     "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
