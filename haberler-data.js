@@ -143,7 +143,7 @@ window.HABERLER_DATA = [
     "id": "mahkeme-dosyasina-gizli-ai-komutu-yargic-prompt-injectioni-yakaladi",
     "title": "Mahkeme Dosyasına Gizli AI Komutu: Yargıç “Prompt Injection”ı Yakaladı",
     "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
-    "categoryBadge": "ADLİ BİLİŞİM & YAPAY ZEKÂ",
+    "categoryBadge": "ADLİ BİLİŞİM & YAPAY ZEK",
     "author": "Melike Özlem BİLGİLİ - Adli Mühendis",
     "date": "24 Ağustos 2026",
     "readTime": "5 dk okuma",
