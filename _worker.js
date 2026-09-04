@@ -27,11 +27,17 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://adlimutalaa.com/haberler</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://adlimutalaa.com/haber-nusaybin-hts-daraltilmis-baz-analizi</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://adlimutalaa.com/haber-denizolgun-otopsi-videosu-supheli-olum</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>

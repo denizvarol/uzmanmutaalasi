@@ -1,5 +1,33 @@
 window.HABERLER_DATA = [
   {
+    "id": "nusaybin-hts-daraltilmis-baz-analizi-4-eylul-2026",
+    "title": "14 Yıl Sonra 15 Gözaltı: Nusaybin Dosyasında Eski Telekom Verisi Yeniden Okundu",
+    "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
+    "categoryBadge": "ADLİ BİLİŞİM & DİJİTAL DELİL",
+    "date": "4 Eylül 2026",
+    "readTime": "6 dk okuma",
+    "image": "assets/haber_nusaybin_hts_hero.jpg",
+    "summary": "2012'de öldürülen İsmail Akın ile 10 yaşındaki kızı Elif Akın'a ilişkin soruşturmada HTS kayıtları, daraltılmış baz analizi, 2G/3G şebeke mimarisi ve adli bilişim delil değerlendirmesi.",
+    "detailUrl": "haber-nusaybin-hts-daraltilmis-baz-analizi",
+    "highlightStats": [
+      {
+        "num": "2012 DOSYASI",
+        "label": "Zaman Eşiği",
+        "sub": "14 Yıl Sonra Yeniden Analiz"
+      },
+      {
+        "num": "HTS & BAZ",
+        "label": "Şebeke Geometrisi",
+        "sub": "2G/3G Hücre Mimarisi"
+      },
+      {
+        "num": "15 GÖZALTI",
+        "label": "Soruşturma Safhası",
+        "sub": "Masumiyet Karinesi Geçerli"
+      }
+    ]
+  },
+  {
     "id": "denizolgun-otopsi-videosu-supheli-olum-26-agustos-2026",
     "title": "10 Yıl Sonra Konuşan Kayıt: Otopsi Videosu Ölüm Dosyasının Yönünü Değiştirdi",
     "category": "SİBER GÜVENLİK / ADLİ BİLİŞİM",
